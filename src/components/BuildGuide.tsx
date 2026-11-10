@@ -13,6 +13,7 @@ import { BuildOptionPicker } from '@/components/BuildOptionPicker'
 import { GuideHeading } from '@/components/GuideHeading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { buildOptionGuides } from '@/content/build-options'
 
 const steps = [
   { title: 'Choose an ancestry', description: 'Ancestry describes your character’s people. It gives your character some starting traits and helps determine their attribute boosts.' },
@@ -45,13 +46,19 @@ type BuildGuideProps = {
   onProgress: (step: BuildGuideStep) => void
   onBackToConcept: () => void
   onPlanSkills?: () => void
+  startingLanguageNotes: string
+  onStartingLanguageNotesChange: (notes: string) => void
 }
 
-export function BuildGuide({ build, currentStep, onChange, onProgress, onBackToConcept, onPlanSkills }: BuildGuideProps) {
+export function BuildGuide({
+  build, currentStep, onChange, onProgress, onBackToConcept, onPlanSkills,
+  startingLanguageNotes, onStartingLanguageNotesChange,
+}: BuildGuideProps) {
   const stepIndex = buildSteps.indexOf(currentStep)
   const heading = useRef<HTMLHeadingElement>(null)
   const step = steps[stepIndex]
   const keys = classKeys(build.characterClass)
+  const ancestryGuide = buildOptionGuides.ancestry[build.ancestry]
 
   useEffect(() => {
     heading.current?.focus()
@@ -126,6 +133,44 @@ export function BuildGuide({ build, currentStep, onChange, onProgress, onBackToC
             {stepIndex === reviewIndex ? (
               <>
                 <BuildSummary build={build} />
+                <details className="rounded-md border border-border p-3">
+                  <summary className="cursor-pointer font-medium">Starting languages (optional)</summary>
+                  <div className="mt-3 space-y-3">
+                    <p id="starting-language-guidance" className="text-muted-foreground">
+                      Your ancestry lists your starting languages and the extras you can choose. At level 1, a positive Intelligence modifier gives you that many additional languages. Ask your GM about languages outside your available choices.
+                    </p>
+                    <div className="flex flex-wrap gap-x-4 gap-y-2">
+                      {ancestryGuide ? (
+                        <a
+                          href={`https://2e.aonprd.com/Ancestries.aspx?ID=${ancestryGuide.rulesId}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="font-medium text-primary underline underline-offset-2"
+                        >
+                          Your ancestry’s rules
+                        </a>
+                      ) : null}
+                      <a
+                        href="https://2e.aonprd.com/Languages.aspx"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-medium text-primary underline underline-offset-2"
+                      >
+                        Pathfinder language rules
+                      </a>
+                    </div>
+                    <label className="block space-y-1">
+                      <span className="font-medium">Starting language notes</span>
+                      <textarea
+                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-foreground focus-visible:outline-2 focus-visible:outline-ring"
+                        rows={3}
+                        aria-describedby="starting-language-guidance"
+                        value={startingLanguageNotes}
+                        onChange={(event) => onStartingLanguageNotesChange(event.currentTarget.value)}
+                      />
+                    </label>
+                  </div>
+                </details>
                 <BuildActions build={build} />
                 <div className="space-y-2">
                   <Button type="button" className="min-h-11" disabled={!onPlanSkills} onClick={onPlanSkills}>

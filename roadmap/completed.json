@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T00:44:34+11:00",
+  "updatedAt": "2026-11-11T01:00:13+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -244,6 +244,13 @@
       "group": "Phase 6",
       "notes": "The maintainer confirmed that pushes to main trigger Vercel builds.",
       "completedAt": "2026-11-11T00:44:34+11:00"
+    },
+    {
+      "id": "starting-language-notes",
+      "title": "Add optional starting language notes to the character guide",
+      "group": "Phase 5",
+      "notes": "The build review links to general language and ancestry rules. The optional notes save with the draft and round-trip through the character file.",
+      "completedAt": "2026-11-11T01:00:13+11:00"
     }
   ]
 }

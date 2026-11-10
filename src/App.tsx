@@ -143,6 +143,8 @@ function App() {
               onProgress={(next) => saveBuild({ ...buildDraft, step: next })}
               onBackToConcept={returnToConcept}
               onPlanSkills={skillsAvailable ? () => saveBuild({ ...buildDraft, step: 'skills' }) : undefined}
+              startingLanguageNotes={character.startingLanguageNotes ?? ''}
+              onStartingLanguageNotesChange={(startingLanguageNotes) => saveCharacter({ ...character, startingLanguageNotes })}
             />
           </div>
         ) : null}

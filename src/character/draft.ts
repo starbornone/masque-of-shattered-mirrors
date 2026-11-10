@@ -10,9 +10,10 @@ export const characterStorageKey = 'masque-character'
 export type CharacterDraft = {
   sessionZero: SessionZeroDraft
   buildDraft: BuildDraft
+  startingLanguageNotes?: string
 }
 
-export function serializeCharacter({ sessionZero, buildDraft }: CharacterDraft): string {
+export function serializeCharacter({ sessionZero, buildDraft, startingLanguageNotes }: CharacterDraft): string {
   return JSON.stringify({
     format: characterStorageKey,
     version: 1,
@@ -20,6 +21,7 @@ export function serializeCharacter({ sessionZero, buildDraft }: CharacterDraft):
     build: JSON.parse(serializeBuild(buildDraft.build)),
     buildStep: buildDraft.step,
     skills: parseSkillPlan(buildDraft.skills) ?? null,
+    startingLanguageNotes: startingLanguageNotes || undefined,
   }, null, 2) + '\n'
 }
 
@@ -38,7 +40,8 @@ export function parseCharacter(serialized: string): CharacterDraft | null {
     if (!sessionZero || !build) return null
     const step: BuildDraft['step'] = data.buildStep === 'skills' ? 'skills' : buildSteps.find((id) => id === data.buildStep) ?? null
     const skills = parseSkillPlan(data.skills)
-    const draft = { sessionZero, buildDraft: { build, step, skills } }
+    const draft: CharacterDraft = { sessionZero, buildDraft: { build, step, skills } }
+    if (typeof data.startingLanguageNotes === 'string') draft.startingLanguageNotes = data.startingLanguageNotes
 
     // Reject files that would silently lose or change values during normalization.
     const canonical = JSON.parse(serializeCharacter(draft))

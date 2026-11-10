@@ -42,6 +42,12 @@ test('character export restores skipped answers, unfinished attributes, planned 
   assert.deepEqual(Object.keys(file), ['format', 'version', 'sessionZero', 'build', 'buildStep', 'skills'])
 })
 
+test('optional starting language notes round-trip in a character file and can be cleared', () => {
+  const draft = { ...character, startingLanguageNotes: 'Common, Elven\nCheck with GM about Dwarven.' }
+  assert.deepEqual(parseCharacter(serializeCharacter(draft)), draft)
+  assert.equal(serializeCharacter({ ...draft, startingLanguageNotes: '' }), serializeCharacter(character))
+})
+
 test('rejects broken or incompatible files instead of clearing or normalizing draft values', () => {
   const file = JSON.parse(serializeCharacter(character))
   for (const invalid of [
@@ -52,6 +58,7 @@ test('rejects broken or incompatible files instead of clearing or normalizing dr
     JSON.stringify({ ...file, sessionZero: { ...file.sessionZero, answers: {} } }),
     JSON.stringify({ ...file, skills: { ...file.skills, lore: [] } }),
     JSON.stringify({ ...file, buildStep: 'unknown' }),
+    JSON.stringify({ ...file, startingLanguageNotes: ['Common'] }),
   ]) {
     assert.equal(parseCharacter(invalid), null)
   }
@@ -102,6 +109,7 @@ test('uses the campaign start level for a new build and preserves levels in olde
   const restored = {
     ...character,
     sessionZero: { ...character.sessionZero, answers: { ...emptySessionZero, faith: 'nocticula' as const } },
+    startingLanguageNotes: 'Common, Goblin',
   }
   saved.set(characterStorageKey, serializeCharacter(restored))
   assert.deepEqual(loadCharacterDraft(7), restored)
