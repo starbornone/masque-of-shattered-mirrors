@@ -39,7 +39,7 @@ The development server defaults to `http://localhost:5173`. Run `npm run build` 
 2. The shell shows **Masque Character Creator** and the player’s guide.
 3. **Accept the invitation** starts the guided questions. The review lets you edit any answer.
 4. Skip any concept question and reload to restore the draft and your place. Download JSON or Markdown from the review.
-5. **Continue to character build** opens the ancestry, background, class, and boost steps. The review shows the current ledger, including any boosts still to assign.
+5. **Continue to character build** opens the ancestry, background, class, and boost steps. Use **Browse ancestries**, **Browse backgrounds**, or **Browse classes** to search the options and read about them before selecting. Each preset links to its full rules. The build review shows the current ledger and any boosts still to assign.
 6. Reload to restore the build and its current step.
 7. Use **Share build** in the review to copy a mechanical link. Opening it shows a preview. Choose **Use shared build** to replace the saved build in that browser.
 8. Use **Print attribute ledger** in the review or preview to print or save a PDF from your browser.

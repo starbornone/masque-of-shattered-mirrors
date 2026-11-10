@@ -31,6 +31,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 ## Phase 2 — Attribute creator (campaign-ready)
 
 - [x] Extend the guide through the mechanical build, introducing Remaster terms as players make each choice.
+- [x] Explain ancestry, background, and class options with searchable summaries and direct rules links.
 - [x] Port UI patterns from the point-buy calculator (ancestry / background / class / level / milestones / voluntary flaws)
 - [ ] Default level configurable (GM sets expected start level)
 - [x] Save the build and current step across refreshes
