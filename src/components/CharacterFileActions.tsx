@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import type { ChangeEvent } from 'react'
+import { Download, Upload } from 'lucide-react'
 import { parseCharacter, serializeCharacter } from '@/character/draft'
 import type { CharacterDraft } from '@/character/draft'
 import { Button } from '@/components/ui/button'
@@ -54,34 +55,38 @@ export function CharacterFileActions({ draft, onRestore }: CharacterFileActionsP
   }
 
   return (
-    <section aria-labelledby="character-file-heading" className="mx-auto w-full max-w-2xl space-y-3 border-t border-border/80 pt-5 print:hidden">
-      <h2 id="character-file-heading" className="font-heading text-xl font-semibold">Character file</h2>
-      <p className="text-sm text-muted-foreground">
-        Save or restore your session-zero answers, attribute build, and planned skills in one JSON file.
-      </p>
-      <div className="flex flex-wrap gap-2">
-        <Button
-          type="button"
-          variant="outline"
-          className="min-h-11"
-          onClick={() => downloadFile('masque-character.json', serializeCharacter(draft), 'application/json')}
-        >
-          Export character
-        </Button>
-        <Button
-          ref={importButton}
-          type="button"
-          variant="outline"
-          className="min-h-11"
-          disabled={reading}
-          onClick={() => input.current?.click()}
-        >
-          Import character
-        </Button>
-        <input ref={input} type="file" accept=".json,application/json" hidden onChange={readCharacter} />
+    <section aria-labelledby="character-file-heading" className="masque-panel mx-auto w-full max-w-2xl rounded-xl border border-border bg-card p-4 print:hidden sm:p-5">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="max-w-[18rem]">
+          <h2 id="character-file-heading" className="font-heading text-2xl">Character file</h2>
+          <p className="text-sm text-muted-foreground">
+            Save or restore your session-zero answers, attribute build, and planned skills in one JSON file.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <Button
+            type="button"
+            variant="outline"
+            className="min-h-11"
+            onClick={() => downloadFile('masque-character.json', serializeCharacter(draft), 'application/json')}
+          >
+            <Download aria-hidden="true" /> Export character
+          </Button>
+          <Button
+            ref={importButton}
+            type="button"
+            variant="outline"
+            className="min-h-11"
+            disabled={reading}
+            onClick={() => input.current?.click()}
+          >
+            <Upload aria-hidden="true" /> Import character
+          </Button>
+          <input ref={input} type="file" accept=".json,application/json" hidden onChange={readCharacter} />
+        </div>
       </div>
       {pending ? (
-        <div className="space-y-3 rounded-lg border border-border bg-card p-4">
+        <div className="mt-3 space-y-3 rounded-lg border border-border bg-background p-4">
           <p className="break-all font-medium">{pending.filename}</p>
           <p className="text-sm text-muted-foreground">Restoring replaces the character saved in this browser.</p>
           <div className="flex flex-wrap gap-2">
@@ -90,8 +95,8 @@ export function CharacterFileActions({ draft, onRestore }: CharacterFileActionsP
           </div>
         </div>
       ) : null}
-      {error ? <p role="alert" className="text-sm text-destructive">{error}</p> : null}
-      <div role="status" className="text-sm text-muted-foreground">
+      {error ? <p role="alert" className="mt-3 text-sm text-destructive">{error}</p> : null}
+      <div role="status" className="text-sm text-muted-foreground [&:not(:empty)]:mt-3">
         {pending ? `Ready to restore ${pending.filename}.` : status}
       </div>
     </section>

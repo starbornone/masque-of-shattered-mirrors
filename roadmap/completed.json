@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T00:11:10+11:00",
+  "updatedAt": "2026-11-11T00:18:48+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -209,6 +209,13 @@
       "group": "Phase 6",
       "notes": "A versioned JSON file combines session-zero answers, attributes, planned skills, and guide progress. It supports unfinished characters and requires confirmation before replacing the browser draft.",
       "completedAt": "2026-11-11T00:11:10+11:00"
+    },
+    {
+      "id": "masquerade-ui-polish",
+      "title": "Polish tone and CSS for a masquerade-adjacent readable UI",
+      "group": "Phase 6",
+      "notes": "Use a midnight-blue masthead, silver progress bars, and a framed invitation with a mirror wax seal. Apply consistent guide headings and panels, and fit the skill table to narrow screens.",
+      "completedAt": "2026-11-11T00:18:48+11:00"
     }
   ]
 }

@@ -89,21 +89,21 @@ function App() {
         className="verathe-backdrop pointer-events-none absolute print:hidden"
       />
 
-      <header className="relative z-10 border-b border-primary/20 bg-[color-mix(in_oklch,var(--card)_78%,transparent)] backdrop-blur-md">
-        <div className="mx-auto max-w-3xl px-6 py-5">
-          <div className="veil-in flex items-start gap-3">
+      <header className="masque-masthead relative z-10">
+        <div className="mx-auto max-w-[45rem] px-4 py-6 sm:px-6 sm:py-7">
+          <div className="veil-in flex items-center gap-3.5 sm:gap-4">
             <img
               src={`${import.meta.env.BASE_URL}favicon.svg`}
               alt=""
-              width={44}
-              height={44}
-              className="mt-0.5 size-11 shrink-0"
+              width={56}
+              height={56}
+              className="size-11 shrink-0 sm:size-14"
             />
             <div>
-              <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-primary">
+              <p className="masque-masthead-kicker mb-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] sm:text-xs">
                 The Masque of Shattered Mirrors
               </p>
-              <h1 className="font-heading text-3xl leading-none tracking-tight text-foreground md:text-4xl">
+              <h1 className="masque-title">
                 Masque Character Creator
               </h1>
             </div>
@@ -111,7 +111,7 @@ function App() {
         </div>
       </header>
 
-      <main className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-6 py-10">
+      <main className="relative z-10 mx-auto flex w-full max-w-[45rem] flex-1 flex-col gap-7 px-4 py-7 sm:px-6 sm:py-10">
         {storageError ? (
           <p role="alert" className="mx-auto w-full max-w-2xl text-destructive">
             This browser couldn’t save your draft. Use Export character to keep a copy.

@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 
 export function Navbar() {
   return (
-    <footer className="mx-auto w-full max-w-3xl px-6 pb-8 print:hidden">
+    <footer className="mx-auto w-full max-w-[45rem] px-4 pb-8 print:hidden sm:px-6">
       <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-border/80 pt-5 sm:justify-between">
         <Button
           asChild

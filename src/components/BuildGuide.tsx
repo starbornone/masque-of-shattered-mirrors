@@ -9,6 +9,7 @@ import { ancestries, attributeIds, attributes, backgrounds, classes } from '@/at
 import { AttributeLedger, AttributeSelect, BoostSlots, BuildBoosts } from '@/components/BuildBoosts'
 import { BuildActions } from '@/components/BuildActions'
 import { BuildFitSuggestions } from '@/components/BuildFitSuggestions'
+import { GuideHeading } from '@/components/GuideHeading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 
@@ -102,14 +103,14 @@ export function BuildGuide({ build, currentStep, onChange, onProgress, onBackToC
 
   return (
     <section aria-labelledby="build-guide-heading" className="flex flex-col gap-4">
-      <div className="space-y-2">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
-          Character build · Step {stepIndex + 1} of {steps.length}
-        </p>
-        <progress aria-label="Character build progress" value={stepIndex + 1} max={steps.length} className="block h-1.5 w-full accent-primary" />
-        <h2 ref={heading} id="build-guide-heading" tabIndex={-1} className="text-3xl">{step.title}</h2>
-        <p className="max-w-prose text-muted-foreground">{step.description}</p>
-      </div>
+      <GuideHeading
+        ref={heading}
+        id="build-guide-heading"
+        eyebrow="Character build"
+        title={step.title}
+        description={step.description}
+        progress={{ label: 'Character build progress', step: stepIndex + 1, total: steps.length }}
+      />
 
       <form onSubmit={advance} className="space-y-4">
         <Card>

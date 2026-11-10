@@ -7,28 +7,29 @@ export function InvitationLetter() {
         aria-hidden="true"
         className="invitation-letter-ribbon absolute inset-x-0 top-0 h-1.5"
       />
-      <div className="relative px-6 pb-8 pt-7 sm:px-9 sm:pb-10 sm:pt-9">
-        <div className="mb-6 flex items-start justify-between gap-4">
+      <div className="relative px-6 py-8 sm:px-10 sm:py-10">
+        <div className="invitation-letter-heading mb-5 flex items-center justify-between gap-4 pb-4">
           <div>
             <p className="invitation-letter-meta text-[0.65rem] font-medium uppercase tracking-[0.22em]">
               House Verathe
             </p>
-            <h2 className="font-heading text-2xl leading-none tracking-tight text-[color:var(--letter-ink)] sm:text-3xl">
+            <h3 className="mt-1 font-heading text-3xl leading-none text-[color:var(--letter-ink)] sm:text-4xl">
               The letter
-            </h2>
+            </h3>
           </div>
-          <div
-            aria-hidden="true"
-            className="invitation-letter-seal mt-1 size-11 shrink-0 rounded-full"
-            title="Black wax seal"
-          />
+          <div aria-hidden="true" className="invitation-letter-seal grid size-12 shrink-0 place-items-center sm:size-14">
+            <svg className="size-7 sm:size-8" viewBox="0 0 32 32" fill="none">
+              <ellipse cx="16" cy="16" rx="10" ry="12" stroke="currentColor" />
+              <path d="m19 5-4 7 4 3-4 6 2 7m2-13 6-2" stroke="currentColor" strokeLinejoin="round" />
+            </svg>
+          </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="invitation-letter-copy space-y-4">
           {invitationParagraphs.map((paragraph) => (
             <p
               key={paragraph}
-              className="font-heading text-[1.05rem] leading-[1.65] text-[color:var(--letter-ink)] sm:text-lg sm:leading-[1.7]"
+              className="font-heading text-lg leading-[1.6] text-[color:var(--letter-ink)] sm:text-xl sm:leading-[1.55]"
             >
               {paragraph}
             </p>

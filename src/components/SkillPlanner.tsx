@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import type { Build } from '@/attributes/build'
 import { attributes } from '@/attributes/options'
+import { GuideHeading } from '@/components/GuideHeading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { evaluateSkillPlan, loreId, loreTopic } from '@/skills/plan'
@@ -36,13 +37,13 @@ export function SkillPlanner({ build, plan, onChange, onBack }: SkillPlannerProp
 
   return (
     <section aria-labelledby="skill-planner-heading" className="mx-auto w-full max-w-2xl space-y-4">
-      <div className="space-y-2">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">Level {build.level} · Character build</p>
-        <h2 id="skill-planner-heading" ref={heading} tabIndex={-1} className="text-3xl">Skill proficiency planner</h2>
-        <p className="text-muted-foreground">
-          Mark your level-1 training, then assign any later increases. The base modifier adds the linked attribute and proficiency.
-        </p>
-      </div>
+      <GuideHeading
+        ref={heading}
+        id="skill-planner-heading"
+        eyebrow={`Character build · Level ${build.level}`}
+        title="Skill proficiency planner"
+        description="Mark your level-1 training, then assign any later increases. The base modifier adds the linked attribute and proficiency."
+      />
 
       <Card>
         <CardHeader>
@@ -78,18 +79,22 @@ export function SkillPlanner({ build, plan, onChange, onBack }: SkillPlannerProp
               <thead>
                 <tr className="border-b border-border">
                   <th scope="col" className="py-2 pr-2">Skill</th>
-                  <th scope="col" className="px-2 text-center">Trained at level 1</th>
-                  <th scope="col" className="px-2">Rank</th>
-                  <th scope="col" className="pl-2 text-right">Base modifier</th>
+                  <th scope="col" className="px-1 text-center sm:px-2">
+                    Trained <span className="sr-only sm:not-sr-only">at level 1</span>
+                  </th>
+                  <th scope="col" className="px-1 sm:px-2">Rank</th>
+                  <th scope="col" className="pl-1 text-right sm:pl-2">
+                    Base <span className="sr-only sm:not-sr-only">modifier</span>
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 {rows.map(({ id, name, attribute, rank, modifier }) => (
                   <tr key={id}>
-                    <th scope="row" className="py-2 pr-2 font-medium">
+                    <th scope="row" className="py-2 pr-1 font-medium wrap-anywhere sm:pr-2">
                       {name}<span className="block text-xs text-muted-foreground">{attributes[attribute]}</span>
                     </th>
-                    <td className="px-2 text-center">
+                    <td className="px-1 text-center sm:px-2">
                       <label className="inline-flex min-h-11 min-w-11 items-center justify-center">
                         <input
                           type="checkbox"
@@ -103,8 +108,8 @@ export function SkillPlanner({ build, plan, onChange, onBack }: SkillPlannerProp
                         />
                       </label>
                     </td>
-                    <td className="px-2">{rank}</td>
-                    <td className="pl-2 text-right tabular-nums">{modifier > 0 ? '+' : ''}{modifier}</td>
+                    <td className="px-1 sm:px-2">{rank}</td>
+                    <td className="pl-1 text-right tabular-nums sm:pl-2">{modifier > 0 ? '+' : ''}{modifier}</td>
                   </tr>
                 ))}
               </tbody>

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
+import { GuideHeading } from '@/components/GuideHeading'
 import { InvitationLetter } from '@/components/InvitationLetter'
 import { SessionZeroExports } from '@/components/SessionZeroExports'
 import { SessionZeroSummary } from '@/components/SessionZeroSummary'
@@ -111,21 +112,14 @@ export function SessionZeroGuide({ answers, initialStep, onChange, onProgress, o
 
   return (
     <section aria-labelledby="guide-heading" className="flex flex-col gap-4">
-      <div className="space-y-2">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
-          Character concept · Step {stepIndex + 1} of {steps.length}
-        </p>
-        <progress
-          aria-label="Character concept progress"
-          value={stepIndex + 1}
-          max={steps.length}
-          className="block h-1.5 w-full accent-primary"
-        />
-        <h2 ref={heading} id="guide-heading" tabIndex={-1} className="text-3xl">
-          {step.title}
-        </h2>
-        {'description' in step ? <p className="max-w-prose text-muted-foreground">{step.description}</p> : null}
-      </div>
+      <GuideHeading
+        ref={heading}
+        id="guide-heading"
+        eyebrow="Character concept"
+        title={step.title}
+        description={'description' in step ? step.description : undefined}
+        progress={{ label: 'Character concept progress', step: stepIndex + 1, total: steps.length }}
+      />
 
       {step.id === 'invitation' ? <InvitationLetter /> : null}
 
@@ -212,7 +206,7 @@ export function SessionZeroGuide({ answers, initialStep, onChange, onProgress, o
                   const labelId = `faith-${id ?? 'skip'}`
                   const description = 'description' in option ? option.description : undefined
                   return (
-                    <label key={labelId} className="flex min-h-11 items-start gap-2 py-2">
+                    <label key={labelId} className="flex min-h-11 cursor-pointer items-start gap-3 rounded-md border border-border px-3 py-2.5 hover:bg-muted/50 has-checked:border-primary/65 has-checked:bg-accent/50">
                       <input
                         type="radio"
                         name="faith"
