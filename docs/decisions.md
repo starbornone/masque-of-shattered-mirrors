@@ -28,9 +28,9 @@ Lightweight records inferred from [README.md](../README.md) and [ROADMAP.md](../
 
 **Context:** The same character data serves the player and the GM, but ritual, scapegoat, and deity climax levers must not leak to the player.
 
-**Decision.** The public app opens the player guide. A future GM entry will sit outside the player interface. The GM brief maps answers to campaign hooks, and player exports stay spoiler-safe.
+**Decision.** The public app opens the player guide. The GM opens `/gm/` directly and signs in with HTTP Basic authentication enforced by a Vercel Function. The workspace reads character exports in the browser.
 
-**Consequences:** Every new campaign-facing string needs an audience check. Automated or manual review should catch GM-only content in player routes.
+**Consequences.** The player and GM builds have separate outputs. The Function checks credentials for the GM page and its assets, and it disables caching of those responses. Keep campaign-only data in private sources. Every new campaign-facing string needs an audience check.
 
 ---
 

@@ -51,7 +51,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 ## Phase 4 — GM tailoring brief
 
 - [x] Remove the mode switch from the player interface
-- [ ] Choose a separate GM entry point outside the player interface
+- [x] Add a password-protected `/gm/` entry outside the player interface
 - [ ] Auto-generate a one-page GM summary from answers + build:
   - Stake → scapegoat wiring options
   - Art → Verathe “honored guest” framing

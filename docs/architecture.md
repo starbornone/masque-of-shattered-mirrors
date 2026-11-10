@@ -1,10 +1,10 @@
 # Architecture
 
-The app opens the player’s character guide, saved build step, or a shared build preview. The build review and shared preview include campaign fit. A separate GM entry point and GMBrief are planned in [ROADMAP.md](../ROADMAP.md).
+The public app opens the player’s character guide, saved build step, or a shared build preview. The build review and shared preview include campaign fit. The protected `/gm/` workspace reads the player’s exported character file. The tailoring brief is planned in [ROADMAP.md](../ROADMAP.md).
 
 ## Goals that drive structure
 
-1. **Player-safe by default** — ritual spoilers, scapegoat identity, and deity climax levers stay behind GM mode.
+1. **Player-safe by default** — ritual spoilers, scapegoat identity, and deity climax levers belong in private GM content.
 2. **Reuse proven boost math** — attribute ledger logic comes from `pf2e-point-buy-calc`, not a second implementation.
 3. **Local-first** — static Vite + TypeScript app; persistence via localStorage, share URLs, and export files.
 
@@ -12,8 +12,8 @@ The app opens the player’s character guide, saved build step, or a shared buil
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                     App shell (Vite)                    │
-│  mode: Player | GM                                      │
+│                   Player app shell (Vite)               │
+│  Public character guide                                 │
 └────────────┬────────────────────────────┬───────────────┘
              │                            │
              ▼                            ▼
@@ -31,12 +31,11 @@ The app opens the player’s character guide, saved build step, or a shared buil
                │  CampaignFit           │
                │  attributes and checks │
                └────────────┬───────────┘
+                 Character JSON export and import
                             ▼
                ┌────────────────────────┐
-               │  GMBrief (GM mode)     │
-               │  stake → scapegoat,    │
-               │  faith → deity hooks,  │
-               │  copyable summary      │
+               │  Protected /gm/        │
+               │  Character review      │
                └────────────────────────┘
 ```
 
@@ -48,7 +47,7 @@ The app opens the player’s character guide, saved build step, or a shared buil
 | Attribute engine | [`src/attributes/`](../src/attributes/) holds the ported catalogs, boost ledger, and versioned build serialization |
 | Skills | [Skill planner](../src/components/SkillPlanner.tsx) for starting training, named Lore, and level-based increases |
 | CampaignFit | [Build suggestions](../src/components/BuildFitSuggestions.tsx) at the background and class steps, plus a [review checklist](../src/components/CampaignFit.tsx) that connects current modifiers to relevant checks |
-| GMBrief | One-page tailoring summary; spoilers only when mode is GM |
+| GM workspace | [Read-only character review](../gm/Workspace.tsx) behind the [GM Function](../api/gm.ts). The tailoring brief is planned. |
 
 The header and browser tab share the same [SVG emblem](../public/favicon.svg). A fractured oval mirror frames the silver masquerade mask.
 
@@ -61,9 +60,11 @@ The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror 
 3. A complete attribute ledger unlocks the skill planner. Players enter starting training, and the planner applies increases in level order with rank limits. The draft stores skills locally. The review includes planned skill ranks and base modifiers in campaign fit. [Paizo’s Remaster character sheet](https://downloads.paizo.com/RemasterPlayerCoreCharacterSheet.pdf)
 4. A build URL contains only mechanics. Opening it previews the build, and choosing **Use shared build** replaces the saved mechanical draft. The printable ledger uses the same calculation as the live view.
 5. One versioned player draft stores concept answers, attributes, skills, and guide progress in localStorage. The app reads the older separate saves when a combined draft is unavailable. **Export character** downloads the same format. **Import character** validates the whole file before asking the player to replace their draft.
-6. Planned GM mode maps answers to scapegoat/stake wiring, Verathe framing, deity levers, and the Marius/mask beat.
+6. The GM workspace imports the character file into memory and displays the player’s answers, build, planned skills, and language notes. The file stays in the browser tab.
 
 Player export must never include GM-only spoilers. GM brief may reference campaign wiring that the player UI never shows.
+
+Vercel publishes `dist/` as the public site. Its Function builder runs the `vercel-build` script and packages `dist-gm/` with the GM Function. Both the GM page and its asset URLs rewrite to that Function, which checks the server-only `MASQUE_GM_PASSWORD` before reading files. See [Vercel routing and build configuration](../vercel.json).
 
 The combat advisory appears once all boosts are assigned. It looks for Strength or Dexterity at +3 or higher, a second physical modifier at +2 or higher, and at least a two-point gap between the higher attack attribute and every mental attribute. The advisory uses current modifiers and leaves all choices and actions available.
 

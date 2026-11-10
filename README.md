@@ -2,7 +2,7 @@
 
 A Pathfinder 2e Remaster character creator for **The Masque of Shattered Mirrors**—built for one player and one GM who will tailor the night around that character.
 
-This is not a general PF2e sheet builder. It walks the player through a **session-zero brief**, a **mechanical build**, and a **campaign-fit check**, then hands the GM a spoiler-safe summary they can wire into House Verathe.
+The player works through a **session-zero brief**, a **mechanical build**, and a **campaign-fit check**. The GM can open the player’s exported character for review.
 
 The guide starts with the invitation and character concept, then walks through ancestry, background, class, and attribute boosts. It assumes tabletop roleplaying experience and explains Pathfinder 2e Remaster rules as they come up. The build uses the boost logic from [`pf2e-point-buy-calc`](https://github.com/starbornone/pf2e-point-buy-calc).
 
@@ -13,7 +13,7 @@ The guide starts with the invitation and character concept, then walks through a
 - **Skill planner** — Once attributes are complete, record starting training and plan later increases. The browser saves skill choices with the local build draft.
 - **Character file** — Export or restore session-zero answers, the attribute build, planned skills, and optional starting language notes in one JSON file. This works at any stage of the guide.
 - **Campaign fit** — The guide suggests backgrounds and classes with relevant boosts or training. The build review shows the modifiers that support Will, Perception, social skills, and investigation. An advisory appears when a finished build is heavily weighted toward physical attributes.
-- **GM handoff (planned)** — A short tailoring brief with campaign context behind a separate GM entry.
+- **GM workspace** — Open a player character file for review at the password-protected `/gm/` route. The tailoring brief is planned.
 
 ## What it does not do (yet)
 
@@ -27,7 +27,7 @@ The guide starts with the invitation and character concept, then walks through a
 | Mode | Audience | Content |
 |------|----------|---------|
 | Player | The one PC | Guided concept, attributes, and skills with a restorable character file |
-| GM (planned entry) | You | Read-only concept answers, attribute ledger, and campaign tailoring |
+| GM | You | Read-only concept answers, attribute ledger, planned skills, and language notes |
 
 ## Tech intent
 
@@ -67,6 +67,8 @@ The production preview defaults to [http://localhost:4173](http://localhost:4173
 ## Deployment and campaign settings
 
 Vercel builds the site when changes are pushed to `main`.
+
+To enable `/gm/`, set a long, unique `MASQUE_GM_PASSWORD` as a sensitive Production environment variable in Vercel and deploy. Open `/gm/` over HTTPS and enter `gm` as the username. The Function serves the workspace only after checking the password. [Vercel environment variables](https://vercel.com/docs/environment-variables)
 
 Set `VITE_CAMPAIGN_START_LEVEL` to a whole number from 1 to 20 in the Vercel project's Production environment variables. The next build uses it for new drafts. An unset or invalid value starts new drafts at level 1. Players can change the level during attribute planning, and saved drafts and shared builds keep their own levels. [Vercel environment variables](https://vercel.com/docs/environment-variables)
 
