@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "dev:gm": "npm run build:gm && vite",
     "build": "tsc -b && vite build",
     "build:gm": "vite build --config vite.gm.config.ts",
     "vercel-build": "npm run build:gm",

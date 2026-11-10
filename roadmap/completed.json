@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T09:25:32+11:00",
+  "updatedAt": "2026-11-11T09:35:10+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -265,6 +265,13 @@
       "group": "Phase 4",
       "notes": "Importing a character generates editable suggestions for the invitation, intended victim, art, deity, mask competition, and planned skills. Copy the Markdown into session notes or regenerate it from the character. All campaign hooks are confined to the protected GM build.",
       "completedAt": "2026-11-11T09:25:32+11:00"
+    },
+    {
+      "id": "local-protected-gm-access",
+      "title": "Serve the protected GM route in local development and preview",
+      "group": "Phase 4",
+      "notes": "Reuse the server-side password check in Vite dev and preview. Load the local password from environment files, deny raw GM source and build files, and document the gm username and private build command.",
+      "completedAt": "2026-11-11T09:35:10+11:00"
     }
   ]
 }

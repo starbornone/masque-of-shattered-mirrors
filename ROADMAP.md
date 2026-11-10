@@ -52,6 +52,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 - [x] Remove the mode switch from the player interface
 - [x] Add a password-protected `/gm/` entry outside the player interface
+- [x] Support the same password check in local dev and preview, with documented GM setup
 - [x] Auto-generate a GM tailoring brief from answers + build:
   - Stake → scapegoat wiring options
   - Art → Verathe “honored guest” framing

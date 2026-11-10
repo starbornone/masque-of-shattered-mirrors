@@ -28,7 +28,9 @@ The development server defaults to `http://localhost:5173`. Run `npm run build` 
 | Script | Purpose |
 |--------|---------|
 | `npm run dev` | Local development server |
+| `npm run dev:gm` | Build the private GM workspace, then start the local server |
 | `npm run build` | Typecheck + production build to `dist/` |
+| `npm run build:gm` | Build the protected workspace into `dist-gm/` |
 | `npm run lint` | `oxlint` |
 | `npm test` | Attribute, skill planner, and draft storage and export tests |
 | `npm run preview` | Serve the existing build in `dist/` locally |
@@ -54,6 +56,12 @@ The optional faith step describes each deity before you choose. The background a
 
 Run `npm test` to check the attribute engine before changing the build flow. See [roadmap/roadmap.json](../roadmap/roadmap.json) for the next items.
 
+### Local GM access
+
+Set `MASQUE_GM_PASSWORD` in `.env.local` or `.env`, restart with `npm run dev:gm`, and open `/gm/` on the printed local URL. Enter **`gm`** for the browser prompt’s username and the configured password. The password stays on the server. `.envlocal` is not loaded by Vite.
+
+The GM workspace uses a separate build. Rebuild with `npm run build:gm` after editing GM code, then reload. `npm run preview` can serve it after both builds exist. Local dev and preview use the same authentication handler as Vercel. No player-interface link is added.
+
 ## Failure symptoms
 
 | Symptom | Likely cause |
@@ -62,6 +70,9 @@ Run `npm test` to check the attribute engine before changing the build flow. See
 | `npm ci` reports `EPERM` on a native dependency on Windows | A running server may have the file open. Stop the project’s Vite servers and retry. |
 | `@/` imports fail in the editor | `paths` missing from `tsconfig.app.json` / Vite alias |
 | Boost totals disagree with Remaster expectations | Check build normalization and run the boost smoke tests |
+| `/gm/` shows the player guide | Restart the server to load the local GM middleware |
+| `/gm/` returns 503 | Set `MASQUE_GM_PASSWORD` in `.env.local`, restart, and run `npm run build:gm` |
+| GM password prompt asks for a username | Enter `gm` |
 | Player sees scapegoat / ritual / climax levers | GM content leaked — check mode gating when it lands |
 
 ## Rules sources

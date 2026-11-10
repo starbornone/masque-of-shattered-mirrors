@@ -64,6 +64,18 @@ npm run preview
 
 The production preview defaults to [http://localhost:4173](http://localhost:4173/). Rebuild before previewing source changes. The development and preview ports have separate browser saves. Use **Export character** and **Import character** to move a draft between them.
 
+### Open the GM workspace locally
+
+Set `MASQUE_GM_PASSWORD` to your chosen local password in `.env.local` (or `.env`), then run:
+
+```sh
+npm run dev:gm
+```
+
+Open [http://localhost:5173/gm/](http://localhost:5173/gm/), using the port Vite prints. The browser asks for username **`gm`** and your configured password. Restart the server after changing the password. `.envlocal` is ignored by Git but is not a Vite environment-file name.
+
+This command builds the private workspace before starting Vite. After editing GM components, run `npm run build:gm` and reload the page. Both `npm run dev` and `npm run preview` also handle `/gm/` once that build exists. A missing password or private build returns 503. The local server uses the same password check as Vercel and blocks direct requests for GM source and build files. [Vite server middleware](https://vite.dev/guide/api-plugin.html#configureserver), [Vite environment loading](https://vite.dev/config/#using-environment-variables-in-config)
+
 ## Deployment and campaign settings
 
 Vercel builds the site when changes are pushed to `main`.
