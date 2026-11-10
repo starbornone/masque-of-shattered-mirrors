@@ -9,6 +9,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:gm": "vite build --config vite.gm.config.ts",
+    "vercel-build": "npm run build:gm",
     "lint": "oxlint",
     "test": "node --test",
     "preview": "vite preview"

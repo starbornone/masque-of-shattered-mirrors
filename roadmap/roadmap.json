@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-11T00:44:34+11:00",
+  "updatedAt": "2026-11-11T01:31:44+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -9,12 +9,6 @@
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
   "items": [
-    {
-      "id": "separate-gm-entry-point",
-      "title": "Choose a GM entry point outside the player interface",
-      "group": "Phase 4",
-      "notes": "The GM entry must be absent from the player interface. Decide how it should be revealed before restoring the workspace."
-    },
     {
       "id": "gm-tailoring-brief-export",
       "title": "Auto-generate spoiler-gated GM tailoring brief with copy-to-clipboard",
@@ -25,7 +19,7 @@
       "id": "unified-export-import",
       "title": "Ship single export package and import for prior exports",
       "group": "Phase 6",
-      "notes": "Session-zero + attributes + skills + GM brief in one package. The player-only package is complete. The GM brief portion depends on the separate GM entry and tailoring brief."
+      "notes": "Session-zero + attributes + skills + GM brief in one package. The player-only package is complete. The GM package depends on the tailoring brief."
     }
   ]
 }

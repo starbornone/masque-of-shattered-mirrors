@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/gm.ts": { "includeFiles": "dist-gm/**" }
+  },
+  "redirects": [
+    { "source": "/gm", "destination": "/gm/", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/gm/assets/:asset", "destination": "/api/gm?asset=:asset" },
+    { "source": "/gm/", "destination": "/api/gm" }
+  ]
+}

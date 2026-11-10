@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T01:00:13+11:00",
+  "updatedAt": "2026-11-11T01:31:44+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -251,6 +251,13 @@
       "group": "Phase 5",
       "notes": "The build review links to general language and ancestry rules. The optional notes save with the draft and round-trip through the character file.",
       "completedAt": "2026-11-11T01:00:13+11:00"
+    },
+    {
+      "id": "separate-gm-entry-point",
+      "title": "Add a password-protected GM entry outside the player interface",
+      "group": "Phase 4",
+      "notes": "The Vercel Function guards the GM workspace and its assets. The workspace imports a player character for read-only review. Production activation requires configuring the password and deploying.",
+      "completedAt": "2026-11-11T01:31:44+11:00"
     }
   ]
 }
