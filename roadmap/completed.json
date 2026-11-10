@@ -1,0 +1,54 @@
+{
+  "schema": "name-roadmap/v1",
+  "file": "completed",
+  "updatedAt": "2026-11-10T13:27:30+11:00",
+  "project": {
+    "key": "masque-of-shattered-mirrors",
+    "title": "Masque Character Creator",
+    "status": "active"
+  },
+  "items": [
+    {
+      "id": "define-product-brief",
+      "title": "Write product README with capabilities and non-goals",
+      "group": "Docs",
+      "notes": "Session zero, build, campaign fit, GM handoff; Player/GM modes; tech intent; rules sources.",
+      "completedAt": "2026-11-10T13:27:30+11:00"
+    },
+    {
+      "id": "draft-phased-roadmap",
+      "title": "Draft phased delivery roadmap through polish and share",
+      "group": "Docs",
+      "notes": "Phases 0–6 plus later non-goals and open decisions in ROADMAP.md.",
+      "completedAt": "2026-11-10T13:27:30+11:00"
+    },
+    {
+      "id": "define-scope-boundaries",
+      "title": "Define early-scope exclusions and campaign-safe non-goals",
+      "group": "Docs",
+      "notes": "No full feat/spell/equipment catalogs; no Foundry/Pathbuilder; no multi-PC balancing; no player-facing ritual spoilers.",
+      "completedAt": "2026-11-10T13:27:30+11:00"
+    },
+    {
+      "id": "document-player-gm-modes",
+      "title": "Document Player and GM mode audiences and content",
+      "group": "Docs",
+      "notes": "Player: invitation, questions, build, soft tips. GM: same build plus scapegoat/stake and deity hooks.",
+      "completedAt": "2026-11-10T13:27:30+11:00"
+    },
+    {
+      "id": "choose-tech-intent",
+      "title": "Record Vite + TypeScript and attribute-engine reuse intent",
+      "group": "Docs",
+      "notes": "Local-first static app; port normalizeBuild/ancestryRule/calculate; Player Core catalogs first; share URL + JSON/Markdown exports.",
+      "completedAt": "2026-11-10T13:27:30+11:00"
+    },
+    {
+      "id": "agent-ready-documentation",
+      "title": "Add agent-ready docs, AGENTS.md, and name-roadmap JSON",
+      "group": "Docs",
+      "notes": "docs/overview through roadmap-format; roadmap/*.json; README Documentation links.",
+      "completedAt": "2026-11-10T13:27:30+11:00"
+    }
+  ]
+}

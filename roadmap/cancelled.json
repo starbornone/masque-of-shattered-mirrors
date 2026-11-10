@@ -1,0 +1,20 @@
+{
+  "schema": "name-roadmap/v1",
+  "file": "cancelled",
+  "updatedAt": "2026-11-10T13:27:30+11:00",
+  "project": {
+    "key": "masque-of-shattered-mirrors",
+    "title": "Masque Character Creator",
+    "status": "active"
+  },
+  "items": [
+    {
+      "id": "in-app-campaign-markdown-reader",
+      "title": "Load campaign markdown inside the app",
+      "group": "Non-goals",
+      "notes": "Would couple the creator to vault text and risk spoilers in player flows.",
+      "cancelledAt": "2026-11-10T13:27:30+11:00",
+      "reason": "Campaign notes stay in the vault one level up; the app stays a character creator."
+    }
+  ]
+}
