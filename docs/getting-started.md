@@ -62,6 +62,14 @@ Set `MASQUE_GM_PASSWORD` in `.env.local` or `.env`, restart with `npm run dev:gm
 
 The GM workspace uses a separate build. Rebuild with `npm run build:gm` after editing GM code, then reload. `npm run preview` can serve it after both builds exist. Local dev and preview use the same authentication handler as Vercel. No player-interface link is added.
 
+To save and resume GM preparation:
+
+1. Open a player character JSON in **Character or GM package JSON file** to generate a tailoring brief.
+2. Edit **Session notes (GM only)** and choose **Export GM package**. The downloaded `masque-gm-package.json` contains the character and those notes.
+3. Open that GM package in the same file input to restore both. The notes are restored exactly, without regenerating the brief.
+
+Export before refreshing or opening another file. Invalid imports keep the current character and notes. GM packages contain spoilers and cannot be imported by the public player guide.
+
 ## Failure symptoms
 
 | Symptom | Likely cause |

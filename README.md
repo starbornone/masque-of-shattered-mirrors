@@ -13,7 +13,7 @@ The guide starts with the invitation and character concept, then walks through a
 - **Skill planner** — Once attributes are complete, record starting training and plan later increases. The browser saves skill choices with the local build draft.
 - **Character file** — Export or restore session-zero answers, the attribute build, planned skills, and optional starting language notes in one JSON file. This works at any stage of the guide.
 - **Campaign fit** — The guide suggests backgrounds and classes with relevant boosts or training. The build review shows the modifiers that support Will, Perception, social skills, and investigation. An advisory appears when a finished build is heavily weighted toward physical attributes.
-- **GM workspace** — Open a player character file at the password-protected `/gm/` route. Review an editable tailoring brief and copy it into your session notes.
+- **GM workspace** — Open a player character file at the password-protected `/gm/` route. Edit and copy the tailoring brief, or export a GM package that saves the character and edited notes together. Open that package to resume.
 
 ## What it does not do (yet)
 
@@ -27,7 +27,7 @@ The guide starts with the invitation and character concept, then walks through a
 | Mode | Audience | Content |
 |------|----------|---------|
 | Player | The one PC | Guided concept, attributes, and skills with a restorable character file |
-| GM | You | Character review and an editable tailoring brief with copy-to-clipboard |
+| GM | You | Character review, editable tailoring notes, and a restorable GM package |
 
 ## Tech intent
 
@@ -75,6 +75,8 @@ npm run dev:gm
 Open [http://localhost:5173/gm/](http://localhost:5173/gm/), using the port Vite prints. The browser asks for username **`gm`** and your configured password. Restart the server after changing the password. `.envlocal` is ignored by Git but is not a Vite environment-file name.
 
 This command builds the private workspace before starting Vite. After editing GM components, run `npm run build:gm` and reload the page. Both `npm run dev` and `npm run preview` also handle `/gm/` once that build exists. A missing password or private build returns 503. The local server uses the same password check as Vercel and blocks direct requests for GM source and build files. [Vite server middleware](https://vite.dev/guide/api-plugin.html#configureserver), [Vite environment loading](https://vite.dev/config/#using-environment-variables-in-config)
+
+In the workspace, open the player’s character JSON to generate a brief. Edit **Session notes (GM only)** and choose **Export GM package** to download `masque-gm-package.json`. Opening that package restores the character and your exact notes, including an empty editor. The workspace keeps edits in tab memory, so export before refreshing or opening another file. GM packages contain campaign spoilers and are rejected by the public character importer.
 
 ## Deployment and campaign settings
 

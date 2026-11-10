@@ -82,6 +82,14 @@ Lightweight records inferred from [README.md](../README.md) and [ROADMAP.md](../
 
 ---
 
+## ADR-009 — Separate GM packages preserve edited preparation
+
+**Decision.** The protected workspace exports a versioned GM JSON package with the canonical player character and exact edited session notes. It accepts both player character exports and GM packages. Only a player character import generates a new brief; a GM package restores its saved notes, including an empty string.
+
+**Consequences.** The public guide rejects GM packages and its exports retain the player-only format. GM package code stays in the private build. GM edits remain in tab memory until copied or exported, with no server storage or public share link.
+
+---
+
 ## Related
 
 - [Architecture](architecture.md)
