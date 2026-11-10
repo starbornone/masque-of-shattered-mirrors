@@ -1,7 +1,7 @@
 import { InvitationLetter } from '@/components/InvitationLetter'
 import { MasqueradeMask } from '@/components/MasqueradeMask'
 import { Navbar } from '@/components/Navbar'
-import { SpiralingComet } from '@/components/SpiralingComet'
+import { StarCluster } from '@/components/StarCluster'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
@@ -10,15 +10,17 @@ function App() {
     <div className="relative flex min-h-svh flex-col overflow-hidden text-foreground">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-16 -top-20 size-[26rem] text-primary/35 spiral-drift md:-right-10 md:size-[32rem]"
+        className="pointer-events-none absolute -right-8 -top-10 size-[22rem] text-primary/40 md:-right-4 md:size-[28rem]"
       >
-        <SpiralingComet className="size-full" />
+        <StarCluster className="size-full" />
       </div>
 
       <header className="relative z-10 border-b border-primary/20 bg-[color-mix(in_oklch,var(--card)_78%,transparent)] backdrop-blur-md">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-5">
           <div className="veil-in flex items-start gap-3">
-            <MasqueradeMask className="mt-1.5 h-9 w-14 shrink-0 text-primary" />
+            <span className="mt-1.5 inline-flex h-8 w-11 shrink-0 items-center justify-center text-primary">
+              <MasqueradeMask className="max-h-full max-w-full" />
+            </span>
             <div>
               <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-primary">
                 An invitation to House Verathe

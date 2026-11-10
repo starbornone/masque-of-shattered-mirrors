@@ -175,15 +175,6 @@
   }
 }
 
-@keyframes spiral-drift {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes veil-in {
   from {
     opacity: 0;
@@ -195,18 +186,14 @@
   }
 }
 
-@keyframes comet-pulse {
+@keyframes star-twinkle {
   0%,
   100% {
-    opacity: 0.55;
+    opacity: 0.25;
   }
   50% {
-    opacity: 1;
+    opacity: 0.95;
   }
-}
-
-.spiral-drift {
-  animation: spiral-drift 120s linear infinite;
 }
 
 .veil-in {
@@ -217,8 +204,8 @@
   animation: veil-in 0.8s ease-out 0.12s both;
 }
 
-.comet-pulse {
-  animation: comet-pulse 4.5s ease-in-out infinite;
+.star-twinkle {
+  animation: star-twinkle 4.8s ease-in-out infinite;
 }
 
 /* Contained letter surface: bone paper on the dark shell for readable prose. */
@@ -228,10 +215,11 @@
   background:
     linear-gradient(
       165deg,
-      oklch(0.97 0.012 95) 0%,
-      oklch(0.94 0.015 250) 55%,
-      oklch(0.92 0.018 250) 100%
+      oklch(0.97 0.012 95 / 0.88) 0%,
+      oklch(0.94 0.015 250 / 0.84) 55%,
+      oklch(0.92 0.018 250 / 0.82) 100%
     );
+  backdrop-filter: blur(6px);
   border: 1px solid color-mix(in oklch, var(--pharasma-silver) 55%, oklch(0.55 0.04 255));
   box-shadow:
     0 1px 0 color-mix(in oklch, white 35%, transparent),
@@ -262,10 +250,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .spiral-drift,
   .veil-in,
   .veil-in-delay,
-  .comet-pulse {
+  .star-twinkle {
     animation: none;
   }
 }
