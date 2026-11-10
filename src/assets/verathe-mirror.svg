@@ -18,16 +18,14 @@
       <stop stop-color="#afc8ec" stop-opacity=".28"/>
       <stop offset="1" stop-color="#526f9d" stop-opacity=".03"/>
     </linearGradient>
-    <radialGradient id="candlelight">
-      <stop stop-color="#f2f5ff" stop-opacity=".45"/>
-      <stop offset=".4" stop-color="#a8c5ef" stop-opacity=".16"/>
+    <radialGradient id="sparkle-glow">
+      <stop stop-color="#f2f5ff" stop-opacity=".34"/>
+      <stop offset=".4" stop-color="#a8c5ef" stop-opacity=".13"/>
       <stop offset="1" stop-color="#a8c5ef" stop-opacity="0"/>
     </radialGradient>
-    <g id="candle">
-      <circle cy="-7" r="17" fill="url(#candlelight)"/>
-      <path d="M-2 1h4v9h-4z" fill="#a9c0e2" opacity=".65"/>
-      <path d="M0-13C1-9 4-7 3-4.5 2-1.5-2-1.5-3-4.5c-.8-2.3 1.5-4.2 3-8.5Z" fill="#f5f2ec"/>
-      <path d="M-1 2v6" stroke="#e4e8f2" stroke-width=".7" opacity=".65"/>
+    <g id="sparkle">
+      <circle r="13" fill="url(#sparkle-glow)"/>
+      <path d="M0-7.5Q.9-.9 6.5 0 .9.9 0 7.5-.9.9-6.5 0-.9-.9 0-7.5Z" fill="#edf4ff"/>
     </g>
     <g id="filigree" fill="none" stroke-linecap="round">
       <path d="M-73 13c23 1 28-20 48-20 10 0 14 10 6 15-5 3-10-1-8-5
@@ -77,26 +75,26 @@
     <path d="m537 367 18-14-8 20Z"/>
   </g>
 
-  <!-- White candles suspended along a spiral -->
+  <!-- Silver sparkles along a spiral -->
   <path d="M326 263C328 238 374 246 382 274c14 46-29 73-71 71
            -62-3-106-58-83-117 22-56 87-82 151-74 57 7 95 44 114 96"
         fill="none" stroke="#8daedb" stroke-opacity=".44" stroke-linecap="round" stroke-dasharray="1 5"/>
-  <use href="#candle" transform="translate(326 263) scale(.48)"/>
-  <use href="#candle" transform="translate(332 254) scale(.53)"/>
-  <use href="#candle" transform="translate(347 249) scale(.57)"/>
-  <use href="#candle" transform="translate(365 253) scale(.61)"/>
-  <use href="#candle" transform="translate(380 268) scale(.66)"/>
-  <use href="#candle" transform="translate(385 291) scale(.7)"/>
-  <use href="#candle" transform="translate(376 317) scale(.75)"/>
-  <use href="#candle" transform="translate(350 337) scale(.79)"/>
-  <use href="#candle" transform="translate(312 345) scale(.84)"/>
-  <use href="#candle" transform="translate(271 335) scale(.89)"/>
-  <use href="#candle" transform="translate(238 306) scale(.93)"/>
-  <use href="#candle" transform="translate(223 263) scale(.97)"/>
-  <use href="#candle" transform="translate(233 215) scale(1.02)"/>
-  <use href="#candle" transform="translate(270 174) scale(1.06)"/>
-  <use href="#candle" transform="translate(329 152) scale(1.11)"/>
-  <use href="#candle" transform="translate(396 157) scale(1.15)"/>
-  <use href="#candle" transform="translate(456 192) scale(1.2)"/>
-  <use href="#candle" transform="translate(493 250) scale(1.25)"/>
+  <use href="#sparkle" transform="translate(326 263) scale(.48)" opacity=".72"/>
+  <use href="#sparkle" transform="translate(332 254) scale(.53)" opacity=".54"/>
+  <use href="#sparkle" transform="translate(347 249) scale(.57)"/>
+  <use href="#sparkle" transform="translate(365 253) scale(.44)" opacity=".74"/>
+  <use href="#sparkle" transform="translate(380 268) scale(.66)"/>
+  <use href="#sparkle" transform="translate(385 291) scale(.53)" opacity=".68"/>
+  <use href="#sparkle" transform="translate(376 317) scale(.75)"/>
+  <use href="#sparkle" transform="translate(350 337) scale(.59)" opacity=".65"/>
+  <use href="#sparkle" transform="translate(312 345) scale(.84)"/>
+  <use href="#sparkle" transform="translate(271 335) scale(.65)" opacity=".72"/>
+  <use href="#sparkle" transform="translate(238 306) scale(.93)"/>
+  <use href="#sparkle" transform="translate(223 263) scale(.68)" opacity=".74"/>
+  <use href="#sparkle" transform="translate(233 215) scale(1.02)"/>
+  <use href="#sparkle" transform="translate(270 174) scale(.75)" opacity=".76"/>
+  <use href="#sparkle" transform="translate(329 152) scale(1.11)"/>
+  <use href="#sparkle" transform="translate(396 157) scale(.85)" opacity=".75"/>
+  <use href="#sparkle" transform="translate(456 192) scale(1.2)"/>
+  <use href="#sparkle" transform="translate(493 250) scale(.93)" opacity=".83"/>
 </svg>

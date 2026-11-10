@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-10T14:51:14+11:00",
+  "updatedAt": "2026-11-10T14:56:01+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -70,6 +70,20 @@
       "group": "Phase 6",
       "notes": "Replace the star cluster with a static silver filigree mirror inspired by the arrival at House Verathe.",
       "completedAt": "2026-11-10T14:51:14+11:00"
+    },
+    {
+      "id": "mirror-mask-emblem",
+      "title": "Frame the favicon and header mask with a fractured mirror",
+      "group": "Phase 6",
+      "notes": "Replace the comet with fractured oval glass inspired by the shell backdrop.",
+      "completedAt": "2026-11-10T14:55:15+11:00"
+    },
+    {
+      "id": "verathe-backdrop-sparkles",
+      "title": "Replace the backdrop candles with silver sparkles",
+      "group": "Phase 6",
+      "notes": "Set four-point glints along the mirror's spiral.",
+      "completedAt": "2026-11-10T14:56:01+11:00"
     }
   ]
 }
