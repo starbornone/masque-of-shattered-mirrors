@@ -1,3 +1,4 @@
+import { Navbar } from '@/components/Navbar'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -11,7 +12,7 @@ import { Separator } from '@/components/ui/separator'
 
 function App() {
   return (
-    <div className="min-h-svh bg-background text-foreground">
+    <div className="flex min-h-svh flex-col bg-background text-foreground">
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-4">
           <div>
@@ -26,7 +27,7 @@ function App() {
         </div>
       </header>
 
-      <main className="mx-auto flex max-w-3xl flex-col gap-6 px-6 py-10">
+      <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-6 py-10">
         <Card>
           <CardHeader>
             <CardTitle>Scaffold ready</CardTitle>
@@ -50,6 +51,8 @@ function App() {
           </CardContent>
         </Card>
       </main>
+
+      <Navbar />
     </div>
   )
 }
