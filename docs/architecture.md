@@ -42,7 +42,7 @@ The app opens the player’s character guide, saved build step, or a shared buil
 
 | Component | Responsibility |
 |-----------|----------------|
-| App shell | Restores the player’s saved concept and build. Opens shared builds in a separate preview. |
+| App shell | Restores the [player’s saved character](../src/character/draft.ts). Opens shared builds in a separate preview. |
 | SessionZero | Guided questions, editable review, and [versioned storage and exports](../src/session-zero/draft.ts) |
 | Build | [Guided Remaster attribute planning](../src/components/BuildGuide.tsx), a share link, and a printable ledger |
 | Attribute engine | [`src/attributes/`](../src/attributes/) holds the ported catalogs, boost ledger, and versioned build serialization |
@@ -56,11 +56,12 @@ The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror 
 
 ## Data and control flow
 
-1. Player answers or skips the session-zero questions. The browser stores answers and progress together in localStorage, and the review offers JSON and Markdown downloads of the answers.
-2. Player selects ancestry, background, class, level, and boosts. The ported engine normalizes and calculates the current `Build`. The browser saves the build and current step separately from concept answers. The review shows unchosen options and unassigned boosts in an incomplete draft.
+1. Player answers or skips the session-zero questions. The review offers JSON and Markdown downloads of the answers.
+2. Player selects ancestry, background, class, level, and boosts. The ported engine normalizes and calculates the current `Build`. The review shows unchosen options and unassigned boosts in an incomplete draft.
 3. A complete attribute ledger unlocks the skill planner. Players enter starting training, and the planner applies increases in level order with rank limits. The draft stores skills locally. The review includes planned skill ranks and base modifiers in campaign fit. [Paizo’s Remaster character sheet](https://downloads.paizo.com/RemasterPlayerCoreCharacterSheet.pdf)
-4. GM mode overlays mapping of answers → scapegoat/stake wiring, Verathe framing, deity levers, Marius/mask beat.
-5. A build URL contains only mechanics. Opening it previews the build, and choosing **Use shared build** replaces the saved mechanical draft. The printable ledger uses the same calculation as the live view. Concept answers export separately as Markdown or JSON.
+4. A build URL contains only mechanics. Opening it previews the build, and choosing **Use shared build** replaces the saved mechanical draft. The printable ledger uses the same calculation as the live view.
+5. One versioned player draft stores concept answers, attributes, skills, and guide progress in localStorage. The app reads the older separate saves when a combined draft is unavailable. **Export character** downloads the same format. **Import character** validates the whole file before asking the player to replace their draft.
+6. Planned GM mode maps answers to scapegoat/stake wiring, Verathe framing, deity levers, and the Marius/mask beat.
 
 Player export must never include GM-only spoilers. GM brief may reference campaign wiring that the player UI never shows.
 

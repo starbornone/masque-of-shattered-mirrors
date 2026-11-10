@@ -28,7 +28,7 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 | `npm run dev` | Local development server |
 | `npm run build` | Typecheck + production build to `dist/` |
 | `npm run lint` | `oxlint` |
-| `npm test` | Attribute and session-zero storage and export tests |
+| `npm test` | Attribute, skill planner, and draft storage and export tests |
 | `npm run preview` | Serve the production build |
 
 ### Verify success
@@ -43,6 +43,7 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 8. Use **Print attribute ledger** in the review or preview to print or save a PDF from your browser.
 9. Check **Campaign fit** beneath the ledger. If you change a boost, the corresponding modifier changes in the checklist.
 10. Once all boosts are assigned, select **Plan skill proficiencies**. Enter level-1 training and assign later increases. Return to the review to see those ranks and base modifiers under **Campaign fit**.
+11. Use **Export character** below the guide to save one JSON file at any stage. To resume from a file, choose **Import character**, select the file, and choose **Restore character** to replace the browser’s draft and return to the saved step.
 
 The optional faith step describes each deity before you choose. The background and class steps offer expandable **Campaign-fit suggestions** with boost and proficiency notes. [Paizo’s Divine Mysteries deity tables](https://downloads.paizo.com/PZO13003_SupplementalGodTable.pdf)
 

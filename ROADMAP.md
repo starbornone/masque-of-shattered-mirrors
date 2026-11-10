@@ -73,8 +73,8 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 ## Phase 6 — Polish & share
 
-- [ ] Single export package: session-zero + attributes + skills + GM brief
-- [ ] Import previous export
+- [x] Export and restore one player character file with session-zero answers, attributes, and skills
+- [ ] Include the GM brief in a combined package once the separate GM entry is available
 - [ ] Tone/CSS: masquerade-adjacent, readable, not a combat dashboard
 - [ ] README “Run locally” filled with real commands/ports
 - [ ] Optional static deploy (same pattern as `pf.starmist.studio` if desired)
