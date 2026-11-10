@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-10T22:43:16+11:00",
+  "updatedAt": "2026-11-10T22:55:21+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -188,6 +188,13 @@
       "group": "Phase 1",
       "notes": "Give a brief, player-safe description of Pharasma, Nocticula, and the Black Butterfly.",
       "completedAt": "2026-11-10T22:43:16+11:00"
+    },
+    {
+      "id": "warn-combat-default-builds",
+      "title": "Flag builds that lean hard into combat-as-default",
+      "group": "Phase 3",
+      "notes": "Show an advisory for finished builds with a strong attack attribute, another high physical modifier, and less support for Wisdom, Charisma, and Intelligence checks.",
+      "completedAt": "2026-11-10T22:55:21+11:00"
     }
   ]
 }

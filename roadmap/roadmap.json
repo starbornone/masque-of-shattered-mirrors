@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-10T22:43:16+11:00",
+  "updatedAt": "2026-11-10T22:55:21+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -20,12 +20,6 @@
       "title": "Make default start level configurable by the GM",
       "group": "Phase 2",
       "notes": "Confirm expected start level with the player before locking defaults (open decision)."
-    },
-    {
-      "id": "warn-combat-default-builds",
-      "title": "Flag builds that lean hard into combat-as-default",
-      "group": "Phase 3",
-      "notes": "Not forbidden—flagged. Soft guidance over pure damage."
     },
     {
       "id": "gm-tailoring-brief-export",

@@ -1,5 +1,5 @@
-import { calculate } from '@/attributes/build'
 import type { Build } from '@/attributes/build'
+import { assessCampaignFit } from '@/attributes/campaign-fit'
 import { attributes } from '@/attributes/options'
 import type { Attribute } from '@/attributes/options'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
@@ -20,8 +20,7 @@ const checks: { name: string; attribute: Attribute; guidance: string }[] = [
 ]
 
 export function CampaignFit({ build }: { build: Build }) {
-  const { rows } = calculate(build)
-  const modifiers = new Map(rows.map(({ id, total }) => [id, total]))
+  const { modifiers, combatHeavy } = assessCampaignFit(build)
 
   return (
     <section aria-labelledby="campaign-fit-heading" className="mx-auto w-full max-w-2xl">
@@ -32,10 +31,16 @@ export function CampaignFit({ build }: { build: Build }) {
             These are your current attribute modifiers. Full checks also use the relevant proficiency and any other bonuses or penalties.
           </p>
         </CardHeader>
-        <CardContent>
+        <CardContent className="space-y-4">
+          {combatHeavy ? (
+            <p className="rounded-md border border-primary/30 bg-secondary/45 px-3 py-2">
+              <strong>Combat-heavy attribute spread.</strong>{' '}
+              Consider Wisdom for Will and Perception, Charisma for social skills, or Intelligence for Society.
+            </p>
+          ) : null}
           <ul className="divide-y divide-border">
             {checks.map(({ name, attribute, guidance }) => {
-              const modifier = modifiers.get(attribute) ?? 0
+              const modifier = modifiers[attribute]
               return (
                 <li key={name} className="space-y-1.5 py-3 first:pt-0 last:pb-0">
                   <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">

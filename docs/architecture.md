@@ -63,6 +63,8 @@ The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror 
 
 Player export must never include GM-only spoilers. GM brief may reference campaign wiring that the player UI never shows.
 
+The combat advisory appears once all boosts are assigned. It looks for Strength or Dexterity at +3 or higher, a second physical modifier at +2 or higher, and at least a two-point gap between the higher attack attribute and every mental attribute. The advisory uses current modifiers and leaves all choices and actions available.
+
 ## Catalog boundary
 
 - First-class options: **Player Core** and **Player Core 2**.

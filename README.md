@@ -10,7 +10,7 @@ The guide starts with the invitation and character concept, then walks through a
 
 - **Session zero (player-safe)** — Why they accepted the invitation; who they would risk the night for; their art or craft; optional faith (Pharasma, Nocticula, or the Black Butterfly); the beautiful lie their mask tells.
 - **Build** — Ancestry, background, class, level, and attribute boosts and flaws. The guide saves the current build and step in the browser. The review offers a mechanical share link and a printable ledger.
-- **Campaign fit** — The guide suggests backgrounds and classes with relevant boosts or training. The build review shows the modifiers that support Will, Perception, social skills, and investigation.
+- **Campaign fit** — The guide suggests backgrounds and classes with relevant boosts or training. The build review shows the modifiers that support Will, Perception, social skills, and investigation. An advisory appears when a finished build is heavily weighted toward physical attributes.
 - **GM handoff (planned)** — A short tailoring brief with campaign context behind a separate GM entry.
 
 ## What it does not do (yet)

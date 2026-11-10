@@ -42,7 +42,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 ## Phase 3 — Campaign fit
 
 - [x] Show a build-based checklist for Will, Perception, social and investigative skills, Stealth, Thievery, Athletics, and optional Religion and Performance.
-- [ ] Warn when Strength/attack focus is the only investment (not forbidden—flagged)
+- [x] Show a mechanical advisory when a completed build is heavily weighted toward physical attributes.
 - [x] Suggest backgrounds and classes with relevant boosts, key attributes, or starting proficiencies.
 
 **Exit:** Player sees clear “fit” feedback; GM sees the same scores.
