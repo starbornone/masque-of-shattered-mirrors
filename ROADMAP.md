@@ -33,7 +33,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 - [x] Extend the guide through the mechanical build, introducing Remaster terms as players make each choice.
 - [x] Explain ancestry, background, and class options with searchable summaries and direct rules links.
 - [x] Port UI patterns from the point-buy calculator (ancestry / background / class / level / milestones / voluntary flaws)
-- [ ] Default level configurable (GM sets expected start level)
+- [x] Let the maintainer configure the starting level for new character drafts
 - [x] Save the build and current step across refreshes
 - [x] Share link for mechanical build only
 - [x] Printable attribute ledger
@@ -78,7 +78,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 - [ ] Include the GM brief in a combined package once the separate GM entry is available
 - [x] Polish the player guide with silver-blue progress, a framed invitation, and layouts for narrow screens
 - [x] Document local installation, development, checks, and production preview in the README
-- [ ] Optional static deploy (same pattern as `pf.starmist.studio` if desired)
+- [x] Build the static site on Vercel when changes are pushed to `main`
 
 **Exit:** Ready to hand a link to the player.
 

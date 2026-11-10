@@ -40,7 +40,7 @@ Lightweight records inferred from [README.md](../README.md) and [ROADMAP.md](../
 
 **Decision:** Vite + TypeScript static app; persistence via localStorage, share URLs, and file export (JSON / Markdown). Node engines match the calculator (22.18+ or 24+).
 
-**Consequences:** No auth or database in scope. Deploy is optional static hosting later. Offline-friendly session zero remains viable.
+**Consequences:** The app stores drafts in the browser and builds on Vercel from pushes to `main`.
 
 ---
 
@@ -71,6 +71,14 @@ Lightweight records inferred from [README.md](../README.md) and [ROADMAP.md](../
 **Decision.** Guide character creation one step at a time. Keep the concept questions direct and explain Pathfinder rules where the player makes the relevant mechanical choice.
 
 **Consequences.** Show progress and let players revisit choices from review. Keep draft steps open when answers are missing. Require an answer only where a later feature needs it, such as finished attributes before a skill planner uses their modifiers. Track the work in [the roadmap](../ROADMAP.md).
+
+---
+
+## ADR-008 — Configure the default level when building the app
+
+**Decision.** The maintainer sets `VITE_CAMPAIGN_START_LEVEL` for new builds. The app falls back to level 1 and lets the player change the level in the attribute guide.
+
+**Consequences.** Saved drafts and shared builds retain their level. The campaign’s intended start level remains an open decision.
 
 ---
 

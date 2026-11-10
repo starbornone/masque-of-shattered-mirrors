@@ -64,6 +64,14 @@ npm run preview
 
 The production preview defaults to [http://localhost:4173](http://localhost:4173/). Rebuild before previewing source changes. The development and preview ports have separate browser saves. Use **Export character** and **Import character** to move a draft between them.
 
+## Deployment and campaign settings
+
+Vercel builds the site when changes are pushed to `main`.
+
+Set `VITE_CAMPAIGN_START_LEVEL` to a whole number from 1 to 20 in the Vercel project's Production environment variables. The next build uses it for new drafts. An unset or invalid value starts new drafts at level 1. Players can change the level during attribute planning, and saved drafts and shared builds keep their own levels. [Vercel environment variables](https://vercel.com/docs/environment-variables)
+
+For local development, set the same variable in `.env.local` and restart Vite. [Vite environment variables](https://vite.dev/guide/env-and-mode.html)
+
 ## Documentation
 
 - [docs/getting-started.md](docs/getting-started.md) — local setup, troubleshooting, and a walkthrough of the player guide
