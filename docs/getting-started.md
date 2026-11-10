@@ -1,12 +1,10 @@
 # Getting started
 
-**Current state:** The app is not scaffolded yet. This page documents the intended first-run path from the README. Until Phase 0 completes, you can only read the product brief and roadmap.
-
 ## Prerequisites
 
 | Requirement | Notes |
 |-------------|--------|
-| Node.js | Prefer the same engines as `pf2e-point-buy-calc`: **22.18+** or **24+** |
+| Node.js | **22.18+** or **24+** (`engines` in `package.json`) |
 | npm | Used for `npm ci` / `npm run dev` |
 | Git | Clone this repo |
 | Optional | Familiarity with PF2e Remaster character creation (Player Core) |
@@ -15,40 +13,43 @@
 
 - **Node too old** — install fails or Vite refuses to start. Upgrade to 22.18+ or 24+.
 - **npm missing** — install Node with npm, or use a version manager that provides both.
-- **No package.json yet** — expected today. Scaffolding is the first roadmap item; do not invent a different stack.
 
-## Install and run (once scaffolded)
+## Install and run
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Exact port and deploy target are TBD in implementation. Prefer matching the point-buy calculator’s Node engines.
+Open the URL Vite prints (usually `http://localhost:5173`).
+
+| Script | Purpose |
+|--------|---------|
+| `npm run dev` | Local development server |
+| `npm run build` | Typecheck + production build to `dist/` |
+| `npm run lint` | `oxlint` |
+| `npm run preview` | Serve the production build |
 
 ### Verify success
 
-When scaffolding is done, you should see:
+1. Dev server starts without module-resolution errors.
+2. The shell shows **Masque Character Creator** with a Player badge.
+3. `npm run build` completes cleanly.
 
-1. Dev server starts without module-resolution errors for the attribute engine.
-2. Empty shell loads a **default level-1 build** (Phase 0 exit criteria).
-3. Mode toggle exists; GM panel is **hidden by default**.
+Default level-1 build loading and the Player/GM mode toggle are still Phase 0 follow-ups (attribute engine + mode gate).
 
 ### First useful action
 
-1. Switch to **Player** mode (default).
-2. Complete the session-zero questions without seeing ritual spoilers.
-3. Set ancestry / background / class / level and confirm attribute boosts calculate.
-4. Export the player-safe brief; optionally flip to **GM** mode and copy the tailoring summary.
+Confirm the app shell loads, then continue Phase 0: port the attribute engine from `pf2e-point-buy-calc` and wire shared `Build` / `SessionZero` types. See [roadmap/roadmap.json](../roadmap/roadmap.json).
 
-## Failure symptoms (implied)
+## Failure symptoms
 
 | Symptom | Likely cause |
 |---------|----------------|
-| `npm ci` fails with “no package.json” / lockfile missing | App not scaffolded — work Phase 0 first |
-| Boost totals disagree with Remaster expectations | Engine not ported cleanly from `pf2e-point-buy-calc` |
-| Player sees scapegoat / ritual / climax levers | GM content leaked — check mode gating |
-| Share link restores wrong boosts | Serialize/parse drift vs the calculator |
+| `npm ci` engine warning / Vite fails | Node below 22.18 |
+| `@/` imports fail in the editor | `paths` missing from `tsconfig.app.json` / Vite alias |
+| Boost totals disagree with Remaster expectations | Engine not ported cleanly (not scaffolded yet) |
+| Player sees scapegoat / ritual / climax levers | GM content leaked — check mode gating when it lands |
 
 ## Rules sources
 

@@ -41,7 +41,7 @@ Campaign notes live one level up in this folder tree, outside the app.
 - Player Core / Player Core 2 catalogs first; custom rows for anything else
 - Shareable build URL + JSON backup for the mechanical side; Markdown or JSON for session-zero answers
 
-**Assumption:** The app is not scaffolded yet. Run commands in the README are the intended workflow once Phase 0 lands.
+Scaffold (Vite + TypeScript + shadcn/ui) is in place. Remaining Phase 0 work: attribute engine, shared types, Player/GM toggle, and boost smoke tests.
 
 ## Next reads
 

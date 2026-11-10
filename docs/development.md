@@ -2,36 +2,42 @@
 
 Guidance for humans and coding agents working in this repository.
 
-## Current repo layout
+## Repo layout
 
 ```
 masque-of-shattered-mirrors/
-├── README.md              # Human product entry point
-├── ROADMAP.md             # Phased delivery narrative (human)
-├── AGENTS.md              # Agent working agreements + roadmap rules
-├── docs/                  # Agent-ready documentation
-└── roadmap/               # Machine-readable roadmap (name-roadmap/v1)
-    ├── roadmap.json
-    ├── completed.json
-    └── cancelled.json
+├── README.md
+├── ROADMAP.md
+├── AGENTS.md
+├── package.json
+├── vite.config.ts
+├── components.json          # shadcn/ui config (radix-nova)
+├── src/
+│   ├── main.tsx
+│   ├── App.tsx              # App shell (player-safe default)
+│   ├── index.css            # Tailwind v4 + shadcn tokens
+│   ├── components/ui/       # shadcn primitives
+│   └── lib/utils.ts
+├── docs/
+└── roadmap/
 ```
 
-**Assumption:** Application source (`src/`, `package.json`, tests) appears when Phase 0 is implemented. Do not invent folders or scripts beyond what the README states.
-
-## Intended local workflow (post-scaffold)
+## Local workflow
 
 ```sh
 npm ci
 npm run dev
 ```
 
-| Expectation | Source |
+| Expectation | Detail |
 |-------------|--------|
-| Node 22.18+ or 24+ | README tech intent / point-buy calculator parity |
-| Attribute smoke tests | Port or reuse `test/build.test.ts` from `pf2e-point-buy-calc` |
-| Lint / format scripts | Not specified yet — add with the Vite scaffold; do not invent CI |
+| Node 22.18+ or 24+ | Matches `package.json` engines |
+| Lint | `npm run lint` → `oxlint` |
+| Build | `npm run build` → `tsc -b && vite build` |
+| UI kit | shadcn/ui (Radix Nova) — add with `npx shadcn@latest add <name>` |
+| Attribute smoke tests | Still TODO — port `test/build.test.ts` from `pf2e-point-buy-calc` |
 
-There is no documented test or lint command today. When you add them, update this file, [AGENTS.md](../AGENTS.md), and the README in the same change.
+Path alias: `@/*` → `./src/*` (TypeScript + Vite).
 
 ## Safe navigation for agents
 
@@ -40,15 +46,17 @@ There is no documented test or lint command today. When you add them, update thi
 3. Prefer extracting/porting the attribute engine over rewriting boost math.
 4. Catalog priority: Player Core and Player Core 2 first; custom rows for anything else.
 5. Move roadmap items in `roadmap/*.json` in the same change as the work they describe. See [roadmap-format.md](roadmap-format.md).
+6. Prefer existing shadcn primitives under `src/components/ui/` before inventing new UI chrome.
 
-## Where new code should land (planned)
+## Where new code should land
 
-| Concern | Module (planned) |
-|---------|------------------|
-| Boost math, serialize/parse | Attribute engine (from point-buy calculator) |
-| Invitation + questions | SessionZero |
-| Fit tips / combat flags | CampaignFit |
-| Spoiler summaries | GMBrief (GM mode only) |
+| Concern | Module |
+|---------|--------|
+| Boost math, serialize/parse | Attribute engine (from point-buy calculator) — not present yet |
+| Invitation + questions | SessionZero (planned) |
+| Fit tips / combat flags | CampaignFit (planned) |
+| Spoiler summaries | GMBrief (GM mode only, planned) |
+| Shared chrome / controls | `src/components/ui/` via shadcn |
 
 Details: [architecture.md](architecture.md).
 

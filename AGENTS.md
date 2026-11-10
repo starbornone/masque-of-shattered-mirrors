@@ -15,17 +15,18 @@
 | [AGENTS.md](AGENTS.md) | This file — agent agreements |
 | [docs/](docs/) | Overview, architecture, getting started, development, contributing, decisions, roadmap format |
 | [roadmap/](roadmap/) | Machine-readable todo / completed / cancelled (`name-roadmap/v1`) |
-| Application source | **Not present yet** — Vite + TypeScript scaffold is Phase 0 |
+| [src/](src/) | Vite + React + TypeScript app (`App.tsx` shell, `components/ui/` shadcn) |
+| [components.json](components.json) | shadcn/ui config (radix-nova) |
 
 Planned modules (see [docs/architecture.md](docs/architecture.md)): SessionZero, Build + attribute engine, CampaignFit, GMBrief, Player/GM mode shell.
 
 ## Working agreements
 
-- Intended run (once scaffolded): `npm ci` then `npm run dev`.
-- Prefer Node **22.18+** or **24+** (same family as `pf2e-point-buy-calc`).
+- Run: `npm ci` then `npm run dev`. Also `npm run build`, `npm run lint`, `npm run preview`.
+- Node **22.18+** or **24+** (`package.json` engines).
+- UI: prefer shadcn primitives (`npx shadcn@latest add …`) under `src/components/ui/`.
 - Port or extract attribute math (`normalizeBuild`, `ancestryRule`, `calculate`, serialize/parse); do not reimplement boosts.
 - Smoke-test boost math when the engine lands (port `test/build.test.ts` if available).
-- No lint/test scripts are documented yet—add them with the scaffold and update docs in the same change.
 - Keep Player mode free of ritual spoilers, scapegoat identity, and deity climax levers.
 - Do not invent auth, databases, CI, feat catalogs, or VTT import the README does not claim.
 

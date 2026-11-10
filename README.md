@@ -40,14 +40,18 @@ The adventure is a social-horror masquerade. Combat is a failure state. Guests a
 
 Campaign notes live one level up in this folder tree.
 
-## Run (once scaffolded)
+## Run
+
+Requires Node **22.18+** or **24+**.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Exact port and deploy target TBD in implementation; prefer the same Node engines as the point-buy calculator (22.18+ or 24+).
+Other scripts: `npm run build`, `npm run lint`, `npm run preview`.
+
+Dev server defaults to Vite’s local URL (usually `http://localhost:5173`). Deploy target TBD.
 
 ## Documentation
 

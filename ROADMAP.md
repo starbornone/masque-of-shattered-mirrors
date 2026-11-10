@@ -6,7 +6,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 ## Phase 0 — Scaffold
 
-- [ ] New Vite + TypeScript app (or monorepo sibling next to `pf2e-point-buy-calc`)
+- [x] New Vite + TypeScript app with Tailwind v4 + shadcn/ui (radix-nova)
 - [ ] Extract or copy attribute engine: `options`, `normalizeBuild`, `ancestryRule`, `calculate`, serialize/parse
 - [ ] Shared types for `Build` + new `SessionZero` answers
 - [ ] Player / GM mode toggle (hide GM panel by default)

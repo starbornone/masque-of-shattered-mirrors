@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-10T13:27:30+11:00",
+  "updatedAt": "2026-11-10T13:43:42+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -9,12 +9,6 @@
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
   "items": [
-    {
-      "id": "scaffold-vite-typescript-app",
-      "title": "Scaffold Vite + TypeScript local-first app",
-      "group": "Phase 0",
-      "notes": "New app or monorepo sibling next to pf2e-point-buy-calc. Node 22.18+ or 24+. Exit: app runs locally."
-    },
     {
       "id": "extract-attribute-engine",
       "title": "Extract or copy attribute engine from pf2e-point-buy-calc",

@@ -1,6 +1,6 @@
 # Architecture
 
-**Assumption:** No application source tree exists yet. This document describes the intended shape from the README and [ROADMAP.md](../ROADMAP.md). Update paths when Phase 0 lands.
+Scaffold is in place (Vite + React + TypeScript + Tailwind v4 + shadcn/ui). Attribute engine, SessionZero, CampaignFit, and GMBrief modules are still planned — see [ROADMAP.md](../ROADMAP.md).
 
 ## Goals that drive structure
 
