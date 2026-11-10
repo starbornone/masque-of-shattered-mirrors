@@ -68,7 +68,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 - [x] Plan skill training and level-appropriate increases once the attribute ledger is complete
 - [x] Map planned skill ranks and base modifiers to the campaign-fit checklist
 - [x] Track optional named Lore skills
-- [ ] Optional starting language notes (Osiriani flavor for the Descent archway is GM-side only)
+- [x] Add optional starting language notes and general Remaster guidance to the build review
 
 **Exit:** Skills planned enough to play the night without a full digital sheet.
 

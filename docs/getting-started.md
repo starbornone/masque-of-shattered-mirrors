@@ -45,7 +45,8 @@ The development server defaults to `http://localhost:5173`. Run `npm run build` 
 8. Use **Print attribute ledger** in the review or preview to print or save a PDF from your browser.
 9. Check **Campaign fit** beneath the ledger. If you change a boost, the corresponding modifier changes in the checklist.
 10. Once all boosts are assigned, select **Plan skill proficiencies**. Enter level-1 training and assign later increases. Return to the review to see those ranks and base modifiers under **Campaign fit**.
-11. Use **Export character** below the guide to save one JSON file at any stage. To resume from a file, choose **Import character**, select the file, and choose **Restore character** to replace the browser’s draft and return to the saved step.
+11. Open **Starting languages (optional)** in the build review to check the rules and jot down the languages you plan to take. The browser saves the notes as you type.
+12. Use **Export character** below the guide to save one JSON file at any stage, including any language notes. To resume from a file, choose **Import character**, select the file, and choose **Restore character** to replace the browser’s draft and return to the saved step.
 
 The optional faith step describes each deity before you choose. The background and class steps offer expandable **Campaign-fit suggestions** with boost and proficiency notes. [Paizo’s Divine Mysteries deity tables](https://downloads.paizo.com/PZO13003_SupplementalGodTable.pdf)
 
