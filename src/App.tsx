@@ -1,15 +1,8 @@
+import { InvitationLetter } from '@/components/InvitationLetter'
 import { Navbar } from '@/components/Navbar'
 import { SpiralingComet } from '@/components/SpiralingComet'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-import { Separator } from '@/components/ui/separator'
 
 function App() {
   return (
@@ -47,31 +40,14 @@ function App() {
       </header>
 
       <main className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-6 py-10">
-        <Card className="veil-in-delay border border-primary/20 bg-card/90 shadow-[0_1px_0_color-mix(in_oklch,var(--pharasma-silver)_55%,transparent)]">
-          <CardHeader>
-            <CardTitle className="font-heading text-2xl text-foreground">
-              Under the spiral
-            </CardTitle>
-            <CardDescription className="text-base">
-              Birth, death, fate, and prophecy — a calm shell for session zero
-              before the night of mirrors.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex flex-col gap-4">
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              Sacred colors of Pharasma guide this interface: bone, silver, and
-              spiraling blue. The panel stays player-safe; GM wiring remains
-              veiled until the mode toggle lands.
-            </p>
-            <Separator className="bg-primary/15" />
-            <div className="flex flex-wrap gap-2">
-              <Button type="button">Start session zero</Button>
-              <Button type="button" variant="outline" disabled>
-                Open build
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        <InvitationLetter />
+
+        <div className="veil-in-delay mx-auto flex w-full max-w-2xl flex-wrap gap-2">
+          <Button type="button">Accept the invitation</Button>
+          <Button type="button" variant="outline" disabled>
+            Open build
+          </Button>
+        </div>
       </main>
 
       <div className="relative z-10">
