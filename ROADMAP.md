@@ -64,9 +64,10 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 ## Phase 5 — Skills & proficiency sketch
 
-- [ ] Level-appropriate skill increase planner ( Remaster proficiency ranks )
-- [ ] Map skill choices to campaign-fit checklist
-- [ ] Optional starting language / lore notes (Osiriani flavor for the Descent archway is GM-side only)
+- [x] Plan skill training and level-appropriate increases once the attribute ledger is complete
+- [x] Map planned skill ranks and base modifiers to the campaign-fit checklist
+- [x] Track optional named Lore skills
+- [ ] Optional starting language notes (Osiriani flavor for the Descent archway is GM-side only)
 
 **Exit:** Skills planned enough to play the night without a full digital sheet.
 

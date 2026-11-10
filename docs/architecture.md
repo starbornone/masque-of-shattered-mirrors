@@ -46,6 +46,7 @@ The app opens the player’s character guide, saved build step, or a shared buil
 | SessionZero | Guided questions, editable review, and [versioned storage and exports](../src/session-zero/draft.ts) |
 | Build | [Guided Remaster attribute planning](../src/components/BuildGuide.tsx), a share link, and a printable ledger |
 | Attribute engine | [`src/attributes/`](../src/attributes/) holds the ported catalogs, boost ledger, and versioned build serialization |
+| Skills | [Skill planner](../src/components/SkillPlanner.tsx) for starting training, named Lore, and level-based increases |
 | CampaignFit | [Build suggestions](../src/components/BuildFitSuggestions.tsx) at the background and class steps, plus a [review checklist](../src/components/CampaignFit.tsx) that connects current modifiers to relevant checks |
 | GMBrief | One-page tailoring summary; spoilers only when mode is GM |
 
@@ -57,13 +58,15 @@ The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror 
 
 1. Player answers or skips the session-zero questions. The browser stores answers and progress together in localStorage, and the review offers JSON and Markdown downloads of the answers.
 2. Player selects ancestry, background, class, level, and boosts. The ported engine normalizes and calculates the current `Build`. The browser saves the build and current step separately from concept answers. The review shows unchosen options and unassigned boosts in an incomplete draft.
-3. Campaign fit uses the calculated build in the review and shared preview. It shows the attribute contribution for each check. Proficiency belongs to the planned skill planner. [Paizo’s Remaster character sheet](https://downloads.paizo.com/RemasterPlayerCoreCharacterSheet.pdf)
+3. A complete attribute ledger unlocks the skill planner. Players enter starting training, and the planner applies increases in level order with rank limits. The draft stores skills locally. The review includes planned skill ranks and base modifiers in campaign fit. [Paizo’s Remaster character sheet](https://downloads.paizo.com/RemasterPlayerCoreCharacterSheet.pdf)
 4. GM mode overlays mapping of answers → scapegoat/stake wiring, Verathe framing, deity levers, Marius/mask beat.
 5. A build URL contains only mechanics. Opening it previews the build, and choosing **Use shared build** replaces the saved mechanical draft. The printable ledger uses the same calculation as the live view. Concept answers export separately as Markdown or JSON.
 
 Player export must never include GM-only spoilers. GM brief may reference campaign wiring that the player UI never shows.
 
 The combat advisory appears once all boosts are assigned. It looks for Strength or Dexterity at +3 or higher, a second physical modifier at +2 or higher, and at least a two-point gap between the higher attack attribute and every mental attribute. The advisory uses current modifiers and leaves all choices and actions available.
+
+The skill planner records level-1 training entered by the player and uses the standard class increase schedule, with the faster schedule for Rogues and Investigators. A full increase to Intelligence adds an untrained skill to train at that milestone. Base modifiers cover attributes and proficiency. Class features, skill feats, items, and situational bonuses are handled at the table. Share links and the printable attribute ledger continue to carry attribute data. [Player Core advancement rules](https://www.dualshadestudios.com/Backblaze/DSBackBlaze/Misc%20Backups/RPG%20Book%20Backups/Pathfinder%202e%20Books/Pathfinder%202e%20Player%20Core%201.pdf#page=30), [Player Core 2 Investigator progression](https://www.dualshadestudios.com/Backblaze/DSBackBlaze/Misc%20Backups/RPG%20Book%20Backups/Pathfinder%202e%20Books/Pathfinder%202e%20Player%20Core%202.pdf)
 
 ## Catalog boundary
 
