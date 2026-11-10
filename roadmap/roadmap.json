@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-11T00:05:58+11:00",
+  "updatedAt": "2026-11-11T00:11:10+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -31,7 +31,7 @@
       "id": "unified-export-import",
       "title": "Ship single export package and import for prior exports",
       "group": "Phase 6",
-      "notes": "Session-zero + attributes + skills + GM brief in one package."
+      "notes": "Session-zero + attributes + skills + GM brief in one package. The player-only package is complete. The GM brief portion depends on the separate GM entry and tailoring brief."
     },
     {
       "id": "masquerade-ui-polish",

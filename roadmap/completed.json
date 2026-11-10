@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T00:05:58+11:00",
+  "updatedAt": "2026-11-11T00:11:10+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -202,6 +202,13 @@
       "group": "Phase 5",
       "notes": "Completed attributes unlock level-1 training, named Lore skills, class-based increases, and Intelligence training. Planned skill ranks and base modifiers appear in campaign fit. The plan saves in the local draft.",
       "completedAt": "2026-11-11T00:05:58+11:00"
+    },
+    {
+      "id": "player-character-export-import",
+      "title": "Export and restore a single player character file",
+      "group": "Phase 6",
+      "notes": "A versioned JSON file combines session-zero answers, attributes, planned skills, and guide progress. It supports unfinished characters and requires confirmation before replacing the browser draft.",
+      "completedAt": "2026-11-11T00:11:10+11:00"
     }
   ]
 }

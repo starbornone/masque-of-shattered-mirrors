@@ -38,7 +38,7 @@ export const emptySkillPlan: SkillPlan = { lore: [], trained: [], choices: {} }
 const rankNames = ['Untrained', 'Trained', 'Expert', 'Master', 'Legendary'] as const
 
 export function loreTopic(value: string) {
-  return value.trim().replace(/\s+lore$/i, '').trim().slice(0, 80)
+  return value.trim().slice(0, 80).trim().replace(/(?:\s+lore)+$/i, '').trim()
 }
 
 export function loreId(topic: string): SkillId {

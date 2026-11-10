@@ -1,55 +1,67 @@
 import { useRef, useState } from 'react'
 import veratheMirror from '@/assets/verathe-mirror.svg'
 import { parseBuild } from '@/attributes/build'
-import { buildDraftStorageKey, loadBuildDraft, serializeBuildDraft } from '@/attributes/draft'
 import type { BuildDraft } from '@/attributes/draft'
+import { characterStorageKey, loadCharacterDraft, serializeCharacter } from '@/character/draft'
+import type { CharacterDraft } from '@/character/draft'
 import { BuildActions } from '@/components/BuildActions'
 import { BuildGuide, BuildSummary } from '@/components/BuildGuide'
 import { CampaignFit } from '@/components/CampaignFit'
+import { CharacterFileActions } from '@/components/CharacterFileActions'
 import { Navbar } from '@/components/Navbar'
 import { PrintableAttributeLedger } from '@/components/PrintableAttributeLedger'
 import { SessionZeroGuide } from '@/components/SessionZeroGuide'
 import { SkillPlanner } from '@/components/SkillPlanner'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { loadSessionZero, serializeSessionZero, sessionZeroStorageKey } from '@/session-zero/draft'
 import type { SessionZeroDraft } from '@/session-zero/types'
 import { canAssignSkills, emptySkillPlan, parseSkillPlan } from '@/skills/plan'
 
 function App() {
-  const [draft, setDraft] = useState(loadSessionZero)
-  const [buildDraft, setBuildDraft] = useState(loadBuildDraft)
+  const [character, setCharacter] = useState(loadCharacterDraft)
   const [shared, setShared] = useState(() => {
     const requested = new URLSearchParams(window.location.search).get('build')
     return requested === null ? null : { build: parseBuild(requested) }
   })
   const [storageError, setStorageError] = useState(false)
-  const [buildStorageError, setBuildStorageError] = useState(false)
+  const [restoreCount, setRestoreCount] = useState(0)
   const concept = useRef<HTMLDivElement>(null)
+  const { sessionZero: draft, buildDraft } = character
   const { build, step: savedStep, skills } = buildDraft
   const skillsAvailable = (savedStep === 'review' || savedStep === 'skills') && canAssignSkills(build)
   const step = savedStep === 'skills' && !skillsAvailable ? 'review' : savedStep
   const sharedBuild = shared?.build
   const reviewBuild = sharedBuild ?? (step === 'review' ? build : null)
 
-  function saveDraft(next: SessionZeroDraft) {
-    setDraft(next)
+  function persistCharacter(next: CharacterDraft) {
     try {
-      localStorage.setItem(sessionZeroStorageKey, serializeSessionZero(next.answers, next.step))
+      localStorage.setItem(characterStorageKey, serializeCharacter(next))
       setStorageError(false)
+      return true
     } catch {
-      setStorageError(true)
+      return false
     }
   }
 
+  function saveCharacter(next: CharacterDraft) {
+    setCharacter(next)
+    if (!persistCharacter(next)) setStorageError(true)
+  }
+
+  function saveDraft(next: SessionZeroDraft) {
+    saveCharacter({ ...character, sessionZero: next })
+  }
+
   function saveBuild(next: BuildDraft) {
-    setBuildDraft(next)
-    try {
-      localStorage.setItem(buildDraftStorageKey, serializeBuildDraft(next))
-      setBuildStorageError(false)
-    } catch {
-      setBuildStorageError(true)
-    }
+    saveCharacter({ ...character, buildDraft: next })
+  }
+
+  function restoreCharacter(next: CharacterDraft) {
+    if (!persistCharacter(next)) return false
+    setCharacter(next)
+    setRestoreCount((count) => count + 1)
+    if (shared) closeSharedBuild()
+    return true
   }
 
   function closeSharedBuild() {
@@ -102,12 +114,7 @@ function App() {
       <main className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-6 py-10">
         {storageError ? (
           <p role="alert" className="mx-auto w-full max-w-2xl text-destructive">
-            This browser couldn’t save your answers. You can still download them from the review.
-          </p>
-        ) : null}
-        {buildStorageError ? (
-          <p role="alert" className="mx-auto w-full max-w-2xl text-destructive">
-            This browser couldn’t save your build. You can keep a share link from the review.
+            This browser couldn’t save your draft. Use Export character to keep a copy.
           </p>
         ) : null}
         {shared && !sharedBuild ? (
@@ -117,6 +124,7 @@ function App() {
         ) : null}
         <div hidden={Boolean(sharedBuild) || step !== null} ref={concept} className="mx-auto w-full max-w-2xl">
           <SessionZeroGuide
+            key={restoreCount}
             answers={draft.answers}
             initialStep={draft.step}
             onChange={(answers) => saveDraft({ ...draft, answers })}
@@ -139,6 +147,7 @@ function App() {
 
         {!sharedBuild && step === 'skills' ? (
           <SkillPlanner
+            key={restoreCount}
             build={build}
             plan={skills ?? emptySkillPlan}
             onChange={(next) => saveBuild({ ...buildDraft, skills: parseSkillPlan(next) })}
@@ -179,6 +188,7 @@ function App() {
         ) : null}
 
         {reviewBuild ? <CampaignFit build={reviewBuild} skillPlan={!sharedBuild && skillsAvailable ? skills : undefined} /> : null}
+        {!sharedBuild ? <CharacterFileActions draft={character} onRestore={restoreCharacter} /> : null}
       </main>
 
       <div className="relative z-10">

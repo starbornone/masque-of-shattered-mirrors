@@ -1,0 +1,59 @@
+import { parseBuild, serializeBuild } from '../attributes/build.ts'
+import { buildSteps, loadBuildDraft } from '../attributes/draft.ts'
+import type { BuildDraft } from '../attributes/draft.ts'
+import { loadSessionZero, parseSessionZero, serializeSessionZero } from '../session-zero/draft.ts'
+import type { SessionZeroDraft } from '../session-zero/types.ts'
+import { parseSkillPlan } from '../skills/plan.ts'
+
+export const characterStorageKey = 'masque-character'
+
+export type CharacterDraft = {
+  sessionZero: SessionZeroDraft
+  buildDraft: BuildDraft
+}
+
+export function serializeCharacter({ sessionZero, buildDraft }: CharacterDraft): string {
+  return JSON.stringify({
+    format: characterStorageKey,
+    version: 1,
+    sessionZero: JSON.parse(serializeSessionZero(sessionZero.answers, sessionZero.step)),
+    build: JSON.parse(serializeBuild(buildDraft.build)),
+    buildStep: buildDraft.step,
+    skills: parseSkillPlan(buildDraft.skills) ?? null,
+  }, null, 2) + '\n'
+}
+
+function orderedFields(_key: string, value: unknown) {
+  if (value === null || typeof value !== 'object' || Array.isArray(value)) return value
+  const fields = value as Record<string, unknown>
+  return Object.fromEntries(Object.keys(fields).sort().map((key) => [key, fields[key]]))
+}
+
+export function parseCharacter(serialized: string): CharacterDraft | null {
+  try {
+    const data = JSON.parse(serialized)
+    if (data?.format !== characterStorageKey || data.version !== 1) return null
+    const sessionZero = parseSessionZero(JSON.stringify(data.sessionZero))
+    const build = parseBuild(JSON.stringify(data.build))
+    if (!sessionZero || !build) return null
+    const step: BuildDraft['step'] = data.buildStep === 'skills' ? 'skills' : buildSteps.find((id) => id === data.buildStep) ?? null
+    const skills = parseSkillPlan(data.skills)
+    const draft = { sessionZero, buildDraft: { build, step, skills } }
+
+    // Reject files that would silently lose or change values during normalization.
+    const canonical = JSON.parse(serializeCharacter(draft))
+    return JSON.stringify(data, orderedFields) === JSON.stringify(canonical, orderedFields) ? draft : null
+  } catch {
+    return null
+  }
+}
+
+export function loadCharacterDraft(): CharacterDraft {
+  try {
+    const saved = parseCharacter(localStorage.getItem(characterStorageKey) ?? '')
+    if (saved) return saved
+  } catch {
+    // Fall back to the older saves or an empty draft.
+  }
+  return { sessionZero: loadSessionZero(), buildDraft: loadBuildDraft() }
+}
