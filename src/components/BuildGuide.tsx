@@ -8,6 +8,7 @@ import { buildSelections } from '@/attributes/ledger'
 import { ancestries, attributeIds, attributes, backgrounds, classes } from '@/attributes/options'
 import { AttributeLedger, AttributeSelect, BoostSlots, BuildBoosts } from '@/components/BuildBoosts'
 import { BuildActions } from '@/components/BuildActions'
+import { BuildFitSuggestions } from '@/components/BuildFitSuggestions'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 
@@ -130,7 +131,10 @@ export function BuildGuide({ build, currentStep, onChange, onProgress, onBackToC
             ) : null}
 
             {stepIndex === 1 ? (
-              <PresetSelect label="Background" catalog={backgrounds} value={build.background} onChange={(background) => updateBuild({ background })} />
+              <>
+                <PresetSelect label="Background" catalog={backgrounds} value={build.background} onChange={(background) => updateBuild({ background })} />
+                <BuildFitSuggestions kind="background" selected={build.background} onSelect={(background) => updateBuild({ background })} />
+              </>
             ) : null}
 
             {stepIndex === 2 ? (
@@ -140,6 +144,7 @@ export function BuildGuide({ build, currentStep, onChange, onProgress, onBackToC
                   <AttributeSelect label="Key attribute" choices={keys} value={build.key} onChange={(key) => updateBuild({ key })} emptyLabel="Decide later" />
                 ) : null}
                 {keys.length === 1 ? <p>Your class boosts {attributes[keys[0]]} automatically.</p> : null}
+                <BuildFitSuggestions kind="class" selected={build.characterClass} onSelect={(characterClass) => updateBuild({ characterClass })} />
               </>
             ) : null}
 

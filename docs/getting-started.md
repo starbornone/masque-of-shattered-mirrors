@@ -43,6 +43,8 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 8. Use **Print attribute ledger** in the review or preview to print or save a PDF from your browser.
 9. Check **Campaign fit** beneath the ledger. If you change a boost, the corresponding modifier changes in the checklist.
 
+The optional faith step describes each deity before you choose. The background and class steps offer expandable **Campaign-fit suggestions** with boost and proficiency notes. [Paizo’s Divine Mysteries deity tables](https://downloads.paizo.com/PZO13003_SupplementalGodTable.pdf)
+
 ### First useful action
 
 Run `npm test` to check the attribute engine before changing the build flow. See [roadmap/roadmap.json](../roadmap/roadmap.json) for the next items.

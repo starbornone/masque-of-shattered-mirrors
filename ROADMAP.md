@@ -22,7 +22,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
   - Why accept?
   - Who matters? (named stake) *or* “I am the one they are watching”
   - Art / craft
-  - Optional deity interest (Pharasma / Nocticula / Black Butterfly / none)
+  - Optional deity interest with short descriptions of Pharasma, Nocticula, and the Black Butterfly
   - Mask concept (“most beautiful lie”)
 - [x] Save answers on this browser and export JSON or Markdown
 
@@ -43,8 +43,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 - [x] Show a build-based checklist for Will, Perception, social and investigative skills, Stealth, Thievery, Athletics, and optional Religion and Performance.
 - [ ] Warn when Strength/attack focus is the only investment (not forbidden—flagged)
-- [ ] Suggest backgrounds that rhyme with the night (Artist, Entertainer, Noble, Acolyte, Detective, Servant, Refugee, Haunted, Blessed, Charlatan, etc.) without forcing them
-- [ ] Suggest classes that can carry solo social-horror (Bard, Rogue, Investigator, Oracle, Witch, Cleric, Swashbuckler, …) as *hints*, not locks
+- [x] Suggest backgrounds and classes with relevant boosts, key attributes, or starting proficiencies.
 
 **Exit:** Player sees clear “fit” feedback; GM sees the same scores.
 

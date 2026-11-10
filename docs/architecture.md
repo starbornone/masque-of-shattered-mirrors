@@ -46,7 +46,7 @@ The app opens the player’s character guide, saved build step, or a shared buil
 | SessionZero | Guided questions, editable review, and [versioned storage and exports](../src/session-zero/draft.ts) |
 | Build | [Guided Remaster attribute planning](../src/components/BuildGuide.tsx), a share link, and a printable ledger |
 | Attribute engine | [`src/attributes/`](../src/attributes/) holds the ported catalogs, boost ledger, and versioned build serialization |
-| CampaignFit | [Player-facing checklist](../src/components/CampaignFit.tsx) that connects current attribute modifiers to relevant checks |
+| CampaignFit | [Build suggestions](../src/components/BuildFitSuggestions.tsx) at the background and class steps, plus a [review checklist](../src/components/CampaignFit.tsx) that connects current modifiers to relevant checks |
 | GMBrief | One-page tailoring summary; spoilers only when mode is GM |
 
 The header and browser tab share the same [SVG emblem](../public/favicon.svg). A fractured oval mirror frames the silver masquerade mask.

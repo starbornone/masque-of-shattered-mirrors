@@ -50,7 +50,13 @@ const steps = [
 
 const reviewIndex = steps.length - 1
 const answerClass = 'w-full rounded-md border border-input bg-background px-3 py-2 text-foreground focus-visible:outline-2 focus-visible:outline-ring'
-const faithOptions = [...Object.entries(faithChoices), ['', 'Skip for now']]
+const faithOptions = [
+  { id: 'pharasma', description: 'Pharasma judges the souls of the dead and watches over birth, death, and fate.' },
+  { id: 'nocticula', description: 'The Redeemer Queen left her life as a demon lord behind. She champions artists and exiles, and midnight is sacred to her.' },
+  { id: 'black-butterfly', description: 'Known as the Silence Between, she watches over the quiet spaces between the stars. Her followers value stillness and kindness done without recognition.' },
+  { id: 'none' },
+  { id: null },
+] as const satisfies readonly { id: FaithChoice | null; description?: string }[]
 
 type SessionZeroGuideProps = {
   answers: SessionZero
@@ -201,18 +207,30 @@ export function SessionZeroGuide({ answers, initialStep, onChange, onProgress, o
             <CardContent>
               <fieldset className="space-y-2">
                 <legend className="mb-2 font-medium">Faith (optional)</legend>
-                {faithOptions.map(([id, label]) => (
-                  <label key={id} className="flex min-h-11 items-center gap-2">
-                    <input
-                      type="radio"
-                      name="faith"
-                      className="accent-primary"
-                      checked={(answers.faith ?? '') === id}
-                      onChange={() => updateAnswer('faith', id ? id as FaithChoice : null)}
-                    />
-                    {label}
-                  </label>
-                ))}
+                {faithOptions.map((option) => {
+                  const { id } = option
+                  const labelId = `faith-${id ?? 'skip'}`
+                  const description = 'description' in option ? option.description : undefined
+                  return (
+                    <label key={labelId} className="flex min-h-11 items-start gap-2 py-2">
+                      <input
+                        type="radio"
+                        name="faith"
+                        className="mt-1 accent-primary"
+                        aria-labelledby={labelId}
+                        aria-describedby={description ? `${labelId}-description` : undefined}
+                        checked={answers.faith === id}
+                        onChange={() => updateAnswer('faith', id)}
+                      />
+                      <span>
+                        <span id={labelId} className="block font-medium">{id ? faithChoices[id] : 'Skip for now'}</span>
+                        {description ? (
+                          <span id={`${labelId}-description`} className="block text-muted-foreground">{description}</span>
+                        ) : null}
+                      </span>
+                    </label>
+                  )
+                })}
               </fieldset>
             </CardContent>
           </Card>

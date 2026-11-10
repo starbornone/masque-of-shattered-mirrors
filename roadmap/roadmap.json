@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-10T22:38:18+11:00",
+  "updatedAt": "2026-11-10T22:43:16+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -26,12 +26,6 @@
       "title": "Flag builds that lean hard into combat-as-default",
       "group": "Phase 3",
       "notes": "Not forbidden—flagged. Soft guidance over pure damage."
-    },
-    {
-      "id": "suggest-fit-backgrounds-classes",
-      "title": "Suggest campaign-fit backgrounds and classes as hints not locks",
-      "group": "Phase 3",
-      "notes": "Backgrounds e.g. Artist, Entertainer, Noble, Acolyte, Detective; classes e.g. Bard, Rogue, Investigator, Oracle, Witch, Cleric, Swashbuckler."
     },
     {
       "id": "gm-tailoring-brief-export",

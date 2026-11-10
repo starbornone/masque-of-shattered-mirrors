@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-10T22:38:18+11:00",
+  "updatedAt": "2026-11-10T22:43:16+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -174,6 +174,20 @@
       "group": "Phase 6",
       "notes": "Replace the invitation line and remove the repeated title below the app name.",
       "completedAt": "2026-11-10T22:38:18+11:00"
+    },
+    {
+      "id": "suggest-fit-backgrounds-classes",
+      "title": "Suggest campaign-fit backgrounds and classes as hints not locks",
+      "group": "Phase 3",
+      "notes": "Backgrounds e.g. Artist, Entertainer, Noble, Acolyte, Detective; classes e.g. Bard, Rogue, Investigator, Oracle, Witch, Cleric, Swashbuckler.",
+      "completedAt": "2026-11-10T22:43:16+11:00"
+    },
+    {
+      "id": "describe-session-zero-deities",
+      "title": "Describe the three deities on the faith step",
+      "group": "Phase 1",
+      "notes": "Give a brief, player-safe description of Pharasma, Nocticula, and the Black Butterfly.",
+      "completedAt": "2026-11-10T22:43:16+11:00"
     }
   ]
 }
