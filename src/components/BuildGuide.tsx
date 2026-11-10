@@ -1,0 +1,179 @@
+import { useEffect, useRef } from 'react'
+import type { FormEvent } from 'react'
+import { classKeys, normalizeBuild } from '@/attributes/build'
+import type { Build } from '@/attributes/build'
+import { buildSteps } from '@/attributes/draft'
+import type { BuildStep } from '@/attributes/draft'
+import { buildSelections } from '@/attributes/ledger'
+import { ancestries, attributeIds, attributes, backgrounds, classes } from '@/attributes/options'
+import { AttributeLedger, AttributeSelect, BoostSlots, BuildBoosts } from '@/components/BuildBoosts'
+import { BuildActions } from '@/components/BuildActions'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+
+const steps = [
+  { title: 'Choose an ancestry', description: 'Ancestry describes your character’s people. It gives your character some starting traits and helps determine their attribute boosts.' },
+  { title: 'Choose a background', description: 'Your background describes your life before adventuring. It determines which attributes you can boost at the background step.' },
+  { title: 'Choose a class', description: 'Your class describes how you adventure. Its key attribute is central to how the class works, and your class gives that attribute a boost.' },
+  { title: 'Assign attribute boosts', description: 'Attributes are modifiers you use on rolls, such as +2. A boost usually raises the modifier by 1. Choose different attributes within each group. The same attribute can receive boosts from different groups.' },
+  { title: 'Review your build', description: 'Check your current modifiers. You can revisit any step to change a choice or fill in a gap.' },
+] as const
+
+const reviewIndex = steps.length - 1
+const boostsIndex = reviewIndex - 1
+const sourceGroups = [
+  { label: 'Player Core', core2: false },
+  { label: 'Player Core 2', core2: true },
+]
+
+type Preset = { name: string; core2?: boolean }
+
+function PresetSelect({ label, catalog, value, onChange }: {
+  label: string
+  catalog: Record<string, Preset>
+  value: string
+  onChange: (value: string) => void
+}) {
+  const options = Object.entries(catalog).sort(([, a], [, b]) => a.name.localeCompare(b.name))
+  return (
+    <label className="block space-y-1">
+      <span className="font-medium">{label}</span>
+      <select
+        className="min-h-11 w-full rounded-md border border-input bg-background px-3 text-foreground focus-visible:outline-2 focus-visible:outline-ring"
+        value={value}
+        onChange={(event) => onChange(event.currentTarget.value)}
+      >
+        {label !== 'Ancestry' ? <option value="">Decide later</option> : null}
+        {sourceGroups.map(({ label, core2 }) => (
+          <optgroup key={label} label={label}>
+            {options.filter(([, option]) => Boolean(option.core2) === core2).map(([id, option]) => (
+              <option key={id} value={id}>{option.name}</option>
+            ))}
+          </optgroup>
+        ))}
+        <option value="custom">Custom</option>
+      </select>
+    </label>
+  )
+}
+
+export function BuildSummary({ build }: { build: Build }) {
+  return (
+    <div className="space-y-4">
+      <dl className="grid gap-3 sm:grid-cols-3">
+        {buildSelections(build).map(({ label, name }) => (
+          <div key={label}><dt className="font-medium text-primary">{label}</dt><dd>{name}</dd></div>
+        ))}
+      </dl>
+      <AttributeLedger build={build} />
+    </div>
+  )
+}
+
+type BuildGuideProps = {
+  build: Build
+  currentStep: BuildStep
+  onChange: (build: Build) => void
+  onProgress: (step: BuildStep) => void
+  onBackToConcept: () => void
+}
+
+export function BuildGuide({ build, currentStep, onChange, onProgress, onBackToConcept }: BuildGuideProps) {
+  const stepIndex = buildSteps.indexOf(currentStep)
+  const heading = useRef<HTMLHeadingElement>(null)
+  const step = steps[stepIndex]
+  const keys = classKeys(build.characterClass)
+
+  useEffect(() => {
+    heading.current?.focus()
+  }, [stepIndex])
+
+  function updateBuild(changes: Partial<Build>) {
+    onChange(normalizeBuild({ ...build, ...changes }))
+  }
+
+  function advance(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    if (stepIndex === reviewIndex) return
+    onProgress(buildSteps[stepIndex + 1])
+  }
+
+  return (
+    <section aria-labelledby="build-guide-heading" className="flex flex-col gap-4">
+      <div className="space-y-2">
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
+          Character build · Step {stepIndex + 1} of {steps.length}
+        </p>
+        <progress aria-label="Character build progress" value={stepIndex + 1} max={steps.length} className="block h-1.5 w-full accent-primary" />
+        <h2 ref={heading} id="build-guide-heading" tabIndex={-1} className="text-3xl">{step.title}</h2>
+        <p className="max-w-prose text-muted-foreground">{step.description}</p>
+      </div>
+
+      <form onSubmit={advance} className="space-y-4">
+        <Card>
+          <CardContent className="space-y-4">
+            {stepIndex === 0 ? (
+              <>
+                <PresetSelect label="Ancestry" catalog={ancestries} value={build.ancestry} onChange={(ancestry) => updateBuild({ ancestry })} />
+                <label className="flex min-h-11 items-center gap-2">
+                  <input type="checkbox" className="accent-primary" checked={build.alternate} onChange={(event) => updateBuild({ alternate: event.currentTarget.checked })} />
+                  Take two boosts of your choice instead of the listed ancestry boosts and flaw
+                </label>
+                {build.ancestry === 'custom' && !build.alternate ? (
+                  <div className="space-y-3">
+                    <p className="text-muted-foreground">Enter the fixed boosts and flaw from your ancestry’s rules. Leave a slot blank if the ancestry has no fixed choice for it.</p>
+                    <BoostSlots label="Fixed boost" slots={[attributeIds, attributeIds]} values={build.customFixed} onChange={(customFixed) => updateBuild({ customFixed })} emptyLabel="None" />
+                    <AttributeSelect label="Listed flaw" choices={attributeIds} value={build.customFlaw} onChange={(customFlaw) => updateBuild({ customFlaw })} emptyLabel="None" />
+                  </div>
+                ) : null}
+              </>
+            ) : null}
+
+            {stepIndex === 1 ? (
+              <PresetSelect label="Background" catalog={backgrounds} value={build.background} onChange={(background) => updateBuild({ background })} />
+            ) : null}
+
+            {stepIndex === 2 ? (
+              <>
+                <PresetSelect label="Class" catalog={classes} value={build.characterClass} onChange={(characterClass) => updateBuild({ characterClass })} />
+                {keys.length > 1 ? (
+                  <AttributeSelect label="Key attribute" choices={keys} value={build.key} onChange={(key) => updateBuild({ key })} emptyLabel="Decide later" />
+                ) : null}
+                {keys.length === 1 ? <p>Your class boosts {attributes[keys[0]]} automatically.</p> : null}
+              </>
+            ) : null}
+
+            {stepIndex === boostsIndex ? (
+              <>
+                <BuildBoosts build={build} onChange={updateBuild} />
+                <AttributeLedger build={build} />
+              </>
+            ) : null}
+
+            {stepIndex === reviewIndex ? (
+              <>
+                <BuildSummary build={build} />
+                <BuildActions build={build} />
+                <div className="flex flex-wrap gap-2">
+                  {buildSteps.slice(0, reviewIndex).map((label) => (
+                    <Button key={label} type="button" variant="outline" className="min-h-11" onClick={() => onProgress(label)}>
+                      Edit {label}
+                    </Button>
+                  ))}
+                </div>
+              </>
+            ) : null}
+          </CardContent>
+        </Card>
+        <div className="flex flex-wrap gap-2">
+          <Button type="button" variant="outline" className="min-h-11" onClick={stepIndex === 0 ? onBackToConcept : () => onProgress(buildSteps[stepIndex - 1])}>
+            {stepIndex === 0 ? 'Back to character concept' : 'Back'}
+          </Button>
+          {stepIndex < reviewIndex ? (
+            <Button type="submit" className="min-h-11">{stepIndex === boostsIndex ? 'Review build' : 'Continue'}</Button>
+          ) : null}
+        </div>
+      </form>
+    </section>
+  )
+}

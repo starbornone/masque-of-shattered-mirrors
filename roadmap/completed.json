@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-10T14:56:01+11:00",
+  "updatedAt": "2026-11-10T21:52:11+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -84,6 +84,13 @@
       "group": "Phase 6",
       "notes": "Set four-point glints along the mirror's spiral.",
       "completedAt": "2026-11-10T14:56:01+11:00"
+    },
+    {
+      "id": "extract-attribute-engine",
+      "title": "Extract or copy attribute engine from pf2e-point-buy-calc",
+      "group": "Phase 0",
+      "notes": "Port options, normalizeBuild, ancestryRule, calculate, and serialize/parse. Do not reimplement boost math.",
+      "completedAt": "2026-11-10T21:52:11+11:00"
     }
   ]
 }
