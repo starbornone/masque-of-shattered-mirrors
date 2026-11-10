@@ -1,4 +1,5 @@
 import { InvitationLetter } from '@/components/InvitationLetter'
+import { MasqueradeMask } from '@/components/MasqueradeMask'
 import { Navbar } from '@/components/Navbar'
 import { SpiralingComet } from '@/components/SpiralingComet'
 import { Badge } from '@/components/ui/badge'
@@ -17,7 +18,7 @@ function App() {
       <header className="relative z-10 border-b border-primary/20 bg-[color-mix(in_oklch,var(--card)_78%,transparent)] backdrop-blur-md">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-5">
           <div className="veil-in flex items-start gap-3">
-            <SpiralingComet className="mt-1 size-11 shrink-0 text-primary" />
+            <MasqueradeMask className="mt-1.5 h-9 w-14 shrink-0 text-primary" />
             <div>
               <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-primary">
                 An invitation to House Verathe
