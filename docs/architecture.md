@@ -49,6 +49,8 @@ Scaffold is in place (Vite + React + TypeScript + Tailwind v4 + shadcn/ui). Attr
 | CampaignFit | Checklist against Will, Perception, social, Stealth/Thievery, investigation |
 | GMBrief | One-page tailoring summary; spoilers only when mode is GM |
 
+The header and browser tab share the same [SVG emblem](../public/favicon.svg). It pairs Pharasma's spiraling comet with a fractured silver masquerade mask.
+
 ## Data and control flow
 
 1. Player completes session-zero questions → answers stored as `SessionZero` (localStorage + optional export).

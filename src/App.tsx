@@ -1,5 +1,4 @@
 import { InvitationLetter } from '@/components/InvitationLetter'
-import { MasqueradeMask } from '@/components/MasqueradeMask'
 import { Navbar } from '@/components/Navbar'
 import { StarCluster } from '@/components/StarCluster'
 import { Badge } from '@/components/ui/badge'
@@ -18,9 +17,13 @@ function App() {
       <header className="relative z-10 border-b border-primary/20 bg-[color-mix(in_oklch,var(--card)_78%,transparent)] backdrop-blur-md">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-5">
           <div className="veil-in flex items-start gap-3">
-            <span className="mt-1.5 inline-flex h-8 w-11 shrink-0 items-center justify-center text-primary">
-              <MasqueradeMask className="max-h-full max-w-full" />
-            </span>
+            <img
+              src={`${import.meta.env.BASE_URL}favicon.svg`}
+              alt=""
+              width={44}
+              height={44}
+              className="mt-0.5 size-11 shrink-0"
+            />
             <div>
               <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-primary">
                 An invitation to House Verathe
