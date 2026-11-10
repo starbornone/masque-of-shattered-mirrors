@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-10T22:55:21+11:00",
+  "updatedAt": "2026-11-11T00:05:58+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -195,6 +195,13 @@
       "group": "Phase 3",
       "notes": "Show an advisory for finished builds with a strong attack attribute, another high physical modifier, and less support for Wisdom, Charisma, and Intelligence checks.",
       "completedAt": "2026-11-10T22:55:21+11:00"
+    },
+    {
+      "id": "skill-proficiency-planner",
+      "title": "Add level-appropriate skill increase planner mapped to campaign fit",
+      "group": "Phase 5",
+      "notes": "Completed attributes unlock level-1 training, named Lore skills, class-based increases, and Intelligence training. Planned skill ranks and base modifiers appear in campaign fit. The plan saves in the local draft.",
+      "completedAt": "2026-11-11T00:05:58+11:00"
     }
   ]
 }

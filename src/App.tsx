@@ -9,10 +9,12 @@ import { CampaignFit } from '@/components/CampaignFit'
 import { Navbar } from '@/components/Navbar'
 import { PrintableAttributeLedger } from '@/components/PrintableAttributeLedger'
 import { SessionZeroGuide } from '@/components/SessionZeroGuide'
+import { SkillPlanner } from '@/components/SkillPlanner'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { loadSessionZero, serializeSessionZero, sessionZeroStorageKey } from '@/session-zero/draft'
 import type { SessionZeroDraft } from '@/session-zero/types'
+import { canAssignSkills, emptySkillPlan, parseSkillPlan } from '@/skills/plan'
 
 function App() {
   const [draft, setDraft] = useState(loadSessionZero)
@@ -24,7 +26,9 @@ function App() {
   const [storageError, setStorageError] = useState(false)
   const [buildStorageError, setBuildStorageError] = useState(false)
   const concept = useRef<HTMLDivElement>(null)
-  const { build, step } = buildDraft
+  const { build, step: savedStep, skills } = buildDraft
+  const skillsAvailable = (savedStep === 'review' || savedStep === 'skills') && canAssignSkills(build)
+  const step = savedStep === 'skills' && !skillsAvailable ? 'review' : savedStep
   const sharedBuild = shared?.build
   const reviewBuild = sharedBuild ?? (step === 'review' ? build : null)
 
@@ -56,7 +60,7 @@ function App() {
   }
 
   function returnToConcept() {
-    saveBuild({ build, step: null })
+    saveBuild({ ...buildDraft, step: null })
     requestAnimationFrame(() => concept.current?.querySelector('h2')?.focus())
   }
 
@@ -117,19 +121,29 @@ function App() {
             initialStep={draft.step}
             onChange={(answers) => saveDraft({ ...draft, answers })}
             onProgress={(step) => saveDraft({ ...draft, step })}
-            onStartBuild={() => saveBuild({ build, step: 'ancestry' })}
+            onStartBuild={() => saveBuild({ ...buildDraft, step: 'ancestry' })}
           />
         </div>
-        {!sharedBuild && step ? (
+        {!sharedBuild && step && step !== 'skills' ? (
           <div className="mx-auto w-full max-w-2xl">
             <BuildGuide
               build={build}
               currentStep={step}
-              onChange={(next) => saveBuild({ build: next, step })}
-              onProgress={(next) => saveBuild({ build, step: next })}
+              onChange={(next) => saveBuild({ ...buildDraft, build: next, step })}
+              onProgress={(next) => saveBuild({ ...buildDraft, step: next })}
               onBackToConcept={returnToConcept}
+              onPlanSkills={skillsAvailable ? () => saveBuild({ ...buildDraft, step: 'skills' }) : undefined}
             />
           </div>
+        ) : null}
+
+        {!sharedBuild && step === 'skills' ? (
+          <SkillPlanner
+            build={build}
+            plan={skills ?? emptySkillPlan}
+            onChange={(next) => saveBuild({ ...buildDraft, skills: parseSkillPlan(next) })}
+            onBack={() => saveBuild({ ...buildDraft, step: 'review' })}
+          />
         ) : null}
 
         {sharedBuild ? (
@@ -164,7 +178,7 @@ function App() {
           </section>
         ) : null}
 
-        {reviewBuild ? <CampaignFit build={reviewBuild} /> : null}
+        {reviewBuild ? <CampaignFit build={reviewBuild} skillPlan={!sharedBuild && skillsAvailable ? skills : undefined} /> : null}
       </main>
 
       <div className="relative z-10">

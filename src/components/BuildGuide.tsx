@@ -3,7 +3,7 @@ import type { FormEvent } from 'react'
 import { classKeys, normalizeBuild } from '@/attributes/build'
 import type { Build } from '@/attributes/build'
 import { buildSteps } from '@/attributes/draft'
-import type { BuildStep } from '@/attributes/draft'
+import type { BuildGuideStep } from '@/attributes/draft'
 import { buildSelections } from '@/attributes/ledger'
 import { ancestries, attributeIds, attributes, backgrounds, classes } from '@/attributes/options'
 import { AttributeLedger, AttributeSelect, BoostSlots, BuildBoosts } from '@/components/BuildBoosts'
@@ -73,13 +73,14 @@ export function BuildSummary({ build }: { build: Build }) {
 
 type BuildGuideProps = {
   build: Build
-  currentStep: BuildStep
+  currentStep: BuildGuideStep
   onChange: (build: Build) => void
-  onProgress: (step: BuildStep) => void
+  onProgress: (step: BuildGuideStep) => void
   onBackToConcept: () => void
+  onPlanSkills?: () => void
 }
 
-export function BuildGuide({ build, currentStep, onChange, onProgress, onBackToConcept }: BuildGuideProps) {
+export function BuildGuide({ build, currentStep, onChange, onProgress, onBackToConcept, onPlanSkills }: BuildGuideProps) {
   const stepIndex = buildSteps.indexOf(currentStep)
   const heading = useRef<HTMLHeadingElement>(null)
   const step = steps[stepIndex]
@@ -159,6 +160,12 @@ export function BuildGuide({ build, currentStep, onChange, onProgress, onBackToC
               <>
                 <BuildSummary build={build} />
                 <BuildActions build={build} />
+                <div className="space-y-2">
+                  <Button type="button" className="min-h-11" disabled={!onPlanSkills} onClick={onPlanSkills}>
+                    Plan skill proficiencies
+                  </Button>
+                  {!onPlanSkills ? <p className="text-muted-foreground">Finish assigning attribute boosts to unlock skill planning.</p> : null}
+                </div>
                 <div className="flex flex-wrap gap-2">
                   {buildSteps.slice(0, reviewIndex).map((label) => (
                     <Button key={label} type="button" variant="outline" className="min-h-11" onClick={() => onProgress(label)}>

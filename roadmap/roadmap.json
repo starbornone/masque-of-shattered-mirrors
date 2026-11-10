@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-10T22:55:21+11:00",
+  "updatedAt": "2026-11-11T00:05:58+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -26,12 +26,6 @@
       "title": "Auto-generate spoiler-gated GM tailoring brief with copy-to-clipboard",
       "group": "Phase 4",
       "notes": "Stake→scapegoat wiring; art→Verathe framing; faith→deity lever; mask→Marius beat; key skills→NPC/room payoffs. Exit: leave session zero with a personalization plan."
-    },
-    {
-      "id": "skill-proficiency-planner",
-      "title": "Add level-appropriate skill increase planner mapped to campaign fit",
-      "group": "Phase 5",
-      "notes": "Remaster proficiency ranks. Optional language/lore notes; Osiriani Descent flavor stays GM-side only. Require a complete attribute ledger when assigning skills. Skipped concept answers do not block the planner."
     },
     {
       "id": "unified-export-import",

@@ -1,17 +1,21 @@
 import { normalizeBuild, parseBuild, serializeBuild } from './build.ts'
 import type { Build } from './build.ts'
+import { parseSkillPlan } from '../skills/plan.ts'
+import type { SkillPlan } from '../skills/plan.ts'
 
 export const buildDraftStorageKey = 'masque-build-draft'
 export const buildSteps = ['ancestry', 'background', 'class', 'boosts', 'review'] as const
-export type BuildStep = typeof buildSteps[number]
+export type BuildGuideStep = typeof buildSteps[number]
+export type BuildStep = BuildGuideStep | 'skills'
 
 export type BuildDraft = {
   build: Build
   step: BuildStep | null
+  skills?: SkillPlan
 }
 
-export function serializeBuildDraft({ build, step }: BuildDraft): string {
-  return JSON.stringify({ build: serializeBuild(build), step })
+export function serializeBuildDraft({ build, step, skills }: BuildDraft): string {
+  return JSON.stringify({ build: serializeBuild(build), step, skills })
 }
 
 export function parseBuildDraft(serialized: string): BuildDraft | null {
@@ -20,8 +24,9 @@ export function parseBuildDraft(serialized: string): BuildDraft | null {
     if (typeof data?.build !== 'string') return null
     const build = parseBuild(data.build)
     if (!build) return null
-    const step = buildSteps.find((id) => id === data.step) ?? null
-    return { build, step }
+    const step = data.step === 'skills' ? 'skills' : buildSteps.find((id) => id === data.step) ?? null
+    const skills = parseSkillPlan(data.skills)
+    return skills ? { build, step, skills } : { build, step }
   } catch {
     return null
   }
