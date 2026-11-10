@@ -1,22 +1,28 @@
-import { useEffect, useRef } from 'react'
+import { lazy, Suspense, useEffect, useRef } from 'react'
 import type { FormEvent } from 'react'
 import { classKeys, normalizeBuild } from '@/attributes/build'
 import type { Build } from '@/attributes/build'
 import { buildSteps } from '@/attributes/draft'
 import type { BuildGuideStep } from '@/attributes/draft'
-import { buildSelections } from '@/attributes/ledger'
 import { attributeIds, attributes } from '@/attributes/options'
 import { AttributeLedger, AttributeSelect, BoostSlots, BuildBoosts } from '@/components/BuildBoosts'
 import { BuildActions } from '@/components/BuildActions'
+import { BuildSummary } from '@/components/BuildSummary'
 import { BuildFitSuggestions } from '@/components/BuildFitSuggestions'
 import { BuildOptionPicker } from '@/components/BuildOptionPicker'
 import { GuideHeading } from '@/components/GuideHeading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { buildOptionGuides } from '@/content/build-options'
+import { AncestryChoicesSummary } from '@/components/AncestryChoicesSummary'
+import { emptyAncestryChoices } from '@/ancestry/choices'
+import type { AncestryChoices as Choices } from '@/ancestry/choices'
+
+const AncestryChoices = lazy(() => import('@/components/AncestryChoices'))
 
 const steps = [
   { title: 'Choose an ancestry', description: 'Ancestry describes your character’s people. It gives your character some starting traits and helps determine their attribute boosts.' },
+  { title: 'Choose heritage and ancestry feats', description: 'These choices add abilities beyond your ancestry’s attribute boosts. Read an option’s rules before selecting it, or leave it undecided for now.' },
   { title: 'Choose a background', description: 'Your background describes your life before adventuring. It determines which attributes you can boost at the background step.' },
   { title: 'Choose a class', description: 'Your class describes how you adventure. Its key attribute is central to how the class works, and your class gives that attribute a boost.' },
   { title: 'Assign attribute boosts', description: 'Attributes are modifiers you use on rolls, such as +2. A boost usually raises the modifier by 1. Choose different attributes within each group. The same attribute can receive boosts from different groups.' },
@@ -25,19 +31,6 @@ const steps = [
 
 const reviewIndex = steps.length - 1
 const boostsIndex = reviewIndex - 1
-
-export function BuildSummary({ build }: { build: Build }) {
-  return (
-    <div className="space-y-4">
-      <dl className="grid gap-3 sm:grid-cols-3">
-        {buildSelections(build).map(({ label, name }) => (
-          <div key={label}><dt className="font-medium text-primary">{label}</dt><dd>{name}</dd></div>
-        ))}
-      </dl>
-      <AttributeLedger build={build} />
-    </div>
-  )
-}
 
 type BuildGuideProps = {
   build: Build
@@ -48,11 +41,14 @@ type BuildGuideProps = {
   onPlanSkills?: () => void
   startingLanguageNotes: string
   onStartingLanguageNotesChange: (notes: string) => void
+  ancestryChoices?: Choices
+  onAncestryChoicesChange: (choices: Choices) => void
 }
 
 export function BuildGuide({
   build, currentStep, onChange, onProgress, onBackToConcept, onPlanSkills,
   startingLanguageNotes, onStartingLanguageNotesChange,
+  ancestryChoices, onAncestryChoicesChange,
 }: BuildGuideProps) {
   const stepIndex = buildSteps.indexOf(currentStep)
   const heading = useRef<HTMLHeadingElement>(null)
@@ -105,14 +101,21 @@ export function BuildGuide({
               </>
             ) : null}
 
-            {stepIndex === 1 ? (
+            {currentStep === 'heritage' ? (
+              <Suspense fallback={<p role="status">Loading heritage and ancestry feat rules…</p>}>
+                <AncestryChoices ancestry={build.ancestry} level={build.level}
+                  choices={ancestryChoices ?? emptyAncestryChoices} onChange={onAncestryChoicesChange} />
+              </Suspense>
+            ) : null}
+
+            {currentStep === 'background' ? (
               <>
                 <BuildOptionPicker kind="background" value={build.background} onChange={(background) => updateBuild({ background })} />
                 <BuildFitSuggestions kind="background" selected={build.background} onSelect={(background) => updateBuild({ background })} />
               </>
             ) : null}
 
-            {stepIndex === 2 ? (
+            {currentStep === 'class' ? (
               <>
                 <BuildOptionPicker kind="class" value={build.characterClass} onChange={(characterClass) => updateBuild({ characterClass })} />
                 {keys.length > 1 ? (
@@ -133,6 +136,7 @@ export function BuildGuide({
             {stepIndex === reviewIndex ? (
               <>
                 <BuildSummary build={build} />
+                <AncestryChoicesSummary choices={ancestryChoices} ancestry={build.ancestry} level={build.level} />
                 <details className="rounded-md border border-border p-3">
                   <summary className="cursor-pointer font-medium">Starting languages (optional)</summary>
                   <div className="mt-3 space-y-3">

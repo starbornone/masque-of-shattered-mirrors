@@ -1,12 +1,49 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-11T09:38:35+11:00",
+  "updatedAt": "2026-11-11T10:12:38+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
     "status": "active",
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
-  "items": []
+  "items": [
+    {
+      "id": "class-general-skill-feat-pickers",
+      "title": "Guide class, general, and skill feat choices",
+      "group": "Phase 7",
+      "notes": "Add level-aware feat slots and searchable Remaster options, explain prerequisites briefly, and account for bonus choices granted by heritage, ancestry feats, backgrounds, and class features. Preserve existing character and GM files."
+    },
+    {
+      "id": "spell-selection-guide",
+      "title": "Guide spell and cantrip selection",
+      "group": "Phase 7",
+      "notes": "Explain traditions, ranks, cantrips, spell slots, and prepared versus spontaneous casting where relevant. Offer choices appropriate to the selected class and level, with room for innate spells granted by ancestry options."
+    },
+    {
+      "id": "equipment-bulk-planner",
+      "title": "Add starting equipment and a bulk planner",
+      "group": "Phase 7",
+      "notes": "Guide weapon, armor, and adventuring gear choices with brief mechanical explanations. Track cost and bulk without assuming unconfirmed campaign starting wealth."
+    },
+    {
+      "id": "foundry-character-export",
+      "title": "Export player characters for Foundry VTT",
+      "group": "Phase 8",
+      "notes": "Design and verify a supported PF2e system export mapping. Export player data only; never include GM packages or tailoring notes. Keep the existing native backup format."
+    },
+    {
+      "id": "pathbuilder-character-export",
+      "title": "Export player characters for Pathbuilder",
+      "group": "Phase 8",
+      "notes": "Research supported exchange formats before promising compatibility, then implement and verify player-only transfer where feasible. Keep GM preparation separate."
+    },
+    {
+      "id": "multiple-character-drafts",
+      "title": "Support multiple saved character drafts",
+      "group": "Phase 8",
+      "notes": "Let users name, switch, and retain separate local drafts with clear replacement behavior. Preserve existing single-character saves and keep GM notes out of player storage. Multi-PC party balancing remains outside scope."
+    }
+  ]
 }

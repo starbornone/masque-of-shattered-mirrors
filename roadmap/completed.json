@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T09:38:35+11:00",
+  "updatedAt": "2026-11-11T10:12:38+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -279,6 +279,20 @@
       "group": "Phase 6",
       "notes": "The public character package preserves player answers, build, skills, and language notes. The protected GM workspace now exports a separate versioned package containing the character and exact edited session notes, and imports either kind of file. Invalid packages preserve the current workspace and the public importer rejects GM packages.",
       "completedAt": "2026-11-11T09:38:35+11:00"
+    },
+    {
+      "id": "heritage-ancestry-feat-choices",
+      "title": "Add heritage and ancestry feat choices",
+      "group": "Phase 7",
+      "notes": "Added a skippable heritage and ancestry feat step with 106 heritages and 403 ancestry feats from Player Core and Player Core 2, searchable rules and attribution, standard feat slots through the selected level, extra-choice notes, and custom options. Choices survive refresh and player/GM files. Compatibility guidance is advisory and granted effects are recorded rather than applied. GM review and tailoring remain protected.",
+      "completedAt": "2026-11-11T10:12:38+11:00"
+    },
+    {
+      "id": "compact-gm-file-panel",
+      "title": "Collapse GM file controls after loading a character",
+      "group": "Phase 6",
+      "notes": "Shorten the initial import guidance and collapse the file controls after a successful character or GM package import. A compact replacement row keeps them available without taking space from session notes.",
+      "completedAt": "2026-11-11T10:12:38+11:00"
     }
   ]
 }

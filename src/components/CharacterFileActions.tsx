@@ -60,7 +60,7 @@ export function CharacterFileActions({ draft, onRestore }: CharacterFileActionsP
         <div className="max-w-[18rem]">
           <h2 id="character-file-heading" className="font-heading text-2xl">Character file</h2>
           <p className="text-sm text-muted-foreground">
-            Save or restore your session-zero answers, attribute build, and planned skills in one JSON file.
+            Save or restore your session-zero answers, heritage and ancestry feats, attribute build, and planned skills in one JSON file.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">

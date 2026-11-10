@@ -1,12 +1,13 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import type { ChangeEvent } from 'react'
 import { parseCharacter } from '@/character/draft'
 import type { CharacterDraft } from '@/character/draft'
-import { BuildSummary } from '@/components/BuildGuide'
+import { BuildSummary } from '@/components/BuildSummary'
 import { SessionZeroSummary } from '@/components/SessionZeroSummary'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { canAssignSkills, evaluateSkillPlan } from '@/skills/plan'
 import { TailoringBrief } from './TailoringBrief'
+import { AncestryChoicesSummary } from '@/components/AncestryChoicesSummary'
 import { tailoringBrief } from './brief.ts'
 import { parseGmPackage } from './package.ts'
 import type { GmPackage } from './package.ts'
@@ -27,6 +28,7 @@ function CharacterSummary({ draft }: { draft: CharacterDraft }) {
         <CardHeader><h2 className="text-2xl">Character build</h2></CardHeader>
         <CardContent className="space-y-4">
           <BuildSummary build={build} />
+          <AncestryChoicesSummary choices={draft.ancestryChoices} ancestry={build.ancestry} level={build.level} />
           {trainedSkills.length ? (
             <section>
               <h3 className="text-xl">Planned skills</h3>
@@ -57,6 +59,7 @@ export function Workspace() {
   const [error, setError] = useState('')
   const [importCount, setImportCount] = useState(0)
   const [message, setMessage] = useState('')
+  const filePanel = useRef<HTMLDetailsElement>(null)
 
   async function openCharacter(event: ChangeEvent<HTMLInputElement>) {
     const file = event.currentTarget.files?.[0]
@@ -75,6 +78,7 @@ export function Workspace() {
         setWorkspace(nextWorkspace)
         setImportCount((count) => count + 1)
         setMessage(gmPackage ? 'GM package restored.' : 'Character loaded. Tailoring brief generated.')
+        if (filePanel.current) filePanel.current.open = false
       }
       else setError('Choose a valid JSON file from Export character or Export GM package. The current character and notes have been kept.')
     } catch {
@@ -96,24 +100,28 @@ export function Workspace() {
       </header>
       <main className="mx-auto flex max-w-[45rem] flex-col gap-6 px-4 py-7 sm:px-6">
         <Card>
-          <CardHeader>
-            <h2 className="text-2xl">Open a character or GM package</h2>
-            <p className="text-muted-foreground">A player character file generates a new brief. A GM package restores the character and edited notes. Files are read in this browser tab.</p>
-            {workspace ? <p className="text-muted-foreground">Opening a file replaces the current character and notes. Export a GM package first to keep your edits.</p> : null}
-          </CardHeader>
           <CardContent className="space-y-2">
-            <label className="block space-y-1">
-              <span className="font-medium">Character or GM package JSON file</span>
-              <input
-                type="file"
-                accept=".json,application/json"
-                disabled={reading}
-                className="block w-full rounded-md border border-input bg-background p-2 file:mr-3 file:font-medium file:text-primary"
-                onChange={openCharacter}
-              />
-            </label>
-            {error ? <p role="alert" className="text-destructive">{error}</p> : null}
-            <p role="status" className="text-muted-foreground">{message}</p>
+            <details ref={filePanel} open={!workspace}>
+              <summary className="cursor-pointer font-medium">
+                {workspace ? 'Replace character or GM package' : 'Open a character or GM package'}
+              </summary>
+              <div className="mt-3 space-y-2">
+                <p className="text-sm text-muted-foreground">A character generates a brief; a GM package restores saved notes.</p>
+                {workspace ? <p className="text-sm text-muted-foreground">Export your edits before replacing this workspace.</p> : null}
+                <label className="block space-y-1">
+                  <span className="sr-only">Character or GM package JSON file</span>
+                  <input
+                    type="file"
+                    accept=".json,application/json"
+                    disabled={reading}
+                    className="block w-full rounded-md border border-input bg-background p-2 file:mr-3 file:font-medium file:text-primary"
+                    onChange={openCharacter}
+                  />
+                </label>
+                {error ? <p role="alert" className="text-destructive">{error}</p> : null}
+              </div>
+            </details>
+            {message ? <p role="status" className="text-sm text-muted-foreground">{message}</p> : null}
           </CardContent>
         </Card>
         {workspace ? (

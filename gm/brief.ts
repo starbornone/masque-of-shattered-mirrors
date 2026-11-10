@@ -5,6 +5,7 @@ import type { CharacterDraft } from '../src/character/draft.ts'
 import { faithChoices } from '../src/session-zero/types.ts'
 import type { FaithChoice } from '../src/session-zero/types.ts'
 import { canAssignSkills, evaluateSkillPlan } from '../src/skills/plan.ts'
+import { ancestryChoiceName, ancestryFeatLevels } from '../src/ancestry/choices.ts'
 
 const deityHooks: Record<FaithChoice, string[]> = {
   pharasma: [
@@ -72,6 +73,17 @@ export function tailoringBrief(draft: CharacterDraft): string {
         `Level ${build.level} · ${buildSelections(build).map(({ name }) => name).join(' · ')}.`,
         `Attribute modifiers${complete ? '' : ' (unfinished)'} — ${calculate(build).rows.map(({ id, total }) => `${attributes[id]} ${total >= 0 ? '+' : ''}${total}`).join(', ')}.`,
       ],
+    },
+    {
+      title: 'Heritage and ancestry feats',
+      answer: draft.ancestryChoices ? [
+        draft.ancestryChoices.heritage ? `Heritage: ${ancestryChoiceName(draft.ancestryChoices.heritage, 'heritage')}. ${draft.ancestryChoices.heritage.notes}` : 'Heritage undecided.',
+        ...ancestryFeatLevels.filter((slot) => slot <= build.level).map((slot) => {
+          const choice = draft.ancestryChoices?.feats[slot]
+          return choice ? `Level ${slot}: ${ancestryChoiceName(choice, 'feat')}. ${choice.notes}` : `Level ${slot} ancestry feat undecided.`
+        }),
+      ].join('\n') : '',
+      notes: ['Check any senses, innate spells, or skill benefits from these choices when preparing opportunities. These recorded choices do not automatically change the attribute or skill calculations.'],
     },
     {
       title: 'Invitation',

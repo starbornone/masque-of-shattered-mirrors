@@ -5,7 +5,8 @@ import type { BuildDraft } from '@/attributes/draft'
 import { characterStorageKey, loadCharacterDraft, serializeCharacter } from '@/character/draft'
 import type { CharacterDraft } from '@/character/draft'
 import { BuildActions } from '@/components/BuildActions'
-import { BuildGuide, BuildSummary } from '@/components/BuildGuide'
+import { BuildGuide } from '@/components/BuildGuide'
+import { BuildSummary } from '@/components/BuildSummary'
 import { CampaignFit } from '@/components/CampaignFit'
 import { CharacterFileActions } from '@/components/CharacterFileActions'
 import { Navbar } from '@/components/Navbar'
@@ -145,6 +146,8 @@ function App() {
               onPlanSkills={skillsAvailable ? () => saveBuild({ ...buildDraft, step: 'skills' }) : undefined}
               startingLanguageNotes={character.startingLanguageNotes ?? ''}
               onStartingLanguageNotesChange={(startingLanguageNotes) => saveCharacter({ ...character, startingLanguageNotes })}
+              ancestryChoices={character.ancestryChoices}
+              onAncestryChoicesChange={(ancestryChoices) => saveCharacter({ ...character, ancestryChoices })}
             />
           </div>
         ) : null}
