@@ -52,14 +52,14 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 - [x] Remove the mode switch from the player interface
 - [x] Add a password-protected `/gm/` entry outside the player interface
-- [ ] Auto-generate a one-page GM summary from answers + build:
+- [x] Auto-generate a GM tailoring brief from answers + build:
   - Stake → scapegoat wiring options
   - Art → Verathe “honored guest” framing
   - Faith → which deity lever to seed early
   - Mask → Marius competition beat
   - Key skills → which NPCs/rooms pay off
-- [ ] Keep spoilers behind GM mode only
-- [ ] Copy-to-clipboard for session notes
+- [x] Keep tailoring suggestions in the protected GM build
+- [x] Copy-to-clipboard for session notes
 
 **Exit:** You can run session zero and leave with a personalization plan.
 

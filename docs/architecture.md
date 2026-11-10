@@ -1,6 +1,6 @@
 # Architecture
 
-The public app opens the player’s character guide, saved build step, or a shared build preview. The build review and shared preview include campaign fit. The protected `/gm/` workspace reads the player’s exported character file. The tailoring brief is planned in [ROADMAP.md](../ROADMAP.md).
+The public app opens the player’s character guide, saved build step, or a shared build preview. The build review and shared preview include campaign fit. The protected `/gm/` workspace reads the player’s exported character file and generates an editable tailoring brief.
 
 ## Goals that drive structure
 
@@ -47,7 +47,7 @@ The public app opens the player’s character guide, saved build step, or a shar
 | Attribute engine | [`src/attributes/`](../src/attributes/) holds the ported catalogs, boost ledger, and versioned build serialization |
 | Skills | [Skill planner](../src/components/SkillPlanner.tsx) for starting training, named Lore, and level-based increases |
 | CampaignFit | [Build suggestions](../src/components/BuildFitSuggestions.tsx) at the background and class steps, plus a [review checklist](../src/components/CampaignFit.tsx) that connects current modifiers to relevant checks |
-| GM workspace | [Read-only character review](../gm/Workspace.tsx) behind the [GM Function](../api/gm.ts). The tailoring brief is planned. |
+| GM workspace | [Character review](../gm/Workspace.tsx) and an [editable tailoring brief](../gm/TailoringBrief.tsx) behind the [GM Function](../api/gm.ts) |
 
 The header and browser tab share the same [SVG emblem](../public/favicon.svg). A fractured oval mirror frames the silver masquerade mask.
 
@@ -60,7 +60,7 @@ The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror 
 3. A complete attribute ledger unlocks the skill planner. Players enter starting training, and the planner applies increases in level order with rank limits. The draft stores skills locally. The review includes planned skill ranks and base modifiers in campaign fit. [Paizo’s Remaster character sheet](https://downloads.paizo.com/RemasterPlayerCoreCharacterSheet.pdf)
 4. A build URL contains only mechanics. Opening it previews the build, and choosing **Use shared build** replaces the saved mechanical draft. The printable ledger uses the same calculation as the live view.
 5. One versioned player draft stores concept answers, attributes, skills, and guide progress in localStorage. The app reads the older separate saves when a combined draft is unavailable. **Export character** downloads the same format. **Import character** validates the whole file before asking the player to replace their draft.
-6. The GM workspace imports the character file into memory and displays the player’s answers, build, planned skills, and language notes. The file stays in the browser tab.
+6. The GM workspace imports the character file into memory, displays the player’s choices, and generates a tailoring brief from curated campaign hooks. The GM can edit and copy the brief as Markdown. Importing another valid character regenerates it. The imported file and brief stay in the browser tab, so copy edits into session notes to retain them.
 
 Player export must never include GM-only spoilers. GM brief may reference campaign wiring that the player UI never shows.
 

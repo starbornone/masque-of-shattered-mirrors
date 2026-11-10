@@ -13,7 +13,7 @@ The guide starts with the invitation and character concept, then walks through a
 - **Skill planner** — Once attributes are complete, record starting training and plan later increases. The browser saves skill choices with the local build draft.
 - **Character file** — Export or restore session-zero answers, the attribute build, planned skills, and optional starting language notes in one JSON file. This works at any stage of the guide.
 - **Campaign fit** — The guide suggests backgrounds and classes with relevant boosts or training. The build review shows the modifiers that support Will, Perception, social skills, and investigation. An advisory appears when a finished build is heavily weighted toward physical attributes.
-- **GM workspace** — Open a player character file for review at the password-protected `/gm/` route. The tailoring brief is planned.
+- **GM workspace** — Open a player character file at the password-protected `/gm/` route. Review an editable tailoring brief and copy it into your session notes.
 
 ## What it does not do (yet)
 
@@ -27,7 +27,7 @@ The guide starts with the invitation and character concept, then walks through a
 | Mode | Audience | Content |
 |------|----------|---------|
 | Player | The one PC | Guided concept, attributes, and skills with a restorable character file |
-| GM | You | Read-only concept answers, attribute ledger, planned skills, and language notes |
+| GM | You | Character review and an editable tailoring brief with copy-to-clipboard |
 
 ## Tech intent
 
