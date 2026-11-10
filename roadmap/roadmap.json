@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-11T00:23:42+11:00",
+  "updatedAt": "2026-11-11T00:44:34+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -16,12 +16,6 @@
       "notes": "The GM entry must be absent from the player interface. Decide how it should be revealed before restoring the workspace."
     },
     {
-      "id": "configurable-start-level",
-      "title": "Make default start level configurable by the GM",
-      "group": "Phase 2",
-      "notes": "Confirm expected start level with the player before locking defaults (open decision)."
-    },
-    {
       "id": "gm-tailoring-brief-export",
       "title": "Auto-generate spoiler-gated GM tailoring brief with copy-to-clipboard",
       "group": "Phase 4",
@@ -32,12 +26,6 @@
       "title": "Ship single export package and import for prior exports",
       "group": "Phase 6",
       "notes": "Session-zero + attributes + skills + GM brief in one package. The player-only package is complete. The GM brief portion depends on the separate GM entry and tailoring brief."
-    },
-    {
-      "id": "optional-static-deploy",
-      "title": "Optionally deploy static build like pf.starmist.studio",
-      "group": "Phase 6",
-      "notes": "Ready to hand a link to the player when desired."
     }
   ]
 }

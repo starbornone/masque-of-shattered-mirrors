@@ -75,10 +75,9 @@ test('a normalized Lore topic stays stable through export and import', () => {
   assert.deepEqual(parseCharacter(serializeCharacter(draft)), draft)
 })
 
-test('loads older browser drafts and prefers a saved combined draft once present', (t) => {
+test('uses the campaign start level for a new build and preserves levels in older and current saves', (t) => {
   const saved = new Map([
     [sessionZeroStorageKey, serializeSessionZero(character.sessionZero.answers, character.sessionZero.step)],
-    [buildDraftStorageKey, serializeBuildDraft(character.buildDraft)],
   ])
   const original = Object.getOwnPropertyDescriptor(globalThis, 'localStorage')
   Object.defineProperty(globalThis, 'localStorage', {
@@ -90,11 +89,20 @@ test('loads older browser drafts and prefers a saved combined draft once present
     else Reflect.deleteProperty(globalThis, 'localStorage')
   })
 
-  assert.deepEqual(loadCharacterDraft(), character)
+  assert.deepEqual(loadCharacterDraft(7), {
+    sessionZero: character.sessionZero,
+    buildDraft: { build: normalizeBuild({ level: 7 }), step: null },
+  })
+  for (const invalid of [undefined, Number.NaN, 0, 5.5, 21]) {
+    assert.equal(loadCharacterDraft(invalid).buildDraft.build.level, 1)
+  }
+
+  saved.set(buildDraftStorageKey, serializeBuildDraft(character.buildDraft))
+  assert.deepEqual(loadCharacterDraft(7), character)
   const restored = {
     ...character,
     sessionZero: { ...character.sessionZero, answers: { ...emptySessionZero, faith: 'nocticula' as const } },
   }
   saved.set(characterStorageKey, serializeCharacter(restored))
-  assert.deepEqual(loadCharacterDraft(), restored)
+  assert.deepEqual(loadCharacterDraft(7), restored)
 })

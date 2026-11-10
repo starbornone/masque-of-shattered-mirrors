@@ -32,14 +32,14 @@ export function parseBuildDraft(serialized: string): BuildDraft | null {
   }
 }
 
-export function loadBuildDraft(): BuildDraft {
+export function loadBuildDraft(startLevel?: number): BuildDraft {
   try {
     const saved = parseBuildDraft(localStorage.getItem(buildDraftStorageKey) ?? '')
     if (saved) return saved
   } catch {
     // The guide also works when browser storage is unavailable.
   }
-  return { build: normalizeBuild(), step: null }
+  return { build: normalizeBuild({ level: startLevel }), step: null }
 }
 
 export function buildShareUrl(build: Build, pageUrl: string): string {

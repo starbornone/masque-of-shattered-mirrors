@@ -48,12 +48,12 @@ export function parseCharacter(serialized: string): CharacterDraft | null {
   }
 }
 
-export function loadCharacterDraft(): CharacterDraft {
+export function loadCharacterDraft(startLevel?: number): CharacterDraft {
   try {
     const saved = parseCharacter(localStorage.getItem(characterStorageKey) ?? '')
     if (saved) return saved
   } catch {
     // Fall back to the older saves or an empty draft.
   }
-  return { sessionZero: loadSessionZero(), buildDraft: loadBuildDraft() }
+  return { sessionZero: loadSessionZero(), buildDraft: loadBuildDraft(startLevel) }
 }

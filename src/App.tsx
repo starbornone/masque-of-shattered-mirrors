@@ -18,7 +18,9 @@ import type { SessionZeroDraft } from '@/session-zero/types'
 import { canAssignSkills, emptySkillPlan, parseSkillPlan } from '@/skills/plan'
 
 function App() {
-  const [character, setCharacter] = useState(loadCharacterDraft)
+  const [character, setCharacter] = useState(() => (
+    loadCharacterDraft(Number(import.meta.env.VITE_CAMPAIGN_START_LEVEL))
+  ))
   const [shared, setShared] = useState(() => {
     const requested = new URLSearchParams(window.location.search).get('build')
     return requested === null ? null : { build: parseBuild(requested) }

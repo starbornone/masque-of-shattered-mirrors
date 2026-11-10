@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T00:29:21+11:00",
+  "updatedAt": "2026-11-11T00:44:34+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -230,6 +230,20 @@
       "group": "Phase 2",
       "notes": "Summaries and direct Remaster rules links cover all presets. Players can search descriptions, choose an option from the results, or use the dropdown.",
       "completedAt": "2026-11-11T00:29:21+11:00"
+    },
+    {
+      "id": "configurable-start-level",
+      "title": "Make default start level configurable by the GM",
+      "group": "Phase 2",
+      "notes": "VITE_CAMPAIGN_START_LEVEL sets the level for new drafts and falls back to 1. Saved levels are preserved. The campaign’s intended starting level is an open decision.",
+      "completedAt": "2026-11-11T00:44:34+11:00"
+    },
+    {
+      "id": "optional-static-deploy",
+      "title": "Optionally deploy static build like pf.starmist.studio",
+      "group": "Phase 6",
+      "notes": "The maintainer confirmed that pushes to main trigger Vercel builds.",
+      "completedAt": "2026-11-11T00:44:34+11:00"
     }
   ]
 }
