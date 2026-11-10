@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-10T22:28:15+11:00",
+  "updatedAt": "2026-11-10T22:38:18+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -160,6 +160,20 @@
       "title": "Remove the mode switch from the player interface",
       "group": "Phase 4",
       "completedAt": "2026-11-10T22:28:15+11:00"
+    },
+    {
+      "id": "campaign-fit-checklist",
+      "title": "Score builds against night demands (Will, Perception, social, Stealth/Thievery)",
+      "group": "Phase 3",
+      "notes": "Also cover Athletics climax interventions, optional Religion, Performance flavor. Same scores for player and GM.",
+      "completedAt": "2026-11-10T22:38:18+11:00"
+    },
+    {
+      "id": "campaign-title-in-header",
+      "title": "Place the campaign title above the app name",
+      "group": "Phase 6",
+      "notes": "Replace the invitation line and remove the repeated title below the app name.",
+      "completedAt": "2026-11-10T22:38:18+11:00"
     }
   ]
 }

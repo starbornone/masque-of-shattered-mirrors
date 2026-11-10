@@ -5,6 +5,7 @@ import { buildDraftStorageKey, loadBuildDraft, serializeBuildDraft } from '@/att
 import type { BuildDraft } from '@/attributes/draft'
 import { BuildActions } from '@/components/BuildActions'
 import { BuildGuide, BuildSummary } from '@/components/BuildGuide'
+import { CampaignFit } from '@/components/CampaignFit'
 import { Navbar } from '@/components/Navbar'
 import { PrintableAttributeLedger } from '@/components/PrintableAttributeLedger'
 import { SessionZeroGuide } from '@/components/SessionZeroGuide'
@@ -25,7 +26,7 @@ function App() {
   const concept = useRef<HTMLDivElement>(null)
   const { build, step } = buildDraft
   const sharedBuild = shared?.build
-  const printBuild = sharedBuild ?? (step === 'review' ? build : null)
+  const reviewBuild = sharedBuild ?? (step === 'review' ? build : null)
 
   function saveDraft(next: SessionZeroDraft) {
     setDraft(next)
@@ -62,7 +63,7 @@ function App() {
   return (
     <div
       className="relative flex min-h-svh flex-col overflow-hidden text-foreground"
-      data-print-ledger={printBuild ? '' : undefined}
+      data-print-ledger={reviewBuild ? '' : undefined}
     >
       <img
         src={veratheMirror}
@@ -84,14 +85,11 @@ function App() {
             />
             <div>
               <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-primary">
-                An invitation to House Verathe
+                The Masque of Shattered Mirrors
               </p>
               <h1 className="font-heading text-3xl leading-none tracking-tight text-foreground md:text-4xl">
                 Masque Character Creator
               </h1>
-              <p className="mt-1.5 text-sm text-muted-foreground">
-                The Masque of Shattered Mirrors
-              </p>
             </div>
           </div>
         </div>
@@ -165,12 +163,14 @@ function App() {
             </Card>
           </section>
         ) : null}
+
+        {reviewBuild ? <CampaignFit build={reviewBuild} /> : null}
       </main>
 
       <div className="relative z-10">
         <Navbar />
       </div>
-      {printBuild ? <PrintableAttributeLedger build={printBuild} /> : null}
+      {reviewBuild ? <PrintableAttributeLedger build={reviewBuild} /> : null}
     </div>
   )
 }

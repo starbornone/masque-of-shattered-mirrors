@@ -1,6 +1,6 @@
 # Architecture
 
-The app opens the player’s character guide, saved build step, or a shared build preview. A separate GM entry point, CampaignFit, and GMBrief are planned in [ROADMAP.md](../ROADMAP.md).
+The app opens the player’s character guide, saved build step, or a shared build preview. The build review and shared preview include campaign fit. A separate GM entry point and GMBrief are planned in [ROADMAP.md](../ROADMAP.md).
 
 ## Goals that drive structure
 
@@ -29,7 +29,7 @@ The app opens the player’s character guide, saved build step, or a shared buil
                             ▼
                ┌────────────────────────┐
                │  CampaignFit           │
-               │  soft scores / flags   │
+               │  attributes and checks │
                └────────────┬───────────┘
                             ▼
                ┌────────────────────────┐
@@ -46,7 +46,7 @@ The app opens the player’s character guide, saved build step, or a shared buil
 | SessionZero | Guided questions, editable review, and [versioned storage and exports](../src/session-zero/draft.ts) |
 | Build | [Guided Remaster attribute planning](../src/components/BuildGuide.tsx), a share link, and a printable ledger |
 | Attribute engine | [`src/attributes/`](../src/attributes/) holds the ported catalogs, boost ledger, and versioned build serialization |
-| CampaignFit | Checklist against Will, Perception, social, Stealth/Thievery, investigation |
+| CampaignFit | [Player-facing checklist](../src/components/CampaignFit.tsx) that connects current attribute modifiers to relevant checks |
 | GMBrief | One-page tailoring summary; spoilers only when mode is GM |
 
 The header and browser tab share the same [SVG emblem](../public/favicon.svg). A fractured oval mirror frames the silver masquerade mask.
@@ -57,7 +57,7 @@ The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror 
 
 1. Player answers or skips the session-zero questions. The browser stores answers and progress together in localStorage, and the review offers JSON and Markdown downloads of the answers.
 2. Player selects ancestry, background, class, level, and boosts. The ported engine normalizes and calculates the current `Build`. The browser saves the build and current step separately from concept answers. The review shows unchosen options and unassigned boosts in an incomplete draft.
-3. Campaign-fit reads `Build` (+ maybe answer hints) → soft tips and combat-as-default warnings for both audiences.
+3. Campaign fit uses the calculated build in the review and shared preview. It shows the attribute contribution for each check. Proficiency belongs to the planned skill planner. [Paizo’s Remaster character sheet](https://downloads.paizo.com/RemasterPlayerCoreCharacterSheet.pdf)
 4. GM mode overlays mapping of answers → scapegoat/stake wiring, Verathe framing, deity levers, Marius/mask beat.
 5. A build URL contains only mechanics. Opening it previews the build, and choosing **Use shared build** replaces the saved mechanical draft. The printable ledger uses the same calculation as the live view. Concept answers export separately as Markdown or JSON.
 

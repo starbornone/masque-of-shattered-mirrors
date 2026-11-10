@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-10T22:28:15+11:00",
+  "updatedAt": "2026-11-10T22:38:18+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -20,12 +20,6 @@
       "title": "Make default start level configurable by the GM",
       "group": "Phase 2",
       "notes": "Confirm expected start level with the player before locking defaults (open decision)."
-    },
-    {
-      "id": "campaign-fit-checklist",
-      "title": "Score builds against night demands (Will, Perception, social, Stealth/Thievery)",
-      "group": "Phase 3",
-      "notes": "Also cover Athletics climax interventions, optional Religion, Performance flavor. Same scores for player and GM."
     },
     {
       "id": "warn-combat-default-builds",

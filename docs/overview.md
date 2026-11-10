@@ -15,7 +15,7 @@ This is not a general PF2e sheet builder. It walks the player through a **sessio
 
 - **Session zero (player-safe)** — Why they accepted the invitation; who they would risk the night for; their art or craft; optional faith (Pharasma, Nocticula, or the Black Butterfly); the beautiful lie their mask tells.
 - **Build** — Ancestry, background, class, level, attribute boosts/flaws, using the same Remaster ledger model as [`pf2e-point-buy-calc`](https://github.com/starbornone/pf2e-point-buy-calc).
-- **Campaign fit** — Soft guidance toward Will, Perception, social skills, Stealth/Thievery, and investigation over pure damage. Flags builds that lean hard into combat-as-default.
+- **Campaign fit** — A checklist showing how the build’s attribute modifiers contribute to Will, Perception, social skills, investigation, and other relevant checks.
 - **GM handoff** — Export a short tailoring brief (stake, art, faith, mask) without leaking ritual secrets. Optional player export of the attribute ledger / share link.
 
 ## Non-goals
@@ -41,7 +41,7 @@ Campaign notes live one level up in this folder tree, outside the app.
 - Player Core / Player Core 2 catalogs first; custom rows for anything else
 - Shareable build URL + JSON backup for the mechanical side; Markdown or JSON for session-zero answers
 
-The player can resume the guide in the same browser, download concept answers, and share or print a mechanical build. A separate GM entry and campaign fit are planned.
+The player can resume the guide in the same browser, download concept answers, and review campaign fit before sharing or printing a mechanical build. A separate GM entry is planned.
 
 ## Next reads
 

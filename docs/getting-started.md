@@ -41,6 +41,7 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 6. Reload to restore the build and its current step.
 7. Use **Share build** in the review to copy a mechanical link. Opening it shows a preview. Choose **Use shared build** to replace the saved build in that browser.
 8. Use **Print attribute ledger** in the review or preview to print or save a PDF from your browser.
+9. Check **Campaign fit** beneath the ledger. If you change a boost, the corresponding modifier changes in the checklist.
 
 ### First useful action
 

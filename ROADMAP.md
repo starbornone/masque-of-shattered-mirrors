@@ -41,14 +41,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 ## Phase 3 — Campaign fit
 
-- [ ] Score or checklist against night demands:
-  - Will / Wisdom pressure (shards, mirrors, entity)
-  - Perception / Investigation
-  - Diplomacy, Deception, Intimidation, Society
-  - Stealth, Thievery
-  - Athletics (climax interventions)
-  - Religion (optional deity path)
-  - Performance (Velys / mask competition flavor)
+- [x] Show a build-based checklist for Will, Perception, social and investigative skills, Stealth, Thievery, Athletics, and optional Religion and Performance.
 - [ ] Warn when Strength/attack focus is the only investment (not forbidden—flagged)
 - [ ] Suggest backgrounds that rhyme with the night (Artist, Entertainer, Noble, Acolyte, Detective, Servant, Refugee, Haunted, Blessed, Charlatan, etc.) without forcing them
 - [ ] Suggest classes that can carry solo social-horror (Bard, Rogue, Investigator, Oracle, Witch, Cleric, Swashbuckler, …) as *hints*, not locks
