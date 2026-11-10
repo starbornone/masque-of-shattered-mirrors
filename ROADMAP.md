@@ -53,6 +53,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 - [x] Remove the mode switch from the player interface
 - [x] Add a password-protected `/gm/` entry outside the player interface
 - [x] Support the same password check in local dev and preview, with documented GM setup
+- [x] Collapse imported character file controls to leave more room for GM notes
 - [x] Auto-generate a GM tailoring brief from answers + build:
   - Stake → scapegoat wiring options
   - Art → Verathe “honored guest” framing
@@ -83,14 +84,27 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 **Exit:** Ready to hand a link to the player.
 
-## Later (explicitly out of early scope)
+## Phase 7 — Extend character creation
 
-- Feat and spell pickers
-- Ancestry feat / heritage detail beyond boosts
-- Equipment and bulk
-- Foundry VTT / Pathbuilder JSON
-- Multi-character parties
-- In-app reading of campaign markdown (keep notes in the vault; app stays a creator)
+- [x] Add heritage and ancestry feat choices with beginner guidance, rules references, and saved selections
+- [ ] Add class, general, and skill feat pickers, including bonus choices granted by other options
+- [ ] Add spell and cantrip selection appropriate to class and level
+- [ ] Add starting equipment choices, costs, and bulk
+
+**Exit:** The player can record the remaining character creation choices with brief mechanical guidance.
+
+## Phase 8 — Character management and integrations
+
+- [ ] Export player characters for Foundry VTT after verifying its supported format
+- [ ] Export player characters for Pathbuilder after verifying supported transfer options
+- [ ] Support multiple named local character drafts
+
+**Exit:** Characters remain easy to manage and transfer, with GM preparation kept separate.
+
+## Outside scope
+
+- Multi-PC party balancing
+- In-app reading of campaign markdown (cancelled; keep campaign notes in the vault)
 
 ## Open decisions
 

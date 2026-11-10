@@ -90,6 +90,14 @@ Lightweight records inferred from [README.md](../README.md) and [ROADMAP.md](../
 
 ---
 
+## ADR-010 — Record ancestry choices separately from attribute math
+
+**Decision.** Add a skippable heritage and ancestry feat step with the Player Core and Player Core 2 options, including versatile heritages and custom entries. Store choices and extra-choice notes in an optional field on the character draft, preserving older exports and the attribute engine’s formats.
+
+**Consequences.** Filter suggestions by ancestry, heritage, slot level, and lineage timing. Show prerequisites and advisory review messages without blocking navigation. Preserve choices when ancestry, heritage, or level changes. The player accounts for granted training and other effects manually; this step does not claim to validate a complete character sheet. Keep campaign-specific tailoring in the protected GM build.
+
+---
+
 ## Related
 
 - [Architecture](architecture.md)

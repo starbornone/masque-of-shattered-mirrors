@@ -57,16 +57,20 @@ Path alias: `@/*` → `./src/*` (TypeScript + Vite).
 | Boost math, serialize/parse | [Attribute engine](../src/attributes/build.ts) from the point-buy calculator |
 | Invitation + questions | [Session-zero guide](../src/components/SessionZeroGuide.tsx) |
 | Ancestry, background, class, and boosts | [Build guide](../src/components/BuildGuide.tsx) |
-| Fit tips / combat flags | CampaignFit (planned) |
-| Spoiler summaries | GMBrief (GM mode only, planned) |
+| Fit tips / combat flags | CampaignFit |
+| Spoiler summaries | Protected `gm/` workspace and brief generator |
 | Shared chrome / controls | `src/components/ui/` via shadcn |
 
 Details: [architecture.md](architecture.md).
 
+## Ancestry rules catalog
+
+See [ancestry option design and refresh instructions](ancestry-options.md). The importer reads a local upstream checkout and includes only the two Remaster Player Core books. Keep the rules attribution with the generated data and verify player and GM file round trips.
+
 ## Unsupported platforms
 
 - No native mobile app — local-first **static web** only.
-- No server-side auth, database, or multi-tenant hosting in scope.
+- The `/gm/` route uses server-side password protection. No database or multi-tenant hosting is in scope.
 - Campaign markdown is **not** loaded in-app; keep notes in the vault one level up.
 
 ## Related

@@ -4,12 +4,13 @@ A Pathfinder 2e Remaster character creator for **The Masque of Shattered Mirrors
 
 The player works through a **session-zero brief**, a **mechanical build**, and a **campaign-fit check**. The GM can open the player’s exported character for review.
 
-The guide starts with the invitation and character concept, then walks through ancestry, background, class, and attribute boosts. It assumes tabletop roleplaying experience and explains Pathfinder 2e Remaster rules as they come up. The build uses the boost logic from [`pf2e-point-buy-calc`](https://github.com/starbornone/pf2e-point-buy-calc).
+The guide starts with the invitation and character concept, then walks through ancestry, heritage, ancestry feats, background, class, and attribute boosts. It assumes tabletop roleplaying experience and explains Pathfinder 2e Remaster rules as they come up. The build uses the boost logic from [`pf2e-point-buy-calc`](https://github.com/starbornone/pf2e-point-buy-calc).
 
 ## What it does
 
 - **Session zero (player-safe)** — Why they accepted the invitation; who they would risk the night for; their art or craft; optional faith (Pharasma, Nocticula, or the Black Butterfly); the beautiful lie their mask tells.
 - **Build** — Choose ancestry, background, class, level, and attribute boosts and flaws. Browse searchable summaries and rules links before choosing. The browser saves your progress, and the review offers a mechanical share link and printable ledger.
+- **Heritage and ancestry feats** — Search Player Core and Player Core 2 options, read their rules, and record choices for the ancestry feat slots up to your level. Versatile heritages expand the available feats. Save extra-choice notes or use a custom entry for another source. Choices travel with character files and GM packages. Prerequisites remain advisory; granted abilities and training are recorded, not automatically applied.
 - **Skill planner** — Once attributes are complete, record starting training and plan later increases. The browser saves skill choices with the local build draft.
 - **Character file** — Export or restore session-zero answers, the attribute build, planned skills, and optional starting language notes in one JSON file. This works at any stage of the guide.
 - **Campaign fit** — The guide suggests backgrounds and classes with relevant boosts or training. The build review shows the modifiers that support Will, Perception, social skills, and investigation. An advisory appears when a finished build is heavily weighted toward physical attributes.
@@ -17,8 +18,8 @@ The guide starts with the invitation and character concept, then walks through a
 
 ## What it does not do (yet)
 
-- Full feat/spell/equipment catalogs
-- Foundry/Pathbuilder import-export
+- Class, general, and skill feat pickers; spell and equipment catalogs (planned)
+- Foundry/Pathbuilder exports and multiple saved characters (planned)
 - Multi-PC party balancing
 - Spoiling the ritual, scapegoat identity, or deity climax levers to the player
 
@@ -91,6 +92,7 @@ For local development, set the same variable in `.env.local` and restart Vite. [
 ## Documentation
 
 - [docs/getting-started.md](docs/getting-started.md) — local setup, troubleshooting, and a walkthrough of the player guide
+- [docs/ancestry-options.md](docs/ancestry-options.md) — heritage and ancestry feat scope, data sources, and refresh instructions
 - [docs/overview.md](docs/overview.md) — product overview for humans and agents
 - [AGENTS.md](AGENTS.md) — working agreements and roadmap rules for coding agents
 - [roadmap/roadmap.json](roadmap/roadmap.json) — machine-readable todo list (highest priority first)

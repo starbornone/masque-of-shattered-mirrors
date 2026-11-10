@@ -57,6 +57,7 @@ The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror 
 
 1. Player answers or skips the session-zero questions. The review offers JSON and Markdown downloads of the answers.
 2. Player selects ancestry, background, class, level, and boosts. The ported engine normalizes and calculates the current `Build`. The review shows unchosen options and unassigned boosts in an incomplete draft.
+   A separate heritage and ancestry feat step follows ancestry. The optional `CharacterDraft.ancestryChoices` field stores one heritage, feat choices by standard slot level, and notes for each choice. The attribute `Build` and its share/print formats stay unchanged. Character saves, player JSON, and nested characters in GM packages include these selections. Older files without the field remain valid. See [ancestry option design and sources](ancestry-options.md).
 3. A complete attribute ledger unlocks the skill planner. Players enter starting training, and the planner applies increases in level order with rank limits. The draft stores skills locally. The review includes planned skill ranks and base modifiers in campaign fit. [Paizo’s Remaster character sheet](https://downloads.paizo.com/RemasterPlayerCoreCharacterSheet.pdf)
 4. A build URL contains only mechanics. Opening it previews the build, and choosing **Use shared build** replaces the saved mechanical draft. The printable ledger uses the same calculation as the live view.
 5. One versioned player draft stores concept answers, attributes, skills, and guide progress in localStorage. The app reads the older separate saves when a combined draft is unavailable. **Export character** downloads the same format. **Import character** validates the whole file before asking the player to replace their draft.
@@ -77,6 +78,7 @@ The skill planner records level-1 training entered by the player and uses the st
 ## Catalog boundary
 
 - First-class options: **Player Core** and **Player Core 2**.
+- Heritage and ancestry feat metadata is bundled separately from the rules descriptions. The guide loads the searchable rules picker on demand at the heritage step. GM review needs only metadata and selected notes, keeping the larger descriptions out of its bundle.
 - Anything else: custom rows, not a full AoN scrape.
 - Skills planner (Phase 5) stays a sketch for the night—not a full digital sheet.
 
