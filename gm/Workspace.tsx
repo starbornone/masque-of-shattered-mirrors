@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { canAssignSkills, evaluateSkillPlan } from '@/skills/plan'
 import { TailoringBrief } from './TailoringBrief'
 import { AncestryChoicesSummary } from '@/components/AncestryChoicesSummary'
+import { FeatChoicesSummary } from '@/components/FeatChoicesSummary'
 import { tailoringBrief } from './brief.ts'
 import { parseGmPackage } from './package.ts'
 import type { GmPackage } from './package.ts'
@@ -29,6 +30,7 @@ function CharacterSummary({ draft }: { draft: CharacterDraft }) {
         <CardContent className="space-y-4">
           <BuildSummary build={build} />
           <AncestryChoicesSummary choices={draft.ancestryChoices} ancestry={build.ancestry} level={build.level} />
+          <FeatChoicesSummary character={draft} />
           {trainedSkills.length ? (
             <section>
               <h3 className="text-xl">Planned skills</h3>

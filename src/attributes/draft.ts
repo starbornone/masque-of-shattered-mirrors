@@ -4,7 +4,7 @@ import { parseSkillPlan } from '../skills/plan.ts'
 import type { SkillPlan } from '../skills/plan.ts'
 
 export const buildDraftStorageKey = 'masque-build-draft'
-export const buildSteps = ['ancestry', 'heritage', 'background', 'class', 'boosts', 'review'] as const
+export const buildSteps = ['ancestry', 'heritage', 'background', 'class', 'boosts', 'feats', 'review'] as const
 export type BuildGuideStep = typeof buildSteps[number]
 export type BuildStep = BuildGuideStep | 'skills'
 

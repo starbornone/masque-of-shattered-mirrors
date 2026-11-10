@@ -138,6 +138,7 @@ function App() {
         {!sharedBuild && step && step !== 'skills' ? (
           <div className="mx-auto w-full max-w-2xl">
             <BuildGuide
+              character={character}
               build={build}
               currentStep={step}
               onChange={(next) => saveBuild({ ...buildDraft, build: next, step })}
@@ -148,6 +149,7 @@ function App() {
               onStartingLanguageNotesChange={(startingLanguageNotes) => saveCharacter({ ...character, startingLanguageNotes })}
               ancestryChoices={character.ancestryChoices}
               onAncestryChoicesChange={(ancestryChoices) => saveCharacter({ ...character, ancestryChoices })}
+              onFeatChoicesChange={(featChoices) => saveCharacter({ ...character, featChoices })}
             />
           </div>
         ) : null}

@@ -6,6 +6,7 @@ import { faithChoices } from '../src/session-zero/types.ts'
 import type { FaithChoice } from '../src/session-zero/types.ts'
 import { canAssignSkills, evaluateSkillPlan } from '../src/skills/plan.ts'
 import { ancestryChoiceName, ancestryFeatLevels } from '../src/ancestry/choices.ts'
+import { selectedFeatRows } from '../src/feats/choices.ts'
 
 const deityHooks: Record<FaithChoice, string[]> = {
   pharasma: [
@@ -84,6 +85,11 @@ export function tailoringBrief(draft: CharacterDraft): string {
         }),
       ].join('\n') : '',
       notes: ['Check any senses, innate spells, or skill benefits from these choices when preparing opportunities. These recorded choices do not automatically change the attribute or skill calculations.'],
+    },
+    {
+      title: 'Class, general, and skill feats',
+      answer: selectedFeatRows(draft).map(({ slot, choice, name }) => `${slot.label}: ${name}. ${choice.notes}`).join('\n'),
+      notes: ['Check these abilities when preparing opportunities. Recorded feat choices do not automatically apply their bonuses, training, spells, or other benefits.'],
     },
     {
       title: 'Invitation',
