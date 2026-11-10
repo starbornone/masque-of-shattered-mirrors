@@ -16,12 +16,14 @@
 
 ## Install and run
 
+From the repository root, install the locked dependencies and start Vite.
+
 ```sh
 npm ci
 npm run dev
 ```
 
-Open the URL Vite prints (usually `http://localhost:5173`).
+The development server defaults to `http://localhost:5173`. Run `npm run build` before `npm run preview` to serve the compiled app at `http://localhost:4173`. Use the URL printed in the terminal if Vite picks another port, and press **Ctrl+C** to stop either server.
 
 | Script | Purpose |
 |--------|---------|
@@ -29,7 +31,7 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 | `npm run build` | Typecheck + production build to `dist/` |
 | `npm run lint` | `oxlint` |
 | `npm test` | Attribute, skill planner, and draft storage and export tests |
-| `npm run preview` | Serve the production build |
+| `npm run preview` | Serve the existing build in `dist/` locally |
 
 ### Verify success
 
@@ -56,6 +58,7 @@ Run `npm test` to check the attribute engine before changing the build flow. See
 | Symptom | Likely cause |
 |---------|----------------|
 | `npm ci` engine warning / Vite fails | Node below 22.18 |
+| `npm ci` reports `EPERM` on a native dependency on Windows | A running server may have the file open. Stop the project’s Vite servers and retry. |
 | `@/` imports fail in the editor | `paths` missing from `tsconfig.app.json` / Vite alias |
 | Boost totals disagree with Remaster expectations | Check build normalization and run the boost smoke tests |
 | Player sees scapegoat / ritual / climax levers | GM content leaked — check mode gating when it lands |

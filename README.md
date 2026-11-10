@@ -42,21 +42,31 @@ The adventure is a social-horror masquerade. Combat is a failure state. Guests a
 
 Campaign notes live one level up in this folder tree.
 
-## Run
+## Run locally
 
-Requires Node **22.18+** or **24+**.
+Install Node.js **22.18+** or **24+** with npm. In a terminal at the repository root, install the locked dependencies and start the development server.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Other scripts include `npm run build`, `npm run lint`, `npm test`, and `npm run preview`.
+Open [http://localhost:5173](http://localhost:5173/). If the port is busy, use the URL Vite prints in the terminal. Press **Ctrl+C** in that terminal to stop the server.
 
-Dev server defaults to Vite’s local URL (usually `http://localhost:5173`). Deploy target TBD.
+Run the checks, build the app into `dist/`, and serve that build locally.
+
+```sh
+npm test
+npm run lint
+npm run build
+npm run preview
+```
+
+The production preview defaults to [http://localhost:4173](http://localhost:4173/). Rebuild before previewing source changes. The development and preview ports have separate browser saves. Use **Export character** and **Import character** to move a draft between them.
 
 ## Documentation
 
+- [docs/getting-started.md](docs/getting-started.md) — local setup, troubleshooting, and a walkthrough of the player guide
 - [docs/overview.md](docs/overview.md) — product overview for humans and agents
 - [AGENTS.md](AGENTS.md) — working agreements and roadmap rules for coding agents
 - [roadmap/roadmap.json](roadmap/roadmap.json) — machine-readable todo list (highest priority first)
