@@ -5,10 +5,11 @@ import type { Build } from '@/attributes/build'
 import { buildSteps } from '@/attributes/draft'
 import type { BuildGuideStep } from '@/attributes/draft'
 import { buildSelections } from '@/attributes/ledger'
-import { ancestries, attributeIds, attributes, backgrounds, classes } from '@/attributes/options'
+import { attributeIds, attributes } from '@/attributes/options'
 import { AttributeLedger, AttributeSelect, BoostSlots, BuildBoosts } from '@/components/BuildBoosts'
 import { BuildActions } from '@/components/BuildActions'
 import { BuildFitSuggestions } from '@/components/BuildFitSuggestions'
+import { BuildOptionPicker } from '@/components/BuildOptionPicker'
 import { GuideHeading } from '@/components/GuideHeading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -23,41 +24,6 @@ const steps = [
 
 const reviewIndex = steps.length - 1
 const boostsIndex = reviewIndex - 1
-const sourceGroups = [
-  { label: 'Player Core', core2: false },
-  { label: 'Player Core 2', core2: true },
-]
-
-type Preset = { name: string; core2?: boolean }
-
-function PresetSelect({ label, catalog, value, onChange }: {
-  label: string
-  catalog: Record<string, Preset>
-  value: string
-  onChange: (value: string) => void
-}) {
-  const options = Object.entries(catalog).sort(([, a], [, b]) => a.name.localeCompare(b.name))
-  return (
-    <label className="block space-y-1">
-      <span className="font-medium">{label}</span>
-      <select
-        className="min-h-11 w-full rounded-md border border-input bg-background px-3 text-foreground focus-visible:outline-2 focus-visible:outline-ring"
-        value={value}
-        onChange={(event) => onChange(event.currentTarget.value)}
-      >
-        {label !== 'Ancestry' ? <option value="">Decide later</option> : null}
-        {sourceGroups.map(({ label, core2 }) => (
-          <optgroup key={label} label={label}>
-            {options.filter(([, option]) => Boolean(option.core2) === core2).map(([id, option]) => (
-              <option key={id} value={id}>{option.name}</option>
-            ))}
-          </optgroup>
-        ))}
-        <option value="custom">Custom</option>
-      </select>
-    </label>
-  )
-}
 
 export function BuildSummary({ build }: { build: Build }) {
   return (
@@ -117,7 +83,7 @@ export function BuildGuide({ build, currentStep, onChange, onProgress, onBackToC
           <CardContent className="space-y-4">
             {stepIndex === 0 ? (
               <>
-                <PresetSelect label="Ancestry" catalog={ancestries} value={build.ancestry} onChange={(ancestry) => updateBuild({ ancestry })} />
+                <BuildOptionPicker kind="ancestry" value={build.ancestry} onChange={(ancestry) => updateBuild({ ancestry })} />
                 <label className="flex min-h-11 items-center gap-2">
                   <input type="checkbox" className="accent-primary" checked={build.alternate} onChange={(event) => updateBuild({ alternate: event.currentTarget.checked })} />
                   Take two boosts of your choice instead of the listed ancestry boosts and flaw
@@ -134,14 +100,14 @@ export function BuildGuide({ build, currentStep, onChange, onProgress, onBackToC
 
             {stepIndex === 1 ? (
               <>
-                <PresetSelect label="Background" catalog={backgrounds} value={build.background} onChange={(background) => updateBuild({ background })} />
+                <BuildOptionPicker kind="background" value={build.background} onChange={(background) => updateBuild({ background })} />
                 <BuildFitSuggestions kind="background" selected={build.background} onSelect={(background) => updateBuild({ background })} />
               </>
             ) : null}
 
             {stepIndex === 2 ? (
               <>
-                <PresetSelect label="Class" catalog={classes} value={build.characterClass} onChange={(characterClass) => updateBuild({ characterClass })} />
+                <BuildOptionPicker kind="class" value={build.characterClass} onChange={(characterClass) => updateBuild({ characterClass })} />
                 {keys.length > 1 ? (
                   <AttributeSelect label="Key attribute" choices={keys} value={build.key} onChange={(key) => updateBuild({ key })} emptyLabel="Decide later" />
                 ) : null}

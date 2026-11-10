@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T00:23:42+11:00",
+  "updatedAt": "2026-11-11T00:29:21+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -223,6 +223,13 @@
       "group": "Phase 6",
       "notes": "Document Node and npm setup, dependency installation, development, tests, lint, build, and local preview. Include default ports and Vite’s behavior when a port is busy.",
       "completedAt": "2026-11-11T00:23:42+11:00"
+    },
+    {
+      "id": "browse-character-option-guides",
+      "title": "Explain ancestry, background, and class options before selection",
+      "group": "Phase 2",
+      "notes": "Summaries and direct Remaster rules links cover all presets. Players can search descriptions, choose an option from the results, or use the dropdown.",
+      "completedAt": "2026-11-11T00:29:21+11:00"
     }
   ]
 }
