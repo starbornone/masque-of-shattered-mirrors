@@ -6,6 +6,7 @@ import { BuildSummary } from '@/components/BuildGuide'
 import { SessionZeroSummary } from '@/components/SessionZeroSummary'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { canAssignSkills, evaluateSkillPlan } from '@/skills/plan'
+import { TailoringBrief } from './TailoringBrief'
 
 function CharacterSummary({ draft }: { draft: CharacterDraft }) {
   const { build, skills } = draft.buildDraft
@@ -51,6 +52,7 @@ export function Workspace() {
   const [draft, setDraft] = useState<CharacterDraft | null>(null)
   const [reading, setReading] = useState(false)
   const [error, setError] = useState('')
+  const [importCount, setImportCount] = useState(0)
 
   async function openCharacter(event: ChangeEvent<HTMLInputElement>) {
     const file = event.currentTarget.files?.[0]
@@ -61,7 +63,10 @@ export function Workspace() {
     setError('')
     try {
       const character = parseCharacter(await file.text())
-      if (character) setDraft(character)
+      if (character) {
+        setDraft(character)
+        setImportCount((count) => count + 1)
+      }
       else setError('Choose a JSON file downloaded with Export character.')
     } catch {
       setError('This file couldn’t be read.')
@@ -101,7 +106,12 @@ export function Workspace() {
             {draft ? <p role="status" className="text-muted-foreground">Character loaded.</p> : null}
           </CardContent>
         </Card>
-        {draft ? <CharacterSummary draft={draft} /> : null}
+        {draft ? (
+          <>
+            <TailoringBrief key={importCount} draft={draft} />
+            <CharacterSummary draft={draft} />
+          </>
+        ) : null}
       </main>
     </>
   )

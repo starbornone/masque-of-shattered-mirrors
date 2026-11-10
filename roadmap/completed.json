@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T01:31:44+11:00",
+  "updatedAt": "2026-11-11T09:25:32+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -258,6 +258,13 @@
       "group": "Phase 4",
       "notes": "The Vercel Function guards the GM workspace and its assets. The workspace imports a player character for read-only review. Production activation requires configuring the password and deploying.",
       "completedAt": "2026-11-11T01:31:44+11:00"
+    },
+    {
+      "id": "gm-tailoring-brief-export",
+      "title": "Auto-generate spoiler-gated GM tailoring brief with copy-to-clipboard",
+      "group": "Phase 4",
+      "notes": "Importing a character generates editable suggestions for the invitation, intended victim, art, deity, mask competition, and planned skills. Copy the Markdown into session notes or regenerate it from the character. All campaign hooks are confined to the protected GM build.",
+      "completedAt": "2026-11-11T09:25:32+11:00"
     }
   ]
 }
