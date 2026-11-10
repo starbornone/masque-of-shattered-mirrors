@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-11T10:12:38+11:00",
+  "updatedAt": "2026-11-11T10:48:11+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -9,12 +9,6 @@
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
   "items": [
-    {
-      "id": "class-general-skill-feat-pickers",
-      "title": "Guide class, general, and skill feat choices",
-      "group": "Phase 7",
-      "notes": "Add level-aware feat slots and searchable Remaster options, explain prerequisites briefly, and account for bonus choices granted by heritage, ancestry feats, backgrounds, and class features. Preserve existing character and GM files."
-    },
     {
       "id": "spell-selection-guide",
       "title": "Guide spell and cantrip selection",

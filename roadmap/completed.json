@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T10:12:38+11:00",
+  "updatedAt": "2026-11-11T10:48:11+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -293,6 +293,13 @@
       "group": "Phase 6",
       "notes": "Shorten the initial import guidance and collapse the file controls after a successful character or GM package import. A compact replacement row keeps them available without taking space from session notes.",
       "completedAt": "2026-11-11T10:12:38+11:00"
+    },
+    {
+      "id": "class-general-skill-feat-pickers",
+      "title": "Guide class, general, and skill feat choices",
+      "group": "Phase 7",
+      "notes": "Added a skippable feat step with 1,418 Remaster Player Core options, class-specific schedules, background and class fixed grants, common heritage/ancestry bonus choices, Fighter daily choices, and manual slots for subclass or conditional grants. Choices, notes, and inactive selections survive refresh and player/GM files. Prerequisites remain advisory and effects are not automatically applied. GM review and tailoring stay protected.",
+      "completedAt": "2026-11-11T10:48:11+11:00"
     }
   ]
 }

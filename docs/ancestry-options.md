@@ -13,6 +13,8 @@ Suggestions check ancestry, heritage, and slot level. They do not fully validate
 
 The step records choices without applying their effects. The player includes granted training in the skill planner and handles senses, innate spells, bonuses, and other benefits using the selected rules. Attribute math remains in the existing engine. [Player Core character creation](https://2e.aonprd.com/Rules.aspx?ID=2027), [leveling up](https://2e.aonprd.com/Rules.aspx?ID=2065)
 
+The later [feat guide](feat-choices.md) opens separate bonus choices for Versatile Human, Ancient Elf, Natural Ambition, General Training, Advanced General Training, and Multitalented. Ancestral Paragon can also add a bonus ancestry feat there. Use an extra feat slot for other conditional grants.
+
 ## Storage and privacy
 
 The optional `ancestryChoices` field in version-1 character data has this shape:

@@ -87,7 +87,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 ## Phase 7 — Extend character creation
 
 - [x] Add heritage and ancestry feat choices with beginner guidance, rules references, and saved selections
-- [ ] Add class, general, and skill feat pickers, including bonus choices granted by other options
+- [x] Add class, general, and skill feat pickers, including bonus choices granted by other options
 - [ ] Add spell and cantrip selection appropriate to class and level
 - [ ] Add starting equipment choices, costs, and bulk
 

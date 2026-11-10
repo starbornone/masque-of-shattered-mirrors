@@ -67,6 +67,8 @@ Details: [architecture.md](architecture.md).
 
 See [ancestry option design and refresh instructions](ancestry-options.md). The importer reads a local upstream checkout and includes only the two Remaster Player Core books. Keep the rules attribution with the generated data and verify player and GM file round trips.
 
+The [feat importer](../scripts/import-feat-options.py) uses the same checkout and shared inert-text conversion helpers. See [feat planning sources and refresh instructions](feat-choices.md). Review progression, fixed grants, and conditional exceptions when updating the source snapshot.
+
 ## Unsupported platforms
 
 - No native mobile app — local-first **static web** only.

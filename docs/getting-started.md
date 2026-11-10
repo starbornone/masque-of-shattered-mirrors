@@ -55,6 +55,10 @@ The optional faith step describes each deity before you choose. The background a
 
 Heritage and ancestry feat choices are recorded with the character. Add any training they grant when planning skills, and check other benefits against the option’s rules. The app does not apply those effects automatically. Attribute share links and the printable attribute ledger retain their existing scope. [Ancestry option details](ancestry-options.md)
 
+After attribute boosts, **Choose class, general, and skill feats** shows the slots for your class and level. Expand each feat group, search by name, trait, or prerequisite, and read a selected feat’s rules. **Granted and extra feats** lists background and class grants and bonus choices from supported ancestry options. Fixed grants do not spend another slot. Use the notes for any skill, spell, or other choice required by a feat.
+
+For an untracked subclass or conditional grant, expand **Additional choices from other rules**, add a slot, and record its source, level gained, and maximum feat level. Return after skill planning if you need to check training. All choices can remain undecided. Build changes retain previous selections for review, including a **Saved choices outside the current plan** section. Player exports and GM packages include the feat plan. [Feat guide details](feat-choices.md)
+
 ### First useful action
 
 Run `npm test` to check the attribute engine before changing the build flow. See [roadmap/roadmap.json](../roadmap/roadmap.json) for the next items.

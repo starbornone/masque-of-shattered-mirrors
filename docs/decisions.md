@@ -98,6 +98,14 @@ Lightweight records inferred from [README.md](../README.md) and [ROADMAP.md](../
 
 ---
 
+## ADR-011 — Separate regular, granted, and conditional feat slots
+
+**Decision.** Add a skippable class, general, and skill feat step using Remaster Player Core options and class progression data. Separate fixed grants and bonus choices from regular level slots. Support explicit extra slots for subclass-dependent, conditional, and custom rules.
+
+**Consequences.** Keep choices and notes in an optional character field, with backward-compatible player and GM exports. Preserve inactive selections after build changes. Suggestions check feat type, class, and level; other prerequisites and effects remain advisory and manual. Load rules descriptions only for selected options, and keep GM campaign content in private sources.
+
+---
+
 ## Related
 
 - [Architecture](architecture.md)
