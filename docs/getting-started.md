@@ -28,19 +28,23 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 | `npm run dev` | Local development server |
 | `npm run build` | Typecheck + production build to `dist/` |
 | `npm run lint` | `oxlint` |
+| `npm test` | Attribute and session-zero storage and export tests |
 | `npm run preview` | Serve the production build |
 
 ### Verify success
 
 1. Dev server starts without module-resolution errors.
-2. The shell shows **Masque Character Creator** with a Player badge.
-3. `npm run build` completes cleanly.
-
-Default level-1 build loading and the Player/GM mode toggle are still Phase 0 follow-ups (attribute engine + mode gate).
+2. The shell shows **Masque Character Creator** and the player’s guide.
+3. **Accept the invitation** starts the guided questions. The review lets you edit any answer.
+4. Skip any concept question and reload to restore the draft and your place. Download JSON or Markdown from the review.
+5. **Continue to character build** opens the ancestry, background, class, and boost steps. The review shows the current ledger, including any boosts still to assign.
+6. Reload to restore the build and its current step.
+7. Use **Share build** in the review to copy a mechanical link. Opening it shows a preview. Choose **Use shared build** to replace the saved build in that browser.
+8. Use **Print attribute ledger** in the review or preview to print or save a PDF from your browser.
 
 ### First useful action
 
-Confirm the app shell loads, then continue Phase 0: port the attribute engine from `pf2e-point-buy-calc` and wire shared `Build` / `SessionZero` types. See [roadmap/roadmap.json](../roadmap/roadmap.json).
+Run `npm test` to check the attribute engine before changing the build flow. See [roadmap/roadmap.json](../roadmap/roadmap.json) for the next items.
 
 ## Failure symptoms
 
@@ -48,7 +52,7 @@ Confirm the app shell loads, then continue Phase 0: port the attribute engine fr
 |---------|----------------|
 | `npm ci` engine warning / Vite fails | Node below 22.18 |
 | `@/` imports fail in the editor | `paths` missing from `tsconfig.app.json` / Vite alias |
-| Boost totals disagree with Remaster expectations | Engine not ported cleanly (not scaffolded yet) |
+| Boost totals disagree with Remaster expectations | Check build normalization and run the boost smoke tests |
 | Player sees scapegoat / ritual / climax levers | GM content leaked — check mode gating when it lands |
 
 ## Rules sources

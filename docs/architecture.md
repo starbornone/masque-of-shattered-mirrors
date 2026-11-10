@@ -1,6 +1,6 @@
 # Architecture
 
-Scaffold is in place (Vite + React + TypeScript + Tailwind v4 + shadcn/ui). Attribute engine, SessionZero, CampaignFit, and GMBrief modules are still planned — see [ROADMAP.md](../ROADMAP.md).
+The app opens the player’s character guide, saved build step, or a shared build preview. A separate GM entry point, CampaignFit, and GMBrief are planned in [ROADMAP.md](../ROADMAP.md).
 
 ## Goals that drive structure
 
@@ -42,10 +42,10 @@ Scaffold is in place (Vite + React + TypeScript + Tailwind v4 + shadcn/ui). Attr
 
 | Component | Responsibility |
 |-----------|----------------|
-| App shell | Routing between steps; Player / GM mode toggle (GM panel hidden by default) |
-| SessionZero | Invitation blurb and guided answers; localStorage + Markdown/JSON export |
-| Build | Remaster attribute planning; share link + ledger export |
-| Attribute engine | Ported `options` / `normalizeBuild` / `ancestryRule` / `calculate` / serialize-parse |
+| App shell | Restores the player’s saved concept and build. Opens shared builds in a separate preview. |
+| SessionZero | Guided questions, editable review, and [versioned storage and exports](../src/session-zero/draft.ts) |
+| Build | [Guided Remaster attribute planning](../src/components/BuildGuide.tsx), a share link, and a printable ledger |
+| Attribute engine | [`src/attributes/`](../src/attributes/) holds the ported catalogs, boost ledger, and versioned build serialization |
 | CampaignFit | Checklist against Will, Perception, social, Stealth/Thievery, investigation |
 | GMBrief | One-page tailoring summary; spoilers only when mode is GM |
 
@@ -55,11 +55,11 @@ The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror 
 
 ## Data and control flow
 
-1. Player completes session-zero questions → answers stored as `SessionZero` (localStorage + optional export).
-2. Player (or GM) builds attributes → `Build` normalized and calculated by the ported engine.
+1. Player answers or skips the session-zero questions. The browser stores answers and progress together in localStorage, and the review offers JSON and Markdown downloads of the answers.
+2. Player selects ancestry, background, class, level, and boosts. The ported engine normalizes and calculates the current `Build`. The browser saves the build and current step separately from concept answers. The review shows unchosen options and unassigned boosts in an incomplete draft.
 3. Campaign-fit reads `Build` (+ maybe answer hints) → soft tips and combat-as-default warnings for both audiences.
 4. GM mode overlays mapping of answers → scapegoat/stake wiring, Verathe framing, deity levers, Marius/mask beat.
-5. Exports: mechanical share URL / JSON; session-zero Markdown or JSON; later a unified package (Phase 6).
+5. A build URL contains only mechanics. Opening it previews the build, and choosing **Use shared build** replaces the saved mechanical draft. The printable ledger uses the same calculation as the live view. Concept answers export separately as Markdown or JSON.
 
 Player export must never include GM-only spoilers. GM brief may reference campaign wiring that the player UI never shows.
 

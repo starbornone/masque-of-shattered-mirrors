@@ -4,14 +4,14 @@ A Pathfinder 2e Remaster character creator for **The Masque of Shattered Mirrors
 
 This is not a general PF2e sheet builder. It walks the player through a **session-zero brief**, a **mechanical build**, and a **campaign-fit check**, then hands the GM a spoiler-safe summary they can wire into House Verathe.
 
-Attribute boost math is meant to reuse the logic already proven in [`pf2e-point-buy-calc`](https://github.com/starbornone/pf2e-point-buy-calc) (`normalizeBuild`, `ancestryRule`, `calculate`, share/backup serialization).
+The guide starts with the invitation and character concept, then walks through ancestry, background, class, and attribute boosts. It assumes tabletop roleplaying experience and explains Pathfinder 2e Remaster rules as they come up. The build uses the boost logic from [`pf2e-point-buy-calc`](https://github.com/starbornone/pf2e-point-buy-calc).
 
 ## What it does
 
 - **Session zero (player-safe)** — Why they accepted the invitation; who they would risk the night for; their art or craft; optional faith (Pharasma, Nocticula, or the Black Butterfly); the beautiful lie their mask tells.
-- **Build** — Ancestry, background, class, level, attribute boosts/flaws, with the same Remaster ledger model as the point-buy calculator.
+- **Build** — Ancestry, background, class, level, and attribute boosts and flaws. The guide saves the current build and step in the browser. The review offers a mechanical share link and a printable ledger.
 - **Campaign fit** — Soft guidance toward Will, Perception, social skills, Stealth/Thievery, and investigation over pure damage. Flags builds that lean hard into combat-as-default.
-- **GM handoff** — Export a short tailoring brief (stake, art, faith, mask) without leaking ritual secrets. Optional player export of the attribute ledger / share link.
+- **GM handoff (planned)** — A short tailoring brief with campaign context behind a separate GM entry.
 
 ## What it does not do (yet)
 
@@ -24,15 +24,15 @@ Attribute boost math is meant to reuse the logic already proven in [`pf2e-point-
 
 | Mode | Audience | Content |
 |------|----------|---------|
-| Player | The one PC | Invitation framing, questions, build UI, soft “this night rewards…” tips |
-| GM | You | Same build, plus how answers map to scapegoat/stake wiring and deity hooks |
+| Player | The one PC | Saved concept answers, JSON and Markdown downloads, and a guided attribute build |
+| GM (planned entry) | You | Read-only concept answers, attribute ledger, and campaign tailoring |
 
 ## Tech intent
 
 - Local-first static web app (Vite + TypeScript), same family as `pf2e-point-buy-calc`
-- Port or extract the attribute engine (`build.ts` / `options.ts`) rather than reimplementing boosts
+- Reuse the ported attribute engine (`src/attributes/build.ts` and `src/attributes/options.ts`)
 - Player Core / Player Core 2 catalogs first; custom rows for anything else
-- Shareable build URL + JSON backup for the mechanical side; Markdown or JSON for the session-zero answers
+- Shareable build URL and printable ledger for the mechanical side. Markdown or JSON downloads for the session-zero answers.
 
 ## Campaign context (GM only)
 
@@ -49,7 +49,7 @@ npm ci
 npm run dev
 ```
 
-Other scripts: `npm run build`, `npm run lint`, `npm run preview`.
+Other scripts include `npm run build`, `npm run lint`, `npm test`, and `npm run preview`.
 
 Dev server defaults to Vite’s local URL (usually `http://localhost:5173`). Deploy target TBD.
 

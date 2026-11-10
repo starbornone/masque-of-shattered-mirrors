@@ -37,11 +37,11 @@ Campaign notes live one level up in this folder tree, outside the app.
 ## Tech direction
 
 - Local-first static web app (Vite + TypeScript), same family as `pf2e-point-buy-calc`
-- Port or extract the attribute engine (`normalizeBuild`, `ancestryRule`, `calculate`, share/backup serialization) rather than reimplementing boosts
+- Reuse the ported attribute engine for boost calculations and versioned build data
 - Player Core / Player Core 2 catalogs first; custom rows for anything else
 - Shareable build URL + JSON backup for the mechanical side; Markdown or JSON for session-zero answers
 
-Scaffold (Vite + TypeScript + shadcn/ui) is in place. Remaining Phase 0 work: attribute engine, shared types, Player/GM toggle, and boost smoke tests.
+The player can resume the guide in the same browser, download concept answers, and share or print a mechanical build. A separate GM entry and campaign fit are planned.
 
 ## Next reads
 

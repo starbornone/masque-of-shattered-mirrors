@@ -16,8 +16,10 @@ masque-of-shattered-mirrors/
 │   ├── main.tsx
 │   ├── App.tsx              # App shell (player-safe default)
 │   ├── index.css            # Tailwind v4 + shadcn tokens
+│   ├── attributes/          # Ported point-buy rules and serialization
 │   ├── components/ui/       # shadcn primitives
 │   └── lib/utils.ts
+├── test/
 ├── docs/
 └── roadmap/
 ```
@@ -35,7 +37,7 @@ npm run dev
 | Lint | `npm run lint` → `oxlint` |
 | Build | `npm run build` → `tsc -b && vite build` |
 | UI kit | shadcn/ui (Radix Nova) — add with `npx shadcn@latest add <name>` |
-| Attribute smoke tests | Still TODO — port `test/build.test.ts` from `pf2e-point-buy-calc` |
+| Tests | `npm test` checks [boost math](../test/build.test.ts) and [session-zero storage and exports](../test/session-zero.test.ts) |
 
 Path alias: `@/*` → `./src/*` (TypeScript + Vite).
 
@@ -52,8 +54,9 @@ Path alias: `@/*` → `./src/*` (TypeScript + Vite).
 
 | Concern | Module |
 |---------|--------|
-| Boost math, serialize/parse | Attribute engine (from point-buy calculator) — not present yet |
-| Invitation + questions | SessionZero (planned) |
+| Boost math, serialize/parse | [Attribute engine](../src/attributes/build.ts) from the point-buy calculator |
+| Invitation + questions | [Session-zero guide](../src/components/SessionZeroGuide.tsx) |
+| Ancestry, background, class, and boosts | [Build guide](../src/components/BuildGuide.tsx) |
 | Fit tips / combat flags | CampaignFit (planned) |
 | Spoiler summaries | GMBrief (GM mode only, planned) |
 | Shared chrome / controls | `src/components/ui/` via shadcn |

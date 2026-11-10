@@ -28,7 +28,7 @@ Lightweight records inferred from [README.md](../README.md) and [ROADMAP.md](../
 
 **Context:** The same character data serves the player and the GM, but ritual, scapegoat, and deity climax levers must not leak to the player.
 
-**Decision:** Two modes in one app. Player mode is default; GM panel hidden until toggled. GM brief maps answers to wiring; player exports stay spoiler-safe.
+**Decision.** The public app opens the player guide. A future GM entry will sit outside the player interface. The GM brief maps answers to campaign hooks, and player exports stay spoiler-safe.
 
 **Consequences:** Every new campaign-facing string needs an audience check. Automated or manual review should catch GM-only content in player routes.
 
@@ -61,6 +61,16 @@ Lightweight records inferred from [README.md](../README.md) and [ROADMAP.md](../
 **Decision:** Do not ship in-app reading of campaign markdown. The app stays a character creator; GM uses vault notes separately.
 
 **Consequences:** Cancelled as a feature direction. City/region stays blank or GM-configurable—never invented by the app.
+
+---
+
+## ADR-007 — Guide players through Pathfinder 2e Remaster
+
+**Context.** The player has tabletop roleplaying experience and is new to Pathfinder 2e Remaster.
+
+**Decision.** Guide character creation one step at a time. Keep the concept questions direct and explain Pathfinder rules where the player makes the relevant mechanical choice.
+
+**Consequences.** Show progress and let players revisit choices from review. Keep draft steps open when answers are missing. Require an answer only where a later feature needs it, such as finished attributes before a skill planner uses their modifiers. Track the work in [the roadmap](../ROADMAP.md).
 
 ---
 

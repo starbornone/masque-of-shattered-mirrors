@@ -7,33 +7,35 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 ## Phase 0 — Scaffold
 
 - [x] New Vite + TypeScript app with Tailwind v4 + shadcn/ui (radix-nova)
-- [ ] Extract or copy attribute engine: `options`, `normalizeBuild`, `ancestryRule`, `calculate`, serialize/parse
-- [ ] Shared types for `Build` + new `SessionZero` answers
-- [ ] Player / GM mode toggle (hide GM panel by default)
-- [ ] Smoke tests for boost math (reuse or port `test/build.test.ts`)
+- [x] Extract or copy attribute engine: `options`, `normalizeBuild`, `ancestryRule`, `calculate`, serialize/parse
+- [x] Shared types for `Build` + new `SessionZero` answers
+- [x] Player / GM mode toggle (hide GM panel by default)
+- [x] Smoke tests for boost math (reuse or port `test/build.test.ts`)
 
 **Exit:** App runs locally; empty shell can load a default level-1 build.
 
 ## Phase 1 — Session zero (player-safe)
 
-- [ ] Invitation blurb (no ritual spoilers)
-- [ ] Guided questions:
+- [x] Start the step-by-step guide with the invitation and character concept for players new to Pathfinder 2e Remaster. Show progress and let players edit answers from the review.
+- [x] Invitation blurb (no ritual spoilers)
+- [x] Guided questions:
   - Why accept?
   - Who matters? (named stake) *or* “I am the one they are watching”
   - Art / craft
   - Optional deity interest (Pharasma / Nocticula / Black Butterfly / none)
   - Mask concept (“most beautiful lie”)
-- [ ] Persist answers in localStorage + export JSON/Markdown
-- [ ] Soft table lines: etiquette over hit points; investigate before violence
+- [x] Save answers on this browser and export JSON or Markdown
 
 **Exit:** Player can finish questions without seeing GM secrets.
 
 ## Phase 2 — Attribute creator (campaign-ready)
 
-- [ ] Port UI patterns from the point-buy calculator (ancestry / background / class / level / milestones / voluntary flaws)
+- [x] Extend the guide through the mechanical build, introducing Remaster terms as players make each choice.
+- [x] Port UI patterns from the point-buy calculator (ancestry / background / class / level / milestones / voluntary flaws)
 - [ ] Default level configurable (GM sets expected start level)
-- [ ] Share link for mechanical build only
-- [ ] Printable / copyable attribute ledger
+- [x] Save the build and current step across refreshes
+- [x] Share link for mechanical build only
+- [x] Printable attribute ledger
 
 **Exit:** Full Remaster attribute planning works inside this app.
 
@@ -55,6 +57,8 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 ## Phase 4 — GM tailoring brief
 
+- [x] Remove the mode switch from the player interface
+- [ ] Choose a separate GM entry point outside the player interface
 - [ ] Auto-generate a one-page GM summary from answers + build:
   - Stake → scapegoat wiring options
   - Art → Verathe “honored guest” framing
