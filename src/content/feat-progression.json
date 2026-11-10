@@ -1,0 +1,834 @@
+{
+  "classes": {
+    "alchemist": {
+      "class": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": [
+        {
+          "level": 1,
+          "feat": "alchemical-crafting"
+        }
+      ]
+    },
+    "barbarian": {
+      "class": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": []
+    },
+    "bard": {
+      "class": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": []
+    },
+    "champion": {
+      "class": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": [
+        {
+          "level": 1,
+          "feat": "shield-block"
+        }
+      ]
+    },
+    "cleric": {
+      "class": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": []
+    },
+    "druid": {
+      "class": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": [
+        {
+          "level": 1,
+          "feat": "shield-block"
+        }
+      ]
+    },
+    "fighter": {
+      "class": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": [
+        {
+          "level": 1,
+          "feat": "shield-block"
+        }
+      ]
+    },
+    "investigator": {
+      "class": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "fixed": []
+    },
+    "monk": {
+      "class": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": []
+    },
+    "oracle": {
+      "class": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": []
+    },
+    "ranger": {
+      "class": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": []
+    },
+    "rogue": {
+      "class": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "fixed": []
+    },
+    "sorcerer": {
+      "class": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": []
+    },
+    "swashbuckler": {
+      "class": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        10,
+        12,
+        14,
+        15,
+        16,
+        18,
+        20
+      ],
+      "fixed": []
+    },
+    "witch": {
+      "class": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": []
+    },
+    "wizard": {
+      "class": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "general": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ],
+      "skill": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "fixed": []
+    }
+  },
+  "backgrounds": {
+    "acolyte": [
+      "student-of-the-canon"
+    ],
+    "acrobat": [
+      "steady-balance"
+    ],
+    "amnesiac": [],
+    "animal-whisperer": [
+      "train-animal"
+    ],
+    "artisan": [
+      "specialty-crafting"
+    ],
+    "artist": [
+      "specialty-crafting"
+    ],
+    "astrologer": [
+      "oddity-identification"
+    ],
+    "bandit": [
+      "group-coercion"
+    ],
+    "barber": [
+      "risky-surgery"
+    ],
+    "barkeep": [
+      "hobnobber"
+    ],
+    "barrister": [
+      "group-impression"
+    ],
+    "blessed": [],
+    "bookkeeper": [],
+    "bounty-hunter": [
+      "experienced-tracker"
+    ],
+    "charlatan": [
+      "charming-liar"
+    ],
+    "cook": [
+      "seasoned"
+    ],
+    "courier": [
+      "glean-contents"
+    ],
+    "criminal": [
+      "experienced-smuggler"
+    ],
+    "cultist": [
+      "schooled-in-secrets"
+    ],
+    "cursed": [],
+    "detective": [
+      "streetwise"
+    ],
+    "emissary": [
+      "multilingual"
+    ],
+    "entertainer": [
+      "fascinating-performance"
+    ],
+    "farmhand": [
+      "assurance"
+    ],
+    "feral-child": [
+      "forager"
+    ],
+    "feybound": [],
+    "field-medic": [
+      "battle-medicine"
+    ],
+    "fortune-teller": [
+      "oddity-identification"
+    ],
+    "gambler": [
+      "lie-to-me"
+    ],
+    "gladiator": [
+      "impressive-performance"
+    ],
+    "guard": [
+      "quick-coercion"
+    ],
+    "haunted": [],
+    "herbalist": [
+      "natural-medicine"
+    ],
+    "hermit": [
+      "dubious-knowledge"
+    ],
+    "hunter": [
+      "survey-wildlife"
+    ],
+    "insurgent": [
+      "lengthy-diversion"
+    ],
+    "laborer": [
+      "hefty-hauler"
+    ],
+    "martial-disciple": [],
+    "merchant": [
+      "bargain-hunter"
+    ],
+    "miner": [
+      "terrain-expertise"
+    ],
+    "noble": [
+      "courtly-graces"
+    ],
+    "nomad": [
+      "assurance"
+    ],
+    "outrider": [
+      "express-rider"
+    ],
+    "pilgrim": [
+      "pilgrims-token"
+    ],
+    "prisoner": [
+      "experienced-smuggler"
+    ],
+    "raised-by-belief": [
+      "assurance"
+    ],
+    "refugee-pc2": [
+      "streetwise"
+    ],
+    "returned": [
+      "diehard",
+      "additional-lore"
+    ],
+    "root-worker": [
+      "root-magic"
+    ],
+    "royalty": [
+      "courtly-graces"
+    ],
+    "saboteur": [
+      "concealing-legerdemain"
+    ],
+    "sailor": [
+      "underwater-marauder"
+    ],
+    "scavenger": [
+      "forager"
+    ],
+    "scholar": [
+      "assurance"
+    ],
+    "scout": [
+      "forager"
+    ],
+    "servant": [
+      "read-lips"
+    ],
+    "squire": [
+      "armor-assist"
+    ],
+    "street-urchin": [
+      "pickpocket"
+    ],
+    "tax-collector": [
+      "quick-coercion"
+    ],
+    "teacher": [
+      "experienced-professional"
+    ],
+    "tinker": [
+      "specialty-crafting"
+    ],
+    "ward": [
+      "fascinating-performance"
+    ],
+    "warrior": [
+      "intimidating-glare"
+    ]
+  },
+  "backgroundReferences": {
+    "bookkeeper": [
+      "Eye for Numbers"
+    ]
+  },
+  "fixedGrants": {
+    "contortionist": [
+      "quick-squeeze"
+    ],
+    "alchemist-dedication": [
+      "alchemical-crafting"
+    ],
+    "bastion-dedication": [
+      "reactive-shield"
+    ],
+    "dual-weapon-warrior-dedication": [
+      "double-slice"
+    ],
+    "linguist-dedication": [
+      "multilingual"
+    ],
+    "terrain-scout": [
+      "terrain-stalker"
+    ],
+    "scroll-trickster-dedication": [
+      "trick-magic-item"
+    ],
+    "snarecrafter-dedication": [
+      "snare-crafting"
+    ],
+    "quick-fix": [
+      "rapid-affixture"
+    ],
+    "viking-weapon-familiarity": [
+      "shield-block"
+    ],
+    "wrestler-dedication": [
+      "titan-wrestler"
+    ],
+    "enigmas-knowledge": [
+      "automatic-knowledge"
+    ],
+    "predictive-purchase-investigator": [
+      "prescient-planner",
+      "prescient-consumable"
+    ],
+    "predictive-purchase-rogue": [
+      "prescient-planner",
+      "prescient-consumable"
+    ],
+    "plummeting-roll": [
+      "cat-fall"
+    ],
+    "spellbook-prodigy": [
+      "magical-shorthand"
+    ]
+  }
+}
