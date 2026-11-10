@@ -75,7 +75,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 - [x] Export and restore one player character file with session-zero answers, attributes, and skills
 - [ ] Include the GM brief in a combined package once the separate GM entry is available
-- [ ] Tone/CSS: masquerade-adjacent, readable, not a combat dashboard
+- [x] Polish the player guide with silver-blue progress, a framed invitation, and layouts for narrow screens
 - [ ] README “Run locally” filled with real commands/ports
 - [ ] Optional static deploy (same pattern as `pf.starmist.studio` if desired)
 

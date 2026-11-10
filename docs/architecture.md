@@ -52,7 +52,7 @@ The app opens the player’s character guide, saved build step, or a shared buil
 
 The header and browser tab share the same [SVG emblem](../public/favicon.svg). A fractured oval mirror frames the silver masquerade mask.
 
-The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror with a spiral of silver sparkles. The artwork sits to the right of the invitation on wide screens and fades into the lower corner on narrow screens.
+The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror with a spiral of silver sparkles. The artwork sits beside the guide on wide screens and fades into the right margin on narrow screens. The concept, build, and skill screens share a heading style and dark panels. The invitation uses a paper surface with a silver ribbon and a mirror stamped into the wax seal.
 
 ## Data and control flow
 
