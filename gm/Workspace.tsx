@@ -7,6 +7,9 @@ import { SessionZeroSummary } from '@/components/SessionZeroSummary'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { canAssignSkills, evaluateSkillPlan } from '@/skills/plan'
 import { TailoringBrief } from './TailoringBrief'
+import { tailoringBrief } from './brief.ts'
+import { parseGmPackage } from './package.ts'
+import type { GmPackage } from './package.ts'
 
 function CharacterSummary({ draft }: { draft: CharacterDraft }) {
   const { build, skills } = draft.buildDraft
@@ -49,10 +52,11 @@ function CharacterSummary({ draft }: { draft: CharacterDraft }) {
 }
 
 export function Workspace() {
-  const [draft, setDraft] = useState<CharacterDraft | null>(null)
+  const [workspace, setWorkspace] = useState<GmPackage | null>(null)
   const [reading, setReading] = useState(false)
   const [error, setError] = useState('')
   const [importCount, setImportCount] = useState(0)
+  const [message, setMessage] = useState('')
 
   async function openCharacter(event: ChangeEvent<HTMLInputElement>) {
     const file = event.currentTarget.files?.[0]
@@ -61,13 +65,18 @@ export function Workspace() {
 
     setReading(true)
     setError('')
+    setMessage('')
     try {
-      const character = parseCharacter(await file.text())
-      if (character) {
-        setDraft(character)
+      const text = await file.text()
+      const gmPackage = parseGmPackage(text)
+      const character = gmPackage ? null : parseCharacter(text)
+      const nextWorkspace = gmPackage ?? (character ? { character, sessionNotes: tailoringBrief(character) } : null)
+      if (nextWorkspace) {
+        setWorkspace(nextWorkspace)
         setImportCount((count) => count + 1)
+        setMessage(gmPackage ? 'GM package restored.' : 'Character loaded. Tailoring brief generated.')
       }
-      else setError('Choose a JSON file downloaded with Export character.')
+      else setError('Choose a valid JSON file from Export character or Export GM package. The current character and notes have been kept.')
     } catch {
       setError('This file couldn’t be read.')
     } finally {
@@ -88,12 +97,13 @@ export function Workspace() {
       <main className="mx-auto flex max-w-[45rem] flex-col gap-6 px-4 py-7 sm:px-6">
         <Card>
           <CardHeader>
-            <h2 className="text-2xl">Open a player character</h2>
-            <p className="text-muted-foreground">Choose the player’s exported character file. The file is read in this browser tab.</p>
+            <h2 className="text-2xl">Open a character or GM package</h2>
+            <p className="text-muted-foreground">A player character file generates a new brief. A GM package restores the character and edited notes. Files are read in this browser tab.</p>
+            {workspace ? <p className="text-muted-foreground">Opening a file replaces the current character and notes. Export a GM package first to keep your edits.</p> : null}
           </CardHeader>
           <CardContent className="space-y-2">
             <label className="block space-y-1">
-              <span className="font-medium">Character JSON file</span>
+              <span className="font-medium">Character or GM package JSON file</span>
               <input
                 type="file"
                 accept=".json,application/json"
@@ -103,13 +113,13 @@ export function Workspace() {
               />
             </label>
             {error ? <p role="alert" className="text-destructive">{error}</p> : null}
-            {draft ? <p role="status" className="text-muted-foreground">Character loaded.</p> : null}
+            <p role="status" className="text-muted-foreground">{message}</p>
           </CardContent>
         </Card>
-        {draft ? (
+        {workspace ? (
           <>
-            <TailoringBrief key={importCount} draft={draft} />
-            <CharacterSummary draft={draft} />
+            <TailoringBrief key={importCount} draft={workspace.character} initialNotes={workspace.sessionNotes} />
+            <CharacterSummary draft={workspace.character} />
           </>
         ) : null}
       </main>

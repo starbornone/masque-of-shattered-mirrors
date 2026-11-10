@@ -1,19 +1,12 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-11T09:25:32+11:00",
+  "updatedAt": "2026-11-11T09:38:35+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
     "status": "active",
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
-  "items": [
-    {
-      "id": "unified-export-import",
-      "title": "Ship single export package and import for prior exports",
-      "group": "Phase 6",
-      "notes": "Session-zero + attributes + skills + GM brief in one package. The player-only package is complete. Add a separate GM package that can save and restore the character together with edited session notes."
-    }
-  ]
+  "items": []
 }

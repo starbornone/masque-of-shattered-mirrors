@@ -76,7 +76,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 ## Phase 6 — Polish & share
 
 - [x] Export and restore one player character file with session-zero answers, attributes, and skills
-- [ ] Include the GM brief in a combined package once the separate GM entry is available
+- [x] Export and restore a separate GM package containing the character and edited session notes behind the protected GM route
 - [x] Polish the player guide with silver-blue progress, a framed invitation, and layouts for narrow screens
 - [x] Document local installation, development, checks, and production preview in the README
 - [x] Build the static site on Vercel when changes are pushed to `main`

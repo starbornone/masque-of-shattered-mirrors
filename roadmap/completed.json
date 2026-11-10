@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T09:35:10+11:00",
+  "updatedAt": "2026-11-11T09:38:35+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -272,6 +272,13 @@
       "group": "Phase 4",
       "notes": "Reuse the server-side password check in Vite dev and preview. Load the local password from environment files, deny raw GM source and build files, and document the gm username and private build command.",
       "completedAt": "2026-11-11T09:35:10+11:00"
+    },
+    {
+      "id": "unified-export-import",
+      "title": "Ship single export package and import for prior exports",
+      "group": "Phase 6",
+      "notes": "The public character package preserves player answers, build, skills, and language notes. The protected GM workspace now exports a separate versioned package containing the character and exact edited session notes, and imports either kind of file. Invalid packages preserve the current workspace and the public importer rejects GM packages.",
+      "completedAt": "2026-11-11T09:38:35+11:00"
     }
   ]
 }

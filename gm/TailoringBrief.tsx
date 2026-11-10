@@ -2,10 +2,12 @@ import { useRef, useState } from 'react'
 import type { CharacterDraft } from '@/character/draft'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { downloadFile } from '@/lib/download'
 import { tailoringBrief } from './brief.ts'
+import { serializeGmPackage } from './package.ts'
 
-export function TailoringBrief({ draft }: { draft: CharacterDraft }) {
-  const [notes, setNotes] = useState(() => tailoringBrief(draft))
+export function TailoringBrief({ draft, initialNotes }: { draft: CharacterDraft; initialNotes: string }) {
+  const [notes, setNotes] = useState(initialNotes)
   const [message, setMessage] = useState('')
   const editor = useRef<HTMLTextAreaElement>(null)
 
@@ -20,13 +22,22 @@ export function TailoringBrief({ draft }: { draft: CharacterDraft }) {
     }
   }
 
+  function exportPackage() {
+    try {
+      downloadFile('masque-gm-package.json', serializeGmPackage({ character: draft, sessionNotes: notes }), 'application/json')
+      setMessage('GM package download started.')
+    } catch {
+      setMessage('The package couldn’t be downloaded. Copy your notes and try again.')
+    }
+  }
+
   return (
     <Card>
       <CardHeader>
         <h2 className="text-2xl">GM tailoring brief</h2>
         <p id="brief-guidance" className="text-muted-foreground">
-          Edit these preparation suggestions, then copy them into your session notes.
-          Opening another character generates a new brief.
+          Edit these preparation suggestions, then copy them or export a GM package to save the character and notes together.
+          Open the package above to resume. GM packages contain campaign spoilers.
         </p>
       </CardHeader>
       <CardContent className="space-y-3">
@@ -46,6 +57,7 @@ export function TailoringBrief({ draft }: { draft: CharacterDraft }) {
         </label>
         <div className="flex flex-wrap gap-2">
           <Button type="button" className="min-h-11" onClick={copyNotes}>Copy session notes</Button>
+          <Button type="button" variant="outline" className="min-h-11" onClick={exportPackage}>Export GM package</Button>
           <Button type="button" variant="outline" className="min-h-11" onClick={() => {
             setNotes(tailoringBrief(draft))
             setMessage('')
