@@ -186,13 +186,21 @@
   }
 }
 
-@keyframes star-twinkle {
-  0%,
-  100% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 0.95;
+.verathe-backdrop {
+  inset-block-start: 1rem;
+  inset-inline-end: clamp(-12rem, 27vw - 27rem, -3rem);
+  width: clamp(29rem, 52vw, 48rem);
+  max-width: none;
+  height: auto;
+  opacity: 0.88;
+}
+
+@media (width < 48rem) {
+  .verathe-backdrop {
+    inset-block: auto -9rem;
+    inset-inline-end: -7.5rem;
+    width: clamp(22rem, 78vw, 29rem);
+    opacity: 0.48;
   }
 }
 
@@ -202,10 +210,6 @@
 
 .veil-in-delay {
   animation: veil-in 0.8s ease-out 0.12s both;
-}
-
-.star-twinkle {
-  animation: star-twinkle 4.8s ease-in-out infinite;
 }
 
 /* Contained letter surface: bone paper on the dark shell for readable prose. */
@@ -251,8 +255,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .veil-in,
-  .veil-in-delay,
-  .star-twinkle {
+  .veil-in-delay {
     animation: none;
   }
 }

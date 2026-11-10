@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 620">
+  <defs>
+    <radialGradient id="mist">
+      <stop stop-color="#6d90cb" stop-opacity=".19"/>
+      <stop offset=".58" stop-color="#4a6da8" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#4a6da8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glass" cx=".57" cy=".36" r=".7">
+      <stop stop-color="#293c5c" stop-opacity=".76"/>
+      <stop offset="1" stop-color="#131d30" stop-opacity=".14"/>
+    </radialGradient>
+    <linearGradient id="silver" x2=".86" y2="1">
+      <stop stop-color="#6883ac" stop-opacity=".18"/>
+      <stop offset=".48" stop-color="#a6b9d8" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#547297" stop-opacity=".28"/>
+    </linearGradient>
+    <linearGradient id="shard" x2="1" y2="1">
+      <stop stop-color="#afc8ec" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#526f9d" stop-opacity=".03"/>
+    </linearGradient>
+    <radialGradient id="candlelight">
+      <stop stop-color="#f2f5ff" stop-opacity=".45"/>
+      <stop offset=".4" stop-color="#a8c5ef" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#a8c5ef" stop-opacity="0"/>
+    </radialGradient>
+    <g id="candle">
+      <circle cy="-7" r="17" fill="url(#candlelight)"/>
+      <path d="M-2 1h4v9h-4z" fill="#a9c0e2" opacity=".65"/>
+      <path d="M0-13C1-9 4-7 3-4.5 2-1.5-2-1.5-3-4.5c-.8-2.3 1.5-4.2 3-8.5Z" fill="#f5f2ec"/>
+      <path d="M-1 2v6" stroke="#e4e8f2" stroke-width=".7" opacity=".65"/>
+    </g>
+    <g id="filigree" fill="none" stroke-linecap="round">
+      <path d="M-73 13c23 1 28-20 48-20 10 0 14 10 6 15-5 3-10-1-8-5
+               M73 13c-23 1-28-20-48-20-10 0-14 10-6 15 5 3 10-1 8-5
+               M-45-1c13-5 13-14 23-19 5-2 9-2 15 0
+               M45-1c-13-5-13-14-23-19-5-2-9-2-15 0
+               M-37 10c11 9 23 9 37 2 14 7 26 7 37-2
+               M0-29c1 10 12 13 12 22C12 0 6 4 0 8-6 4-12 0-12-7c0-9 11-12 12-22Z"/>
+      <path d="M0-17c3 4 6 7 6 10S3-2 0 1c-3-3-6-5-6-8s3-6 6-10Z" fill="#a6b9d8" fill-opacity=".28"/>
+      <path d="m-55-3-4-4-4 4 4 4Zm110 0 4-4 4 4-4 4Z" fill="#a6b9d8" fill-opacity=".4" stroke="none"/>
+    </g>
+  </defs>
+
+  <ellipse cx="337" cy="296" rx="258" ry="293" fill="url(#mist)"/>
+  <ellipse cx="326" cy="282" rx="174" ry="201" fill="url(#glass)"/>
+  <path d="M162 222C203 130 280 90 366 88L263 174 169 290Z" fill="url(#shard)" opacity=".33"/>
+  <path d="M397 355l-22 43 15 30-26 56c61-16 109-60 131-121l-55-25Z" fill="url(#shard)"/>
+
+  <!-- Engraved mirror frame -->
+  <g fill="none" stroke="url(#silver)">
+    <ellipse cx="326" cy="282" rx="186" ry="213" stroke-width="5" opacity=".35"/>
+    <ellipse cx="326" cy="282" rx="192" ry="220" stroke-width="1.6"/>
+    <ellipse cx="326" cy="282" rx="178" ry="206" stroke-width="1.25"/>
+    <ellipse cx="326" cy="282" rx="182" ry="210" stroke-dasharray="1 5" stroke-linecap="round" opacity=".82"/>
+    <path d="M181 139c31-49 83-81 145-81s114 32 145 81
+             M181 425c31 49 83 81 145 81s114-32 145-81" opacity=".7"/>
+  </g>
+  <g stroke="#9aafcf" stroke-width="1.1">
+    <use href="#filigree" transform="translate(326 58)" opacity=".66"/>
+    <use href="#filigree" transform="translate(326 506) rotate(180)" opacity=".51"/>
+    <use href="#filigree" transform="translate(519 282) rotate(90) scale(.76)" opacity=".55"/>
+    <use href="#filigree" transform="translate(133 282) rotate(-90) scale(.76)" opacity=".33"/>
+  </g>
+  <g fill="#a6b9d8" opacity=".45">
+    <path d="m456 111 4-6 4 6-4 6Zm-268 0 4-6 4 6-4 6Zm268 342 4-6 4 6-4 6Zm-268 0 4-6 4 6-4 6Z"/>
+  </g>
+
+  <!-- Fractures in the glass -->
+  <g fill="none" stroke="#abc2e3" stroke-linejoin="round" opacity=".48">
+    <path d="m364 484 26-56-15-30 22-43-17-20 30-30 14-35 44-17 31-37" stroke-width="1.45"/>
+    <path d="m390 428 43 3 9 20 26 7m-71-103 43-17 55 25m-71-93-18-28 10-26m-36 119-25 9-16 20-29 1" stroke-width=".95"/>
+  </g>
+  <g fill="url(#shard)" stroke="#829dc4" stroke-width=".8" opacity=".48">
+    <path d="m503 411 27-18-9 31-23 17Z"/>
+    <path d="m467 470 25-10-8 21-18 6Z"/>
+    <path d="m413 507 21-8-13 21Z"/>
+    <path d="m537 367 18-14-8 20Z"/>
+  </g>
+
+  <!-- White candles suspended along a spiral -->
+  <path d="M326 263C328 238 374 246 382 274c14 46-29 73-71 71
+           -62-3-106-58-83-117 22-56 87-82 151-74 57 7 95 44 114 96"
+        fill="none" stroke="#8daedb" stroke-opacity=".44" stroke-linecap="round" stroke-dasharray="1 5"/>
+  <use href="#candle" transform="translate(326 263) scale(.48)"/>
+  <use href="#candle" transform="translate(332 254) scale(.53)"/>
+  <use href="#candle" transform="translate(347 249) scale(.57)"/>
+  <use href="#candle" transform="translate(365 253) scale(.61)"/>
+  <use href="#candle" transform="translate(380 268) scale(.66)"/>
+  <use href="#candle" transform="translate(385 291) scale(.7)"/>
+  <use href="#candle" transform="translate(376 317) scale(.75)"/>
+  <use href="#candle" transform="translate(350 337) scale(.79)"/>
+  <use href="#candle" transform="translate(312 345) scale(.84)"/>
+  <use href="#candle" transform="translate(271 335) scale(.89)"/>
+  <use href="#candle" transform="translate(238 306) scale(.93)"/>
+  <use href="#candle" transform="translate(223 263) scale(.97)"/>
+  <use href="#candle" transform="translate(233 215) scale(1.02)"/>
+  <use href="#candle" transform="translate(270 174) scale(1.06)"/>
+  <use href="#candle" transform="translate(329 152) scale(1.11)"/>
+  <use href="#candle" transform="translate(396 157) scale(1.15)"/>
+  <use href="#candle" transform="translate(456 192) scale(1.2)"/>
+  <use href="#candle" transform="translate(493 250) scale(1.25)"/>
+</svg>

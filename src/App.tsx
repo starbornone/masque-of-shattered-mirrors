@@ -1,18 +1,19 @@
+import veratheMirror from '@/assets/verathe-mirror.svg'
 import { InvitationLetter } from '@/components/InvitationLetter'
 import { Navbar } from '@/components/Navbar'
-import { StarCluster } from '@/components/StarCluster'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 function App() {
   return (
     <div className="relative flex min-h-svh flex-col overflow-hidden text-foreground">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-8 -top-10 size-[22rem] text-primary/40 md:-right-4 md:size-[28rem]"
-      >
-        <StarCluster className="size-full" />
-      </div>
+      <img
+        src={veratheMirror}
+        alt=""
+        width={600}
+        height={620}
+        className="verathe-backdrop pointer-events-none absolute print:hidden"
+      />
 
       <header className="relative z-10 border-b border-primary/20 bg-[color-mix(in_oklch,var(--card)_78%,transparent)] backdrop-blur-md">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-5">

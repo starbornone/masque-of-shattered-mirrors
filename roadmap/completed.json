@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-10T14:47:44+11:00",
+  "updatedAt": "2026-11-10T14:51:14+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -63,6 +63,13 @@
       "group": "Phase 6",
       "notes": "Share one SVG between the header and browser tab. Combine Pharasma's spiraling comet with a fractured silver masquerade mask.",
       "completedAt": "2026-11-10T14:47:44+11:00"
+    },
+    {
+      "id": "verathe-mirror-backdrop",
+      "title": "Illustrate the shell with a fractured mirror and a candle spiral",
+      "group": "Phase 6",
+      "notes": "Replace the star cluster with a static silver filigree mirror inspired by the arrival at House Verathe.",
+      "completedAt": "2026-11-10T14:51:14+11:00"
     }
   ]
 }

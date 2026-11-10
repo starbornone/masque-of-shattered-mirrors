@@ -51,6 +51,8 @@ Scaffold is in place (Vite + React + TypeScript + Tailwind v4 + shadcn/ui). Attr
 
 The header and browser tab share the same [SVG emblem](../public/favicon.svg). It pairs Pharasma's spiraling comet with a fractured silver masquerade mask.
 
+The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror with a spiral of still candles. The artwork sits to the right of the invitation on wide screens and fades into the lower corner on narrow screens.
+
 ## Data and control flow
 
 1. Player completes session-zero questions → answers stored as `SessionZero` (localStorage + optional export).
