@@ -1,0 +1,6203 @@
+{
+  "heritages": [
+    {
+      "id": "aiuvarin",
+      "name": "Aiuvarin",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "aiuvarin"
+      ],
+      "ancestry": ""
+    },
+    {
+      "id": "ancient-elf",
+      "name": "Ancient Elf",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "elf"
+    },
+    {
+      "id": "ancient-blooded-dwarf",
+      "name": "Ancient-Blooded Dwarf",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "dwarf"
+    },
+    {
+      "id": "ant-kholo",
+      "name": "Ant Kholo",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kholo"
+    },
+    {
+      "id": "arctic-elf",
+      "name": "Arctic Elf",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "elf"
+    },
+    {
+      "id": "badlands-orc",
+      "name": "Badlands Orc",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "orc"
+    },
+    {
+      "id": "battle-ready-orc",
+      "name": "Battle-Ready Orc",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "orc"
+    },
+    {
+      "id": "cactus-leshy",
+      "name": "Cactus Leshy",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "leshy"
+    },
+    {
+      "id": "cave-kholo",
+      "name": "Cave Kholo",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kholo"
+    },
+    {
+      "id": "cavern-elf",
+      "name": "Cavern Elf",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "elf"
+    },
+    {
+      "id": "cavernstalker-kobold",
+      "name": "Cavernstalker Kobold",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kobold"
+    },
+    {
+      "id": "chameleon-gnome",
+      "name": "Chameleon Gnome",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "gnome"
+    },
+    {
+      "id": "changeling",
+      "name": "Changeling",
+      "source": "Player Core",
+      "rarity": "uncommon",
+      "traits": [
+        "changeling"
+      ],
+      "ancestry": ""
+    },
+    {
+      "id": "charhide-goblin",
+      "name": "Charhide Goblin",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "goblin"
+    },
+    {
+      "id": "clawed-catfolk",
+      "name": "Clawed Catfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "catfolk"
+    },
+    {
+      "id": "cliffscale-lizardfolk",
+      "name": "Cliffscale Lizardfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "lizardfolk"
+    },
+    {
+      "id": "cloudleaper-lizardfolk",
+      "name": "Cloudleaper Lizardfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "lizardfolk"
+    },
+    {
+      "id": "death-warden-dwarf",
+      "name": "Death Warden Dwarf",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "dwarf"
+    },
+    {
+      "id": "deep-orc",
+      "name": "Deep Orc",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "orc"
+    },
+    {
+      "id": "deep-rat",
+      "name": "Deep Rat",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "ratfolk"
+    },
+    {
+      "id": "desert-rat",
+      "name": "Desert Rat",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "ratfolk"
+    },
+    {
+      "id": "dhampir",
+      "name": "Dhampir",
+      "source": "Player Core 2",
+      "rarity": "uncommon",
+      "traits": [
+        "dhampir"
+      ],
+      "ancestry": ""
+    },
+    {
+      "id": "dog-kholo",
+      "name": "Dog Kholo",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kholo"
+    },
+    {
+      "id": "dogtooth-tengu",
+      "name": "Dogtooth Tengu",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tengu"
+    },
+    {
+      "id": "dragonblood",
+      "name": "Dragonblood",
+      "source": "Player Core 2",
+      "rarity": "uncommon",
+      "traits": [
+        "dragonblood"
+      ],
+      "ancestry": ""
+    },
+    {
+      "id": "dragonscaled-kobold",
+      "name": "Dragonscaled Kobold",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kobold"
+    },
+    {
+      "id": "dromaar",
+      "name": "Dromaar",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dromaar"
+      ],
+      "ancestry": ""
+    },
+    {
+      "id": "duskwalker",
+      "name": "Duskwalker",
+      "source": "Player Core 2",
+      "rarity": "uncommon",
+      "traits": [
+        "duskwalker"
+      ],
+      "ancestry": ""
+    },
+    {
+      "id": "elementheart-kobold",
+      "name": "Elementheart Kobold",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kobold"
+    },
+    {
+      "id": "elfbane-hobgoblin",
+      "name": "Elfbane Hobgoblin",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "hobgoblin"
+    },
+    {
+      "id": "fey-touched-gnome",
+      "name": "Fey-Touched Gnome",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "gnome"
+    },
+    {
+      "id": "forge-dwarf",
+      "name": "Forge Dwarf",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "dwarf"
+    },
+    {
+      "id": "frilled-lizardfolk",
+      "name": "Frilled Lizardfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "lizardfolk"
+    },
+    {
+      "id": "fruit-leshy",
+      "name": "Fruit Leshy",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "leshy"
+    },
+    {
+      "id": "fungus-leshy",
+      "name": "Fungus Leshy",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "leshy"
+    },
+    {
+      "id": "gourd-leshy",
+      "name": "Gourd Leshy",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "leshy"
+    },
+    {
+      "id": "grave-orc",
+      "name": "Grave Orc",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "orc"
+    },
+    {
+      "id": "great-kholo",
+      "name": "Great Kholo",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kholo"
+    },
+    {
+      "id": "gutsy-halfling",
+      "name": "Gutsy Halfling",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "halfling"
+    },
+    {
+      "id": "hillock-halfling",
+      "name": "Hillock Halfling",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "halfling"
+    },
+    {
+      "id": "hold-scarred-orc",
+      "name": "Hold-Scarred Orc",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "orc"
+    },
+    {
+      "id": "hunting-catfolk",
+      "name": "Hunting Catfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "catfolk"
+    },
+    {
+      "id": "irongut-goblin",
+      "name": "Irongut Goblin",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "goblin"
+    },
+    {
+      "id": "jinxed-halfling",
+      "name": "Jinxed Halfling",
+      "source": "Player Core",
+      "rarity": "uncommon",
+      "traits": [],
+      "ancestry": "halfling"
+    },
+    {
+      "id": "jinxed-tengu",
+      "name": "Jinxed Tengu",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tengu"
+    },
+    {
+      "id": "jungle-catfolk",
+      "name": "Jungle Catfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "catfolk"
+    },
+    {
+      "id": "leaf-leshy",
+      "name": "Leaf Leshy",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "leshy"
+    },
+    {
+      "id": "liminal-catfolk",
+      "name": "Liminal Catfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "catfolk"
+    },
+    {
+      "id": "longsnout-rat",
+      "name": "Longsnout Rat",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "ratfolk"
+    },
+    {
+      "id": "lotus-leshy",
+      "name": "Lotus Leshy",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "leshy"
+    },
+    {
+      "id": "mountainkeeper-tengu",
+      "name": "Mountainkeeper Tengu",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tengu"
+    },
+    {
+      "id": "nephilim",
+      "name": "Nephilim",
+      "source": "Player Core",
+      "rarity": "uncommon",
+      "traits": [
+        "nephilim"
+      ],
+      "ancestry": ""
+    },
+    {
+      "id": "nine-lives-catfolk",
+      "name": "Nine Lives Catfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "catfolk"
+    },
+    {
+      "id": "nomadic-halfling",
+      "name": "Nomadic Halfling",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "halfling"
+    },
+    {
+      "id": "poisonhide-tripkee",
+      "name": "Poisonhide Tripkee",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tripkee"
+    },
+    {
+      "id": "rainfall-orc",
+      "name": "Rainfall Orc",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "orc"
+    },
+    {
+      "id": "razortooth-goblin",
+      "name": "Razortooth Goblin",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "goblin"
+    },
+    {
+      "id": "riverside-tripkee",
+      "name": "Riverside Tripkee",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tripkee"
+    },
+    {
+      "id": "rock-dwarf",
+      "name": "Rock Dwarf",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "dwarf"
+    },
+    {
+      "id": "root-leshy",
+      "name": "Root Leshy",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "leshy"
+    },
+    {
+      "id": "runtboss-hobgoblin",
+      "name": "Runtboss Hobgoblin",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "hobgoblin"
+    },
+    {
+      "id": "sandstrider-lizardfolk",
+      "name": "Sandstrider Lizardfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "lizardfolk"
+    },
+    {
+      "id": "seaweed-leshy",
+      "name": "Seaweed Leshy",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "leshy"
+    },
+    {
+      "id": "seer-elf",
+      "name": "Seer Elf",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "elf"
+    },
+    {
+      "id": "sensate-gnome",
+      "name": "Sensate Gnome",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "gnome"
+    },
+    {
+      "id": "sewer-rat",
+      "name": "Sewer Rat",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "ratfolk"
+    },
+    {
+      "id": "shadow-rat",
+      "name": "Shadow Rat",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "ratfolk"
+    },
+    {
+      "id": "sharp-eared-catfolk",
+      "name": "Sharp-Eared Catfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "catfolk"
+    },
+    {
+      "id": "shortshanks-hobgoblin",
+      "name": "Shortshanks Hobgoblin",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "hobgoblin"
+    },
+    {
+      "id": "skilled-human",
+      "name": "Skilled Human",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "human"
+    },
+    {
+      "id": "skyborn-tengu",
+      "name": "Skyborn Tengu",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tengu"
+    },
+    {
+      "id": "smokeworker-hobgoblin",
+      "name": "Smokeworker Hobgoblin",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "hobgoblin"
+    },
+    {
+      "id": "snaptongue-tripkee",
+      "name": "Snaptongue Tripkee",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tripkee"
+    },
+    {
+      "id": "snow-goblin",
+      "name": "Snow Goblin",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "goblin"
+    },
+    {
+      "id": "snow-rat",
+      "name": "Snow Rat",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "ratfolk"
+    },
+    {
+      "id": "spellhorn-kobold",
+      "name": "Spellhorn Kobold",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kobold"
+    },
+    {
+      "id": "stickytoe-tripkee",
+      "name": "Stickytoe Tripkee",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tripkee"
+    },
+    {
+      "id": "stormtossed-tengu",
+      "name": "Stormtossed Tengu",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tengu"
+    },
+    {
+      "id": "strong-blooded-dwarf",
+      "name": "Strong-Blooded Dwarf",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "dwarf"
+    },
+    {
+      "id": "strongjaw-kobold",
+      "name": "Strongjaw Kobold",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kobold"
+    },
+    {
+      "id": "sweetbreath-kholo",
+      "name": "Sweetbreath Kholo",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kholo"
+    },
+    {
+      "id": "taloned-tengu",
+      "name": "Taloned Tengu",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tengu"
+    },
+    {
+      "id": "thickskin-tripkee",
+      "name": "Thickskin Tripkee",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tripkee"
+    },
+    {
+      "id": "tunnel-rat",
+      "name": "Tunnel Rat",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "ratfolk"
+    },
+    {
+      "id": "tunnelflood-kobold",
+      "name": "Tunnelflood Kobold",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kobold"
+    },
+    {
+      "id": "twilight-halfling",
+      "name": "Twilight Halfling",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "halfling"
+    },
+    {
+      "id": "umbral-gnome",
+      "name": "Umbral Gnome",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "gnome"
+    },
+    {
+      "id": "unbreakable-goblin",
+      "name": "Unbreakable Goblin",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "goblin"
+    },
+    {
+      "id": "unseen-lizardfolk",
+      "name": "Unseen Lizardfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "lizardfolk"
+    },
+    {
+      "id": "venomtail-kobold",
+      "name": "Venomtail Kobold",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kobold"
+    },
+    {
+      "id": "versatile-human",
+      "name": "Versatile Human",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "human"
+    },
+    {
+      "id": "vine-leshy",
+      "name": "Vine Leshy",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "leshy"
+    },
+    {
+      "id": "warmarch-hobgoblin",
+      "name": "Warmarch Hobgoblin",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "hobgoblin"
+    },
+    {
+      "id": "warrenbred-hobgoblin",
+      "name": "Warrenbred Hobgoblin",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "hobgoblin"
+    },
+    {
+      "id": "wavediver-tengu",
+      "name": "Wavediver Tengu",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tengu"
+    },
+    {
+      "id": "wellspring-gnome",
+      "name": "Wellspring Gnome",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "gnome"
+    },
+    {
+      "id": "wetlander-lizardfolk",
+      "name": "Wetlander Lizardfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "lizardfolk"
+    },
+    {
+      "id": "whisper-elf",
+      "name": "Whisper Elf",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "elf"
+    },
+    {
+      "id": "wildwood-halfling",
+      "name": "Wildwood Halfling",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "halfling"
+    },
+    {
+      "id": "windweb-tripkee",
+      "name": "Windweb Tripkee",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "tripkee"
+    },
+    {
+      "id": "winter-catfolk",
+      "name": "Winter Catfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "catfolk"
+    },
+    {
+      "id": "winter-kholo",
+      "name": "Winter Kholo",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kholo"
+    },
+    {
+      "id": "winter-orc",
+      "name": "Winter Orc",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "orc"
+    },
+    {
+      "id": "witch-kholo",
+      "name": "Witch Kholo",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "kholo"
+    },
+    {
+      "id": "woodland-elf",
+      "name": "Woodland Elf",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "elf"
+    },
+    {
+      "id": "woodstalker-lizardfolk",
+      "name": "Woodstalker Lizardfolk",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [],
+      "ancestry": "lizardfolk"
+    }
+  ],
+  "feats": [
+    {
+      "id": "absorb-strength",
+      "name": "Absorb Strength",
+      "source": "Player Core 2",
+      "rarity": "uncommon",
+      "traits": [
+        "kholo"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "absorb-toxin",
+      "name": "Absorb Toxin",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 9,
+      "prerequisites": "You are not immune to diseases or poisons",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "accursed-claws",
+      "name": "Accursed Claws",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "changeling"
+      ],
+      "level": 9,
+      "prerequisites": "claw unarmed attack",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "adapted-cantrip",
+      "name": "Adapted Cantrip",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 1,
+      "prerequisites": "spellcasting class feature",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "adaptive-adept",
+      "name": "Adaptive Adept",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 5,
+      "prerequisites": "Adapted Cantrip; can cast 3rd rank spells",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "advanced-general-training",
+      "name": "Advanced General Training",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": true,
+      "action": "passive"
+    },
+    {
+      "id": "affliction-resistance",
+      "name": "Affliction Resistance",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ageless-patience",
+      "name": "Ageless Patience",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "aggravating-scratch",
+      "name": "Aggravating Scratch",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk",
+        "disease"
+      ],
+      "level": 9,
+      "prerequisites": "claw unarmed attack",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "agonizing-rebuke",
+      "name": "Agonizing Rebuke",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "alchemical-scholar",
+      "name": "Alchemical Scholar",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "allys-shelter",
+      "name": "Ally's Shelter",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "fortune",
+        "kobold"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "ambush-hunter",
+      "name": "Ambush Hunter",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ancestors-rage",
+      "name": "Ancestor's Rage",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ancestral-longevity",
+      "name": "Ancestral Longevity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 1,
+      "prerequisites": "at least 100 years old",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ancestral-suspicion",
+      "name": "Ancestral Suspicion",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "anchoring-roots",
+      "name": "Anchoring Roots",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "angelkin",
+      "name": "Angelkin",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "lineage",
+        "nephilim"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "animal-accomplice",
+      "name": "Animal Accomplice",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "animal-elocutionist",
+      "name": "Animal Elocutionist",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "arcane-dragonblood",
+      "name": "Arcane Dragonblood",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood",
+        "lineage"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ask-the-bones",
+      "name": "Ask the Bones",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "free action"
+    },
+    {
+      "id": "athletic-might",
+      "name": "Athletic Might",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "avenge-ally",
+      "name": "Avenge Ally",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf",
+        "fortune"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "bark-and-tendril",
+      "name": "Bark and Tendril",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "beast-trainer",
+      "name": "Beast Trainer",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "benefactors-majesty",
+      "name": "Benefactor's Majesty",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "healing",
+        "kobold",
+        "visual"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "bestial-manifestation",
+      "name": "Bestial Manifestation",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "between-the-scales",
+      "name": "Between the Scales",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "big-mouth",
+      "name": "Big Mouth",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 9,
+      "prerequisites": "Cheek Pouches",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "black-cat-curse",
+      "name": "Black Cat Curse",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk",
+        "misfortune",
+        "occult"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "blessed-blood-nephilim",
+      "name": "Blessed Blood (Nephilim)",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "bloodletting-fangs",
+      "name": "Bloodletting Fangs",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dhampir"
+      ],
+      "level": 9,
+      "prerequisites": "fangs unarmed attack",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "bloody-blows",
+      "name": "Bloody Blows",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "bone-investiture",
+      "name": "Bone Investiture",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 13,
+      "prerequisites": "Bone Magic",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "bone-magic",
+      "name": "Bone Magic",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "bonekeepers-bane",
+      "name": "Bonekeeper's Bane",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "boneyards-call",
+      "name": "Boneyard's Call",
+      "source": "Player Core 2",
+      "rarity": "uncommon",
+      "traits": [
+        "duskwalker"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "boulder-roll",
+      "name": "Boulder Roll",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 5,
+      "prerequisites": "Rock Runner",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "bounce-back",
+      "name": "Bounce Back",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "free action"
+    },
+    {
+      "id": "breath-like-honey",
+      "name": "Breath Like Honey",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 9,
+      "prerequisites": "sweetbreath kholo heritage",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "breath-of-the-dragon-dragonblood",
+      "name": "Breath of the Dragon (Dragonblood)",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood",
+        "magical"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "briar-battler",
+      "name": "Briar Battler",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "brine-may",
+      "name": "Brine May",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "changeling",
+        "lineage"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "burn-it",
+      "name": "Burn It!",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "call-of-the-green-man",
+      "name": "Call of the Green Man",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "call-the-swarm",
+      "name": "Call the Swarm",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 17,
+      "prerequisites": "Ratspeak",
+      "repeatable": false,
+      "action": "3 actions"
+    },
+    {
+      "id": "called",
+      "name": "Called",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "changeling"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "callow-may",
+      "name": "Callow May",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "changeling",
+        "lineage"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "cant-fall-here",
+      "name": "Can't Fall Here",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "auditory",
+        "hobgoblin",
+        "manipulate"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "cantorian-reinforcement",
+      "name": "Cantorian Reinforcement",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "cantorian-rejuvenation",
+      "name": "Cantorian Rejuvenation",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "healing",
+        "hobgoblin",
+        "vitality"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "cantorian-restoration",
+      "name": "Cantorian Restoration",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "healing",
+        "hobgoblin",
+        "vitality"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "cat-nap",
+      "name": "Cat Nap",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk",
+        "concentrate",
+        "exploration"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "cats-luck",
+      "name": "Cat's Luck",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk",
+        "fortune"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "free action"
+    },
+    {
+      "id": "caterwaul",
+      "name": "Caterwaul",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "auditory",
+        "catfolk",
+        "concentrate",
+        "emotion",
+        "mental"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "catfolk-dance",
+      "name": "Catfolk Dance",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "catfolk-lore",
+      "name": "Catfolk Lore",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "catfolk-weapon-familiarity",
+      "name": "Catfolk Weapon Familiarity",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "cautious-curiosity",
+      "name": "Cautious Curiosity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome"
+      ],
+      "level": 9,
+      "prerequisites": "at least one arcane or occult innate spell gained from a gnome heritage or gnome ancestry feat",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "cave-climber",
+      "name": "Cave Climber",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ceaseless-shadows",
+      "name": "Ceaseless Shadows",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 13,
+      "prerequisites": "Distracting Shadows",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "celestial-magic",
+      "name": "Celestial Magic",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 9,
+      "prerequisites": "Angelkin, Lawbringer, Musetouched, or another lineage feat associated with celestials",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "celestial-mercy",
+      "name": "Celestial Mercy",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 13,
+      "prerequisites": "Angelkin, Lawbringer, Musetouched, or another lineage feat associated with celestials",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "chance-death",
+      "name": "Chance Death",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "duskwalker",
+        "fortune"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "changeling-lore",
+      "name": "Changeling Lore",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "changeling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "cheek-pouches",
+      "name": "Cheek Pouches",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "city-scavenger",
+      "name": "City Scavenger",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "clever-improviser",
+      "name": "Clever Improviser",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "climbing-claws",
+      "name": "Climbing Claws",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "cling",
+      "name": "Cling",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "cloak-of-poison",
+      "name": "Cloak of Poison",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy",
+        "poison"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "close-quarters",
+      "name": "Close Quarters",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "cooperative-nature",
+      "name": "Cooperative Nature",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "cooperative-soul",
+      "name": "Cooperative Soul",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "cornered-fury",
+      "name": "Cornered Fury",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "cringe",
+      "name": "Cringe",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "emotion",
+        "kobold",
+        "mental",
+        "visual"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "croak-talker",
+      "name": "Croak Talker",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "crunch",
+      "name": "Crunch",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "cultural-adaptability",
+      "name": "Cultural Adaptability",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "dance-underfoot",
+      "name": "Dance Underfoot",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 9,
+      "prerequisites": "Step Lively",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "dangle",
+      "name": "Dangle",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "deadly-aspect",
+      "name": "Deadly Aspect",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 5,
+      "prerequisites": "Draconic Aspect",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "defy-death",
+      "name": "Defy Death",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 5,
+      "prerequisites": "Orc Ferocity",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "defy-the-darkness",
+      "name": "Defy the Darkness",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 5,
+      "prerequisites": "darkvision",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "deliberate-death",
+      "name": "Deliberate Death",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "duskwalker"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "distant-cackle",
+      "name": "Distant Cackle",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 5,
+      "prerequisites": "witch kholo heritage",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "distracting-shadows",
+      "name": "Distracting Shadows",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "divine-countermeasures",
+      "name": "Divine Countermeasures",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "divine-declaration",
+      "name": "Divine Declaration",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "divine-dragonblood",
+      "name": "Divine Dragonblood",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood",
+        "lineage"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "divine-wings",
+      "name": "Divine Wings",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "divine",
+        "morph",
+        "nephilim"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "draconic-aspect",
+      "name": "Draconic Aspect",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "draconic-resistance",
+      "name": "Draconic Resistance",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "draconic-scent",
+      "name": "Draconic Scent",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "draconic-sight",
+      "name": "Draconic Sight",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "draconic-veil",
+      "name": "Draconic Veil",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "dragon-lore",
+      "name": "Dragon Lore",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "dragons-flight",
+      "name": "Dragon's Flight",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "dragons-presence",
+      "name": "Dragon's Presence",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 1,
+      "prerequisites": "dragonscaled kobold heritage",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "dream-may",
+      "name": "Dream May",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "changeling",
+        "lineage"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "duskwalker-lore",
+      "name": "Duskwalker Lore",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "duskwalker"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "duskwalker-magic",
+      "name": "Duskwalker Magic",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "duskwalker"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "duskwalker-weapon-familiarity",
+      "name": "Duskwalker Weapon Familiarity",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "duskwalker"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "dwarven-doughtiness",
+      "name": "Dwarven Doughtiness",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "dwarven-lore",
+      "name": "Dwarven Lore",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "dwarven-reinforcement",
+      "name": "Dwarven Reinforcement",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 5,
+      "prerequisites": "expert in Crafting",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "dwarven-weapon-familiarity",
+      "name": "Dwarven Weapon Familiarity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "earned-glory",
+      "name": "Earned Glory",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "aiuvarin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "eat-fortune",
+      "name": "Eat Fortune",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "concentrate",
+        "divine",
+        "tengu"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "echoes-in-stone",
+      "name": "Echoes in Stone",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "concentrate",
+        "dwarf"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "elf-atavism",
+      "name": "Elf Atavism",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "aiuvarin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "elf-step",
+      "name": "Elf Step",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "elude-trouble",
+      "name": "Elude Trouble",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "elven-lore",
+      "name": "Elven Lore",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "elven-weapon-familiarity",
+      "name": "Elven Weapon Familiarity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "energized-font",
+      "name": "Energized Font",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome"
+      ],
+      "level": 5,
+      "prerequisites": "focus pool; at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least one of your focus spells",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "enthralling-allure",
+      "name": "Enthralling Allure",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dhampir"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "envenom-fangs",
+      "name": "Envenom Fangs",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 5,
+      "prerequisites": "Iruxi Armaments (Fangs)",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "envenomed-edge",
+      "name": "Envenomed Edge",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "eternal-wings-nephilim",
+      "name": "Eternal Wings (Nephilim)",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 17,
+      "prerequisites": "Divine Wings",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "evade-doom",
+      "name": "Evade Doom",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "evolved-spellhorn",
+      "name": "Evolved Spellhorn",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "expert-drill-sergeant",
+      "name": "Expert Drill Sergeant",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "expert-longevity",
+      "name": "Expert Longevity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 9,
+      "prerequisites": "Ancestral Longevity",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "extraplanar-supplication",
+      "name": "Extraplanar Supplication",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "eyes-of-night",
+      "name": "Eyes of Night",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dhampir"
+      ],
+      "level": 1,
+      "prerequisites": "low-light vision",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "fangs",
+      "name": "Fangs",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dhampir"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "fantastic-leaps",
+      "name": "Fantastic Leaps",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "fell-rider",
+      "name": "Fell Rider",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 9,
+      "prerequisites": "animal companion",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ferocious-beasts",
+      "name": "Ferocious Beasts",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 13,
+      "prerequisites": "animal companion, Pet, or Bonded Animal; Orc Ferocity",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "fey-fellowship",
+      "name": "Fey Fellowship",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "fiendish-magic",
+      "name": "Fiendish Magic",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 9,
+      "prerequisites": "Grimspawn, Pitborn, Hellspawn, or another lineage feat associated with fiends",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "first-world-adept",
+      "name": "First World Adept",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome"
+      ],
+      "level": 9,
+      "prerequisites": "at least one primal innate spell",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "first-world-magic",
+      "name": "First World Magic",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "first-to-strike-first-to-fall",
+      "name": "First to Strike, First to Fall",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "fleeing-shriek",
+      "name": "Fleeing Shriek",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "auditory",
+        "kobold",
+        "sonic"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "flexible-tail",
+      "name": "Flexible Tail",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "flourish-and-ruin",
+      "name": "Flourish and Ruin",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "folksy-patter",
+      "name": "Folksy Patter",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "forlorn",
+      "name": "Forlorn",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "form-of-the-bat",
+      "name": "Form of the Bat",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "concentrate",
+        "dhampir",
+        "divine",
+        "polymorph"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "form-of-the-dragon",
+      "name": "Form of the Dragon",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "formidable-breath",
+      "name": "Formidable Breath",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 9,
+      "prerequisites": "Breath of the Dragon",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "fossil-rider",
+      "name": "Fossil Rider",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 17,
+      "prerequisites": "Bone Magic",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "geckos-grip",
+      "name": "Gecko's Grip",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 5,
+      "prerequisites": "cliffscale lizardfolk",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "general-training",
+      "name": "General Training",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": true,
+      "action": "passive"
+    },
+    {
+      "id": "ghost-hunter",
+      "name": "Ghost Hunter",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "duskwalker"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "gnome-obsession",
+      "name": "Gnome Obsession",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "gnome-weapon-familiarity",
+      "name": "Gnome Weapon Familiarity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "goblin-lore",
+      "name": "Goblin Lore",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "goblin-scuttle",
+      "name": "Goblin Scuttle",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "goblin-song",
+      "name": "Goblin Song",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "goblin-weapon-familiarity",
+      "name": "Goblin Weapon Familiarity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "graceful-guidance",
+      "name": "Graceful Guidance",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "grandmothers-wisdom",
+      "name": "Grandmother's Wisdom",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "grasping-reach",
+      "name": "Grasping Reach",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "gravesight",
+      "name": "Gravesight",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "duskwalker"
+      ],
+      "level": 1,
+      "prerequisites": "low-light vision",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "great-tengu-form",
+      "name": "Great Tengu Form",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 17,
+      "prerequisites": "Long-Nosed Form",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "greater-than-the-sum",
+      "name": "Greater than the Sum",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "grimspawn",
+      "name": "Grimspawn",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "lineage",
+        "nephilim"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "group-aid",
+      "name": "Group Aid",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "grovel",
+      "name": "Grovel",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "auditory",
+        "concentrate",
+        "emotion",
+        "kobold",
+        "mental"
+      ],
+      "level": 5,
+      "prerequisites": "trained in Deception",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "guiding-luck",
+      "name": "Guiding Luck",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 9,
+      "prerequisites": "Halfling Luck",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "hag-claws",
+      "name": "Hag Claws",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "changeling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "hag-magic",
+      "name": "Hag Magic",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "changeling"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "hags-sight",
+      "name": "Hag's Sight",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "changeling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "halfling-lore",
+      "name": "Halfling Lore",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "halfling-luck",
+      "name": "Halfling Luck",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "fortune",
+        "halfling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "free action"
+    },
+    {
+      "id": "halfling-weapon-familiarity",
+      "name": "Halfling Weapon Familiarity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "halo",
+      "name": "Halo",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "harbingers-caw",
+      "name": "Harbinger's Caw",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "auditory",
+        "divine",
+        "misfortune",
+        "tengu"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "hardy-traveler",
+      "name": "Hardy Traveler",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "harmlessly-cute",
+      "name": "Harmlessly Cute",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "haughty-obstinacy",
+      "name": "Haughty Obstinacy",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "hellspawn",
+      "name": "Hellspawn",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "lineage",
+        "nephilim"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "heroic-presence",
+      "name": "Heroic Presence",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "emotion",
+        "human",
+        "mental"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "hobgoblin-lore",
+      "name": "Hobgoblin Lore",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "hobgoblin-weapon-familiarity",
+      "name": "Hobgoblin Weapon Familiarity",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "hold-mark",
+      "name": "Hold Mark",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "homeward-bound",
+      "name": "Homeward Bound",
+      "source": "Player Core",
+      "rarity": "uncommon",
+      "traits": [
+        "gnome"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "hone-claws",
+      "name": "Hone Claws",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 9,
+      "prerequisites": "Iruxi Armaments (Claws)",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "hop-up",
+      "name": "Hop Up",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "free action"
+    },
+    {
+      "id": "hunters-defense",
+      "name": "Hunter's Defense",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 1,
+      "prerequisites": "trained in Nature",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "hyena-familiar",
+      "name": "Hyena Familiar",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "illusion-sense",
+      "name": "Illusion Sense",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "impaling-bone",
+      "name": "Impaling Bone",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "incredible-ferocity",
+      "name": "Incredible Ferocity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 13,
+      "prerequisites": "Orc Ferocity",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "incredible-improvisation",
+      "name": "Incredible Improvisation",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 9,
+      "prerequisites": "Clever Improviser",
+      "repeatable": false,
+      "action": "free action"
+    },
+    {
+      "id": "inspire-imitation",
+      "name": "Inspire Imitation",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "aiuvarin"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "instinctive-obfuscation",
+      "name": "Instinctive Obfuscation",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome",
+        "illusion",
+        "visual"
+      ],
+      "level": 13,
+      "prerequisites": "at least one arcane or occult innate spell gained from a gnome heritage or gnome ancestry feat",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "iron-fists",
+      "name": "Iron Fists",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "irrepressible-halfling",
+      "name": "Irrepressible (Halfling)",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "iruxi-armaments",
+      "name": "Iruxi Armaments",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "iruxi-spirit-strike",
+      "name": "Iruxi Spirit Strike",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "jinx-glutton",
+      "name": "Jinx Glutton",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 13,
+      "prerequisites": "Eat Fortune",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "jungle-strider",
+      "name": "Jungle Strider",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "junk-tinker",
+      "name": "Junk Tinker",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "kholo-lore",
+      "name": "Kholo Lore",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "kholo-weapon-familiarity",
+      "name": "Kholo Weapon Familiarity",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "kneecap",
+      "name": "Kneecap",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "kobold-lore",
+      "name": "Kobold Lore",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "kobold-weapon-familiarity",
+      "name": "Kobold Weapon Familiarity",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "lab-rat",
+      "name": "Lab Rat",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "laughing-kholo",
+      "name": "Laughing Kholo",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 9,
+      "prerequisites": "master in Intimidation",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "lawbringer",
+      "name": "Lawbringer",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "lineage",
+        "nephilim"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "leech-clip",
+      "name": "Leech-Clip",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "left-hand-blood",
+      "name": "Left-Hand Blood",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "legendary-laugh",
+      "name": "Legendary Laugh",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "leshy-glide",
+      "name": "Leshy Glide",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 5,
+      "prerequisites": "leaf leshy heritage or Cat Fall skill feat",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "leshy-lore",
+      "name": "Leshy Lore",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "leshy-superstition",
+      "name": "Leshy Superstition",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "life-leap",
+      "name": "Life Leap",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome",
+        "move",
+        "teleportation"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "lifesense",
+      "name": "Lifesense",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "divine",
+        "duskwalker"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "light-paws",
+      "name": "Light Paws",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "lingering-breath",
+      "name": "Lingering Breath",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 17,
+      "prerequisites": "Breath of the Dragon",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "lizardfolk-lore",
+      "name": "Lizardfolk Lore",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "long-tongue",
+      "name": "Long Tongue",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 5,
+      "prerequisites": "snaptongue tripkee",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "long-nosed-form",
+      "name": "Long-Nosed Form",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "concentrate",
+        "polymorph",
+        "primal",
+        "tengu"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "loud-singer",
+      "name": "Loud Singer",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 5,
+      "prerequisites": "Goblin Song",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "luck-of-the-clowder",
+      "name": "Luck of the Clowder",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 9,
+      "prerequisites": "Cat's Luck",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "lucky-break",
+      "name": "Lucky Break",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 5,
+      "prerequisites": "Cat's Luck",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "lucky-keepsake",
+      "name": "Lucky Keepsake",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 9,
+      "prerequisites": "Leshy Superstition",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "magic-rider",
+      "name": "Magic Rider",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "magpie-snatch",
+      "name": "Magpie Snatch",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "majestic-presence",
+      "name": "Majestic Presence",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood",
+        "emotion",
+        "fear",
+        "mental",
+        "visual"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "march-the-mines",
+      "name": "March the Mines",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "mariners-fire",
+      "name": "Mariner's Fire",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "marsh-runner",
+      "name": "Marsh Runner",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 1,
+      "prerequisites": "You have a swim Speed",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "martial-experience",
+      "name": "Martial Experience",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "mist-child",
+      "name": "Mist Child",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "changeling"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "moisture-bath",
+      "name": "Moisture Bath",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee",
+        "manipulate"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "monstrous-peacemaker",
+      "name": "Monstrous Peacemaker",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dromaar"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "mountain-strategy",
+      "name": "Mountain Strategy",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "mountains-stoutness",
+      "name": "Mountain's Stoutness",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "multitalented",
+      "name": "Multitalented",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "musetouched",
+      "name": "Musetouched",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "lineage",
+        "nephilim"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "natural-ambition",
+      "name": "Natural Ambition",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "natural-skill",
+      "name": "Natural Skill",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "necromantic-physiology",
+      "name": "Necromantic Physiology",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dhampir"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "nephilim-eyes",
+      "name": "Nephilim Eyes",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 1,
+      "prerequisites": "low-light vision",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "nephilim-lore",
+      "name": "Nephilim Lore",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "nephilim-resistance",
+      "name": "Nephilim Resistance",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "night-magic",
+      "name": "Night Magic",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dhampir"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "nimble-elf",
+      "name": "Nimble Elf",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "nimble-hooves",
+      "name": "Nimble Hooves",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "nocturnal-tripkee",
+      "name": "Nocturnal Tripkee",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "occult-dragonblood",
+      "name": "Occult Dragonblood",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood",
+        "lineage"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "occult-resistance",
+      "name": "Occult Resistance",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "changeling"
+      ],
+      "level": 9,
+      "prerequisites": "expert in Occultism",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "one-toed-hop",
+      "name": "One-Toed Hop",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "orc-ferocity",
+      "name": "Orc Ferocity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "orc-lore",
+      "name": "Orc Lore",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "orc-sight",
+      "name": "Orc Sight",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dromaar"
+      ],
+      "level": 1,
+      "prerequisites": "low-light vision",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "orc-superstition",
+      "name": "Orc Superstition",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "concentrate",
+        "orc"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "orc-weapon-familiarity",
+      "name": "Orc Weapon Familiarity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "otherworldly-acumen",
+      "name": "Otherworldly Acumen",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 9,
+      "prerequisites": "at least one innate spell gained from an elf ancestry feat",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "otherworldly-magic",
+      "name": "Otherworldly Magic",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "overcrowd",
+      "name": "Overcrowd",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "pack-hunter",
+      "name": "Pack Hunter",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "pack-rat",
+      "name": "Pack Rat",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "pack-stalker",
+      "name": "Pack Stalker",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 5,
+      "prerequisites": "expert in Stealth",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "parthenogenic-hatchling",
+      "name": "Parthenogenic Hatchling",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "pervasive-superstition",
+      "name": "Pervasive Superstition",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 9,
+      "prerequisites": "Orc Superstition",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "pitborn",
+      "name": "Pitborn",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "lineage",
+        "nephilim"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "prairie-rider",
+      "name": "Prairie Rider",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "predators-growl",
+      "name": "Predator's Growl",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 9,
+      "prerequisites": "expert in Intimidation",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "pride-hunter",
+      "name": "Pride Hunter",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "pride-in-arms",
+      "name": "Pride in Arms",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "auditory",
+        "hobgoblin"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "primal-dragonblood",
+      "name": "Primal Dragonblood",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood",
+        "lineage"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "primal-rampage",
+      "name": "Primal Rampage",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "prodigious-climber",
+      "name": "Prodigious Climber",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "project-persona",
+      "name": "Project Persona",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "concentrate",
+        "gnome",
+        "illusion",
+        "primal",
+        "visual"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "quick-stow-ratfolk",
+      "name": "Quick Stow (Ratfolk)",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 5,
+      "prerequisites": "Cheek Pouches",
+      "repeatable": false,
+      "action": "free action"
+    },
+    {
+      "id": "quietus-strikes",
+      "name": "Quietus Strikes",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "duskwalker"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "rabid-sprint",
+      "name": "Rabid Sprint",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "flourish",
+        "kholo"
+      ],
+      "level": 5,
+      "prerequisites": "dog kholo heritage",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "rallying-cry",
+      "name": "Rallying Cry",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "auditory",
+        "hobgoblin"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "rampaging-ferocity",
+      "name": "Rampaging Ferocity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 17,
+      "prerequisites": "Orc Ferocity",
+      "repeatable": false,
+      "action": "free action"
+    },
+    {
+      "id": "rat-familiar",
+      "name": "Rat Familiar",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "rat-form",
+      "name": "Rat Form",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "concentrate",
+        "polymorph",
+        "primal",
+        "ratfolk"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "rat-magic",
+      "name": "Rat Magic",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ratfolk-lore",
+      "name": "Ratfolk Lore",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ratfolk-roll",
+      "name": "Ratfolk Roll",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "move",
+        "ratfolk"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "ratspeak",
+      "name": "Ratspeak",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "razzle-dazzle",
+      "name": "Razzle-Dazzle",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "free action"
+    },
+    {
+      "id": "reckless-abandon",
+      "name": "Reckless Abandon",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "fortune",
+        "goblin"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "free action"
+    },
+    {
+      "id": "recognize-ambush",
+      "name": "Recognize Ambush",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "free action"
+    },
+    {
+      "id": "regrowth",
+      "name": "Regrowth",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "reliable-luck",
+      "name": "Reliable Luck",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 17,
+      "prerequisites": "Cat's Luck",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "remorseless-lash",
+      "name": "Remorseless Lash",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "reptile-speaker",
+      "name": "Reptile Speaker",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "resist-ruin",
+      "name": "Resist Ruin",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "duskwalker"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "resplendent-spellhorn",
+      "name": "Resplendent Spellhorn",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 13,
+      "prerequisites": "Evolved Spellhorn",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ricocheting-leap",
+      "name": "Ricocheting Leap",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 9,
+      "prerequisites": "Wall Jump",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "right-hand-blood",
+      "name": "Right-Hand Blood",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ritual-reversion",
+      "name": "Ritual Reversion",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy",
+        "polymorph",
+        "primal"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "rock-runner",
+      "name": "Rock Runner",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "rough-rider",
+      "name": "Rough Rider",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "runtsage",
+      "name": "Runtsage",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "saber-teeth",
+      "name": "Saber Teeth",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "scaly-hide",
+      "name": "Scaly Hide",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "scamper",
+      "name": "Scamper",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "scar-thick-skin",
+      "name": "Scar-Thick Skin",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "scavengers-search",
+      "name": "Scavenger's Search",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "scion-transformation",
+      "name": "Scion Transformation",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk",
+        "primal"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "scion-of-many-planes",
+      "name": "Scion of Many Planes",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "seedpod",
+      "name": "Seedpod",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "sense-allies",
+      "name": "Sense Allies",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "sensitive-nose",
+      "name": "Sensitive Nose",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kholo"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "shadow-self",
+      "name": "Shadow Self",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 17,
+      "prerequisites": "legendary Stealth",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "shadow-of-the-wilds",
+      "name": "Shadow of the Wilds",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "shed-tail",
+      "name": "Shed Tail",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 5,
+      "prerequisites": "Iruxi Armaments (Tail)",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "shinstabber",
+      "name": "Shinstabber",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 13,
+      "prerequisites": "Overcrowd",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "silent-step",
+      "name": "Silent Step",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk",
+        "flourish"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "skillful-tail-nephilim",
+      "name": "Skillful Tail (Nephilim)",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "skittering-scuttle",
+      "name": "Skittering Scuttle",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 9,
+      "prerequisites": "Goblin Scuttle",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "skittering-sneak",
+      "name": "Skittering Sneak",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "slag-may",
+      "name": "Slag May",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "changeling",
+        "lineage"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "slip-sideways",
+      "name": "Slip Sideways",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 13,
+      "prerequisites": "Grimspawn, Pitborn, or Hellspawn, or another lineage feat associated with fiends or the Maelstrom",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "snare-genius",
+      "name": "Snare Genius",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 5,
+      "prerequisites": "expert in Crafting; Snare Crafting",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "snare-setter",
+      "name": "Snare Setter",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 1,
+      "prerequisites": "trained in Crafting",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "sneaky",
+      "name": "Sneaky",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "soaring-flight",
+      "name": "Soaring Flight",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 5,
+      "prerequisites": "skyborn tengu heritage",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "soaring-form",
+      "name": "Soaring Form",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 9,
+      "prerequisites": "Soaring Flight",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "solar-rejuvenation",
+      "name": "Solar Rejuvenation",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "ghoran",
+        "leshy"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "speak-with-kindred",
+      "name": "Speak with Kindred",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "spell-devourer",
+      "name": "Spell Devourer",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 13,
+      "prerequisites": "Pervasive Superstition",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "spirit-soother",
+      "name": "Spirit Soother",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "duskwalker"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "springing-leaper",
+      "name": "Springing Leaper",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 5,
+      "prerequisites": "expert in Athletics",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "squad-tactics",
+      "name": "Squad Tactics",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "squawk",
+      "name": "Squawk!",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "step-lively",
+      "name": "Step Lively",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "stone-bones",
+      "name": "Stone Bones",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "stone-face",
+      "name": "Stone Face",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "stonegate",
+      "name": "Stonegate",
+      "source": "Player Core",
+      "rarity": "uncommon",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 17,
+      "prerequisites": "Stonewalker",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "stonemasons-eye",
+      "name": "Stonemason's Eye",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "stonewalker",
+      "name": "Stonewalker",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "stonewall",
+      "name": "Stonewall",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf",
+        "earth",
+        "polymorph"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "storms-lash",
+      "name": "Storm's Lash",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "straveika",
+      "name": "Straveika",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dhampir",
+        "lineage"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "stubborn-persistence",
+      "name": "Stubborn Persistence",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "summon-nephilim-kin",
+      "name": "Summon Nephilim Kin",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "nephilim"
+      ],
+      "level": 13,
+      "prerequisites": "any nephilim lineage feat",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "supernatural-charm",
+      "name": "Supernatural Charm",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "aiuvarin"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "sure-feet",
+      "name": "Sure Feet",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "svetocher",
+      "name": "Svetocher",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dhampir",
+        "lineage"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "swift-swimmer",
+      "name": "Swift Swimmer",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "symphony-of-blood",
+      "name": "Symphony of Blood",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dhampir"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "telluric-power",
+      "name": "Telluric Power",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ten-lives",
+      "name": "Ten Lives",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 17,
+      "prerequisites": "Evade Doom",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "tenacious-net",
+      "name": "Tenacious Net",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "tengu-feather-fan",
+      "name": "Tengu Feather Fan",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "tengu-lore",
+      "name": "Tengu Lore",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "tengu-weapon-familiarity",
+      "name": "Tengu Weapon Familiarity",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "terrain-advantage",
+      "name": "Terrain Advantage",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "lizardfolk"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "terrifying-croak",
+      "name": "Terrifying Croak",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 1,
+      "prerequisites": "trained in Intimidation",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "thorned-seedpod",
+      "name": "Thorned Seedpod",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 9,
+      "prerequisites": "Seedpod",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "thunder-gods-fan",
+      "name": "Thunder God's Fan",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 13,
+      "prerequisites": "Tengu Feather Fan",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "tinkering-fingers",
+      "name": "Tinkering Fingers",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "titan-slinger",
+      "name": "Titan Slinger",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "tongue-tether",
+      "name": "Tongue Tether",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 9,
+      "prerequisites": "snaptongue tripkee",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "toppling-dance",
+      "name": "Toppling Dance",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 13,
+      "prerequisites": "Dance Underfoot",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "traditional-resistances",
+      "name": "Traditional Resistances",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 5,
+      "prerequisites": "Arcane Dragonblood, Divine Dragonblood, Occult Dragonblood, or Primal Dragonblood",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "tree-climber-elf",
+      "name": "Tree Climber (Elf)",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "trickster-tengu",
+      "name": "Trickster Tengu",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "tripkee-glide",
+      "name": "Tripkee Glide",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 5,
+      "prerequisites": "windweb tripkee",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "tripkee-lore",
+      "name": "Tripkee Lore",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "tripkee-weapon-familiarity",
+      "name": "Tripkee Weapon Familiarity",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "true-dragons-flight",
+      "name": "True Dragon's Flight",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dragonblood"
+      ],
+      "level": 9,
+      "prerequisites": "Dragon's Flight",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "tumbling-diversion",
+      "name": "Tumbling Diversion",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 13,
+      "prerequisites": "expert in Acrobatics and Deception",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "tusks-orc",
+      "name": "Tusks (Orc)",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "unbound-leaper",
+      "name": "Unbound Leaper",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 17,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "unburdened-iron",
+      "name": "Unburdened Iron",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "dwarf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "uncanny-agility",
+      "name": "Uncanny Agility",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "uncanny-cheeks",
+      "name": "Uncanny Cheeks",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "unconventional-weaponry",
+      "name": "Unconventional Weaponry",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "human"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "undaunted",
+      "name": "Undaunted",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "leshy"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "undead-slayer",
+      "name": "Undead Slayer",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dhampir"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "undying-ferocity",
+      "name": "Undying Ferocity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "orc"
+      ],
+      "level": 9,
+      "prerequisites": "Orc Ferocity",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "unfettered-halfling",
+      "name": "Unfettered Halfling",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "unhampered-passage",
+      "name": "Unhampered Passage",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "universal-longevity",
+      "name": "Universal Longevity",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 13,
+      "prerequisites": "Ancestral Longevity",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "unwavering-mien",
+      "name": "Unwavering Mien",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "elf"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "vampire-lore",
+      "name": "Vampire Lore",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dhampir"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "vandal",
+      "name": "Vandal",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "very-sneaky",
+      "name": "Very Sneaky",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "very-very-sneaky",
+      "name": "Very, Very Sneaky",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "goblin"
+      ],
+      "level": 13,
+      "prerequisites": "Very Sneaky",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "vicious-incisors",
+      "name": "Vicious Incisors",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "vicious-snares",
+      "name": "Vicious Snares",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 13,
+      "prerequisites": "expert in Crafting; Snare Crafting",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "vigorous-health",
+      "name": "Vigorous Health",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "vivacious-conduit",
+      "name": "Vivacious Conduit",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "gnome"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "voice-of-the-night",
+      "name": "Voice of the Night",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "dhampir"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "vomit-stomach",
+      "name": "Vomit Stomach",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tripkee"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "reaction"
+    },
+    {
+      "id": "war-conditioning",
+      "name": "War Conditioning",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "hobgoblin"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "ward-against-corruption",
+      "name": "Ward Against Corruption",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "duskwalker"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "warren-digger",
+      "name": "Warren Digger",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 13,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "warren-navigator",
+      "name": "Warren Navigator",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "ratfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "wary-skulker",
+      "name": "Wary Skulker",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 9,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "watchful-halfling",
+      "name": "Watchful Halfling",
+      "source": "Player Core",
+      "rarity": "common",
+      "traits": [
+        "halfling"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "well-groomed",
+      "name": "Well-Groomed",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "well-met-traveler",
+      "name": "Well-Met Traveler",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "catfolk"
+      ],
+      "level": 1,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "wind-gods-fan",
+      "name": "Wind God's Fan",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "tengu"
+      ],
+      "level": 9,
+      "prerequisites": "Tengu Feather Fan",
+      "repeatable": false,
+      "action": "passive"
+    },
+    {
+      "id": "wing-buffet",
+      "name": "Wing Buffet",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "attack",
+        "dragonblood"
+      ],
+      "level": 9,
+      "prerequisites": "expert in Athletics",
+      "repeatable": false,
+      "action": "2 actions"
+    },
+    {
+      "id": "winglet-flight",
+      "name": "Winglet Flight",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 9,
+      "prerequisites": "Winglets",
+      "repeatable": false,
+      "action": "1 action"
+    },
+    {
+      "id": "winglets",
+      "name": "Winglets",
+      "source": "Player Core 2",
+      "rarity": "common",
+      "traits": [
+        "kobold"
+      ],
+      "level": 5,
+      "prerequisites": "",
+      "repeatable": false,
+      "action": "passive"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+ORC NOTICE
+This product is licensed under the ORC License located at the Library of Congress at TX 9-307-067 and available online at https://downloads.paizo.com/ORC_License_FINAL.pdf. All warranties are disclaimed as set forth therein.
+
+ATTRIBUTION NOTICE
+Pathfinder Player Core © 2023, Paizo Inc.; Designers: Logan Bonner, Jason Bulmahn, Stephen Radney-MacFarland, and Mark Seifter. Authors: Alexander Augunas, Kate Baker, Logan Bonner, Jason Bulmahn, Carlos Cabrera, Calder CaDavid, James Case, Eleanor Ferron, Steven Hammond, Joan Hong, Vanessa Hoskins, James Jacobs, Jenny Jarzabski, Erik Keith, Dustin Knight, Lyz Liddell, Luis Loza, Patchen Mortimer, Dennis Muldoon, Stephen Radney-MacFarland, Mikhail Rekun, David N. Ross, Michael Sayre, Mark Seifter, Kendra Leigh, Speedling, Mark Thompson, Clark Valentine, Andrew White, Landon Winkler, and Linda Zayas-Palmer
+
+Pathfinder Player Core 2 © 2024, Paizo Inc.; Authors: Amirali Attar Olyaee, Alexander Augunas, Brian Bauman, Joshua Birdsong, Logan Bonner, Jason Bulmahn, James Case, Jessica Catalan, John Compton, Paris Crenshaw, Jesse Decker, Eleanor Ferron, Fabby Garza Marroquín, Steven Hammond, Sasha Laranoa Harving, Joan Hong, Nicolas Hornyak, Vanessa Hoskins, James Jacobs, Jason Keeley, Dustin Knight, Avi Kool, Lyz Liddell, Nicolas Logue, Luis Loza, Ron Lundeen, Patchen Mortimer, Stephen Radney‑MacFarland, Jessica Redekop, Mikhail Rekun, Alex Riggs, David N. Ross, Michael Sayre, Mark Seifter, Owen K.C. Stephens, Jason Tondro, Clark Valentine, Andrew White, Landon Winkler, and Tonya Woldridge.
+
+Rules data transcribed by the PF2e for Foundry VTT volunteer development team.
+https://github.com/foundryvtt/pf2e/tree/4cbdaa37d6c33e9519561bae2c59a23e0288cbce
+Adapted plain-text rules catalog: Masque Character Creator contributors, 2026.
+
+RESERVED MATERIAL
+Trademarks, artwork, characters, deities, locations, plots, storylines, and trade dress are reserved to their respective owners to the extent they constitute Reserved Material under the ORC License.
+
+EXPRESSLY DESIGNATED LICENSED MATERIAL
+This product contains no Expressly Designated Licensed Material.
