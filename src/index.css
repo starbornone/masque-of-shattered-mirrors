@@ -259,3 +259,19 @@
     animation: none;
   }
 }
+
+@media print {
+  body:has(.print-attribute-ledger) {
+    background: white;
+  }
+
+  [data-print-ledger] {
+    display: block;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  [data-print-ledger] > :not(.print-attribute-ledger) {
+    display: none;
+  }
+}

@@ -1,12 +1,69 @@
+import { useRef, useState } from 'react'
 import veratheMirror from '@/assets/verathe-mirror.svg'
-import { InvitationLetter } from '@/components/InvitationLetter'
+import { parseBuild } from '@/attributes/build'
+import { buildDraftStorageKey, loadBuildDraft, serializeBuildDraft } from '@/attributes/draft'
+import type { BuildDraft } from '@/attributes/draft'
+import { BuildActions } from '@/components/BuildActions'
+import { BuildGuide, BuildSummary } from '@/components/BuildGuide'
 import { Navbar } from '@/components/Navbar'
-import { Badge } from '@/components/ui/badge'
+import { PrintableAttributeLedger } from '@/components/PrintableAttributeLedger'
+import { SessionZeroGuide } from '@/components/SessionZeroGuide'
 import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { loadSessionZero, serializeSessionZero, sessionZeroStorageKey } from '@/session-zero/draft'
+import type { SessionZeroDraft } from '@/session-zero/types'
 
 function App() {
+  const [draft, setDraft] = useState(loadSessionZero)
+  const [buildDraft, setBuildDraft] = useState(loadBuildDraft)
+  const [shared, setShared] = useState(() => {
+    const requested = new URLSearchParams(window.location.search).get('build')
+    return requested === null ? null : { build: parseBuild(requested) }
+  })
+  const [storageError, setStorageError] = useState(false)
+  const [buildStorageError, setBuildStorageError] = useState(false)
+  const concept = useRef<HTMLDivElement>(null)
+  const { build, step } = buildDraft
+  const sharedBuild = shared?.build
+  const printBuild = sharedBuild ?? (step === 'review' ? build : null)
+
+  function saveDraft(next: SessionZeroDraft) {
+    setDraft(next)
+    try {
+      localStorage.setItem(sessionZeroStorageKey, serializeSessionZero(next.answers, next.step))
+      setStorageError(false)
+    } catch {
+      setStorageError(true)
+    }
+  }
+
+  function saveBuild(next: BuildDraft) {
+    setBuildDraft(next)
+    try {
+      localStorage.setItem(buildDraftStorageKey, serializeBuildDraft(next))
+      setBuildStorageError(false)
+    } catch {
+      setBuildStorageError(true)
+    }
+  }
+
+  function closeSharedBuild() {
+    const url = new URL(window.location.href)
+    url.searchParams.delete('build')
+    window.history.replaceState(window.history.state, '', url)
+    setShared(null)
+  }
+
+  function returnToConcept() {
+    saveBuild({ build, step: null })
+    requestAnimationFrame(() => concept.current?.querySelector('h2')?.focus())
+  }
+
   return (
-    <div className="relative flex min-h-svh flex-col overflow-hidden text-foreground">
+    <div
+      className="relative flex min-h-svh flex-col overflow-hidden text-foreground"
+      data-print-ledger={printBuild ? '' : undefined}
+    >
       <img
         src={veratheMirror}
         alt=""
@@ -16,7 +73,7 @@ function App() {
       />
 
       <header className="relative z-10 border-b border-primary/20 bg-[color-mix(in_oklch,var(--card)_78%,transparent)] backdrop-blur-md">
-        <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-5">
+        <div className="mx-auto max-w-3xl px-6 py-5">
           <div className="veil-in flex items-start gap-3">
             <img
               src={`${import.meta.env.BASE_URL}favicon.svg`}
@@ -37,29 +94,83 @@ function App() {
               </p>
             </div>
           </div>
-          <Badge
-            variant="secondary"
-            className="veil-in border border-primary/25 bg-secondary/90 tracking-wide text-secondary-foreground"
-          >
-            Player
-          </Badge>
         </div>
       </header>
 
       <main className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-6 py-10">
-        <InvitationLetter />
-
-        <div className="veil-in-delay mx-auto flex w-full max-w-2xl flex-wrap gap-2">
-          <Button type="button">Accept the invitation</Button>
-          <Button type="button" variant="outline" disabled>
-            Open build
-          </Button>
+        {storageError ? (
+          <p role="alert" className="mx-auto w-full max-w-2xl text-destructive">
+            This browser couldn’t save your answers. You can still download them from the review.
+          </p>
+        ) : null}
+        {buildStorageError ? (
+          <p role="alert" className="mx-auto w-full max-w-2xl text-destructive">
+            This browser couldn’t save your build. You can keep a share link from the review.
+          </p>
+        ) : null}
+        {shared && !sharedBuild ? (
+          <p role="alert" className="mx-auto w-full max-w-2xl text-destructive">
+            This build link couldn’t be opened.
+          </p>
+        ) : null}
+        <div hidden={Boolean(sharedBuild) || step !== null} ref={concept} className="mx-auto w-full max-w-2xl">
+          <SessionZeroGuide
+            answers={draft.answers}
+            initialStep={draft.step}
+            onChange={(answers) => saveDraft({ ...draft, answers })}
+            onProgress={(step) => saveDraft({ ...draft, step })}
+            onStartBuild={() => saveBuild({ build, step: 'ancestry' })}
+          />
         </div>
+        {!sharedBuild && step ? (
+          <div className="mx-auto w-full max-w-2xl">
+            <BuildGuide
+              build={build}
+              currentStep={step}
+              onChange={(next) => saveBuild({ build: next, step })}
+              onProgress={(next) => saveBuild({ build, step: next })}
+              onBackToConcept={returnToConcept}
+            />
+          </div>
+        ) : null}
+
+        {sharedBuild ? (
+          <section aria-labelledby="shared-build-heading" className="mx-auto w-full max-w-2xl">
+            <Card>
+              <CardHeader>
+                <h2 id="shared-build-heading" className="text-3xl">Shared build</h2>
+                <p className="text-muted-foreground">
+                  You can review or print this build. Using it replaces the build saved in this browser.
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-5">
+                <BuildSummary build={sharedBuild} />
+                <BuildActions build={sharedBuild} />
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    type="button"
+                    className="min-h-11"
+                    onClick={() => {
+                      saveBuild({ build: sharedBuild, step: 'review' })
+                      closeSharedBuild()
+                    }}
+                  >
+                    Use shared build
+                  </Button>
+                  <Button type="button" variant="outline" className="min-h-11" onClick={closeSharedBuild}>
+                    Back to my draft
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+        ) : null}
       </main>
 
       <div className="relative z-10">
         <Navbar />
       </div>
+      {printBuild ? <PrintableAttributeLedger build={printBuild} /> : null}
     </div>
   )
 }

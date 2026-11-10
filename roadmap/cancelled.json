@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "cancelled",
-  "updatedAt": "2026-11-10T13:43:42+11:00",
+  "updatedAt": "2026-11-10T22:16:56+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -15,6 +15,14 @@
       "notes": "Would couple the creator to vault text and risk spoilers in player flows.",
       "cancelledAt": "2026-11-10T13:27:30+11:00",
       "reason": "Campaign notes stay in the vault one level up; the app stays a character creator."
+    },
+    {
+      "id": "soft-campaign-table-lines",
+      "title": "Add soft table lines for etiquette and investigate-before-violence",
+      "group": "Phase 1",
+      "notes": "Player-facing tips only; Exit: player finishes questions without seeing GM secrets.",
+      "cancelledAt": "2026-11-10T22:16:56+11:00",
+      "reason": "The player already knows how to roleplay. Use the guide to explain Pathfinder rules at the point of choice."
     }
   ]
 }

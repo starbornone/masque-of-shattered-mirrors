@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-10T21:52:11+11:00",
+  "updatedAt": "2026-11-10T22:28:15+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -91,6 +91,75 @@
       "group": "Phase 0",
       "notes": "Port options, normalizeBuild, ancestryRule, calculate, and serialize/parse. Do not reimplement boost math.",
       "completedAt": "2026-11-10T21:52:11+11:00"
+    },
+    {
+      "id": "smoke-tests-boost-math",
+      "title": "Port smoke tests for Remaster boost math",
+      "group": "Phase 0",
+      "notes": "Reuse or port test/build.test.ts from the point-buy calculator. Exit: empty shell loads a default level-1 build.",
+      "completedAt": "2026-11-10T21:52:11+11:00"
+    },
+    {
+      "id": "shared-build-sessionzero-types",
+      "title": "Add shared Build and SessionZero types",
+      "group": "Phase 0",
+      "notes": "Mechanical Build plus new SessionZero answers for invitation, stake, art, faith, mask.",
+      "completedAt": "2026-11-10T22:03:32+11:00"
+    },
+    {
+      "id": "player-gm-mode-toggle",
+      "title": "Add Player / GM mode toggle with GM panel hidden by default",
+      "group": "Phase 0",
+      "notes": "Player-safe default; GM wiring only when toggled.",
+      "completedAt": "2026-11-10T22:03:32+11:00"
+    },
+    {
+      "id": "session-zero-invitation-and-questions",
+      "title": "Ship player-safe invitation blurb and guided questions",
+      "group": "Phase 1",
+      "notes": "Why accept; who matters (or self as watched); art/craft; optional deity (Pharasma / Nocticula / Black Butterfly / none); mask concept. No ritual spoilers.",
+      "completedAt": "2026-11-10T22:03:32+11:00"
+    },
+    {
+      "id": "persist-session-zero-export",
+      "title": "Persist session-zero answers in localStorage and export JSON/Markdown",
+      "group": "Phase 1",
+      "notes": "Player can finish questions and take answers with them.",
+      "completedAt": "2026-11-10T22:16:56+11:00"
+    },
+    {
+      "id": "guided-remaster-character-creation",
+      "title": "Guide players through Pathfinder 2e Remaster character creation step by step",
+      "group": "Phase 2",
+      "notes": "The invitation and character concept guide ships in Phase 1 with progress and editable review. Extend the same flow through the mechanical build for players with tabletop experience who are new to Pathfinder 2e Remaster. Introduce rules at the relevant choice, including ancestry boosts and class key attributes.",
+      "completedAt": "2026-11-10T22:16:56+11:00"
+    },
+    {
+      "id": "port-attribute-creator-ui",
+      "title": "Port attribute creator UI from the point-buy calculator",
+      "group": "Phase 2",
+      "notes": "Ancestry / background / class / level / milestones / voluntary flaws. Player Core and Player Core 2 first; custom rows otherwise.",
+      "completedAt": "2026-11-10T22:16:56+11:00"
+    },
+    {
+      "id": "persist-build-draft",
+      "title": "Save build choices and progress across refreshes",
+      "group": "Phase 2",
+      "notes": "Store the mechanical build and current guide step separately from session-zero answers.",
+      "completedAt": "2026-11-10T22:28:15+11:00"
+    },
+    {
+      "id": "share-link-and-ledger-export",
+      "title": "Add share link and printable attribute ledger for the mechanical build",
+      "group": "Phase 2",
+      "notes": "Mechanical side only; Exit: full Remaster attribute planning works in-app.",
+      "completedAt": "2026-11-10T22:28:15+11:00"
+    },
+    {
+      "id": "remove-player-facing-mode-switch",
+      "title": "Remove the mode switch from the player interface",
+      "group": "Phase 4",
+      "completedAt": "2026-11-10T22:28:15+11:00"
     }
   ]
 }

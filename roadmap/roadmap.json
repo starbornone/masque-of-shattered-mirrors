@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-10T21:52:11+11:00",
+  "updatedAt": "2026-11-10T22:28:15+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -10,58 +10,16 @@
   },
   "items": [
     {
-      "id": "shared-build-sessionzero-types",
-      "title": "Add shared Build and SessionZero types",
-      "group": "Phase 0",
-      "notes": "Mechanical Build plus new SessionZero answers for invitation, stake, art, faith, mask."
-    },
-    {
-      "id": "player-gm-mode-toggle",
-      "title": "Add Player / GM mode toggle with GM panel hidden by default",
-      "group": "Phase 0",
-      "notes": "Player-safe default; GM wiring only when toggled."
-    },
-    {
-      "id": "smoke-tests-boost-math",
-      "title": "Port smoke tests for Remaster boost math",
-      "group": "Phase 0",
-      "notes": "Reuse or port test/build.test.ts from the point-buy calculator. Exit: empty shell loads a default level-1 build."
-    },
-    {
-      "id": "session-zero-invitation-and-questions",
-      "title": "Ship player-safe invitation blurb and guided questions",
-      "group": "Phase 1",
-      "notes": "Why accept; who matters (or self as watched); art/craft; optional deity (Pharasma / Nocticula / Black Butterfly / none); mask concept. No ritual spoilers."
-    },
-    {
-      "id": "persist-session-zero-export",
-      "title": "Persist session-zero answers in localStorage and export JSON/Markdown",
-      "group": "Phase 1",
-      "notes": "Player can finish questions and take answers with them."
-    },
-    {
-      "id": "soft-campaign-table-lines",
-      "title": "Add soft table lines for etiquette and investigate-before-violence",
-      "group": "Phase 1",
-      "notes": "Player-facing tips only; Exit: player finishes questions without seeing GM secrets."
-    },
-    {
-      "id": "port-attribute-creator-ui",
-      "title": "Port attribute creator UI from the point-buy calculator",
-      "group": "Phase 2",
-      "notes": "Ancestry / background / class / level / milestones / voluntary flaws. Player Core and Player Core 2 first; custom rows otherwise."
+      "id": "separate-gm-entry-point",
+      "title": "Choose a GM entry point outside the player interface",
+      "group": "Phase 4",
+      "notes": "The GM entry must be absent from the player interface. Decide how it should be revealed before restoring the workspace."
     },
     {
       "id": "configurable-start-level",
       "title": "Make default start level configurable by the GM",
       "group": "Phase 2",
       "notes": "Confirm expected start level with the player before locking defaults (open decision)."
-    },
-    {
-      "id": "share-link-and-ledger-export",
-      "title": "Add share link and printable attribute ledger for the mechanical build",
-      "group": "Phase 2",
-      "notes": "Mechanical side only; Exit: full Remaster attribute planning works in-app."
     },
     {
       "id": "campaign-fit-checklist",
@@ -91,7 +49,7 @@
       "id": "skill-proficiency-planner",
       "title": "Add level-appropriate skill increase planner mapped to campaign fit",
       "group": "Phase 5",
-      "notes": "Remaster proficiency ranks. Optional language/lore notes; Osiriani Descent flavor stays GM-side only."
+      "notes": "Remaster proficiency ranks. Optional language/lore notes; Osiriani Descent flavor stays GM-side only. Require a complete attribute ledger when assigning skills. Skipped concept answers do not block the planner."
     },
     {
       "id": "unified-export-import",
