@@ -14,6 +14,9 @@ export default defineConfig({
     },
   },
   build: {
+    rolldownOptions: {
+      output: { codeSplitting: { groups: [{ name: 'rules-index', test: /[\\/]content[\\/](?:spell-labels|feat-labels|feat-progression|ancestry-options)\.json$/ }] } },
+    },
     outDir: path.resolve(import.meta.dirname, 'dist-gm'),
     emptyOutDir: true,
   },

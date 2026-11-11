@@ -7,6 +7,7 @@ import type { FaithChoice } from '../src/session-zero/types.ts'
 import { canAssignSkills, evaluateSkillPlan } from '../src/skills/plan.ts'
 import { ancestryChoiceName, ancestryFeatLevels } from '../src/ancestry/choices.ts'
 import { selectedFeatRows } from '../src/feats/choices.ts'
+import { rankLabel, selectedSpellRows } from '../src/spells/choices.ts'
 
 const deityHooks: Record<FaithChoice, string[]> = {
   pharasma: [
@@ -90,6 +91,11 @@ export function tailoringBrief(draft: CharacterDraft): string {
       title: 'Class, general, and skill feats',
       answer: selectedFeatRows(draft).map(({ slot, choice, name }) => `${slot.label}: ${name}. ${choice.notes}`).join('\n'),
       notes: ['Check these abilities when preparing opportunities. Recorded feat choices do not automatically apply their bonuses, training, spells, or other benefits.'],
+    },
+    {
+      title: 'Spells and cantrips',
+      answer: [draft.spellChoices?.notes, ...selectedSpellRows(draft).map(({ slot, choice, name }) => `${slot.label} (${rankLabel(slot.rank)}, ${slot.kind}): ${name}${choice.signature ? ' · signature' : ''}${slot.frequency ? ` · ${slot.frequency}` : ''}. ${choice.notes}`)].filter(Boolean).join('\n'),
+      notes: ['Check spell access and preparation with the player. Account for detection, healing, and other utility effects when preparing clues; choices do not apply spell effects automatically.'],
     },
     {
       title: 'Invitation',

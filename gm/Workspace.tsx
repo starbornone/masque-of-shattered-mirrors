@@ -9,6 +9,7 @@ import { canAssignSkills, evaluateSkillPlan } from '@/skills/plan'
 import { TailoringBrief } from './TailoringBrief'
 import { AncestryChoicesSummary } from '@/components/AncestryChoicesSummary'
 import { FeatChoicesSummary } from '@/components/FeatChoicesSummary'
+import { SpellChoicesSummary } from '@/components/SpellChoicesSummary'
 import { tailoringBrief } from './brief.ts'
 import { parseGmPackage } from './package.ts'
 import type { GmPackage } from './package.ts'
@@ -31,6 +32,7 @@ function CharacterSummary({ draft }: { draft: CharacterDraft }) {
           <BuildSummary build={build} />
           <AncestryChoicesSummary choices={draft.ancestryChoices} ancestry={build.ancestry} level={build.level} />
           <FeatChoicesSummary character={draft} />
+          <SpellChoicesSummary character={draft} />
           {trainedSkills.length ? (
             <section>
               <h3 className="text-xl">Planned skills</h3>

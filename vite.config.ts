@@ -6,6 +6,11 @@ import { localGm } from './server/gm-local.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
+  build: {
+    rolldownOptions: {
+      output: { codeSplitting: { groups: [{ name: 'rules-index', test: /[\\/]content[\\/](?:spell-labels|feat-labels|feat-progression|ancestry-options)\.json$/ }] } },
+    },
+  },
   plugins: [localGm(), react(), tailwindcss()],
   resolve: {
     alias: {
