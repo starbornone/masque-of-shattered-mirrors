@@ -2,13 +2,15 @@ import { useRef, useState } from 'react'
 import veratheMirror from '@/assets/verathe-mirror.svg'
 import { parseBuild } from '@/attributes/build'
 import type { BuildDraft } from '@/attributes/draft'
-import { characterStorageKey, loadCharacterDraft, serializeCharacter } from '@/character/draft'
 import type { CharacterDraft } from '@/character/draft'
+import { draftNameError, loadDraftLibrary, newCharacterDraft, storeDraftLibrary } from '@/character/library'
+import type { DraftLibrary } from '@/character/library'
 import { BuildActions } from '@/components/BuildActions'
 import { BuildGuide } from '@/components/BuildGuide'
 import { BuildSummary } from '@/components/BuildSummary'
 import { CampaignFit } from '@/components/CampaignFit'
 import { CharacterFileActions } from '@/components/CharacterFileActions'
+import { DraftPicker } from '@/components/DraftPicker'
 import { Navbar } from '@/components/Navbar'
 import { PrintableAttributeLedger } from '@/components/PrintableAttributeLedger'
 import { SessionZeroGuide } from '@/components/SessionZeroGuide'
@@ -18,17 +20,25 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import type { SessionZeroDraft } from '@/session-zero/types'
 import { canAssignSkills, emptySkillPlan, parseSkillPlan } from '@/skills/plan'
 
+const startLevel = Number(import.meta.env.VITE_CAMPAIGN_START_LEVEL)
+const storageMessages = {
+  unavailable: 'This browser couldn’t save your drafts. Use Export character to keep a copy of your work.',
+  changed: 'Saved drafts changed in another tab. Export any unsaved work, then reload this page.',
+  unreadable: 'This browser’s draft library couldn’t be read. The older draft is open when available. Use Export character to keep a copy.',
+}
+
 function App() {
-  const [character, setCharacter] = useState(() => (
-    loadCharacterDraft(Number(import.meta.env.VITE_CAMPAIGN_START_LEVEL))
-  ))
+  const [stored, setStored] = useState(() => loadDraftLibrary(startLevel))
   const [shared, setShared] = useState(() => {
     const requested = new URLSearchParams(window.location.search).get('build')
     return requested === null ? null : { build: parseBuild(requested) }
   })
-  const [storageError, setStorageError] = useState(false)
   const [restoreCount, setRestoreCount] = useState(0)
   const concept = useRef<HTMLDivElement>(null)
+  const { library, problem } = stored
+  const active = library.drafts.find(({ id }) => id === library.activeId)!
+  const character = active.character
+  const editorKey = `${active.id}:${restoreCount}`
   const { sessionZero: draft, buildDraft } = character
   const { build, step: savedStep, skills } = buildDraft
   const skillsAvailable = (savedStep === 'review' || savedStep === 'skills') && canAssignSkills(build)
@@ -36,19 +46,39 @@ function App() {
   const sharedBuild = shared?.build
   const reviewBuild = sharedBuild ?? (step === 'review' ? build : null)
 
-  function persistCharacter(next: CharacterDraft) {
-    try {
-      localStorage.setItem(characterStorageKey, serializeCharacter(next))
-      setStorageError(false)
-      return true
-    } catch {
+  function saveLibrary(next: DraftLibrary, keepInMemory = false) {
+    const result = problem === 'unreadable' ? { problem } : storeDraftLibrary(next, stored.saved)
+    if (result.problem) {
+      setStored({ ...stored, library: keepInMemory ? next : library, problem: result.problem })
       return false
     }
+    setStored({ library: next, saved: result.saved, problem: null })
+    return true
+  }
+
+  function updateActive(changes: Partial<Pick<typeof active, 'name' | 'character'>>) {
+    return { ...library, drafts: library.drafts.map((entry) => entry.id === active.id ? { ...entry, ...changes } : entry) }
   }
 
   function saveCharacter(next: CharacterDraft) {
-    setCharacter(next)
-    if (!persistCharacter(next)) setStorageError(true)
+    saveLibrary(updateActive({ character: next }), true)
+  }
+
+  function createDraft(name: string, next: CharacterDraft = newCharacterDraft(startLevel)) {
+    if (draftNameError(library, name)) return false
+    const entry = { id: crypto.randomUUID(), name: name.trim(), character: next }
+    return saveLibrary({ activeId: entry.id, drafts: [...library.drafts, entry] })
+  }
+
+  function renameDraft(name: string) {
+    if (draftNameError(library, name, active.id)) return false
+    return saveLibrary(updateActive({ name: name.trim() }))
+  }
+
+  function deleteDraft() {
+    if (library.drafts.length < 2) return false
+    const drafts = library.drafts.filter(({ id }) => id !== active.id)
+    return saveLibrary({ activeId: drafts[0].id, drafts })
   }
 
   function saveDraft(next: SessionZeroDraft) {
@@ -60,8 +90,7 @@ function App() {
   }
 
   function restoreCharacter(next: CharacterDraft) {
-    if (!persistCharacter(next)) return false
-    setCharacter(next)
+    if (!saveLibrary(updateActive({ character: next }))) return false
     setRestoreCount((count) => count + 1)
     if (shared) closeSharedBuild()
     return true
@@ -115,9 +144,9 @@ function App() {
       </header>
 
       <main className="relative z-10 mx-auto flex w-full max-w-[45rem] flex-1 flex-col gap-7 px-4 py-7 sm:px-6 sm:py-10">
-        {storageError ? (
+        {problem ? (
           <p role="alert" className="mx-auto w-full max-w-2xl text-destructive">
-            This browser couldn’t save your draft. Use Export character to keep a copy.
+            {storageMessages[problem]}
           </p>
         ) : null}
         {shared && !sharedBuild ? (
@@ -125,9 +154,19 @@ function App() {
             This build link couldn’t be opened.
           </p>
         ) : null}
+        {!sharedBuild ? (
+          <DraftPicker
+            library={library}
+            active={active}
+            onSwitch={(id) => saveLibrary({ ...library, activeId: id })}
+            onCreate={createDraft}
+            onRename={renameDraft}
+            onDelete={deleteDraft}
+          />
+        ) : null}
         <div hidden={Boolean(sharedBuild) || step !== null} ref={concept} className="mx-auto w-full max-w-2xl">
           <SessionZeroGuide
-            key={restoreCount}
+            key={editorKey}
             answers={draft.answers}
             initialStep={draft.step}
             onChange={(answers) => saveDraft({ ...draft, answers })}
@@ -138,6 +177,7 @@ function App() {
         {!sharedBuild && step && step !== 'skills' ? (
           <div className="mx-auto w-full max-w-2xl">
             <BuildGuide
+              key={editorKey}
               character={character}
               build={build}
               currentStep={step}
@@ -158,7 +198,7 @@ function App() {
 
         {!sharedBuild && step === 'skills' ? (
           <SkillPlanner
-            key={restoreCount}
+            key={editorKey}
             build={build}
             plan={skills ?? emptySkillPlan}
             onChange={(next) => saveBuild({ ...buildDraft, skills: parseSkillPlan(next) })}
@@ -172,7 +212,7 @@ function App() {
               <CardHeader>
                 <h2 id="shared-build-heading" className="text-3xl">Shared build</h2>
                 <p className="text-muted-foreground">
-                  You can review or print this build. Using it replaces the build saved in this browser.
+                  You can review or print this build. Using it replaces the attribute build and skill plan in “{active.name}”.
                 </p>
               </CardHeader>
               <CardContent className="space-y-5">
@@ -182,10 +222,7 @@ function App() {
                   <Button
                     type="button"
                     className="min-h-11"
-                    onClick={() => {
-                      saveBuild({ build: sharedBuild, step: 'review' })
-                      closeSharedBuild()
-                    }}
+                    onClick={() => restoreCharacter({ ...character, buildDraft: { build: sharedBuild, step: 'review' } })}
                   >
                     Use shared build
                   </Button>
@@ -199,7 +236,16 @@ function App() {
         ) : null}
 
         {reviewBuild ? <CampaignFit build={reviewBuild} skillPlan={!sharedBuild && skillsAvailable ? skills : undefined} /> : null}
-        {!sharedBuild ? <CharacterFileActions draft={character} onRestore={restoreCharacter} /> : null}
+        {!sharedBuild ? (
+          <CharacterFileActions
+            key={active.id}
+            draft={character}
+            draftName={active.name}
+            validateName={(name) => draftNameError(library, name)}
+            onImportNew={createDraft}
+            onRestore={restoreCharacter}
+          />
+        ) : null}
       </main>
 
       <div className="relative z-10">
