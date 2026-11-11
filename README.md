@@ -22,7 +22,8 @@ The guide starts with the invitation and character concept, then walks through a
 
 ## What it does not do (yet)
 
-- Pathbuilder export and multiple saved characters (planned)
+- Multiple saved characters (planned)
+- Pathbuilder export (deferred pending a supported character import). [Transfer findings](docs/pathbuilder-transfer.md)
 - Multi-PC party balancing
 - Spoiling the ritual, scapegoat identity, or deity climax levers to the player
 

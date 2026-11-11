@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-11T19:46:31+11:00",
+  "updatedAt": "2026-11-11T20:24:58+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -10,16 +10,16 @@
   },
   "items": [
     {
-      "id": "pathbuilder-character-export",
-      "title": "Export player characters for Pathbuilder",
-      "group": "Phase 8",
-      "notes": "Research supported exchange formats before promising compatibility, then implement and verify player-only transfer where feasible. Keep GM preparation separate."
-    },
-    {
       "id": "multiple-character-drafts",
       "title": "Support multiple saved character drafts",
       "group": "Phase 8",
       "notes": "Let users name, switch, and retain separate local drafts with clear replacement behavior. Preserve existing single-character saves and keep GM notes out of player storage. Multi-PC party balancing remains outside scope."
+    },
+    {
+      "id": "pathbuilder-character-export",
+      "title": "Export player characters for Pathbuilder",
+      "group": "Phase 8",
+      "notes": "Deferred pending a supported third-party character import format. Checked Pathbuilder Web 112.0 and developer documentation on 2026-11-11. Backup/Restore transfers native saves, Custom Pack imports rules content, and Export JSON sends character data out. Revisit when Pathbuilder documents a way to import external player builds."
     }
   ]
 }

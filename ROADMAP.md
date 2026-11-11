@@ -96,8 +96,8 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 ## Phase 8 — Character management and integrations
 
 - [x] Export player characters as native PF2e actors for Foundry VTT
-- [ ] Export player characters for Pathbuilder after verifying supported transfer options
 - [ ] Support multiple named local character drafts
+- [ ] Revisit Pathbuilder export when it supports importing third-party character builds. [Transfer findings](docs/pathbuilder-transfer.md)
 
 **Exit:** Characters remain easy to manage and transfer, with GM preparation kept separate.
 
