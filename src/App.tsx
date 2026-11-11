@@ -151,6 +151,7 @@ function App() {
               onAncestryChoicesChange={(ancestryChoices) => saveCharacter({ ...character, ancestryChoices })}
               onFeatChoicesChange={(featChoices) => saveCharacter({ ...character, featChoices })}
               onSpellChoicesChange={(spellChoices) => saveCharacter({ ...character, spellChoices })}
+              onEquipmentPlanChange={(equipmentPlan) => saveCharacter({ ...character, equipmentPlan })}
             />
           </div>
         ) : null}

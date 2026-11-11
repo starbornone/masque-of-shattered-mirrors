@@ -10,6 +10,7 @@ import { TailoringBrief } from './TailoringBrief'
 import { AncestryChoicesSummary } from '@/components/AncestryChoicesSummary'
 import { FeatChoicesSummary } from '@/components/FeatChoicesSummary'
 import { SpellChoicesSummary } from '@/components/SpellChoicesSummary'
+import { EquipmentSummary } from '@/components/EquipmentSummary'
 import { tailoringBrief } from './brief.ts'
 import { parseGmPackage } from './package.ts'
 import type { GmPackage } from './package.ts'
@@ -35,6 +36,7 @@ function CharacterSummary({ draft }: { draft: CharacterDraft }) {
           <AncestryChoicesSummary choices={draft.ancestryChoices} ancestry={build.ancestry} level={build.level} />
           <FeatChoicesSummary character={draft} />
           <SpellChoicesSummary character={draft} />
+          <EquipmentSummary plan={draft.equipmentPlan} build={build} />
           {trainedSkills.length ? (
             <section className="space-y-2">
               <h3 className="text-xl">Planned skills</h3>

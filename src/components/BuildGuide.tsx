@@ -22,10 +22,13 @@ import type { FeatChoices } from '@/feats/choices'
 import { FeatChoicesSummary } from '@/components/FeatChoicesSummary'
 import { SpellChoicesSummary } from '@/components/SpellChoicesSummary'
 import type { SpellChoices } from '@/spells/choices'
+import { EquipmentSummary } from '@/components/EquipmentSummary'
+import type { EquipmentPlan } from '@/equipment/plan'
 
 const AncestryChoices = lazy(() => import('@/components/AncestryChoices'))
 const FeatGuide = lazy(() => import('@/components/FeatGuide'))
 const SpellGuide = lazy(() => import('@/components/SpellGuide'))
+const EquipmentGuide = lazy(() => import('@/components/EquipmentGuide'))
 
 const steps = [
   { title: 'Choose an ancestry', description: 'Ancestry describes your character’s people. It gives your character some starting traits and helps determine their attribute boosts.' },
@@ -35,6 +38,7 @@ const steps = [
   { title: 'Assign attribute boosts', description: 'Attributes are modifiers you use on rolls, such as +2. A boost usually raises the modifier by 1. Choose different attributes within each group. The same attribute can receive boosts from different groups.' },
   { title: 'Choose class, general, and skill feats', description: 'Pick abilities for the slots your class and level provide. You can return after planning skills or leave a choice undecided.' },
   { title: 'Choose spells and cantrips', description: 'Plan the spells your class or other features provide. Read the rules, record granted choices, or return to this step later.' },
+  { title: 'Plan starting equipment', description: 'Choose gear and see its cost and Bulk. Set starting wealth when you know it, or continue and come back later.' },
   { title: 'Review your build', description: 'Check your current modifiers. You can revisit any step to change a choice or fill in a gap.' },
 ] as const
 
@@ -54,12 +58,13 @@ type BuildGuideProps = {
   onAncestryChoicesChange: (choices: Choices) => void
   onFeatChoicesChange: (choices: FeatChoices) => void
   onSpellChoicesChange: (choices: SpellChoices) => void
+  onEquipmentPlanChange: (plan: EquipmentPlan) => void
 }
 
 export function BuildGuide({
   character, build, currentStep, onChange, onProgress, onBackToConcept, onPlanSkills,
   startingLanguageNotes, onStartingLanguageNotesChange,
-  ancestryChoices, onAncestryChoicesChange, onFeatChoicesChange, onSpellChoicesChange,
+  ancestryChoices, onAncestryChoicesChange, onFeatChoicesChange, onSpellChoicesChange, onEquipmentPlanChange,
 }: BuildGuideProps) {
   const stepIndex = buildSteps.indexOf(currentStep)
   const heading = useRef<HTMLHeadingElement>(null)
@@ -156,12 +161,19 @@ export function BuildGuide({
               </Suspense>
             ) : null}
 
+            {currentStep === 'equipment' ? (
+              <Suspense fallback={<p role="status">Loading equipment choices…</p>}>
+                <EquipmentGuide plan={character.equipmentPlan} build={build} onChange={onEquipmentPlanChange} />
+              </Suspense>
+            ) : null}
+
             {stepIndex === reviewIndex ? (
               <>
                 <BuildSummary build={build} />
                 <AncestryChoicesSummary choices={ancestryChoices} ancestry={build.ancestry} level={build.level} />
                 <FeatChoicesSummary character={character} />
                 <SpellChoicesSummary character={character} />
+                <EquipmentSummary plan={character.equipmentPlan} build={build} />
                 <details className="rounded-md border border-border p-3">
                   <summary className="cursor-pointer font-medium">Starting languages (optional)</summary>
                   <div className="mt-3 space-y-3">
@@ -223,7 +235,7 @@ export function BuildGuide({
             {stepIndex === 0 ? 'Back to character concept' : 'Back'}
           </Button>
           {stepIndex < reviewIndex ? (
-            <Button type="submit" className="min-h-11">{currentStep === 'spells' ? 'Review build' : 'Continue'}</Button>
+            <Button type="submit" className="min-h-11">{stepIndex === reviewIndex - 1 ? 'Review build' : 'Continue'}</Button>
           ) : null}
         </div>
       </form>
