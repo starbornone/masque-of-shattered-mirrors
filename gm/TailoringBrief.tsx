@@ -33,15 +33,15 @@ export function TailoringBrief({ draft, initialNotes }: { draft: CharacterDraft;
 
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="gap-2">
         <h2 className="text-2xl">GM tailoring brief</h2>
         <p id="brief-guidance" className="text-muted-foreground">
           Edit these preparation suggestions, then copy them or export a GM package to save the character and notes together.
           Open the package above to resume. GM packages contain campaign spoilers.
         </p>
       </CardHeader>
-      <CardContent className="space-y-3">
-        <label className="block space-y-1">
+      <CardContent className="space-y-4">
+        <label className="block space-y-2">
           <span className="font-medium">Session notes (GM only)</span>
           <textarea
             ref={editor}
@@ -65,7 +65,7 @@ export function TailoringBrief({ draft, initialNotes }: { draft: CharacterDraft;
             Regenerate from character
           </Button>
         </div>
-        <p role="status" className="text-muted-foreground">{message}</p>
+        {message ? <p role="status" className="text-sm text-muted-foreground">{message}</p> : null}
       </CardContent>
     </Card>
   )

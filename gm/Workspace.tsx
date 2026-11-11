@@ -4,7 +4,7 @@ import { parseCharacter } from '@/character/draft'
 import type { CharacterDraft } from '@/character/draft'
 import { BuildSummary } from '@/components/BuildSummary'
 import { SessionZeroSummary } from '@/components/SessionZeroSummary'
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import { canAssignSkills, evaluateSkillPlan } from '@/skills/plan'
 import { TailoringBrief } from './TailoringBrief'
 import { AncestryChoicesSummary } from '@/components/AncestryChoicesSummary'
@@ -23,20 +23,22 @@ function CharacterSummary({ draft }: { draft: CharacterDraft }) {
   return (
     <>
       <Card>
-        <CardHeader><h2 className="text-2xl">Character concept</h2></CardHeader>
-        <CardContent><SessionZeroSummary answers={draft.sessionZero.answers} /></CardContent>
+        <CardContent className="space-y-4">
+          <h2 className="text-2xl">Character concept</h2>
+          <SessionZeroSummary answers={draft.sessionZero.answers} />
+        </CardContent>
       </Card>
       <Card>
-        <CardHeader><h2 className="text-2xl">Character build</h2></CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent className="space-y-5">
+          <h2 className="text-2xl">Character build</h2>
           <BuildSummary build={build} />
           <AncestryChoicesSummary choices={draft.ancestryChoices} ancestry={build.ancestry} level={build.level} />
           <FeatChoicesSummary character={draft} />
           <SpellChoicesSummary character={draft} />
           {trainedSkills.length ? (
-            <section>
+            <section className="space-y-2">
               <h3 className="text-xl">Planned skills</h3>
-              <ul className="mt-2 grid gap-2 sm:grid-cols-2">
+              <ul className="grid gap-2 sm:grid-cols-2">
                 {trainedSkills.map(({ id, name, rank, modifier }) => (
                   <li key={id}>
                     {name} · {rank} ({modifier >= 0 ? '+' : ''}{modifier})
@@ -46,7 +48,7 @@ function CharacterSummary({ draft }: { draft: CharacterDraft }) {
             </section>
           ) : null}
           {draft.startingLanguageNotes?.trim() ? (
-            <section>
+            <section className="space-y-2">
               <h3 className="text-xl">Starting language notes</h3>
               <p className="whitespace-pre-wrap wrap-anywhere">{draft.startingLanguageNotes}</p>
             </section>
@@ -93,26 +95,28 @@ export function Workspace() {
   }
 
   return (
-    <>
-      <header className="masque-masthead">
+    <div className="relative flex min-h-svh flex-col text-foreground">
+      <header className="masque-masthead relative z-10">
         <div className="mx-auto max-w-[45rem] px-4 py-6 sm:px-6 sm:py-7">
-          <p className="masque-masthead-kicker mb-1 text-xs font-semibold uppercase tracking-[0.18em]">
+          <p className="masque-masthead-kicker mb-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] sm:text-xs">
             The Masque of Shattered Mirrors
           </p>
           <h1 className="masque-title">GM workspace</h1>
         </div>
       </header>
-      <main className="mx-auto flex max-w-[45rem] flex-col gap-6 px-4 py-7 sm:px-6">
+      <main className="relative z-10 mx-auto flex w-full max-w-[45rem] flex-1 flex-col gap-7 px-4 py-7 sm:px-6 sm:py-10">
         <Card>
-          <CardContent className="space-y-2">
-            <details ref={filePanel} open={!workspace}>
+          <CardContent className="space-y-3">
+            <details ref={filePanel} open={!workspace} className="space-y-3">
               <summary className="cursor-pointer font-medium">
                 {workspace ? 'Replace character or GM package' : 'Open a character or GM package'}
               </summary>
-              <div className="mt-3 space-y-2">
-                <p className="text-sm text-muted-foreground">A character generates a brief; a GM package restores saved notes.</p>
-                {workspace ? <p className="text-sm text-muted-foreground">Export your edits before replacing this workspace.</p> : null}
-                <label className="block space-y-1">
+              <div className="space-y-3">
+                <div className="space-y-1.5">
+                  <p className="text-sm text-muted-foreground">A character generates a brief; a GM package restores saved notes.</p>
+                  {workspace ? <p className="text-sm text-muted-foreground">Export your edits before replacing this workspace.</p> : null}
+                </div>
+                <label className="block">
                   <span className="sr-only">Character or GM package JSON file</span>
                   <input
                     type="file"
@@ -122,7 +126,7 @@ export function Workspace() {
                     onChange={openCharacter}
                   />
                 </label>
-                {error ? <p role="alert" className="text-destructive">{error}</p> : null}
+                {error ? <p role="alert" className="text-sm text-destructive">{error}</p> : null}
               </div>
             </details>
             {message ? <p role="status" className="text-sm text-muted-foreground">{message}</p> : null}
@@ -135,6 +139,6 @@ export function Workspace() {
           </>
         ) : null}
       </main>
-    </>
+    </div>
   )
 }

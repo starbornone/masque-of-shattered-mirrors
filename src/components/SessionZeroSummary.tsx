@@ -11,7 +11,7 @@ export function SessionZeroSummary({ answers, onEdit }: SessionZeroSummaryProps)
   return (
     <dl className="divide-y divide-border">
       {sessionZeroEntries(answers).map(({ field, label, value }) => (
-        <div key={field} className="space-y-1 py-3">
+        <div key={field} className="space-y-1 py-3 first:pt-0 last:pb-0">
           <dt className="font-medium text-primary">{label}</dt>
           <dd className="flex items-start justify-between gap-3">
             <span className="min-w-0 whitespace-pre-wrap wrap-anywhere">
