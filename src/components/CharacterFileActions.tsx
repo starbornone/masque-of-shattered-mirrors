@@ -4,6 +4,7 @@ import { Download, Upload } from 'lucide-react'
 import { parseCharacter, serializeCharacter } from '@/character/draft'
 import type { CharacterDraft } from '@/character/draft'
 import { Button } from '@/components/ui/button'
+import { FoundryExport } from '@/components/FoundryExport'
 import { downloadFile } from '@/lib/download'
 
 type CharacterFileActionsProps = {
@@ -99,6 +100,7 @@ export function CharacterFileActions({ draft, onRestore }: CharacterFileActionsP
       <div role="status" className="text-sm text-muted-foreground [&:not(:empty)]:mt-3">
         {pending ? `Ready to restore ${pending.filename}.` : status}
       </div>
+      <FoundryExport draft={draft} />
     </section>
   )
 }
