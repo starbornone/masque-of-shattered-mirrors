@@ -1,0 +1,3758 @@
+{
+  "avatar": [
+    "Avatar",
+    10,
+    false,
+    false
+  ],
+  "cataclysm": [
+    "Cataclysm",
+    10,
+    false,
+    false
+  ],
+  "fabricated-truth": [
+    "Fabricated Truth",
+    10,
+    false,
+    false
+  ],
+  "freeze-time": [
+    "Freeze Time",
+    10,
+    false,
+    false
+  ],
+  "gate": [
+    "Gate",
+    10,
+    false,
+    false
+  ],
+  "indestructibility": [
+    "Indestructibility",
+    10,
+    false,
+    false
+  ],
+  "manifestation": [
+    "Manifestation",
+    10,
+    false,
+    false
+  ],
+  "nature-incarnate": [
+    "Nature Incarnate",
+    10,
+    false,
+    false
+  ],
+  "primal-herd": [
+    "Primal Herd",
+    10,
+    false,
+    false
+  ],
+  "remake": [
+    "Remake",
+    10,
+    false,
+    false
+  ],
+  "revival": [
+    "Revival",
+    10,
+    false,
+    false
+  ],
+  "air-bubble": [
+    "Air Bubble",
+    1,
+    false,
+    false
+  ],
+  "alarm": [
+    "Alarm",
+    1,
+    false,
+    false
+  ],
+  "ant-haul": [
+    "Ant Haul",
+    1,
+    false,
+    false
+  ],
+  "bane": [
+    "Bane",
+    1,
+    false,
+    false
+  ],
+  "bless": [
+    "Bless",
+    1,
+    false,
+    false
+  ],
+  "breathe-fire": [
+    "Breathe Fire",
+    1,
+    false,
+    false
+  ],
+  "carryall": [
+    "Carryall",
+    1,
+    false,
+    false
+  ],
+  "charm": [
+    "Charm",
+    1,
+    false,
+    false
+  ],
+  "chilling-spray": [
+    "Chilling Spray",
+    1,
+    false,
+    false
+  ],
+  "cleanse-cuisine": [
+    "Cleanse Cuisine",
+    1,
+    false,
+    false
+  ],
+  "command": [
+    "Command",
+    1,
+    false,
+    false
+  ],
+  "concordant-choir": [
+    "Concordant Choir",
+    1,
+    false,
+    false
+  ],
+  "create-water": [
+    "Create Water",
+    1,
+    false,
+    false
+  ],
+  "detect-poison": [
+    "Detect Poison",
+    1,
+    false,
+    false
+  ],
+  "disguise-magic": [
+    "Disguise Magic",
+    1,
+    false,
+    false
+  ],
+  "dizzying-colors": [
+    "Dizzying Colors",
+    1,
+    false,
+    false
+  ],
+  "déjà-vu": [
+    "Déjà Vu",
+    1,
+    false,
+    false
+  ],
+  "enfeeble": [
+    "Enfeeble",
+    1,
+    false,
+    false
+  ],
+  "fear": [
+    "Fear",
+    1,
+    false,
+    false
+  ],
+  "fleet-step": [
+    "Fleet Step",
+    1,
+    false,
+    false
+  ],
+  "force-barrage": [
+    "Force Barrage",
+    1,
+    false,
+    false
+  ],
+  "gentle-landing": [
+    "Gentle Landing",
+    1,
+    false,
+    false
+  ],
+  "goblin-pox": [
+    "Goblin Pox",
+    1,
+    false,
+    false
+  ],
+  "grease": [
+    "Grease",
+    1,
+    false,
+    false
+  ],
+  "grim-tendrils": [
+    "Grim Tendrils",
+    1,
+    false,
+    false
+  ],
+  "gust-of-wind": [
+    "Gust of Wind",
+    1,
+    false,
+    false
+  ],
+  "harm": [
+    "Harm",
+    1,
+    false,
+    false
+  ],
+  "heal": [
+    "Heal",
+    1,
+    false,
+    false
+  ],
+  "hydraulic-push": [
+    "Hydraulic Push",
+    1,
+    false,
+    false
+  ],
+  "ill-omen": [
+    "Ill Omen",
+    1,
+    false,
+    false
+  ],
+  "illusory-disguise": [
+    "Illusory Disguise",
+    1,
+    false,
+    false
+  ],
+  "illusory-object": [
+    "Illusory Object",
+    1,
+    false,
+    false
+  ],
+  "imprint-message": [
+    "Imprint Message",
+    1,
+    false,
+    false
+  ],
+  "infuse-vitality": [
+    "Infuse Vitality",
+    1,
+    false,
+    false
+  ],
+  "invisible-item": [
+    "Invisible Item",
+    1,
+    false,
+    false
+  ],
+  "item-facade": [
+    "Item Facade",
+    1,
+    false,
+    false
+  ],
+  "jump": [
+    "Jump",
+    1,
+    false,
+    false
+  ],
+  "leaden-steps": [
+    "Leaden Steps",
+    1,
+    false,
+    false
+  ],
+  "lock": [
+    "Lock",
+    1,
+    false,
+    false
+  ],
+  "mending": [
+    "Mending",
+    1,
+    false,
+    false
+  ],
+  "mindlink": [
+    "Mindlink",
+    1,
+    false,
+    false
+  ],
+  "mud-pit": [
+    "Mud Pit",
+    1,
+    false,
+    false
+  ],
+  "mystic-armor": [
+    "Mystic Armor",
+    1,
+    false,
+    false
+  ],
+  "noxious-vapors": [
+    "Noxious Vapors",
+    1,
+    false,
+    false
+  ],
+  "object-reading": [
+    "Object Reading",
+    1,
+    false,
+    false
+  ],
+  "pest-form": [
+    "Pest Form",
+    1,
+    false,
+    false
+  ],
+  "pet-cache": [
+    "Pet Cache",
+    1,
+    false,
+    false
+  ],
+  "phantasmal-minion": [
+    "Phantasmal Minion",
+    1,
+    false,
+    false
+  ],
+  "phantom-pain": [
+    "Phantom Pain",
+    1,
+    false,
+    false
+  ],
+  "protection": [
+    "Protection",
+    1,
+    false,
+    false
+  ],
+  "protector-tree": [
+    "Protector Tree",
+    1,
+    false,
+    false
+  ],
+  "pummeling-rubble": [
+    "Pummeling Rubble",
+    1,
+    false,
+    false
+  ],
+  "runic-body": [
+    "Runic Body",
+    1,
+    false,
+    false
+  ],
+  "runic-weapon": [
+    "Runic Weapon",
+    1,
+    false,
+    false
+  ],
+  "sanctuary": [
+    "Sanctuary",
+    1,
+    false,
+    false
+  ],
+  "schadenfreude": [
+    "Schadenfreude",
+    1,
+    false,
+    false
+  ],
+  "sleep": [
+    "Sleep",
+    1,
+    false,
+    false
+  ],
+  "soothe": [
+    "Soothe",
+    1,
+    false,
+    false
+  ],
+  "spider-sting": [
+    "Spider Sting",
+    1,
+    false,
+    false
+  ],
+  "spirit-link": [
+    "Spirit Link",
+    1,
+    false,
+    false
+  ],
+  "summon-animal": [
+    "Summon Animal",
+    1,
+    false,
+    false
+  ],
+  "summon-construct": [
+    "Summon Construct",
+    1,
+    false,
+    false
+  ],
+  "summon-fey": [
+    "Summon Fey",
+    1,
+    false,
+    false
+  ],
+  "summon-lesser-servitor": [
+    "Summon Lesser Servitor",
+    1,
+    false,
+    false
+  ],
+  "summon-plant-or-fungus": [
+    "Summon Plant or Fungus",
+    1,
+    false,
+    false
+  ],
+  "summon-undead": [
+    "Summon Undead",
+    1,
+    false,
+    false
+  ],
+  "sure-strike": [
+    "Sure Strike",
+    1,
+    false,
+    false
+  ],
+  "tailwind": [
+    "Tailwind",
+    1,
+    false,
+    false
+  ],
+  "thoughtful-gift": [
+    "Thoughtful Gift",
+    1,
+    false,
+    false
+  ],
+  "thunderstrike": [
+    "Thunderstrike",
+    1,
+    false,
+    false
+  ],
+  "vanishing-tracks": [
+    "Vanishing Tracks",
+    1,
+    false,
+    false
+  ],
+  "ventriloquism": [
+    "Ventriloquism",
+    1,
+    false,
+    false
+  ],
+  "acid-grip": [
+    "Acid Grip",
+    2,
+    false,
+    false
+  ],
+  "animal-form": [
+    "Animal Form",
+    2,
+    false,
+    false
+  ],
+  "animal-messenger": [
+    "Animal Messenger",
+    2,
+    false,
+    false
+  ],
+  "animated-assault": [
+    "Animated Assault",
+    2,
+    false,
+    false
+  ],
+  "augury": [
+    "Augury",
+    2,
+    false,
+    false
+  ],
+  "blazing-bolt": [
+    "Blazing Bolt",
+    2,
+    false,
+    false
+  ],
+  "blistering-invective": [
+    "Blistering Invective",
+    2,
+    false,
+    false
+  ],
+  "blood-vendetta": [
+    "Blood Vendetta",
+    2,
+    false,
+    false
+  ],
+  "blur": [
+    "Blur",
+    2,
+    false,
+    false
+  ],
+  "calm": [
+    "Calm",
+    2,
+    false,
+    false
+  ],
+  "charitable-urge": [
+    "Charitable Urge",
+    2,
+    false,
+    false
+  ],
+  "cleanse-affliction": [
+    "Cleanse Affliction",
+    2,
+    false,
+    false
+  ],
+  "clear-mind": [
+    "Clear Mind",
+    2,
+    false,
+    false
+  ],
+  "create-food": [
+    "Create Food",
+    2,
+    false,
+    false
+  ],
+  "darkness": [
+    "Darkness",
+    2,
+    false,
+    false
+  ],
+  "darkvision": [
+    "Darkvision",
+    2,
+    false,
+    false
+  ],
+  "deafness": [
+    "Deafness",
+    2,
+    false,
+    false
+  ],
+  "dismantle": [
+    "Dismantle",
+    2,
+    false,
+    false
+  ],
+  "dispel-magic": [
+    "Dispel Magic",
+    2,
+    false,
+    false
+  ],
+  "embed-message": [
+    "Embed Message",
+    2,
+    false,
+    false
+  ],
+  "enlarge": [
+    "Enlarge",
+    2,
+    false,
+    false
+  ],
+  "entangling-flora": [
+    "Entangling Flora",
+    2,
+    false,
+    false
+  ],
+  "environmental-endurance": [
+    "Environmental Endurance",
+    2,
+    false,
+    false
+  ],
+  "everlight": [
+    "Everlight",
+    2,
+    false,
+    false
+  ],
+  "false-vitality": [
+    "False Vitality",
+    2,
+    false,
+    false
+  ],
+  "final-sacrifice": [
+    "Final Sacrifice",
+    2,
+    false,
+    false
+  ],
+  "floating-flame": [
+    "Floating Flame",
+    2,
+    false,
+    false
+  ],
+  "fungal-infestation": [
+    "Fungal Infestation",
+    2,
+    false,
+    false
+  ],
+  "gecko-grip": [
+    "Gecko Grip",
+    2,
+    false,
+    false
+  ],
+  "ghostly-carrier": [
+    "Ghostly Carrier",
+    2,
+    false,
+    false
+  ],
+  "ghoulish-cravings": [
+    "Ghoulish Cravings",
+    2,
+    false,
+    false
+  ],
+  "humanoid-form": [
+    "Humanoid Form",
+    2,
+    false,
+    false
+  ],
+  "illusory-creature": [
+    "Illusory Creature",
+    2,
+    false,
+    false
+  ],
+  "invisibility": [
+    "Invisibility",
+    2,
+    false,
+    false
+  ],
+  "knock": [
+    "Knock",
+    2,
+    false,
+    false
+  ],
+  "laughing-fit": [
+    "Laughing Fit",
+    2,
+    false,
+    false
+  ],
+  "marvelous-mount": [
+    "Marvelous Mount",
+    2,
+    false,
+    false
+  ],
+  "mist": [
+    "Mist",
+    2,
+    false,
+    false
+  ],
+  "noise-blast": [
+    "Noise Blast",
+    2,
+    false,
+    false
+  ],
+  "oaken-resilience": [
+    "Oaken Resilience",
+    2,
+    false,
+    false
+  ],
+  "one-with-plants": [
+    "One with Plants",
+    2,
+    false,
+    false
+  ],
+  "paranoia": [
+    "Paranoia",
+    2,
+    false,
+    false
+  ],
+  "peaceful-rest": [
+    "Peaceful Rest",
+    2,
+    false,
+    false
+  ],
+  "phantasmal-treasure": [
+    "Phantasmal Treasure",
+    2,
+    false,
+    false
+  ],
+  "reapers-lantern": [
+    "Reaper's Lantern",
+    2,
+    false,
+    false
+  ],
+  "resist-energy": [
+    "Resist Energy",
+    2,
+    false,
+    false
+  ],
+  "revealing-light": [
+    "Revealing Light",
+    2,
+    false,
+    false
+  ],
+  "see-the-unseen": [
+    "See the Unseen",
+    2,
+    false,
+    false
+  ],
+  "shape-wood": [
+    "Shape Wood",
+    2,
+    false,
+    false
+  ],
+  "share-life": [
+    "Share Life",
+    2,
+    false,
+    false
+  ],
+  "shatter": [
+    "Shatter",
+    2,
+    false,
+    false
+  ],
+  "shrink": [
+    "Shrink",
+    2,
+    false,
+    false
+  ],
+  "silence": [
+    "Silence",
+    2,
+    false,
+    false
+  ],
+  "sound-body": [
+    "Sound Body",
+    2,
+    false,
+    false
+  ],
+  "speak-with-animals": [
+    "Speak with Animals",
+    2,
+    false,
+    false
+  ],
+  "spirit-sense": [
+    "Spirit Sense",
+    2,
+    false,
+    false
+  ],
+  "spiritual-armament": [
+    "Spiritual Armament",
+    2,
+    false,
+    false
+  ],
+  "status": [
+    "Status",
+    2,
+    false,
+    false
+  ],
+  "stupefy": [
+    "Stupefy",
+    2,
+    false,
+    false
+  ],
+  "sudden-blight": [
+    "Sudden Blight",
+    2,
+    false,
+    false
+  ],
+  "summon-elemental": [
+    "Summon Elemental",
+    2,
+    false,
+    false
+  ],
+  "sure-footing": [
+    "Sure Footing",
+    2,
+    false,
+    false
+  ],
+  "telekinetic-maneuver": [
+    "Telekinetic Maneuver",
+    2,
+    false,
+    false
+  ],
+  "translate": [
+    "Translate",
+    2,
+    false,
+    false
+  ],
+  "vomit-swarm": [
+    "Vomit Swarm",
+    2,
+    false,
+    false
+  ],
+  "water-breathing": [
+    "Water Breathing",
+    2,
+    false,
+    false
+  ],
+  "water-walk": [
+    "Water Walk",
+    2,
+    false,
+    false
+  ],
+  "web": [
+    "Web",
+    2,
+    false,
+    false
+  ],
+  "animal-vision": [
+    "Animal Vision",
+    3,
+    false,
+    false
+  ],
+  "anointed-ground": [
+    "Anointed Ground",
+    3,
+    false,
+    false
+  ],
+  "aqueous-orb": [
+    "Aqueous Orb",
+    3,
+    false,
+    false
+  ],
+  "bind-undead": [
+    "Bind Undead",
+    3,
+    false,
+    false
+  ],
+  "blindness": [
+    "Blindness",
+    3,
+    false,
+    false
+  ],
+  "chilling-darkness": [
+    "Chilling Darkness",
+    3,
+    false,
+    false
+  ],
+  "clairaudience": [
+    "Clairaudience",
+    3,
+    false,
+    false
+  ],
+  "cozy-cabin": [
+    "Cozy Cabin",
+    3,
+    false,
+    false
+  ],
+  "crashing-wave": [
+    "Crashing Wave",
+    3,
+    false,
+    false
+  ],
+  "crisis-of-faith": [
+    "Crisis of Faith",
+    3,
+    false,
+    false
+  ],
+  "curse-of-lost-time": [
+    "Curse of Lost Time",
+    3,
+    false,
+    false
+  ],
+  "dream-message": [
+    "Dream Message",
+    3,
+    false,
+    false
+  ],
+  "earthbind": [
+    "Earthbind",
+    3,
+    false,
+    false
+  ],
+  "enthrall": [
+    "Enthrall",
+    3,
+    false,
+    false
+  ],
+  "familiars-face": [
+    "Familiar's Face",
+    3,
+    false,
+    false
+  ],
+  "feet-to-fins": [
+    "Feet to Fins",
+    3,
+    false,
+    false
+  ],
+  "fireball": [
+    "Fireball",
+    3,
+    false,
+    false
+  ],
+  "ghostly-weapon": [
+    "Ghostly Weapon",
+    3,
+    false,
+    false
+  ],
+  "gravity-well": [
+    "Gravity Well",
+    3,
+    false,
+    false
+  ],
+  "haste": [
+    "Haste",
+    3,
+    false,
+    false
+  ],
+  "heroism": [
+    "Heroism",
+    3,
+    false,
+    false
+  ],
+  "holy-light": [
+    "Holy Light",
+    3,
+    false,
+    false
+  ],
+  "hypercognition": [
+    "Hypercognition",
+    3,
+    false,
+    false
+  ],
+  "hypnotize": [
+    "Hypnotize",
+    3,
+    false,
+    false
+  ],
+  "insect-form": [
+    "Insect Form",
+    3,
+    false,
+    false
+  ],
+  "levitate": [
+    "Levitate",
+    3,
+    false,
+    false
+  ],
+  "lightning-bolt": [
+    "Lightning Bolt",
+    3,
+    false,
+    false
+  ],
+  "locate": [
+    "Locate",
+    3,
+    false,
+    false
+  ],
+  "mad-monkeys": [
+    "Mad Monkeys",
+    3,
+    false,
+    false
+  ],
+  "mind-reading": [
+    "Mind Reading",
+    3,
+    false,
+    false
+  ],
+  "one-with-stone": [
+    "One with Stone",
+    3,
+    false,
+    false
+  ],
+  "paralyze": [
+    "Paralyze",
+    3,
+    false,
+    false
+  ],
+  "ring-of-truth": [
+    "Ring of Truth",
+    3,
+    false,
+    false
+  ],
+  "rouse-skeletons": [
+    "Rouse Skeletons",
+    3,
+    false,
+    false
+  ],
+  "safe-passage": [
+    "Safe Passage",
+    3,
+    false,
+    false
+  ],
+  "shared-invisibility": [
+    "Shared Invisibility",
+    3,
+    false,
+    false
+  ],
+  "shrink-item": [
+    "Shrink Item",
+    3,
+    false,
+    false
+  ],
+  "slow": [
+    "Slow",
+    3,
+    false,
+    false
+  ],
+  "speak-with-plants": [
+    "Speak with Plants",
+    3,
+    false,
+    false
+  ],
+  "threefold-aspect": [
+    "Threefold Aspect",
+    3,
+    false,
+    false
+  ],
+  "vampiric-feast": [
+    "Vampiric Feast",
+    3,
+    false,
+    false
+  ],
+  "veil-of-privacy": [
+    "Veil of Privacy",
+    3,
+    false,
+    false
+  ],
+  "wall-of-thorns": [
+    "Wall of Thorns",
+    3,
+    false,
+    false
+  ],
+  "wall-of-wind": [
+    "Wall of Wind",
+    3,
+    false,
+    false
+  ],
+  "wanderers-guide": [
+    "Wanderer's Guide",
+    3,
+    false,
+    false
+  ],
+  "aerial-form": [
+    "Aerial Form",
+    4,
+    false,
+    false
+  ],
+  "bestial-curse": [
+    "Bestial Curse",
+    4,
+    false,
+    false
+  ],
+  "chroma-leach": [
+    "Chroma Leach",
+    4,
+    false,
+    false
+  ],
+  "clairvoyance": [
+    "Clairvoyance",
+    4,
+    false,
+    false
+  ],
+  "confusion": [
+    "Confusion",
+    4,
+    false,
+    false
+  ],
+  "containment": [
+    "Containment",
+    4,
+    false,
+    false
+  ],
+  "countless-eyes": [
+    "Countless Eyes",
+    4,
+    false,
+    false
+  ],
+  "creation": [
+    "Creation",
+    4,
+    false,
+    false
+  ],
+  "detect-scrying": [
+    "Detect Scrying",
+    4,
+    false,
+    false
+  ],
+  "dinosaur-form": [
+    "Dinosaur Form",
+    4,
+    false,
+    false
+  ],
+  "dispelling-globe": [
+    "Dispelling Globe",
+    4,
+    false,
+    false
+  ],
+  "divine-wrath": [
+    "Divine Wrath",
+    4,
+    false,
+    false
+  ],
+  "dull-ambition": [
+    "Dull Ambition",
+    4,
+    false,
+    false
+  ],
+  "fire-shield": [
+    "Fire Shield",
+    4,
+    false,
+    false
+  ],
+  "flicker": [
+    "Flicker",
+    4,
+    false,
+    false
+  ],
+  "fly": [
+    "Fly",
+    4,
+    false,
+    false
+  ],
+  "ghostly-tragedy": [
+    "Ghostly Tragedy",
+    4,
+    false,
+    false
+  ],
+  "holy-cascade": [
+    "Holy Cascade",
+    4,
+    false,
+    false
+  ],
+  "honeyed-words": [
+    "Honeyed Words",
+    4,
+    false,
+    false
+  ],
+  "hydraulic-torrent": [
+    "Hydraulic Torrent",
+    4,
+    false,
+    false
+  ],
+  "ice-storm": [
+    "Ice Storm",
+    4,
+    false,
+    false
+  ],
+  "liminal-doorway": [
+    "Liminal Doorway",
+    4,
+    false,
+    false
+  ],
+  "mirage": [
+    "Mirage",
+    4,
+    false,
+    false
+  ],
+  "mountain-resilience": [
+    "Mountain Resilience",
+    4,
+    false,
+    false
+  ],
+  "nightmare": [
+    "Nightmare",
+    4,
+    false,
+    false
+  ],
+  "outcasts-curse": [
+    "Outcast's Curse",
+    4,
+    false,
+    false
+  ],
+  "peaceful-bubble": [
+    "Peaceful Bubble",
+    4,
+    false,
+    false
+  ],
+  "planar-tether": [
+    "Planar Tether",
+    4,
+    false,
+    false
+  ],
+  "read-omens": [
+    "Read Omens",
+    4,
+    false,
+    false
+  ],
+  "rewrite-memory": [
+    "Rewrite Memory",
+    4,
+    false,
+    false
+  ],
+  "seal-fate": [
+    "Seal Fate",
+    4,
+    false,
+    false
+  ],
+  "shape-stone": [
+    "Shape Stone",
+    4,
+    false,
+    false
+  ],
+  "suggestion": [
+    "Suggestion",
+    4,
+    false,
+    false
+  ],
+  "talking-corpse": [
+    "Talking Corpse",
+    4,
+    false,
+    false
+  ],
+  "telepathy": [
+    "Telepathy",
+    4,
+    false,
+    false
+  ],
+  "translocate": [
+    "Translocate",
+    4,
+    false,
+    false
+  ],
+  "unfettered-movement": [
+    "Unfettered Movement",
+    4,
+    false,
+    false
+  ],
+  "vampiric-maiden": [
+    "Vampiric Maiden",
+    4,
+    false,
+    false
+  ],
+  "vapor-form": [
+    "Vapor Form",
+    4,
+    false,
+    false
+  ],
+  "vision-of-death": [
+    "Vision of Death",
+    4,
+    false,
+    false
+  ],
+  "vital-beacon": [
+    "Vital Beacon",
+    4,
+    false,
+    false
+  ],
+  "wall-of-fire": [
+    "Wall of Fire",
+    4,
+    false,
+    false
+  ],
+  "weapon-storm": [
+    "Weapon Storm",
+    4,
+    false,
+    false
+  ],
+  "whispers-of-the-void": [
+    "Whispers of the Void",
+    4,
+    false,
+    false
+  ],
+  "banishment": [
+    "Banishment",
+    5,
+    false,
+    false
+  ],
+  "blister": [
+    "Blister",
+    5,
+    false,
+    false
+  ],
+  "breath-of-life": [
+    "Breath of Life",
+    5,
+    false,
+    false
+  ],
+  "chameleon-coat": [
+    "Chameleon Coat",
+    5,
+    false,
+    false
+  ],
+  "cloak-of-colors": [
+    "Cloak of Colors",
+    5,
+    false,
+    false
+  ],
+  "control-water": [
+    "Control Water",
+    5,
+    false,
+    false
+  ],
+  "corrosive-muck": [
+    "Corrosive Muck",
+    5,
+    false,
+    false
+  ],
+  "divine-immolation": [
+    "Divine Immolation",
+    5,
+    false,
+    false
+  ],
+  "dreaming-potential": [
+    "Dreaming Potential",
+    5,
+    false,
+    false
+  ],
+  "drop-dead": [
+    "Drop Dead",
+    5,
+    false,
+    false
+  ],
+  "elemental-form": [
+    "Elemental Form",
+    5,
+    false,
+    false
+  ],
+  "false-vision": [
+    "False Vision",
+    5,
+    false,
+    false
+  ],
+  "grisly-growths": [
+    "Grisly Growths",
+    5,
+    false,
+    false
+  ],
+  "hallucination": [
+    "Hallucination",
+    5,
+    false,
+    false
+  ],
+  "howling-blizzard": [
+    "Howling Blizzard",
+    5,
+    false,
+    false
+  ],
+  "illusory-scene": [
+    "Illusory Scene",
+    5,
+    false,
+    false
+  ],
+  "imaginary-lockbox": [
+    "Imaginary Lockbox",
+    5,
+    false,
+    false
+  ],
+  "impaling-spike": [
+    "Impaling Spike",
+    5,
+    false,
+    false
+  ],
+  "invoke-spirits": [
+    "Invoke Spirits",
+    5,
+    false,
+    false
+  ],
+  "lightning-storm": [
+    "Lightning Storm",
+    5,
+    false,
+    false
+  ],
+  "magic-passage": [
+    "Magic Passage",
+    5,
+    false,
+    false
+  ],
+  "mariners-curse": [
+    "Mariner's Curse",
+    5,
+    false,
+    false
+  ],
+  "mind-probe": [
+    "Mind Probe",
+    5,
+    false,
+    false
+  ],
+  "moon-frenzy": [
+    "Moon Frenzy",
+    5,
+    false,
+    false
+  ],
+  "natures-pathway": [
+    "Nature's Pathway",
+    5,
+    false,
+    false
+  ],
+  "plant-form": [
+    "Plant Form",
+    5,
+    false,
+    false
+  ],
+  "scouting-eye": [
+    "Scouting Eye",
+    5,
+    false,
+    false
+  ],
+  "sending": [
+    "Sending",
+    5,
+    false,
+    false
+  ],
+  "shadow-blast": [
+    "Shadow Blast",
+    5,
+    false,
+    false
+  ],
+  "slither": [
+    "Slither",
+    5,
+    false,
+    false
+  ],
+  "speak-with-stones": [
+    "Speak with Stones",
+    5,
+    false,
+    false
+  ],
+  "spiritual-guardian": [
+    "Spiritual Guardian",
+    5,
+    false,
+    false
+  ],
+  "strange-geometry": [
+    "Strange Geometry",
+    5,
+    false,
+    false
+  ],
+  "subconscious-suggestion": [
+    "Subconscious Suggestion",
+    5,
+    false,
+    false
+  ],
+  "summon-celestial": [
+    "Summon Celestial",
+    5,
+    false,
+    false
+  ],
+  "summon-dragon": [
+    "Summon Dragon",
+    5,
+    false,
+    false
+  ],
+  "summon-entity": [
+    "Summon Entity",
+    5,
+    false,
+    false
+  ],
+  "summon-fiend": [
+    "Summon Fiend",
+    5,
+    false,
+    false
+  ],
+  "summon-giant": [
+    "Summon Giant",
+    5,
+    false,
+    false
+  ],
+  "summon-monitor": [
+    "Summon Monitor",
+    5,
+    false,
+    false
+  ],
+  "synaptic-pulse": [
+    "Synaptic Pulse",
+    5,
+    false,
+    false
+  ],
+  "synesthesia": [
+    "Synesthesia",
+    5,
+    false,
+    false
+  ],
+  "telekinetic-haul": [
+    "Telekinetic Haul",
+    5,
+    false,
+    false
+  ],
+  "toxic-cloud": [
+    "Toxic Cloud",
+    5,
+    false,
+    false
+  ],
+  "truespeech": [
+    "Truespeech",
+    5,
+    false,
+    false
+  ],
+  "wall-of-flesh": [
+    "Wall of Flesh",
+    5,
+    false,
+    false
+  ],
+  "wall-of-ice": [
+    "Wall of Ice",
+    5,
+    false,
+    false
+  ],
+  "wall-of-stone": [
+    "Wall of Stone",
+    5,
+    false,
+    false
+  ],
+  "wave-of-despair": [
+    "Wave of Despair",
+    5,
+    false,
+    false
+  ],
+  "blanket-of-stars": [
+    "Blanket of Stars",
+    6,
+    false,
+    false
+  ],
+  "blessed-boundary": [
+    "Blessed Boundary",
+    6,
+    false,
+    false
+  ],
+  "blinding-fury": [
+    "Blinding Fury",
+    6,
+    false,
+    false
+  ],
+  "chain-lightning": [
+    "Chain Lightning",
+    6,
+    false,
+    false
+  ],
+  "collective-transposition": [
+    "Collective Transposition",
+    6,
+    false,
+    false
+  ],
+  "cursed-metamorphosis": [
+    "Cursed Metamorphosis",
+    6,
+    false,
+    false
+  ],
+  "disintegrate": [
+    "Disintegrate",
+    6,
+    false,
+    false
+  ],
+  "dominate": [
+    "Dominate",
+    6,
+    false,
+    false
+  ],
+  "dragon-form": [
+    "Dragon Form",
+    6,
+    false,
+    false
+  ],
+  "field-of-life": [
+    "Field of Life",
+    6,
+    false,
+    false
+  ],
+  "mislead": [
+    "Mislead",
+    6,
+    false,
+    false
+  ],
+  "never-mind": [
+    "Never Mind",
+    6,
+    false,
+    false
+  ],
+  "petrify": [
+    "Petrify",
+    6,
+    false,
+    false
+  ],
+  "phantasmal-calamity": [
+    "Phantasmal Calamity",
+    6,
+    false,
+    false
+  ],
+  "raise-dead": [
+    "Raise Dead",
+    6,
+    false,
+    false
+  ],
+  "repulsion": [
+    "Repulsion",
+    6,
+    false,
+    false
+  ],
+  "sacred-form": [
+    "Sacred Form",
+    6,
+    false,
+    false
+  ],
+  "scintillating-safeguard": [
+    "Scintillating Safeguard",
+    6,
+    false,
+    false
+  ],
+  "scrying": [
+    "Scrying",
+    6,
+    false,
+    false
+  ],
+  "spellwrack": [
+    "Spellwrack",
+    6,
+    false,
+    false
+  ],
+  "spirit-blast": [
+    "Spirit Blast",
+    6,
+    false,
+    false
+  ],
+  "tangling-creepers": [
+    "Tangling Creepers",
+    6,
+    false,
+    false
+  ],
+  "teleport": [
+    "Teleport",
+    6,
+    false,
+    false
+  ],
+  "tree-of-seasons": [
+    "Tree of Seasons",
+    6,
+    false,
+    false
+  ],
+  "truesight": [
+    "Truesight",
+    6,
+    false,
+    false
+  ],
+  "vampiric-exsanguination": [
+    "Vampiric Exsanguination",
+    6,
+    false,
+    false
+  ],
+  "vibrant-pattern": [
+    "Vibrant Pattern",
+    6,
+    false,
+    false
+  ],
+  "wall-of-force": [
+    "Wall of Force",
+    6,
+    false,
+    false
+  ],
+  "zealous-conviction": [
+    "Zealous Conviction",
+    6,
+    false,
+    false
+  ],
+  "contingency": [
+    "Contingency",
+    7,
+    false,
+    false
+  ],
+  "divine-decree": [
+    "Divine Decree",
+    7,
+    false,
+    false
+  ],
+  "duplicate-foe": [
+    "Duplicate Foe",
+    7,
+    false,
+    false
+  ],
+  "eclipse-burst": [
+    "Eclipse Burst",
+    7,
+    false,
+    false
+  ],
+  "energy-aegis": [
+    "Energy Aegis",
+    7,
+    false,
+    false
+  ],
+  "execute": [
+    "Execute",
+    7,
+    false,
+    false
+  ],
+  "fiery-body": [
+    "Fiery Body",
+    7,
+    false,
+    false
+  ],
+  "interplanar-teleport": [
+    "Interplanar Teleport",
+    7,
+    false,
+    false
+  ],
+  "lifewood-cage": [
+    "Lifewood Cage",
+    7,
+    false,
+    false
+  ],
+  "mask-of-terror": [
+    "Mask of Terror",
+    7,
+    false,
+    false
+  ],
+  "planar-palace": [
+    "Planar Palace",
+    7,
+    false,
+    false
+  ],
+  "planar-seal": [
+    "Planar Seal",
+    7,
+    false,
+    false
+  ],
+  "possession": [
+    "Possession",
+    7,
+    false,
+    false
+  ],
+  "project-image": [
+    "Project Image",
+    7,
+    false,
+    false
+  ],
+  "regenerate": [
+    "Regenerate",
+    7,
+    false,
+    false
+  ],
+  "retrocognition": [
+    "Retrocognition",
+    7,
+    false,
+    false
+  ],
+  "spell-riposte": [
+    "Spell Riposte",
+    7,
+    false,
+    false
+  ],
+  "sunburst": [
+    "Sunburst",
+    7,
+    false,
+    false
+  ],
+  "true-target": [
+    "True Target",
+    7,
+    false,
+    false
+  ],
+  "unfettered-pack": [
+    "Unfettered Pack",
+    7,
+    false,
+    false
+  ],
+  "visions-of-danger": [
+    "Visions of Danger",
+    7,
+    false,
+    false
+  ],
+  "volcanic-eruption": [
+    "Volcanic Eruption",
+    7,
+    false,
+    false
+  ],
+  "warp-mind": [
+    "Warp Mind",
+    7,
+    false,
+    false
+  ],
+  "arctic-rift": [
+    "Arctic Rift",
+    8,
+    false,
+    false
+  ],
+  "canticle-of-everlasting-grief": [
+    "Canticle of Everlasting Grief",
+    8,
+    false,
+    false
+  ],
+  "confusing-colors": [
+    "Confusing Colors",
+    8,
+    false,
+    false
+  ],
+  "desiccate": [
+    "Desiccate",
+    8,
+    false,
+    false
+  ],
+  "disappearance": [
+    "Disappearance",
+    8,
+    false,
+    false
+  ],
+  "divine-inspiration": [
+    "Divine Inspiration",
+    8,
+    false,
+    false
+  ],
+  "dream-council": [
+    "Dream Council",
+    8,
+    false,
+    false
+  ],
+  "earthquake": [
+    "Earthquake",
+    8,
+    false,
+    false
+  ],
+  "migration": [
+    "Migration",
+    8,
+    false,
+    false
+  ],
+  "moment-of-renewal": [
+    "Moment of Renewal",
+    8,
+    false,
+    false
+  ],
+  "monstrosity-form": [
+    "Monstrosity Form",
+    8,
+    false,
+    false
+  ],
+  "pinpoint": [
+    "Pinpoint",
+    8,
+    false,
+    false
+  ],
+  "punishing-winds": [
+    "Punishing Winds",
+    8,
+    false,
+    false
+  ],
+  "quandary": [
+    "Quandary",
+    8,
+    false,
+    false
+  ],
+  "spirit-song": [
+    "Spirit Song",
+    8,
+    false,
+    false
+  ],
+  "spiritual-epidemic": [
+    "Spiritual Epidemic",
+    8,
+    false,
+    false
+  ],
+  "uncontrollable-dance": [
+    "Uncontrollable Dance",
+    8,
+    false,
+    false
+  ],
+  "unrelenting-observation": [
+    "Unrelenting Observation",
+    8,
+    false,
+    false
+  ],
+  "detonate-magic": [
+    "Detonate Magic",
+    9,
+    false,
+    false
+  ],
+  "falling-stars": [
+    "Falling Stars",
+    9,
+    false,
+    false
+  ],
+  "foresight": [
+    "Foresight",
+    9,
+    false,
+    false
+  ],
+  "implosion": [
+    "Implosion",
+    9,
+    false,
+    false
+  ],
+  "massacre": [
+    "Massacre",
+    9,
+    false,
+    false
+  ],
+  "metamorphosis": [
+    "Metamorphosis",
+    9,
+    false,
+    false
+  ],
+  "natures-enmity": [
+    "Nature's Enmity",
+    9,
+    false,
+    false
+  ],
+  "overwhelming-presence": [
+    "Overwhelming Presence",
+    9,
+    false,
+    false
+  ],
+  "phantasmagoria": [
+    "Phantasmagoria",
+    9,
+    false,
+    false
+  ],
+  "resplendent-mansion": [
+    "Resplendent Mansion",
+    9,
+    false,
+    false
+  ],
+  "seize-soul": [
+    "Seize Soul",
+    9,
+    false,
+    false
+  ],
+  "telepathic-demand": [
+    "Telepathic Demand",
+    9,
+    false,
+    false
+  ],
+  "unfathomable-song": [
+    "Unfathomable Song",
+    9,
+    false,
+    false
+  ],
+  "wails-of-the-damned": [
+    "Wails of the Damned",
+    9,
+    false,
+    false
+  ],
+  "weapon-of-judgment": [
+    "Weapon of Judgment",
+    9,
+    false,
+    false
+  ],
+  "wrathful-storm": [
+    "Wrathful Storm",
+    9,
+    false,
+    false
+  ],
+  "bullhorn": [
+    "Bullhorn",
+    1,
+    true,
+    false
+  ],
+  "caustic-blast": [
+    "Caustic Blast",
+    1,
+    true,
+    false
+  ],
+  "daze": [
+    "Daze",
+    1,
+    true,
+    false
+  ],
+  "detect-magic": [
+    "Detect Magic",
+    1,
+    true,
+    false
+  ],
+  "divine-lance": [
+    "Divine Lance",
+    1,
+    true,
+    false
+  ],
+  "electric-arc": [
+    "Electric Arc",
+    1,
+    true,
+    false
+  ],
+  "figment": [
+    "Figment",
+    1,
+    true,
+    false
+  ],
+  "forbidding-ward": [
+    "Forbidding Ward",
+    1,
+    true,
+    false
+  ],
+  "frostbite": [
+    "Frostbite",
+    1,
+    true,
+    false
+  ],
+  "gale-blast": [
+    "Gale Blast",
+    1,
+    true,
+    false
+  ],
+  "gouging-claw": [
+    "Gouging Claw",
+    1,
+    true,
+    false
+  ],
+  "guidance": [
+    "Guidance",
+    1,
+    true,
+    false
+  ],
+  "haunting-hymn": [
+    "Haunting Hymn",
+    1,
+    true,
+    false
+  ],
+  "ignition": [
+    "Ignition",
+    1,
+    true,
+    false
+  ],
+  "know-the-way": [
+    "Know the Way",
+    1,
+    true,
+    false
+  ],
+  "light": [
+    "Light",
+    1,
+    true,
+    false
+  ],
+  "live-wire": [
+    "Live Wire",
+    1,
+    true,
+    false
+  ],
+  "message": [
+    "Message",
+    1,
+    true,
+    false
+  ],
+  "prestidigitation": [
+    "Prestidigitation",
+    1,
+    true,
+    false
+  ],
+  "puff-of-poison": [
+    "Puff of Poison",
+    1,
+    true,
+    false
+  ],
+  "read-aura": [
+    "Read Aura",
+    1,
+    true,
+    false
+  ],
+  "scatter-scree": [
+    "Scatter Scree",
+    1,
+    true,
+    false
+  ],
+  "shield": [
+    "Shield",
+    1,
+    true,
+    false
+  ],
+  "sigil": [
+    "Sigil",
+    1,
+    true,
+    false
+  ],
+  "spout": [
+    "Spout",
+    1,
+    true,
+    false
+  ],
+  "stabilize": [
+    "Stabilize",
+    1,
+    true,
+    false
+  ],
+  "summon-instrument": [
+    "Summon Instrument",
+    1,
+    true,
+    false
+  ],
+  "tangle-vine": [
+    "Tangle Vine",
+    1,
+    true,
+    false
+  ],
+  "telekinetic-hand": [
+    "Telekinetic Hand",
+    1,
+    true,
+    false
+  ],
+  "telekinetic-projectile": [
+    "Telekinetic Projectile",
+    1,
+    true,
+    false
+  ],
+  "vitality-lash": [
+    "Vitality Lash",
+    1,
+    true,
+    false
+  ],
+  "void-warp": [
+    "Void Warp",
+    1,
+    true,
+    false
+  ],
+  "aberrant-whispers": [
+    "Aberrant Whispers",
+    3,
+    false,
+    true
+  ],
+  "access-lore": [
+    "Access Lore",
+    3,
+    false,
+    true
+  ],
+  "agile-feet": [
+    "Agile Feet",
+    1,
+    false,
+    true
+  ],
+  "allegro": [
+    "Allegro",
+    7,
+    true,
+    true
+  ],
+  "ancestral-defense": [
+    "Ancestral Defense",
+    3,
+    false,
+    true
+  ],
+  "ancestral-form": [
+    "Ancestral Form",
+    6,
+    false,
+    true
+  ],
+  "ancestral-memories": [
+    "Ancestral Memories",
+    1,
+    false,
+    true
+  ],
+  "ancestral-touch": [
+    "Ancestral Touch",
+    1,
+    false,
+    true
+  ],
+  "angelic-halo": [
+    "Angelic Halo",
+    1,
+    false,
+    true
+  ],
+  "angelic-wings": [
+    "Angelic Wings",
+    3,
+    false,
+    true
+  ],
+  "animal-feature": [
+    "Animal Feature",
+    2,
+    false,
+    true
+  ],
+  "appearance-of-wealth": [
+    "Appearance of Wealth",
+    1,
+    false,
+    true
+  ],
+  "arcane-countermeasure": [
+    "Arcane Countermeasure",
+    5,
+    false,
+    true
+  ],
+  "armor-of-bones": [
+    "Armor of Bones",
+    3,
+    false,
+    true
+  ],
+  "artistic-flourish": [
+    "Artistic Flourish",
+    4,
+    false,
+    true
+  ],
+  "athletic-rush": [
+    "Athletic Rush",
+    1,
+    false,
+    true
+  ],
+  "battlefield-persistence": [
+    "Battlefield Persistence",
+    3,
+    false,
+    true
+  ],
+  "bit-of-luck": [
+    "Bit of Luck",
+    1,
+    false,
+    true
+  ],
+  "blood-ward": [
+    "Blood Ward",
+    1,
+    false,
+    true
+  ],
+  "brain-drain": [
+    "Brain Drain",
+    1,
+    false,
+    true
+  ],
+  "cackle": [
+    "Cackle",
+    1,
+    false,
+    true
+  ],
+  "captivating-adoration": [
+    "Captivating Adoration",
+    4,
+    false,
+    true
+  ],
+  "celestial-brand": [
+    "Celestial Brand",
+    5,
+    false,
+    true
+  ],
+  "champions-sacrifice": [
+    "Champion's Sacrifice",
+    6,
+    false,
+    true
+  ],
+  "charming-push": [
+    "Charming Push",
+    1,
+    false,
+    true
+  ],
+  "charming-touch": [
+    "Charming Touch",
+    1,
+    false,
+    true
+  ],
+  "chthonian-wrath": [
+    "Chthonian Wrath",
+    5,
+    false,
+    true
+  ],
+  "claim-undead": [
+    "Claim Undead",
+    6,
+    false,
+    true
+  ],
+  "clinging-ice": [
+    "Clinging Ice",
+    1,
+    true,
+    true
+  ],
+  "clinging-shadows-stance": [
+    "Clinging Shadows Stance",
+    4,
+    false,
+    true
+  ],
+  "cloak-of-shadow": [
+    "Cloak of Shadow",
+    1,
+    false,
+    true
+  ],
+  "commanding-lash": [
+    "Commanding Lash",
+    4,
+    false,
+    true
+  ],
+  "community-restoration": [
+    "Community Restoration",
+    4,
+    false,
+    true
+  ],
+  "competitive-edge": [
+    "Competitive Edge",
+    4,
+    false,
+    true
+  ],
+  "cornucopia": [
+    "Cornucopia",
+    1,
+    false,
+    true
+  ],
+  "counter-performance": [
+    "Counter Performance",
+    1,
+    false,
+    true
+  ],
+  "courageous-anthem": [
+    "Courageous Anthem",
+    1,
+    true,
+    true
+  ],
+  "creative-splash": [
+    "Creative Splash",
+    1,
+    false,
+    true
+  ],
+  "cry-of-destruction": [
+    "Cry of Destruction",
+    1,
+    false,
+    true
+  ],
+  "curse-of-death": [
+    "Curse of Death",
+    5,
+    false,
+    true
+  ],
+  "darkened-sight": [
+    "Darkened Sight",
+    4,
+    false,
+    true
+  ],
+  "dazzling-flash": [
+    "Dazzling Flash",
+    1,
+    false,
+    true
+  ],
+  "deaths-call": [
+    "Death's Call",
+    1,
+    false,
+    true
+  ],
+  "deceivers-cloak": [
+    "Deceiver's Cloak",
+    3,
+    false,
+    true
+  ],
+  "delay-affliction": [
+    "Delay Affliction",
+    3,
+    false,
+    true
+  ],
+  "delusional-pride": [
+    "Delusional Pride",
+    4,
+    false,
+    true
+  ],
+  "destructive-aura": [
+    "Destructive Aura",
+    4,
+    false,
+    true
+  ],
+  "diabolic-edict": [
+    "Diabolic Edict",
+    1,
+    false,
+    true
+  ],
+  "dirge-of-doom": [
+    "Dirge of Doom",
+    3,
+    true,
+    true
+  ],
+  "discern-secrets": [
+    "Discern Secrets",
+    1,
+    true,
+    true
+  ],
+  "disperse-into-air": [
+    "Disperse into Air",
+    4,
+    false,
+    true
+  ],
+  "downpour": [
+    "Downpour",
+    4,
+    false,
+    true
+  ],
+  "dragon-breath": [
+    "Dragon Breath",
+    3,
+    false,
+    true
+  ],
+  "dragon-wings": [
+    "Dragon Wings",
+    5,
+    false,
+    true
+  ],
+  "drain-life": [
+    "Drain Life",
+    3,
+    false,
+    true
+  ],
+  "dread-secret": [
+    "Dread Secret",
+    6,
+    false,
+    true
+  ],
+  "dreamers-call": [
+    "Dreamer's Call",
+    4,
+    false,
+    true
+  ],
+  "earthworks": [
+    "Earthworks",
+    1,
+    false,
+    true
+  ],
+  "elemental-betrayal": [
+    "Elemental Betrayal",
+    1,
+    false,
+    true
+  ],
+  "elemental-blast": [
+    "Elemental Blast",
+    5,
+    false,
+    true
+  ],
+  "elemental-motion": [
+    "Elemental Motion",
+    3,
+    false,
+    true
+  ],
+  "elemental-toss": [
+    "Elemental Toss",
+    1,
+    false,
+    true
+  ],
+  "embrace-nothingness": [
+    "Embrace Nothingness",
+    9,
+    false,
+    true
+  ],
+  "embrace-the-pit": [
+    "Embrace the Pit",
+    3,
+    false,
+    true
+  ],
+  "enduring-might": [
+    "Enduring Might",
+    4,
+    false,
+    true
+  ],
+  "energy-absorption": [
+    "Energy Absorption",
+    4,
+    false,
+    true
+  ],
+  "enlarge-companion": [
+    "Enlarge Companion",
+    2,
+    false,
+    true
+  ],
+  "ephemeral-tracking": [
+    "Ephemeral Tracking",
+    3,
+    false,
+    true
+  ],
+  "eradicate-undeath": [
+    "Eradicate Undeath",
+    4,
+    false,
+    true
+  ],
+  "evil-eye": [
+    "Evil Eye",
+    1,
+    true,
+    true
+  ],
+  "extend-blood-magic": [
+    "Extend Blood Magic",
+    3,
+    false,
+    true
+  ],
+  "face-in-the-crowd": [
+    "Face in the Crowd",
+    1,
+    false,
+    true
+  ],
+  "faerie-dust": [
+    "Faerie Dust",
+    1,
+    false,
+    true
+  ],
+  "fatal-aria": [
+    "Fatal Aria",
+    10,
+    false,
+    true
+  ],
+  "fey-disappearance": [
+    "Fey Disappearance",
+    3,
+    false,
+    true
+  ],
+  "fey-glamour": [
+    "Fey Glamour",
+    5,
+    false,
+    true
+  ],
+  "fire-ray": [
+    "Fire Ray",
+    1,
+    false,
+    true
+  ],
+  "flame-barrier": [
+    "Flame Barrier",
+    4,
+    false,
+    true
+  ],
+  "flaming-fusillade": [
+    "Flaming Fusillade",
+    6,
+    false,
+    true
+  ],
+  "flurry-of-claws": [
+    "Flurry of Claws",
+    1,
+    false,
+    true
+  ],
+  "force-bolt": [
+    "Force Bolt",
+    1,
+    false,
+    true
+  ],
+  "fortify-summoning": [
+    "Fortify Summoning",
+    1,
+    false,
+    true
+  ],
+  "fortissimo-composition": [
+    "Fortissimo Composition",
+    4,
+    false,
+    true
+  ],
+  "glimpse-the-truth": [
+    "Glimpse the Truth",
+    4,
+    false,
+    true
+  ],
+  "gluttons-jaws": [
+    "Glutton's Jaws",
+    1,
+    false,
+    true
+  ],
+  "grasping-grave": [
+    "Grasping Grave",
+    5,
+    false,
+    true
+  ],
+  "gravity-weapon": [
+    "Gravity Weapon",
+    1,
+    false,
+    true
+  ],
+  "hand-of-the-apprentice": [
+    "Hand of the Apprentice",
+    1,
+    false,
+    true
+  ],
+  "harmonize-self": [
+    "Harmonize Self",
+    2,
+    false,
+    true
+  ],
+  "heal-animal": [
+    "Heal Animal",
+    1,
+    false,
+    true
+  ],
+  "heal-companion": [
+    "Heal Companion",
+    1,
+    false,
+    true
+  ],
+  "healers-blessing": [
+    "Healer's Blessing",
+    1,
+    false,
+    true
+  ],
+  "hellfire-plume": [
+    "Hellfire Plume",
+    5,
+    false,
+    true
+  ],
+  "heros-defiance": [
+    "Hero's Defiance",
+    10,
+    false,
+    true
+  ],
+  "horrific-visage": [
+    "Horrific Visage",
+    3,
+    false,
+    true
+  ],
+  "house-of-imaginary-walls": [
+    "House of Imaginary Walls",
+    5,
+    true,
+    true
+  ],
+  "hunters-luck": [
+    "Hunter's Luck",
+    2,
+    false,
+    true
+  ],
+  "hunters-vision": [
+    "Hunter's Vision",
+    5,
+    false,
+    true
+  ],
+  "hurtling-stone": [
+    "Hurtling Stone",
+    1,
+    false,
+    true
+  ],
+  "hymn-of-healing": [
+    "Hymn of Healing",
+    1,
+    false,
+    true
+  ],
+  "ignite-ambition": [
+    "Ignite Ambition",
+    1,
+    false,
+    true
+  ],
+  "impaling-briars": [
+    "Impaling Briars",
+    8,
+    false,
+    true
+  ],
+  "incendiary-aura": [
+    "Incendiary Aura",
+    1,
+    false,
+    true
+  ],
+  "inner-upheaval": [
+    "Inner Upheaval",
+    1,
+    false,
+    true
+  ],
+  "interdisciplinary-incantation": [
+    "Interdisciplinary Incantation",
+    4,
+    false,
+    true
+  ],
+  "interstellar-void": [
+    "Interstellar Void",
+    3,
+    false,
+    true
+  ],
+  "invisibility-cloak": [
+    "Invisibility Cloak",
+    4,
+    false,
+    true
+  ],
+  "jealous-hex": [
+    "Jealous Hex",
+    1,
+    false,
+    true
+  ],
+  "know-the-enemy": [
+    "Know the Enemy",
+    4,
+    false,
+    true
+  ],
+  "lay-on-hands": [
+    "Lay on Hands",
+    1,
+    false,
+    true
+  ],
+  "life-boost": [
+    "Life Boost",
+    1,
+    false,
+    true
+  ],
+  "life-giving-form": [
+    "Life-Giving Form",
+    6,
+    false,
+    true
+  ],
+  "life-link": [
+    "Life Link",
+    1,
+    false,
+    true
+  ],
+  "lingering-composition": [
+    "Lingering Composition",
+    1,
+    false,
+    true
+  ],
+  "localized-quake": [
+    "Localized Quake",
+    4,
+    false,
+    true
+  ],
+  "loremasters-etude": [
+    "Loremaster's Etude",
+    1,
+    false,
+    true
+  ],
+  "lucky-break": [
+    "Lucky Break",
+    4,
+    false,
+    true
+  ],
+  "magic-hide": [
+    "Magic Hide",
+    1,
+    false,
+    true
+  ],
+  "magics-vessel": [
+    "Magic's Vessel",
+    1,
+    false,
+    true
+  ],
+  "malicious-shadow": [
+    "Malicious Shadow",
+    3,
+    false,
+    true
+  ],
+  "malignant-sustenance": [
+    "Malignant Sustenance",
+    4,
+    false,
+    true
+  ],
+  "medusas-wrath": [
+    "Medusa's Wrath",
+    8,
+    false,
+    true
+  ],
+  "moonbeam": [
+    "Moonbeam",
+    1,
+    false,
+    true
+  ],
+  "moonlight-bridge": [
+    "Moonlight Bridge",
+    6,
+    false,
+    true
+  ],
+  "mystic-beacon": [
+    "Mystic Beacon",
+    4,
+    false,
+    true
+  ],
+  "natures-bounty": [
+    "Nature's Bounty",
+    4,
+    false,
+    true
+  ],
+  "needle-of-vengeance": [
+    "Needle of Vengeance",
+    1,
+    false,
+    true
+  ],
+  "nudge-fate": [
+    "Nudge Fate",
+    1,
+    true,
+    true
+  ],
+  "ode-to-ouroboros": [
+    "Ode to Ouroboros",
+    5,
+    false,
+    true
+  ],
+  "overstuff": [
+    "Overstuff",
+    1,
+    false,
+    true
+  ],
+  "patrons-puppet": [
+    "Patron's Puppet",
+    1,
+    false,
+    true
+  ],
+  "perfected-body": [
+    "Perfected Body",
+    4,
+    false,
+    true
+  ],
+  "perfected-mind": [
+    "Perfected Mind",
+    1,
+    false,
+    true
+  ],
+  "personal-blizzard": [
+    "Personal Blizzard",
+    3,
+    false,
+    true
+  ],
+  "phase-familiar": [
+    "Phase Familiar",
+    1,
+    false,
+    true
+  ],
+  "pied-piping": [
+    "Pied Piping",
+    10,
+    false,
+    true
+  ],
+  "precious-metals": [
+    "Precious Metals",
+    4,
+    false,
+    true
+  ],
+  "primal-summons": [
+    "Primal Summons",
+    6,
+    false,
+    true
+  ],
+  "protective-wards": [
+    "Protective Wards",
+    1,
+    false,
+    true
+  ],
+  "protectors-sacrifice": [
+    "Protector's Sacrifice",
+    1,
+    false,
+    true
+  ],
+  "protectors-sphere": [
+    "Protector's Sphere",
+    4,
+    false,
+    true
+  ],
+  "pulse-of-civilization": [
+    "Pulse of Civilization",
+    4,
+    false,
+    true
+  ],
+  "pushing-gust": [
+    "Pushing Gust",
+    1,
+    false,
+    true
+  ],
+  "qi-blast": [
+    "Qi Blast",
+    3,
+    false,
+    true
+  ],
+  "qi-form": [
+    "Qi Form",
+    9,
+    false,
+    true
+  ],
+  "qi-rush": [
+    "Qi Rush",
+    1,
+    false,
+    true
+  ],
+  "rallying-anthem": [
+    "Rallying Anthem",
+    2,
+    true,
+    true
+  ],
+  "rangers-bramble": [
+    "Ranger's Bramble",
+    3,
+    false,
+    true
+  ],
+  "read-fate": [
+    "Read Fate",
+    1,
+    false,
+    true
+  ],
+  "rebuke-death": [
+    "Rebuke Death",
+    4,
+    false,
+    true
+  ],
+  "restorative-moment": [
+    "Restorative Moment",
+    5,
+    false,
+    true
+  ],
+  "retributive-pain": [
+    "Retributive Pain",
+    4,
+    false,
+    true
+  ],
+  "revel-in-retribution": [
+    "Revel in Retribution",
+    6,
+    false,
+    true
+  ],
+  "rune-of-observation": [
+    "Rune of Observation",
+    4,
+    false,
+    true
+  ],
+  "safeguard-secret": [
+    "Safeguard Secret",
+    4,
+    false,
+    true
+  ],
+  "savor-the-sting": [
+    "Savor the Sting",
+    1,
+    false,
+    true
+  ],
+  "scholarly-recollection": [
+    "Scholarly Recollection",
+    1,
+    false,
+    true
+  ],
+  "scramble-body": [
+    "Scramble Body",
+    1,
+    false,
+    true
+  ],
+  "shadows-web": [
+    "Shadow's Web",
+    7,
+    false,
+    true
+  ],
+  "shared-nightmare": [
+    "Shared Nightmare",
+    4,
+    false,
+    true
+  ],
+  "shields-of-the-spirit": [
+    "Shields of the Spirit",
+    1,
+    false,
+    true
+  ],
+  "shifting-form": [
+    "Shifting Form",
+    4,
+    false,
+    true
+  ],
+  "shrink-the-span": [
+    "Shrink the Span",
+    3,
+    false,
+    true
+  ],
+  "shroud-of-night": [
+    "Shroud of Night",
+    1,
+    true,
+    true
+  ],
+  "song-of-marching": [
+    "Song of Marching",
+    3,
+    true,
+    true
+  ],
+  "song-of-strength": [
+    "Song of Strength",
+    1,
+    true,
+    true
+  ],
+  "soothing-ballad": [
+    "Soothing Ballad",
+    7,
+    false,
+    true
+  ],
+  "soothing-mist": [
+    "Soothing Mist",
+    2,
+    false,
+    true
+  ],
+  "soothing-words": [
+    "Soothing Words",
+    1,
+    false,
+    true
+  ],
+  "soul-siphon": [
+    "Soul Siphon",
+    1,
+    false,
+    true
+  ],
+  "spectral-advance": [
+    "Spectral Advance",
+    5,
+    false,
+    true
+  ],
+  "spiral-of-horrors": [
+    "Spiral of Horrors",
+    4,
+    false,
+    true
+  ],
+  "spray-of-stars": [
+    "Spray of Stars",
+    1,
+    false,
+    true
+  ],
+  "stoke-the-heart": [
+    "Stoke the Heart",
+    1,
+    true,
+    true
+  ],
+  "storm-lord": [
+    "Storm Lord",
+    9,
+    false,
+    true
+  ],
+  "stormwind-flight": [
+    "Stormwind Flight",
+    4,
+    false,
+    true
+  ],
+  "sudden-shift": [
+    "Sudden Shift",
+    1,
+    false,
+    true
+  ],
+  "swamp-of-sloth": [
+    "Swamp of Sloth",
+    3,
+    false,
+    true
+  ],
+  "sweet-dream": [
+    "Sweet Dream",
+    1,
+    false,
+    true
+  ],
+  "symphony-of-the-unfettered-heart": [
+    "Symphony of the Unfettered Heart",
+    5,
+    false,
+    true
+  ],
+  "take-its-course": [
+    "Take its Course",
+    4,
+    false,
+    true
+  ],
+  "tempest-form": [
+    "Tempest Form",
+    6,
+    false,
+    true
+  ],
+  "tempest-surge": [
+    "Tempest Surge",
+    1,
+    false,
+    true
+  ],
+  "tempest-touch": [
+    "Tempest Touch",
+    1,
+    false,
+    true
+  ],
+  "tempt-fate": [
+    "Tempt Fate",
+    4,
+    false,
+    true
+  ],
+  "tentacular-limbs": [
+    "Tentacular Limbs",
+    1,
+    false,
+    true
+  ],
+  "terrain-transposition": [
+    "Terrain Transposition",
+    5,
+    false,
+    true
+  ],
+  "thunderburst": [
+    "Thunderburst",
+    3,
+    false,
+    true
+  ],
+  "tidal-surge": [
+    "Tidal Surge",
+    1,
+    false,
+    true
+  ],
+  "touch-of-death": [
+    "Touch of Death",
+    8,
+    false,
+    true
+  ],
+  "touch-of-obedience": [
+    "Touch of Obedience",
+    1,
+    false,
+    true
+  ],
+  "touch-of-the-moon": [
+    "Touch of the Moon",
+    4,
+    false,
+    true
+  ],
+  "touch-of-the-void": [
+    "Touch of the Void",
+    1,
+    false,
+    true
+  ],
+  "touch-of-undeath": [
+    "Touch of Undeath",
+    1,
+    false,
+    true
+  ],
+  "travelers-transit": [
+    "Traveler's Transit",
+    4,
+    false,
+    true
+  ],
+  "tricksters-twin": [
+    "Trickster's Twin",
+    4,
+    false,
+    true
+  ],
+  "triple-time": [
+    "Triple Time",
+    2,
+    true,
+    true
+  ],
+  "undeaths-blessing": [
+    "Undeath's Blessing",
+    1,
+    false,
+    true
+  ],
+  "unimpeded-stride": [
+    "Unimpeded Stride",
+    1,
+    false,
+    true
+  ],
+  "unity": [
+    "Unity",
+    4,
+    false,
+    true
+  ],
+  "untamed-form": [
+    "Untamed Form",
+    1,
+    false,
+    true
+  ],
+  "untamed-shift": [
+    "Untamed Shift",
+    1,
+    false,
+    true
+  ],
+  "unusual-anatomy": [
+    "Unusual Anatomy",
+    5,
+    false,
+    true
+  ],
+  "uplifting-overture": [
+    "Uplifting Overture",
+    1,
+    true,
+    true
+  ],
+  "veil-of-confidence": [
+    "Veil of Confidence",
+    1,
+    false,
+    true
+  ],
+  "veil-of-dreams": [
+    "Veil of Dreams",
+    1,
+    false,
+    true
+  ],
+  "vibrant-thorns": [
+    "Vibrant Thorns",
+    1,
+    false,
+    true
+  ],
+  "waking-nightmare": [
+    "Waking Nightmare",
+    1,
+    false,
+    true
+  ],
+  "weapon-surge": [
+    "Weapon Surge",
+    1,
+    false,
+    true
+  ],
+  "weapon-trance": [
+    "Weapon Trance",
+    1,
+    false,
+    true
+  ],
+  "whirling-flames": [
+    "Whirling Flames",
+    3,
+    false,
+    true
+  ],
+  "whispering-quiet": [
+    "Whispering Quiet",
+    1,
+    false,
+    true
+  ],
+  "wild-winds-stance": [
+    "Wild Winds Stance",
+    4,
+    false,
+    true
+  ],
+  "wilding-word": [
+    "Wilding Word",
+    1,
+    true,
+    true
+  ],
+  "wind-jump": [
+    "Wind Jump",
+    5,
+    false,
+    true
+  ],
+  "word-of-freedom": [
+    "Word of Freedom",
+    4,
+    false,
+    true
+  ],
+  "word-of-truth": [
+    "Word of Truth",
+    1,
+    false,
+    true
+  ],
+  "youre-mine": [
+    "You're Mine",
+    5,
+    false,
+    true
+  ],
+  "zeal-for-battle": [
+    "Zeal for Battle",
+    4,
+    false,
+    true
+  ]
+}
