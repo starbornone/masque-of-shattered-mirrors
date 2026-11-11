@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T10:48:11+11:00",
+  "updatedAt": "2026-11-11T19:05:27+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -300,6 +300,13 @@
       "group": "Phase 7",
       "notes": "Added a skippable feat step with 1,418 Remaster Player Core options, class-specific schedules, background and class fixed grants, common heritage/ancestry bonus choices, Fighter daily choices, and manual slots for subclass or conditional grants. Choices, notes, and inactive selections survive refresh and player/GM files. Prerequisites remain advisory and effects are not automatically applied. GM review and tailoring stay protected.",
       "completedAt": "2026-11-11T10:48:11+11:00"
+    },
+    {
+      "id": "spell-selection-guide",
+      "title": "Guide spell and cantrip selection",
+      "group": "Phase 7",
+      "notes": "Add a skippable class and level based spell step with searchable Remaster Core rules, prepared spells, repertoires, cantrips, and separate learned, focus, and innate choices. Save plans in native character files and review them in the protected GM workspace.",
+      "completedAt": "2026-11-11T19:05:27+11:00"
     }
   ]
 }

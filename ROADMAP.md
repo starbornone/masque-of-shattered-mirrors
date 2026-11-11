@@ -88,7 +88,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 - [x] Add heritage and ancestry feat choices with beginner guidance, rules references, and saved selections
 - [x] Add class, general, and skill feat pickers, including bonus choices granted by other options
-- [ ] Add spell and cantrip selection appropriate to class and level
+- [x] Add spell and cantrip selection with class slots, searchable rules, and saved grants
 - [ ] Add starting equipment choices, costs, and bulk
 
 **Exit:** The player can record the remaining character creation choices with brief mechanical guidance.
