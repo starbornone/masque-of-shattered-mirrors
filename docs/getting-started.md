@@ -44,12 +44,18 @@ The development server defaults to `http://localhost:5173`. Run `npm run build` 
 5. **Continue to character build** opens the ancestry, background, class, and boost steps. Use **Browse ancestries**, **Browse backgrounds**, or **Browse classes** to search the options and read about them before selecting. Each preset links to its full rules. The build review shows the current ledger and any boosts still to assign.
 6. Reload to restore the build and its current step.
    The **Choose heritage and ancestry feats** step follows ancestry. Search by name or ability, choose one heritage, and record ancestry feats at levels 1, 5, 9, 13, and 17 up to your character’s level. Each selected option shows rules, rarity, prerequisites where applicable, and space for extra choices. **Decide later** leaves the step open. If you change ancestry or heritage, prior choices stay saved with review guidance. Choices above a reduced level are retained for later. The build review and GM character review include the selections.
-7. Use **Share build** in the review to copy a mechanical link. Opening it shows a preview. Choose **Use shared build** to replace the saved build in that browser.
+7. Use **Share build** in the review to copy a mechanical link. Opening it shows a preview. Choose **Use shared build** to replace the attribute build and skill plan in the named active draft.
 8. Use **Print attribute ledger** in the review or preview to print or save a PDF from your browser.
 9. Check **Campaign fit** beneath the ledger. If you change a boost, the corresponding modifier changes in the checklist.
 10. Once all boosts are assigned, select **Plan skill proficiencies**. Enter level-1 training and assign later increases. Return to the review to see those ranks and base modifiers under **Campaign fit**.
 11. Open **Starting languages (optional)** in the build review to check the rules and jot down the languages you plan to take. The browser saves the notes as you type.
-12. Use **Export character** below the guide to save one JSON file at any stage, including any language notes. To resume from a file, choose **Import character**, select the file, and choose **Restore character** to replace the browser’s draft and return to the saved step.
+12. Use **Export character** below the guide to save the active draft as JSON at any stage. Choose **Import character** to open a backup as a new draft or replace the active draft.
+
+### Named character drafts
+
+Use **New draft** above the guide to name and start a character. Choose a name in **Active character draft** to resume that draft’s answers and guide step. **Rename** updates the name. To remove a draft, select it, choose **Delete**, and confirm the deletion.
+
+Existing saves open as **Character 1**. Drafts are stored in the current browser. Use **Export character** to keep a portable backup of the active draft. To restore a file, select **Import as new draft** and give it a name, or choose **Replace active draft** to overwrite the draft named in the preview.
 
 The optional faith step describes each deity before you choose. The background and class steps offer expandable **Campaign-fit suggestions** with boost and proficiency notes. [Paizo’s Divine Mysteries deity tables](https://downloads.paizo.com/PZO13003_SupplementalGodTable.pdf)
 

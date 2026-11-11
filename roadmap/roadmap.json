@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-11T20:24:58+11:00",
+  "updatedAt": "2026-11-11T20:32:45+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -9,12 +9,6 @@
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
   "items": [
-    {
-      "id": "multiple-character-drafts",
-      "title": "Support multiple saved character drafts",
-      "group": "Phase 8",
-      "notes": "Let users name, switch, and retain separate local drafts with clear replacement behavior. Preserve existing single-character saves and keep GM notes out of player storage. Multi-PC party balancing remains outside scope."
-    },
     {
       "id": "pathbuilder-character-export",
       "title": "Export player characters for Pathbuilder",

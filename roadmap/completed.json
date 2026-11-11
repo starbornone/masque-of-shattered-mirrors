@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T19:46:31+11:00",
+  "updatedAt": "2026-11-11T20:32:45+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -321,6 +321,13 @@
       "group": "Phase 8",
       "notes": "Export a player-only Character actor for Foundry 14 with PF2e 8.7.0. Transfer level, modifiers, skills, Lore, and inventory. Link remaining build choices in Campaign Notes. Verify the mapping against the pinned system source and browser download. Keep native Masque backups and GM packages separate.",
       "completedAt": "2026-11-11T19:46:31+11:00"
+    },
+    {
+      "id": "multiple-character-drafts",
+      "title": "Support multiple saved character drafts",
+      "group": "Phase 8",
+      "notes": "Add a local library of named player drafts with independent progress and an active draft picker. Preserve existing saves as Character 1. Import into a new draft or explicitly replace the active draft. Keep the native character file and protected GM package separate.",
+      "completedAt": "2026-11-11T20:32:45+11:00"
     }
   ]
 }

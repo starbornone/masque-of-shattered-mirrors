@@ -130,6 +130,14 @@ Lightweight records inferred from [README.md](../README.md) and [ROADMAP.md](../
 
 ---
 
+## ADR-015 — Keep a named draft library in the player browser
+
+**Decision.** Store named player drafts with an active ID and migrate the existing save into the first draft. Use the existing character file format for portable backups.
+
+**Consequences.** Switching resumes each draft’s own guide step. Imports can create a draft or replace the named active one. The library keeps the previous storage keys and checks for writes from another tab before saving. GM packages and tailoring notes stay in the protected workspace.
+
+---
+
 ## Related
 
 - [Architecture](architecture.md)
