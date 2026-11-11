@@ -69,6 +69,8 @@ See [ancestry option design and refresh instructions](ancestry-options.md). The 
 
 The [feat importer](../scripts/import-feat-options.py) uses the same checkout and shared inert-text conversion helpers. See [feat planning sources and refresh instructions](feat-choices.md). Review progression, fixed grants, and conditional exceptions when updating the source snapshot.
 
+The [spell importer](../scripts/import-spell-options.py) reads the same licensed snapshot and produces a lightweight index, lazy metadata, and local description chunks. See [spell sources and refresh instructions](spell-choices.md). Verify curated class slot counts, gifted spells, and preparation exceptions against current primary class rules when updating the data.
+
 ## Unsupported platforms
 
 - No native mobile app — local-first **static web** only.

@@ -106,6 +106,14 @@ Lightweight records inferred from [README.md](../README.md) and [ROADMAP.md](../
 
 ---
 
+## ADR-012 — Separate spell preparations, known spells, and grants
+
+**Decision.** Add a skippable spell step using Remaster Core rules, class-based slot profiles, separate learning and repertoire records, and explicit grants for innate, focus, conditional, and other magic. Preserve inactive selections after build changes and keep the optional plan in native character saves and GM packages.
+
+**Consequences.** Teach ranks, traditions, preparation, repertoires, cantrips, signatures, and focus resources in brief mechanical terms. Filter ordinary choices by type, tradition, and rank; keep access and source restrictions advisory. Resource tracking, spell DCs, complete subclass automation, and spell effects remain manual. Load large rules only on demand. GM tailoring and package content stay in the protected private build.
+
+---
+
 ## Related
 
 - [Architecture](architecture.md)

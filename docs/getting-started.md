@@ -59,6 +59,12 @@ After attribute boosts, **Choose class, general, and skill feats** shows the slo
 
 For an untracked subclass or conditional grant, expand **Additional choices from other rules**, add a slot, and record its source, level gained, and maximum feat level. Return after skill planning if you need to check training. All choices can remain undecided. Build changes retain previous selections for review, including a **Saved choices outside the current plan** section. Player exports and GM packages include the feat plan. [Feat guide details](feat-choices.md)
 
+### Spell choices
+
+After feats, **Choose spells and cantrips** shows your class’s cantrips and ranked preparations or repertoire. Choose the tradition for a Witch or Sorcerer, the school preparation type for a Wizard, or the deity-allowed font for a Cleric. Expand a group and spell row, search, choose, and read the rules. Repertoire counts are spells known; daily slot counts appear separately in each rank heading.
+
+Wizards and Witches can record learned spells separately from daily preparations. **Additional spells and granted access** records innate, focus, feat, archetype, and other grants with their source, rank, level, and frequency. All selections remain optional, survive refreshes, and travel with **Export character**. Earlier selections remain saved after class or level changes. [Spell planning details](spell-choices.md)
+
 ### First useful action
 
 Run `npm test` to check the attribute engine before changing the build flow. See [roadmap/roadmap.json](../roadmap/roadmap.json) for the next items.
