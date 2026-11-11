@@ -20,9 +20,12 @@ import type { AncestryChoices as Choices } from '@/ancestry/choices'
 import type { CharacterDraft } from '@/character/draft'
 import type { FeatChoices } from '@/feats/choices'
 import { FeatChoicesSummary } from '@/components/FeatChoicesSummary'
+import { SpellChoicesSummary } from '@/components/SpellChoicesSummary'
+import type { SpellChoices } from '@/spells/choices'
 
 const AncestryChoices = lazy(() => import('@/components/AncestryChoices'))
 const FeatGuide = lazy(() => import('@/components/FeatGuide'))
+const SpellGuide = lazy(() => import('@/components/SpellGuide'))
 
 const steps = [
   { title: 'Choose an ancestry', description: 'Ancestry describes your character’s people. It gives your character some starting traits and helps determine their attribute boosts.' },
@@ -31,6 +34,7 @@ const steps = [
   { title: 'Choose a class', description: 'Your class describes how you adventure. Its key attribute is central to how the class works, and your class gives that attribute a boost.' },
   { title: 'Assign attribute boosts', description: 'Attributes are modifiers you use on rolls, such as +2. A boost usually raises the modifier by 1. Choose different attributes within each group. The same attribute can receive boosts from different groups.' },
   { title: 'Choose class, general, and skill feats', description: 'Pick abilities for the slots your class and level provide. You can return after planning skills or leave a choice undecided.' },
+  { title: 'Choose spells and cantrips', description: 'Plan the spells your class or other features provide. Read the rules, record granted choices, or return to this step later.' },
   { title: 'Review your build', description: 'Check your current modifiers. You can revisit any step to change a choice or fill in a gap.' },
 ] as const
 
@@ -49,12 +53,13 @@ type BuildGuideProps = {
   ancestryChoices?: Choices
   onAncestryChoicesChange: (choices: Choices) => void
   onFeatChoicesChange: (choices: FeatChoices) => void
+  onSpellChoicesChange: (choices: SpellChoices) => void
 }
 
 export function BuildGuide({
   character, build, currentStep, onChange, onProgress, onBackToConcept, onPlanSkills,
   startingLanguageNotes, onStartingLanguageNotesChange,
-  ancestryChoices, onAncestryChoicesChange, onFeatChoicesChange,
+  ancestryChoices, onAncestryChoicesChange, onFeatChoicesChange, onSpellChoicesChange,
 }: BuildGuideProps) {
   const stepIndex = buildSteps.indexOf(currentStep)
   const heading = useRef<HTMLHeadingElement>(null)
@@ -145,11 +150,18 @@ export function BuildGuide({
               </Suspense>
             ) : null}
 
+            {currentStep === 'spells' ? (
+              <Suspense fallback={<p role="status">Loading spell choices…</p>}>
+                <SpellGuide character={character} onChange={onSpellChoicesChange} />
+              </Suspense>
+            ) : null}
+
             {stepIndex === reviewIndex ? (
               <>
                 <BuildSummary build={build} />
                 <AncestryChoicesSummary choices={ancestryChoices} ancestry={build.ancestry} level={build.level} />
                 <FeatChoicesSummary character={character} />
+                <SpellChoicesSummary character={character} />
                 <details className="rounded-md border border-border p-3">
                   <summary className="cursor-pointer font-medium">Starting languages (optional)</summary>
                   <div className="mt-3 space-y-3">
@@ -211,7 +223,7 @@ export function BuildGuide({
             {stepIndex === 0 ? 'Back to character concept' : 'Back'}
           </Button>
           {stepIndex < reviewIndex ? (
-            <Button type="submit" className="min-h-11">{currentStep === 'feats' ? 'Review build' : 'Continue'}</Button>
+            <Button type="submit" className="min-h-11">{currentStep === 'spells' ? 'Review build' : 'Continue'}</Button>
           ) : null}
         </div>
       </form>

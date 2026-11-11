@@ -8,6 +8,8 @@ import { parseAncestryChoices } from '../ancestry/choices.ts'
 import type { AncestryChoices } from '../ancestry/choices.ts'
 import { parseFeatChoices } from '../feats/choices.ts'
 import type { FeatChoices } from '../feats/choices.ts'
+import { parseSpellChoices } from '../spells/choices.ts'
+import type { SpellChoices } from '../spells/choices.ts'
 
 export const characterStorageKey = 'masque-character'
 
@@ -17,9 +19,10 @@ export type CharacterDraft = {
   startingLanguageNotes?: string
   ancestryChoices?: AncestryChoices
   featChoices?: FeatChoices
+  spellChoices?: SpellChoices
 }
 
-export function serializeCharacter({ sessionZero, buildDraft, startingLanguageNotes, ancestryChoices, featChoices }: CharacterDraft): string {
+export function serializeCharacter({ sessionZero, buildDraft, startingLanguageNotes, ancestryChoices, featChoices, spellChoices }: CharacterDraft): string {
   return JSON.stringify({
     format: characterStorageKey,
     version: 1,
@@ -30,6 +33,7 @@ export function serializeCharacter({ sessionZero, buildDraft, startingLanguageNo
     startingLanguageNotes: startingLanguageNotes || undefined,
     ancestryChoices,
     featChoices,
+    spellChoices,
   }, null, 2) + '\n'
 }
 
@@ -59,6 +63,11 @@ export function parseCharacter(serialized: string): CharacterDraft | null {
       const choices = parseFeatChoices(data.featChoices)
       if (!choices) return null
       draft.featChoices = choices
+    }
+    if (Object.hasOwn(data, 'spellChoices')) {
+      const choices = parseSpellChoices(data.spellChoices)
+      if (!choices) return null
+      draft.spellChoices = choices
     }
 
     // Reject files that would silently lose or change values during normalization.
