@@ -95,7 +95,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 ## Phase 8 — Character management and integrations
 
-- [ ] Export player characters for Foundry VTT after verifying its supported format
+- [x] Export player characters as native PF2e actors for Foundry VTT
 - [ ] Export player characters for Pathbuilder after verifying supported transfer options
 - [ ] Support multiple named local character drafts
 

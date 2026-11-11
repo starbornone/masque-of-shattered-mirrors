@@ -69,6 +69,10 @@ Wizards and Witches can record learned spells separately from daily preparations
 
 Continue from spells to **Plan starting equipment**. Enter the character’s starting wealth in gp when you know it. Browse starter gear or add a custom item, then adjust quantities and mark what the character carries. The totals show cost, remaining wealth when set, and Bulk. Choose **Review build** at any point and use **Edit equipment** to return. [Equipment planning details](equipment-planner.md)
 
+### Foundry VTT
+
+Open **Export to Foundry VTT** in the player’s Character file panel. Download the actor and use **Import Data** on a new blank Character in a PF2e world. Check **Biography → Campaign Notes** for the choices to finish in Foundry. Use **Export character** to keep an editable Masque backup. [Foundry import instructions](foundry-export.md)
+
 ### First useful action
 
 Run `npm test` to check the attribute engine before changing the build flow. See [roadmap/roadmap.json](../roadmap/roadmap.json) for the next items.

@@ -20,7 +20,7 @@ This is not a general PF2e sheet builder. It walks the player through a **sessio
 
 ## Planned extensions
 
-Heritage, ancestry, class, general, and skill feat choices, spell planning, and starting equipment are available. The roadmap continues with player-only Foundry and Pathbuilder exports and multiple named local drafts. See [the roadmap](../ROADMAP.md).
+Heritage, ancestry, class, general, and skill feat choices, spell planning, starting equipment, and a player-only Foundry export are available. The roadmap continues with a Pathbuilder export and multiple named local drafts. See [the roadmap](../ROADMAP.md).
 
 ## Non-goals
 

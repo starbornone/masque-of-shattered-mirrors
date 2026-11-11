@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T19:16:51+11:00",
+  "updatedAt": "2026-11-11T19:46:31+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -314,6 +314,13 @@
       "group": "Phase 7",
       "notes": "Add a skippable starting equipment step with curated Player Core gear, custom lines, editable unit prices and Bulk, optional per-character wealth, and Strength-based carrying limits. Include plans in character files and protected GM review.",
       "completedAt": "2026-11-11T19:16:51+11:00"
+    },
+    {
+      "id": "foundry-character-export",
+      "title": "Export player characters for Foundry VTT",
+      "group": "Phase 8",
+      "notes": "Export a player-only Character actor for Foundry 14 with PF2e 8.7.0. Transfer level, modifiers, skills, Lore, and inventory. Link remaining build choices in Campaign Notes. Verify the mapping against the pinned system source and browser download. Keep native Masque backups and GM packages separate.",
+      "completedAt": "2026-11-11T19:46:31+11:00"
     }
   ]
 }

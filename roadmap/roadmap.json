@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-11T19:16:51+11:00",
+  "updatedAt": "2026-11-11T19:46:31+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -9,12 +9,6 @@
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
   "items": [
-    {
-      "id": "foundry-character-export",
-      "title": "Export player characters for Foundry VTT",
-      "group": "Phase 8",
-      "notes": "Design and verify a supported PF2e system export mapping. Export player data only; never include GM packages or tailoring notes. Keep the existing native backup format."
-    },
     {
       "id": "pathbuilder-character-export",
       "title": "Export player characters for Pathbuilder",

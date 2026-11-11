@@ -122,6 +122,14 @@ Lightweight records inferred from [README.md](../README.md) and [ROADMAP.md](../
 
 ---
 
+## ADR-014 — Export a native Foundry player actor
+
+**Decision.** Create PF2e Character JSON for Foundry’s built-in actor import. Transfer current modifiers, skill ranks, Lore, and inventory. Link remaining selections to the system compendiums so players can use Foundry’s setup workflow for grants and spells.
+
+**Consequences.** The player file panel owns the export. An explicit mechanical mapping excludes session-zero answers and private GM data. The export targets Foundry 14 with PF2e 8.7.0. The character backup continues to carry the complete Masque draft. See [Foundry import instructions](foundry-export.md).
+
+---
+
 ## Related
 
 - [Architecture](architecture.md)
