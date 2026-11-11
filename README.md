@@ -13,6 +13,7 @@ The guide starts with the invitation and character concept, then walks through a
 - **Heritage and ancestry feats** — Search Player Core and Player Core 2 options, read their rules, and record choices for the ancestry feat slots up to your level. Versatile heritages expand the available feats. Save extra-choice notes or use a custom entry for another source. Choices travel with character files and GM packages. Prerequisites remain advisory; granted abilities and training are recorded, not automatically applied.
 - **Class, general, and skill feats** — Follow your class’s feat schedule, search Remaster options, and record extra choices. Background and class grants are listed separately, with bonus slots from common heritage and ancestry feats. Add slots for conditional or custom grants. Selections survive build changes and travel with player and GM files. [Feat guide details](docs/feat-choices.md)
 - **Spells and cantrips** — Choose class- and level-appropriate spells with searchable Core rules. Keep daily preparations, repertoires, learned spells, and granted magic separate. Record signature spells, innate frequencies, and extra grants. Choices are saved and included in player and GM files. [Spell guide details](docs/spell-choices.md)
+- **Starting equipment** — Browse common Player Core gear or add your own. Set starting wealth for the character when you know it, then check gear costs and carried Bulk against the current Strength modifier. Gear and wealth are saved in player and GM files. [Equipment guide details](docs/equipment-planner.md)
 - **Skill planner** — Once attributes are complete, record starting training and plan later increases. The browser saves skill choices with the local build draft.
 - **Character file** — Export or restore session-zero answers, the attribute build, planned skills, and optional starting language notes in one JSON file. This works at any stage of the guide.
 - **Campaign fit** — The guide suggests backgrounds and classes with relevant boosts or training. The build review shows the modifiers that support Will, Perception, social skills, and investigation. An advisory appears when a finished build is heavily weighted toward physical attributes.
@@ -20,7 +21,6 @@ The guide starts with the invitation and character concept, then walks through a
 
 ## What it does not do (yet)
 
-- Equipment and bulk planning (planned)
 - Foundry/Pathbuilder exports and multiple saved characters (planned)
 - Multi-PC party balancing
 - Spoiling the ritual, scapegoat identity, or deity climax levers to the player

@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T19:05:27+11:00",
+  "updatedAt": "2026-11-11T19:16:51+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -307,6 +307,13 @@
       "group": "Phase 7",
       "notes": "Add a skippable class and level based spell step with searchable Remaster Core rules, prepared spells, repertoires, cantrips, and separate learned, focus, and innate choices. Save plans in native character files and review them in the protected GM workspace.",
       "completedAt": "2026-11-11T19:05:27+11:00"
+    },
+    {
+      "id": "equipment-bulk-planner",
+      "title": "Add starting equipment and a bulk planner",
+      "group": "Phase 7",
+      "notes": "Add a skippable starting equipment step with curated Player Core gear, custom lines, editable unit prices and Bulk, optional per-character wealth, and Strength-based carrying limits. Include plans in character files and protected GM review.",
+      "completedAt": "2026-11-11T19:16:51+11:00"
     }
   ]
 }

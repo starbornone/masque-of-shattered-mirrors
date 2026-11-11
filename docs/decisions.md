@@ -114,6 +114,14 @@ Lightweight records inferred from [README.md](../README.md) and [ROADMAP.md](../
 
 ---
 
+## ADR-013 — Set starting wealth per character
+
+**Decision.** Keep starting wealth optional on each character draft. The equipment planner uses common Player Core gear and editable item lines. It shows costs and compares carried Bulk with the current Strength modifier.
+
+**Consequences.** A blank budget still allows gear planning, and zero remains a valid budget. Gear and wealth travel with character exports and GM packages. The player can adjust costs and Bulk for granted gear, containers, or other circumstances. See [equipment planning](equipment-planner.md).
+
+---
+
 ## Related
 
 - [Architecture](architecture.md)

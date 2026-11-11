@@ -65,6 +65,10 @@ After feats, **Choose spells and cantrips** shows your class’s cantrips and ra
 
 Wizards and Witches can record learned spells separately from daily preparations. **Additional spells and granted access** records innate, focus, feat, archetype, and other grants with their source, rank, level, and frequency. All selections remain optional, survive refreshes, and travel with **Export character**. Earlier selections remain saved after class or level changes. [Spell planning details](spell-choices.md)
 
+### Starting equipment
+
+Continue from spells to **Plan starting equipment**. Enter the character’s starting wealth in gp when you know it. Browse starter gear or add a custom item, then adjust quantities and mark what the character carries. The totals show cost, remaining wealth when set, and Bulk. Choose **Review build** at any point and use **Edit equipment** to return. [Equipment planning details](equipment-planner.md)
+
 ### First useful action
 
 Run `npm test` to check the attribute engine before changing the build flow. See [roadmap/roadmap.json](../roadmap/roadmap.json) for the next items.
