@@ -14,7 +14,7 @@ const kindNames = { innate: 'Innate spell', focus: 'Focus spell / focus cantrip'
 function SpellGroup({ title, defaultOpen, children }: { title: string; defaultOpen: boolean; children: ReactNode }) {
   const [open, setOpen] = useState(defaultOpen)
   return <details open={open} onToggle={(e) => setOpen(e.currentTarget.open)} className="rounded-lg border border-border p-3 sm:p-4">
-    <summary className="min-h-11 cursor-pointer py-2 font-semibold">{title}</summary>
+    <summary className="font-semibold">{title}</summary>
     {open ? <div className="mt-3 space-y-3">{children}</div> : null}
   </details>
 }
@@ -38,7 +38,7 @@ function SpellRules({ option }: { option: SpellOption }) {
     <p className="text-muted-foreground">{[option.range && `Range: ${option.range}`, option.target && `Targets: ${option.target}`, option.duration && `Duration: ${option.duration}`, option.sustained && 'Sustained', option.defense?.save?.statistic && `${option.defense.save.basic ? 'Basic ' : ''}${option.defense.save.statistic} save`].filter(Boolean).join(' · ')}</p>
     <p className="text-muted-foreground">{option.traits.join(' · ')}</p>
     {text ? <><p className="text-muted-foreground">{text.split('\n\n')[0]}</p><details>
-      <summary className="min-h-11 cursor-pointer py-2 font-medium">Full rules and heightening for {option.name}</summary>
+      <summary className="font-medium">Full rules and heightening for {option.name}</summary>
       <p className="whitespace-pre-line text-muted-foreground">{text}</p>
     </details></> : failed ? <p role="status">Rules couldn’t be loaded. <button type="button" className="underline" onClick={() => { setFailed(false); setAttempt((n) => n + 1) }}>Try again</button> or use the reference link.</p> : <p role="status">Loading spell rules…</p>}
     <a className="inline-block font-medium text-primary underline underline-offset-2" href={`https://2e.aonprd.com/Search.aspx?q=${encodeURIComponent(option.name)}`} target="_blank" rel="noreferrer">Find {option.name} on Archives of Nethys</a>
@@ -54,7 +54,7 @@ function SpellPicker({ slot, choice, onChange, signature }: { slot: SpellSlot; c
   const matches = allowed.filter((s) => `${s.name} ${s.traits.join(' ')}`.toLowerCase().includes(query.trim().toLowerCase()))
   const visible = selected && !matches.some((s) => s.id === selected.id) ? [selected, ...matches] : matches
   return <details open={open} onToggle={(e) => setOpen(e.currentTarget.open)} className="rounded-md border border-border p-3">
-    <summary className="min-h-11 cursor-pointer py-2 font-medium">{slot.label}: <span className="text-primary">{choice ? spellName(choice.id) : 'Decide later'}</span>{choice?.signature ? ' · signature' : ''}</summary>
+    <summary className="font-medium">{slot.label}: <span className="text-primary">{choice ? spellName(choice.id) : 'Decide later'}</span>{choice?.signature ? ' · signature' : ''}</summary>
     {open ? <div className="space-y-3 pt-2">
       <p className="text-sm text-muted-foreground">{slot.source} · {rankLabel(slot.rank)}{slot.rank === 0 ? ' (automatically heightens)' : slot.kind === 'focus' ? ' (automatically heightens)' : ' or a lower-rank spell'}{slot.granted ? ' · follow the granting rule’s choices' : slot.tradition ? ` · ${slot.tradition}` : ' · choose your tradition above'}</p>
       {!slot.fixed ? <>
@@ -117,7 +117,7 @@ export default function SpellGuide({ character, onChange }: { character: Charact
     {warnings.length ? <aside className="rounded-md border border-primary/30 bg-primary/5 p-3 text-sm"><p className="font-medium">Check these spell choices</p><ul className="mt-2 list-disc space-y-1 pl-5">{warnings.map((w) => <li key={w}>{w}</li>)}</ul></aside> : null}
     {groups.filter((g) => g.slots.length).map((group) => <SpellGroup key={group.title} defaultOpen={group.open} title={`${group.title} · ${group.slots.filter((s) => effectiveSpell(s, plan)).length}/${group.slots.length} chosen`}>{group.slots.map(picker)}</SpellGroup>)}
     <details className="rounded-lg border border-border p-3 sm:p-4" open={plan.extra.length > 0}>
-      <summary className="min-h-11 cursor-pointer py-2 font-semibold">Additional spells and granted access · {plan.extra.length}</summary>
+      <summary className="font-semibold">Additional spells and granted access · {plan.extra.length}</summary>
       <div className="space-y-3 pt-3">
         <p className="text-sm text-muted-foreground">Add a row only when a rule grants it. Innate spells use their own frequency and granted rank, not class slots; innate cantrips still heighten. Focus spells normally cost 1 Focus Point and heighten automatically; a focus cantrip costs none. Refocus for 10 minutes to regain 1 Focus Point. Follow your source for pool size and any additional requirements.</p>
         <p className="text-sm text-muted-foreground">“Added to your spell list” records access only; it does not grant a known spell, preparation, or slot. Add separate rows if a feature grants those too. For focus cantrips choose Cantrip; for other focus spells the guide uses your current half-level rank.</p>
@@ -133,7 +133,7 @@ export default function SpellGuide({ character, onChange }: { character: Charact
         <Button type="button" variant="outline" disabled={plan.extra.length >= 100} onClick={() => onChange({ ...plan, extra: [...plan.extra, { id: `extra:${crypto.randomUUID()}`, kind: 'innate', rank: 0, level, source: '', frequency: '' }] })}>Add a granted or learned spell</Button>
       </div>
     </details>
-    {inactive.length ? <details className="rounded-md border border-border p-3"><summary className="min-h-11 cursor-pointer py-2 font-medium">Earlier selections · {inactive.length}</summary><ul className="space-y-2">{inactive.map(({ id, name, choice }) => <li key={id} className="wrap-anywhere">{name} · {id}{choice.notes ? ` · ${choice.notes}` : ''}</li>)}</ul></details> : null}
+    {inactive.length ? <details className="rounded-md border border-border p-3"><summary className="font-medium">Earlier selections · {inactive.length}</summary><ul className="space-y-2">{inactive.map(({ id, name, choice }) => <li key={id} className="wrap-anywhere">{name} · {id}{choice.notes ? ` · ${choice.notes}` : ''}</li>)}</ul></details> : null}
     <a href="/rules-notice.txt" target="_blank" rel="noreferrer" className="inline-block text-sm text-primary underline underline-offset-2">Rules sources and ORC attribution</a>
   </div>
 }

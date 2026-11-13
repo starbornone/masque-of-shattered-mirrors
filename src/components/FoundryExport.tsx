@@ -20,7 +20,7 @@ export function FoundryExport({ draft }: { draft: CharacterDraft }) {
 
   return (
     <details className="mt-3 rounded-md border border-border p-3">
-      <summary className="min-h-9 cursor-pointer font-medium">Export to Foundry VTT</summary>
+      <summary className="font-medium">Export to Foundry VTT</summary>
       <div className="space-y-3 text-sm">
         <p className="text-muted-foreground">For Foundry 14 with the PF2e 8.7.0 system. Create a blank Character in Foundry, right-click it in Actors, and choose <strong>Import Data</strong>. Importing replaces that actor’s data.</p>
         <p className="text-muted-foreground">Level, modifiers, skills, and gear transfer to the sheet. Open Biography → Campaign Notes for the checklist of compendium choices to add in Foundry.</p>

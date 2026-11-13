@@ -31,7 +31,7 @@ function AmountField({ label, value, places, minimum = 0, maximum, placeholder, 
     <label className="block space-y-1">
       <span className="text-sm font-medium">{label}</span>
       <input
-        className={field}
+        className={`${field} text-base`}
         inputMode={places ? 'decimal' : 'numeric'}
         placeholder={placeholder}
         value={text}
@@ -65,7 +65,7 @@ function CustomItemForm({ disabled, onAdd }: { disabled: boolean; onAdd: (item: 
 
   return (
     <details className="rounded-md border border-border p-3">
-      <summary className="min-h-9 cursor-pointer font-medium">Add custom gear</summary>
+      <summary className="font-medium">Add custom gear</summary>
       <div className="space-y-3">
         <p className="text-sm text-muted-foreground">Enter 0 gp for gear you’re given. For Bulk, 0.1 is light and 0 is negligible.</p>
         <label className="block space-y-1">
@@ -152,7 +152,7 @@ export default function EquipmentGuide({ plan = emptyEquipmentPlan, build, onCha
               <p className="font-medium wrap-anywhere">{item.name}</p>
               <p className="text-sm text-muted-foreground">{formatCoins(item.priceCp)} · {formatItemBulk(item.bulkLight)} per unit</p>
               <div className="flex flex-wrap items-end gap-3">
-                <div className="w-24">
+                <div className="w-24 min-w-11">
                   <AmountField label="Quantity" value={item.quantity} places={0} minimum={1} maximum={maxQuantity} onChange={(quantity) => { if (quantity !== null) updateItem(item.id, { quantity }) }} />
                 </div>
                 <label className="flex min-h-11 items-center gap-2 text-sm">
@@ -162,7 +162,7 @@ export default function EquipmentGuide({ plan = emptyEquipmentPlan, build, onCha
                 <Button type="button" variant="ghost" aria-label={`Remove ${item.name}`} onClick={() => onChange({ ...plan, items: plan.items.filter(({ id }) => id !== item.id) })}>Remove</Button>
               </div>
               <details className="text-sm">
-                <summary className="min-h-9 cursor-pointer pt-2">Adjust price or Bulk</summary>
+                <summary>Adjust price or Bulk</summary>
                 <div className="grid grid-cols-2 gap-3">
                   <AmountField label="Unit price (gp)" value={item.priceCp} places={2} maximum={maxPriceCp} onChange={(priceCp) => { if (priceCp !== null) updateItem(item.id, { priceCp }) }} />
                   <AmountField label="Unit Bulk" value={item.bulkLight} places={1} maximum={maxBulkLight} onChange={(bulkLight) => { if (bulkLight !== null) updateItem(item.id, { bulkLight }) }} />
@@ -173,7 +173,7 @@ export default function EquipmentGuide({ plan = emptyEquipmentPlan, build, onCha
         </ul>
       ) : null}
       <details className="rounded-md border border-border p-3 text-sm">
-        <summary className="min-h-9 cursor-pointer font-medium">Equipment and Bulk rules</summary>
+        <summary className="font-medium">Equipment and Bulk rules</summary>
         <div className="space-y-2 text-muted-foreground">
           <p>Check your class for weapon and armor training. An armor’s Dexterity cap limits how much Dexterity adds to AC. Meeting its Strength requirement reduces its penalties. A shield’s AC bonus applies after you Raise a Shield.</p>
           <p>Ten light items count as 1 Bulk. Ignore leftover light items when comparing against your limits. Uncheck Carried for gear you leave behind. Its cost still counts.</p>

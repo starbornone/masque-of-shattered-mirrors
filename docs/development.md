@@ -41,6 +41,8 @@ npm run dev
 
 Path alias: `@/*` → `./src/*` (TypeScript + Vite).
 
+The player and GM builds share the dark theme and focus styles in [src/index.css](../src/index.css). Shared buttons and disclosure rows use a 44 CSS-pixel minimum touch target. Check action wrapping, disclosure taps, quantity fields, and keyboard focus at 360 × 800 and 768 × 1024 in portrait. Check normal text against its rendered surface at 4.5:1 or higher, including helper text, errors, and hover states.
+
 ## Safe navigation for agents
 
 1. Treat [README.md](../README.md) and [ROADMAP.md](../ROADMAP.md) as product authority for scope.

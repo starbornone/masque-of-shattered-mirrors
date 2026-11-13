@@ -116,7 +116,7 @@ export function BuildBoosts({ build, onChange }: BuildBoostsProps) {
           />
         ) : null}
         <details className="rounded-md border border-border p-3">
-          <summary className="cursor-pointer font-medium">Optional voluntary flaws</summary>
+          <summary className="font-medium">Optional voluntary flaws</summary>
           <p className="my-2 text-muted-foreground">Choose a weakness for your character. Each choice lowers that attribute by 1 and gives no extra boost.</p>
           <div className="grid gap-x-3 sm:grid-cols-2">
             {attributeIds.filter((id) => id !== rule.flaw).map((id) => (

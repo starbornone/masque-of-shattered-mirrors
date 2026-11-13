@@ -58,7 +58,7 @@ function RulePicker({ label, kind, options, choice, onChange }: {
           <p className="text-muted-foreground">{textFor(selected.id).split('\n\n')[0]}</p>
           {textFor(selected.id).includes('\n\n') ? (
             <details>
-              <summary className="min-h-11 cursor-pointer py-2 font-medium">More rules for {selected.name}</summary>
+              <summary className="font-medium">More rules for {selected.name}</summary>
               <p className="whitespace-pre-line text-muted-foreground">{textFor(selected.id).split('\n\n').slice(1).join('\n\n')}</p>
             </details>
           ) : null}

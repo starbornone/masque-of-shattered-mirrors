@@ -120,7 +120,7 @@ export function BuildOptionPicker({ kind, value, onChange }: BuildOptionPickerPr
       ) : null}
 
       <details ref={browser} className="rounded-md border border-border">
-        <summary className="min-h-11 cursor-pointer px-3 py-2.5 font-medium">Browse {plural}</summary>
+        <summary className="px-3 font-medium">Browse {plural}</summary>
         <div className="space-y-4 border-t border-border px-3 py-3">
           <label className="block space-y-1">
             <span className="font-medium">Search {plural}</span>

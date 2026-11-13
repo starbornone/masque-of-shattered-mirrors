@@ -33,7 +33,7 @@ export function BuildFitSuggestions({ kind, selected, onSelect }: BuildFitSugges
 
   return (
     <details className="rounded-md border border-border p-3">
-      <summary className="cursor-pointer font-medium">Campaign-fit {kind} suggestions</summary>
+      <summary className="font-medium">Campaign-fit {kind} suggestions</summary>
       <ul className="mt-2 divide-y divide-border">
         {suggestions.map(({ id, note }) => {
           const name = catalog[id].name
