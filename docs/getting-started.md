@@ -44,12 +44,13 @@ The development server defaults to `http://localhost:5173`. Run `npm run build` 
 5. **Continue to character build** opens the ancestry, background, class, and boost steps. Use **Browse ancestries**, **Browse backgrounds**, or **Browse classes** to search the options and read about them before selecting. Each preset links to its full rules. The build review shows the current ledger and any boosts still to assign.
 6. Reload to restore the build and its current step.
    The **Choose heritage and ancestry feats** step follows ancestry. Search by name or ability, choose one heritage, and record ancestry feats at levels 1, 5, 9, 13, and 17 up to your character’s level. Each selected option shows rules, rarity, prerequisites where applicable, and space for extra choices. **Decide later** leaves the step open. If you change ancestry or heritage, prior choices stay saved with review guidance. Choices above a reduced level are retained for later. The build review and GM character review include the selections.
-7. Use **Share build** in the review to copy a mechanical link. Opening it shows a preview. Choose **Use shared build** to replace the attribute build and skill plan in the named active draft.
-8. Use **Print attribute ledger** in the review or preview to print or save a PDF from your browser.
-9. Check **Campaign fit** beneath the ledger. If you change a boost, the corresponding modifier changes in the checklist.
-10. Once all boosts are assigned, select **Plan skill proficiencies**. Enter level-1 training and assign later increases. Return to the review to see those ranks and base modifiers under **Campaign fit**.
-11. Open **Starting languages (optional)** in the build review to check the rules and jot down the languages you plan to take. The browser saves the notes as you type.
-12. Use **Export character** below the guide to save the active draft as JSON at any stage. Choose **Import character** to open a backup as a new draft or replace the active draft.
+7. In build review, **What’s left** shows up to three next steps, with unfinished mechanics first, followed by advisory checks and optional choices. Select an action to open its editor, then use **Back to build review** to return to the same spot. When an action is resolved, focus moves to the next available action or the review heading. You can still export a partial draft.
+8. Use **Share build** in the review to copy a mechanical link. Opening it shows a preview. Choose **Use shared build** to replace the attribute build and skill plan in the named active draft.
+9. Use **Print attribute ledger** in the review or preview to print or save a PDF from your browser.
+10. Check **Campaign fit** beneath the ledger. If you change a boost, the corresponding modifier changes in the checklist.
+11. Once all boosts are assigned, select **Plan skill proficiencies**. Enter level-1 training and assign later increases. Return to the review to see those ranks and base modifiers under **Campaign fit**.
+12. Open **Starting languages (optional)** in the build review to check the rules and jot down the languages you plan to take. The browser saves the notes as you type.
+13. Use **Export character** below the guide to save the active draft as JSON at any stage. Choose **Import character** to open a backup as a new draft or replace the active draft.
 
 ### Named character drafts
 
@@ -95,7 +96,9 @@ To save and resume GM preparation:
 2. Edit **Session notes (GM only)** and choose **Export GM package**. The downloaded `masque-gm-package.json` contains the character and those notes.
 3. Open that GM package in the same file input to restore both. The notes are restored exactly, without regenerating the brief.
 
-Export before refreshing or opening another file. Invalid imports keep the current character and notes. GM packages contain spoilers and cannot be imported by the public player guide.
+When **Unsaved edits** is visible, opening a valid replacement file or choosing **Regenerate from character** asks what to do with your current notes. **Export package** starts a download of the current character and notes, then continues. **Discard edits** continues without exporting. **Cancel** keeps the current character and notes. Invalid imports keep your work in place.
+
+Edits stay in tab memory. The browser can warn on refresh, navigation, or tab close while edits are unsaved. Some browsers and mobile exit flows skip this warning, so export the package before leaving. GM packages contain spoilers and cannot be imported by the public player guide.
 
 The GM file panel collapses after a successful import. Expand **Replace character or GM package** to open another file; the session notes stay in view while the import controls are tucked away.
 

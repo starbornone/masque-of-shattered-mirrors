@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import veratheMirror from '@/assets/verathe-mirror.svg'
 import { parseBuild } from '@/attributes/build'
-import type { BuildDraft } from '@/attributes/draft'
+import type { BuildDraft, BuildStep } from '@/attributes/draft'
 import type { CharacterDraft } from '@/character/draft'
 import { draftNameError, loadDraftLibrary, newCharacterDraft, storeDraftLibrary } from '@/character/library'
 import type { DraftLibrary } from '@/character/library'
@@ -34,7 +34,9 @@ function App() {
     return requested === null ? null : { build: parseBuild(requested) }
   })
   const [restoreCount, setRestoreCount] = useState(0)
+  const [editingFromReview, setEditingFromReview] = useState(false)
   const concept = useRef<HTMLDivElement>(null)
+  const reviewPosition = useRef<{ triggerId: string; top: number; languagesOpen: boolean } | null>(null)
   const { library, problem } = stored
   const active = library.drafts.find(({ id }) => id === library.activeId)!
   const character = active.character
@@ -45,6 +47,24 @@ function App() {
   const step = savedStep === 'skills' && !skillsAvailable ? 'review' : savedStep
   const sharedBuild = shared?.build
   const reviewBuild = sharedBuild ?? (step === 'review' ? build : null)
+  useLayoutEffect(() => {
+    const position = reviewPosition.current
+    if (!position || step !== 'review' || sharedBuild) return
+    reviewPosition.current = null
+    const languages = document.querySelector<HTMLDetailsElement>('#review-starting-languages')
+    if (languages) languages.open = position.languagesOpen
+    const anchor = document.getElementById(position.triggerId)
+      ?? document.querySelector<HTMLButtonElement>('#build-review-actions + ul button')
+      ?? document.getElementById('build-review-actions')
+      ?? document.getElementById('build-guide-heading')
+    anchor?.focus({ preventScroll: true })
+    if (anchor) window.scrollBy({ top: anchor.getBoundingClientRect().top - position.top, behavior: 'instant' })
+  }, [sharedBuild, step])
+
+  function resetReviewEdit() {
+    reviewPosition.current = null
+    setEditingFromReview(false)
+  }
 
   function saveLibrary(next: DraftLibrary, keepInMemory = false) {
     const result = problem === 'unreadable' ? { problem } : storeDraftLibrary(next, stored.saved)
@@ -52,6 +72,7 @@ function App() {
       setStored({ ...stored, library: keepInMemory ? next : library, problem: result.problem })
       return false
     }
+    if (next.activeId !== library.activeId) resetReviewEdit()
     setStored({ library: next, saved: result.saved, problem: null })
     return true
   }
@@ -89,8 +110,24 @@ function App() {
     saveCharacter({ ...character, buildDraft: next })
   }
 
+  function editFromReview(next: BuildStep, trigger: HTMLButtonElement) {
+    reviewPosition.current = {
+      triggerId: trigger.id,
+      top: trigger.getBoundingClientRect().top,
+      languagesOpen: document.querySelector<HTMLDetailsElement>('#review-starting-languages')?.open ?? false,
+    }
+    setEditingFromReview(true)
+    saveBuild({ ...buildDraft, step: next })
+  }
+
+  function returnToReview() {
+    setEditingFromReview(false)
+    saveBuild({ ...buildDraft, step: 'review' })
+  }
+
   function restoreCharacter(next: CharacterDraft) {
     if (!saveLibrary(updateActive({ character: next }))) return false
+    resetReviewEdit()
     setRestoreCount((count) => count + 1)
     if (shared) closeSharedBuild()
     return true
@@ -184,7 +221,9 @@ function App() {
               onChange={(next) => saveBuild({ ...buildDraft, build: next, step })}
               onProgress={(next) => saveBuild({ ...buildDraft, step: next })}
               onBackToConcept={returnToConcept}
-              onPlanSkills={skillsAvailable ? () => saveBuild({ ...buildDraft, step: 'skills' }) : undefined}
+              skillsAvailable={skillsAvailable}
+              onEditFromReview={editFromReview}
+              onReturnToReview={editingFromReview && step !== 'review' ? returnToReview : undefined}
               startingLanguageNotes={character.startingLanguageNotes ?? ''}
               onStartingLanguageNotesChange={(startingLanguageNotes) => saveCharacter({ ...character, startingLanguageNotes })}
               ancestryChoices={character.ancestryChoices}
@@ -202,7 +241,7 @@ function App() {
             build={build}
             plan={skills ?? emptySkillPlan}
             onChange={(next) => saveBuild({ ...buildDraft, skills: parseSkillPlan(next) })}
-            onBack={() => saveBuild({ ...buildDraft, step: 'review' })}
+            onBack={returnToReview}
           />
         ) : null}
 

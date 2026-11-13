@@ -1,9 +1,9 @@
-import { lazy, Suspense, useEffect, useRef } from 'react'
-import type { FormEvent } from 'react'
+import { lazy, Suspense, useLayoutEffect, useRef } from 'react'
+import type { FormEvent, MouseEvent } from 'react'
 import { classKeys, normalizeBuild } from '@/attributes/build'
 import type { Build } from '@/attributes/build'
 import { buildSteps } from '@/attributes/draft'
-import type { BuildGuideStep } from '@/attributes/draft'
+import type { BuildGuideStep, BuildStep } from '@/attributes/draft'
 import { attributeIds, attributes } from '@/attributes/options'
 import { AttributeLedger, AttributeSelect, BoostSlots, BuildBoosts } from '@/components/BuildBoosts'
 import { BuildActions } from '@/components/BuildActions'
@@ -18,6 +18,7 @@ import { AncestryChoicesSummary } from '@/components/AncestryChoicesSummary'
 import { emptyAncestryChoices } from '@/ancestry/choices'
 import type { AncestryChoices as Choices } from '@/ancestry/choices'
 import type { CharacterDraft } from '@/character/draft'
+import { buildReviewActions } from '@/character/review-actions'
 import type { FeatChoices } from '@/feats/choices'
 import { FeatChoicesSummary } from '@/components/FeatChoicesSummary'
 import { SpellChoicesSummary } from '@/components/SpellChoicesSummary'
@@ -51,7 +52,9 @@ type BuildGuideProps = {
   onChange: (build: Build) => void
   onProgress: (step: BuildGuideStep) => void
   onBackToConcept: () => void
-  onPlanSkills?: () => void
+  skillsAvailable: boolean
+  onEditFromReview: (step: BuildStep, trigger: HTMLButtonElement) => void
+  onReturnToReview?: () => void
   startingLanguageNotes: string
   onStartingLanguageNotesChange: (notes: string) => void
   ancestryChoices?: Choices
@@ -62,7 +65,8 @@ type BuildGuideProps = {
 }
 
 export function BuildGuide({
-  character, build, currentStep, onChange, onProgress, onBackToConcept, onPlanSkills,
+  character, build, currentStep, onChange, onProgress, onBackToConcept,
+  skillsAvailable, onEditFromReview, onReturnToReview,
   startingLanguageNotes, onStartingLanguageNotesChange,
   ancestryChoices, onAncestryChoicesChange, onFeatChoicesChange, onSpellChoicesChange, onEquipmentPlanChange,
 }: BuildGuideProps) {
@@ -71,8 +75,9 @@ export function BuildGuide({
   const step = steps[stepIndex]
   const keys = classKeys(build.characterClass)
   const ancestryGuide = buildOptionGuides.ancestry[build.ancestry]
+  const reviewActions = currentStep === 'review' ? buildReviewActions(character) : []
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     heading.current?.focus()
   }, [stepIndex])
 
@@ -83,7 +88,12 @@ export function BuildGuide({
   function advance(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     if (stepIndex === reviewIndex) return
-    onProgress(buildSteps[stepIndex + 1])
+    if (onReturnToReview) onReturnToReview()
+    else onProgress(buildSteps[stepIndex + 1])
+  }
+
+  function edit(step: BuildStep) {
+    return (event: MouseEvent<HTMLButtonElement>) => onEditFromReview(step, event.currentTarget)
   }
 
   return (
@@ -98,6 +108,35 @@ export function BuildGuide({
       />
 
       <form onSubmit={advance} className="space-y-4">
+        {onReturnToReview ? (
+          <Button type="submit" className="min-h-11">Back to build review</Button>
+        ) : null}
+        {reviewActions.length ? (
+          <Card>
+            <CardContent>
+              <section aria-labelledby="build-review-actions" className="space-y-2">
+                <h3 id="build-review-actions" tabIndex={-1} className="text-xl">What’s left</h3>
+                <ul className="divide-y divide-border">
+                  {reviewActions.map(({ step, label, kind }) => (
+                    <li key={step} className="flex flex-wrap items-center justify-between gap-x-3 py-1">
+                      <span id={`review-action-kind-${step}`} className="text-sm font-medium text-muted-foreground">{kind}</span>
+                      <Button
+                        id={`review-action-${step}`}
+                        aria-describedby={`review-action-kind-${step}`}
+                        type="button"
+                        variant="outline"
+                        className="min-h-11 max-w-full whitespace-normal text-left"
+                        onClick={edit(step)}
+                      >
+                        {label}
+                      </Button>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </CardContent>
+          </Card>
+        ) : null}
         <Card>
           <CardContent className="space-y-4">
             {stepIndex === 0 ? (
@@ -174,8 +213,8 @@ export function BuildGuide({
                 <FeatChoicesSummary character={character} />
                 <SpellChoicesSummary character={character} />
                 <EquipmentSummary plan={character.equipmentPlan} build={build} />
-                <details className="rounded-md border border-border p-3">
-                  <summary className="cursor-pointer font-medium">Starting languages (optional)</summary>
+                <details id="review-starting-languages" className="rounded-md border border-border p-3">
+                  <summary className="font-medium">Starting languages (optional)</summary>
                   <div className="mt-3 space-y-3">
                     <p id="starting-language-guidance" className="text-muted-foreground">
                       Your ancestry lists your starting languages and the extras you can choose. At level 1, a positive Intelligence modifier gives you that many additional languages. Ask your GM about languages outside your available choices.
@@ -214,14 +253,14 @@ export function BuildGuide({
                 </details>
                 <BuildActions build={build} />
                 <div className="space-y-2">
-                  <Button type="button" className="min-h-11" disabled={!onPlanSkills} onClick={onPlanSkills}>
+                  <Button id="review-edit-skills" type="button" className="min-h-11" disabled={!skillsAvailable} onClick={edit('skills')}>
                     Plan skill proficiencies
                   </Button>
-                  {!onPlanSkills ? <p className="text-muted-foreground">Finish assigning attribute boosts to unlock skill planning.</p> : null}
+                  {!skillsAvailable ? <p className="text-muted-foreground">Finish assigning attribute boosts to unlock skill planning.</p> : null}
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {buildSteps.slice(0, reviewIndex).map((label) => (
-                    <Button key={label} type="button" variant="outline" className="min-h-11" onClick={() => onProgress(label)}>
+                    <Button key={label} id={`review-edit-${label}`} type="button" variant="outline" className="min-h-11" onClick={edit(label)}>
                       Edit {label}
                     </Button>
                   ))}
@@ -230,14 +269,18 @@ export function BuildGuide({
             ) : null}
           </CardContent>
         </Card>
-        <div className="flex flex-wrap gap-2">
-          <Button type="button" variant="outline" className="min-h-11" onClick={stepIndex === 0 ? onBackToConcept : () => onProgress(buildSteps[stepIndex - 1])}>
-            {stepIndex === 0 ? 'Back to character concept' : 'Back'}
-          </Button>
-          {stepIndex < reviewIndex ? (
-            <Button type="submit" className="min-h-11">{stepIndex === reviewIndex - 1 ? 'Review build' : 'Continue'}</Button>
-          ) : null}
-        </div>
+        {onReturnToReview ? (
+          <Button type="submit" variant="outline" className="min-h-11">Back to build review</Button>
+        ) : (
+          <div className="flex flex-wrap gap-2">
+            <Button type="button" variant="outline" className="min-h-11" onClick={stepIndex === 0 ? onBackToConcept : () => onProgress(buildSteps[stepIndex - 1])}>
+              {stepIndex === 0 ? 'Back to character concept' : 'Back'}
+            </Button>
+            {stepIndex < reviewIndex ? (
+              <Button type="submit" className="min-h-11">{stepIndex === reviewIndex - 1 ? 'Review build' : 'Continue'}</Button>
+            ) : null}
+          </div>
+        )}
       </form>
     </section>
   )
