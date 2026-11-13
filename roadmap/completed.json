@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-11T20:32:45+11:00",
+  "updatedAt": "2026-11-14T10:42:40+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -328,6 +328,27 @@
       "group": "Phase 8",
       "notes": "Add a local library of named player drafts with independent progress and an active draft picker. Preserve existing saves as Character 1. Import into a new draft or explicitly replace the active draft. Keep the native character file and protected GM package separate.",
       "completedAt": "2026-11-11T20:32:45+11:00"
+    },
+    {
+      "id": "protect-unsaved-gm-notes",
+      "title": "Protect unsaved GM notes",
+      "group": "Phase 1: MVP/Now",
+      "notes": "Show unsaved status and package export beside the editor. A valid replacement or regeneration offers Export package, Discard edits, or Cancel. Warn on page exit while edits differ from the loaded or last exported notes. Verified replacement, regeneration, export failure and retry, and the native refresh warning in Chromium.",
+      "completedAt": "2026-11-14T10:19:40+11:00"
+    },
+    {
+      "id": "build-review-next-actions",
+      "title": "Show next actions at the top of build review",
+      "group": "Phase 1: MVP/Now",
+      "notes": "Show up to three next actions ordered by unfinished mechanics, advisory checks, and optional choices. Open each editor directly and restore scroll and focus on return, with a fallback when the action is resolved. Preserve export for partial drafts. Verified the review round trip in Chromium at 360 CSS pixels.",
+      "completedAt": "2026-11-14T10:36:22+11:00"
+    },
+    {
+      "id": "table-touch-targets-contrast",
+      "title": "Improve touch targets and contrast for dim rooms",
+      "group": "Phase 1: MVP/Now",
+      "notes": "Use 44 CSS-pixel minimums for shared buttons and full-width disclosure rows. Improve text, field outlines, and keyboard focus in the dark theme. Verified button and quantity sizes, disclosure taps, focus, and wrapping in Chromium at 360 x 800 and 768 x 1024. Checked sampled normal text against a 4.5:1 minimum and inspected simulated dim layouts.",
+      "completedAt": "2026-11-14T10:42:40+11:00"
     }
   ]
 }

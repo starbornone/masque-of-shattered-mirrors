@@ -1,8 +1,34 @@
 # Roadmap
 
-Phased delivery. Ship a usable solo session-zero + attributes loop before any feat catalog work.
+The current priorities cover build review, GM handoff, and quick reference at the table. The original delivery phases are recorded below.
 
 Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.json) (see [`docs/roadmap-format.md`](docs/roadmap-format.md)).
+
+## Current priorities
+
+### Phase 1 — MVP/Now
+
+- [x] Protect unsaved GM notes when replacing a character, regenerating the brief, or leaving the page.
+- [x] Put actionable next steps at the top of build review and return there after edits.
+- [x] Enlarge touch targets and check contrast in phone and portrait tablet layouts.
+- [ ] Offer optional skill planning immediately after boosts, with a return path to relevant feat choices.
+- [ ] Clarify GM handoff, draft backups, and attribute sharing. Preview the effects of applying a shared build.
+- [ ] Profile draft saves on a phone and improve save status and recovery.
+
+### Phase 2 — Next
+
+- [ ] Add a read-only Table View for quick access to checks, training, and relevant gear or spells.
+- [ ] Generate a one-page print or PDF table card from Table View.
+- [ ] Let the GM review revised character files and keep their edited notes.
+- [ ] Make Table View reopen after a refresh in airplane mode.
+- [ ] Verify a live Foundry actor import and surface the remaining setup before download.
+
+### Phase 3 — Later
+
+- [ ] Prototype a player-approved prompt card based on the mask's lie.
+- [ ] Revisit Pathbuilder export when it supports importing third-party character builds. [Transfer findings](docs/pathbuilder-transfer.md)
+
+## Original delivery phases
 
 ## Phase 0 — Scaffold
 
@@ -97,7 +123,6 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 - [x] Export player characters as native PF2e actors for Foundry VTT
 - [x] Support multiple named local character drafts
-- [ ] Revisit Pathbuilder export when it supports importing third-party character builds. [Transfer findings](docs/pathbuilder-transfer.md)
 
 **Exit:** Characters remain easy to manage and transfer, with GM preparation kept separate.
 

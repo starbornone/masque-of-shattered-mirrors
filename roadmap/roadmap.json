@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-11T20:32:45+11:00",
+  "updatedAt": "2026-11-14T10:42:40+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -10,10 +10,64 @@
   },
   "items": [
     {
+      "id": "skill-planning-after-boosts",
+      "title": "Offer optional skill planning as soon as boosts are complete",
+      "group": "Phase 1: MVP/Now",
+      "notes": "Impact High, effort Med. Offer Plan skills after boosts and from relevant feat decisions. Return to the originating feat slot and show recorded ranks beside relevant prerequisites as advisory guidance. Preserve choices when the build changes."
+    },
+    {
+      "id": "clarify-character-transfers",
+      "title": "Clarify handoff, backup, and attribute sharing",
+      "group": "Phase 1: MVP/Now",
+      "notes": "Impact Med, effort Low. Label Send to GM, Back up or restore, and Share attributes by purpose and describe what each includes. Use the draft name in downloads. Before applying a shared build, name the destination and explain that its attributes will be replaced and its skill plan cleared."
+    },
+    {
+      "id": "profile-draft-saves-and-recovery",
+      "title": "Profile draft saves and improve recovery",
+      "group": "Phase 1: MVP/Now",
+      "notes": "Impact Med, effort Med. Measure typing and draft switching with one typical draft and several developed drafts on a mid-range phone. Target visible feedback within 100 ms for common edits. Show saving, saved on this device, and recovery states. Persist drafts individually if whole-library writes are the bottleneck. Retain stale-write detection and compatibility with existing imports."
+    },
+    {
+      "id": "player-table-view",
+      "title": "Add a read-only Table View for the active draft",
+      "group": "Phase 2: Next",
+      "notes": "Impact High, effort Med. Add At the table near the active draft. Show player-safe social and investigation actions, planned base skill modifiers and training, plus a short gear or spell list. Label incomplete values and show only the Wisdom contribution for Will and Perception until full modifiers are available. Find a social modifier and confirm Thievery training within two taps and five seconds from the active draft on a dimmed phone."
+    },
+    {
+      "id": "printable-table-card",
+      "title": "Print a one-page player table card",
+      "group": "Phase 2: Next",
+      "notes": "Impact High, effort Low. Use Table View data for an ink-friendly A4 and Letter layout with browser print and PDF support. Include key checks, training, and relevant gear or spells. Preview the mask text and other included player-written fields and let the player omit personal hooks."
+    },
+    {
+      "id": "update-gm-character-without-losing-notes",
+      "title": "Update the player character while preserving GM notes",
+      "group": "Phase 2: Next",
+      "notes": "Impact High, effort Med. Import a revised player JSON into the open GM package. Preview concept, build, and training changes, retain the exact edited notes, and let the GM copy individual refreshed suggestions into prep."
+    },
+    {
+      "id": "offline-player-table-view",
+      "title": "Make Table View reopen offline",
+      "group": "Phase 2: Next",
+      "notes": "Impact High, effort Med. Add Prepare for offline play and report readiness after caching the public shell and Table View assets. Exclude /gm/ and its assets from the versioned cache. In airplane mode, refresh and verify that the active character and key checks are still accessible."
+    },
+    {
+      "id": "verify-live-foundry-import",
+      "title": "Verify the Foundry export in a live import",
+      "group": "Phase 2: Next",
+      "notes": "Impact Med, effort Low. Import into a blank actor on the documented Foundry and PF2e target. Check level, attributes, skills, Lore, gear quantities, and carried status. Show the remaining foundation, feat, and spell setup before download."
+    },
+    {
+      "id": "mask-slips-prompt-card",
+      "title": "Prototype The mask slips prompt card",
+      "group": "Phase 3: Later",
+      "notes": "Impact Med, effort Med. Try a paper card pairing the player's mask lie with a short player-safe question and observe whether they reach for it during a scene. Let the player approve a prompt once and open it in one tap or print it on the back of the table card, with no entry during play."
+    },
+    {
       "id": "pathbuilder-character-export",
       "title": "Export player characters for Pathbuilder",
-      "group": "Phase 8",
-      "notes": "Deferred pending a supported third-party character import format. Checked Pathbuilder Web 112.0 and developer documentation on 2026-11-11. Backup/Restore transfers native saves, Custom Pack imports rules content, and Export JSON sends character data out. Revisit when Pathbuilder documents a way to import external player builds."
+      "group": "Phase 3: Later",
+      "notes": "Impact Med, effort Med. Deferred pending a supported third-party character import format. Checked Pathbuilder Web 112.0 and developer documentation on 2026-11-11. Backup/Restore transfers native saves, Custom Pack imports rules content, and Export JSON sends character data out. Revisit when Pathbuilder documents a way to import external player builds."
     }
   ]
 }
