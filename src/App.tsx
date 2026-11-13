@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import veratheMirror from '@/assets/verathe-mirror.svg'
 import { parseBuild } from '@/attributes/build'
 import type { BuildDraft, BuildStep } from '@/attributes/draft'
+import { characterFilename, serializeCharacter } from '@/character/draft'
 import type { CharacterDraft } from '@/character/draft'
 import { draftNameError, loadDraftLibrary, newCharacterDraft, storeDraftLibrary } from '@/character/library'
 import type { DraftLibrary } from '@/character/library'
@@ -17,14 +18,15 @@ import { SessionZeroGuide } from '@/components/SessionZeroGuide'
 import { SkillPlanner } from '@/components/SkillPlanner'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { downloadFile } from '@/lib/download'
 import type { SessionZeroDraft } from '@/session-zero/types'
 import { canAssignSkills, emptySkillPlan, parseSkillPlan } from '@/skills/plan'
 
 const startLevel = Number(import.meta.env.VITE_CAMPAIGN_START_LEVEL)
 const storageMessages = {
-  unavailable: 'This browser couldn’t save your drafts. Use Export character to keep a copy of your work.',
+  unavailable: 'This browser couldn’t save your drafts. Use Download backup to keep a copy of your work.',
   changed: 'Saved drafts changed in another tab. Export any unsaved work, then reload this page.',
-  unreadable: 'This browser’s draft library couldn’t be read. The older draft is open when available. Use Export character to keep a copy.',
+  unreadable: 'This browser’s draft library couldn’t be read. The older draft is open when available. Use Download backup to keep a copy.',
 }
 
 type SkillReturn = { label: string; trigger: HTMLButtonElement; top: number }
@@ -36,6 +38,7 @@ function App() {
     return requested === null ? null : { build: parseBuild(requested) }
   })
   const [restoreCount, setRestoreCount] = useState(0)
+  const [sharedTransferMessage, setSharedTransferMessage] = useState('')
   const [editingFromReview, setEditingFromReview] = useState(false)
   const [skillReturn, setSkillReturn] = useState<SkillReturn | null>(null)
   const skillReturnPosition = useRef<SkillReturn | null>(null)
@@ -163,6 +166,15 @@ function App() {
     setShared(null)
   }
 
+  function downloadBeforeApplying() {
+    try {
+      downloadFile(characterFilename(active.name), serializeCharacter(character), 'application/json')
+      setSharedTransferMessage('Backup download started.')
+    } catch {
+      setSharedTransferMessage('The backup couldn’t be downloaded. Try again.')
+    }
+  }
+
   function returnToConcept() {
     saveBuild({ ...buildDraft, step: null })
     requestAnimationFrame(() => concept.current?.querySelector('h2')?.focus())
@@ -274,26 +286,38 @@ function App() {
           <section aria-labelledby="shared-build-heading" className="mx-auto w-full max-w-2xl">
             <Card>
               <CardHeader>
-                <h2 id="shared-build-heading" className="text-3xl">Shared build</h2>
+                <h2 id="shared-build-heading" className="text-3xl">Shared attribute build</h2>
                 <p className="text-muted-foreground">
-                  You can review or print this build. Using it replaces the attribute build and skill plan in “{active.name}”.
+                  Preview, print, or share these attributes before deciding whether to apply them.
                 </p>
               </CardHeader>
               <CardContent className="space-y-5">
                 <BuildSummary build={sharedBuild} />
                 <BuildActions build={sharedBuild} />
-                <div className="flex flex-wrap gap-2">
-                  <Button
-                    type="button"
-                    className="min-h-11"
-                    onClick={() => restoreCharacter({ ...character, buildDraft: { build: sharedBuild, step: 'review' } })}
-                  >
-                    Use shared build
-                  </Button>
-                  <Button type="button" variant="outline" className="min-h-11" onClick={closeSharedBuild}>
-                    Back to my draft
-                  </Button>
-                </div>
+                <section aria-labelledby="shared-build-impact" className="space-y-3 rounded-lg border border-border bg-background p-4">
+                  <h3 id="shared-build-impact" className="text-xl wrap-anywhere">Apply to “{active.name}”?</h3>
+                  <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+                    <li><strong className="text-foreground">Replaces</strong> level, ancestry, background, class, and attribute choices with the build above.</li>
+                    <li><strong className="text-foreground">Clears</strong> the skill plan, including training, Lore, and planned increases.</li>
+                    <li><strong className="text-foreground">Keeps</strong> session-zero answers, heritage, feats, spells, gear, and language notes. Review those choices for compatibility with the incoming build.</li>
+                  </ul>
+                  <div className="flex flex-wrap gap-2">
+                    <Button
+                      type="button"
+                      aria-describedby="shared-build-impact"
+                      onClick={() => {
+                        if (!restoreCharacter({ ...character, buildDraft: { build: sharedBuild, step: 'review' } })) {
+                          setSharedTransferMessage('The shared build couldn’t be saved. Your current draft is intact.')
+                        }
+                      }}
+                    >
+                      Apply shared attributes
+                    </Button>
+                    <Button type="button" variant="outline" onClick={downloadBeforeApplying}>Download backup</Button>
+                    <Button type="button" variant="outline" onClick={closeSharedBuild}>Back to my draft</Button>
+                  </div>
+                  <p role="status" className="text-sm text-muted-foreground empty:hidden">{sharedTransferMessage}</p>
+                </section>
               </CardContent>
             </Card>
           </section>

@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import type { ChangeEvent } from 'react'
 import { Download, Upload } from 'lucide-react'
-import { parseCharacter, serializeCharacter } from '@/character/draft'
+import { characterFilename, parseCharacter, serializeCharacter } from '@/character/draft'
 import type { CharacterDraft } from '@/character/draft'
 import { maxDraftNameLength } from '@/character/library'
 import { Button } from '@/components/ui/button'
@@ -26,6 +26,18 @@ export function CharacterFileActions({ draft, draftName, validateName, onImportN
   const [status, setStatus] = useState('')
   const nameError = validateName(importName)
 
+  function downloadCharacter(forGm: boolean) {
+    setError('')
+    setStatus('')
+    try {
+      const filename = characterFilename(draftName)
+      downloadFile(filename, serializeCharacter(draft), 'application/json')
+      setStatus(forGm ? `Download started. Send ${filename} to your GM.` : `Backup download started for “${draftName}”.`)
+    } catch {
+      setError('The character file couldn’t be downloaded. Try again.')
+    }
+  }
+
   async function readCharacter(event: ChangeEvent<HTMLInputElement>) {
     const file = event.currentTarget.files?.[0]
     event.currentTarget.value = ''
@@ -39,7 +51,7 @@ export function CharacterFileActions({ draft, draftName, validateName, onImportN
       if (imported) {
         setPending({ filename: file.name, draft: imported })
         setImportName(file.name.replace(/\.json$/i, '').trim().slice(0, maxDraftNameLength).trim() || 'Imported character')
-      } else setError('Choose a valid JSON file downloaded with Export character.')
+      } else setError('Choose a character JSON file from Download for GM or Download backup.')
     } catch {
       setError('This file couldn’t be read.')
     } finally {
@@ -72,34 +84,32 @@ export function CharacterFileActions({ draft, draftName, validateName, onImportN
 
   return (
     <section aria-labelledby="character-file-heading" className="masque-panel mx-auto w-full max-w-2xl rounded-xl border border-border bg-card p-4 print:hidden sm:p-5">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="max-w-[18rem]">
-          <h2 id="character-file-heading" className="font-heading text-2xl">Character file</h2>
+      <h2 id="character-file-heading" className="font-heading text-2xl wrap-anywhere">Character file for “{draftName}”</h2>
+      <div className="mt-3 grid gap-4 sm:grid-cols-2">
+        <section aria-labelledby="gm-handoff-heading" className="space-y-2 rounded-lg border border-border p-3">
+          <h3 id="gm-handoff-heading" className="text-xl">Send to GM</h3>
           <p className="text-sm text-muted-foreground">
-            Export “{draftName}” or import a character file.
+            Download a copy of this draft and send it privately to your GM. It includes your session-zero answers and build choices, including skills, feats, spells, and gear.
           </p>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <Button
-            type="button"
-            variant="outline"
-            className="min-h-11"
-            onClick={() => downloadFile('masque-character.json', serializeCharacter(draft), 'application/json')}
-          >
-            <Download aria-hidden="true" /> Export character
+          <Button type="button" variant="outline" onClick={() => downloadCharacter(true)}>
+            <Download aria-hidden="true" /> Download for GM
           </Button>
-          <Button
-            ref={importButton}
-            type="button"
-            variant="outline"
-            className="min-h-11"
-            disabled={reading}
-            onClick={() => input.current?.click()}
-          >
-            <Upload aria-hidden="true" /> Import character
-          </Button>
-          <input ref={input} type="file" accept=".json,application/json" hidden onChange={readCharacter} />
-        </div>
+        </section>
+        <section aria-labelledby="draft-backup-heading" className="space-y-2 rounded-lg border border-border p-3">
+          <h3 id="draft-backup-heading" className="text-xl">Back up or restore</h3>
+          <p className="text-sm text-muted-foreground">
+            Save the same full character file for yourself, including your current guide step. Restore a character file here or move it to another browser.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <Button type="button" variant="outline" onClick={() => downloadCharacter(false)}>
+              <Download aria-hidden="true" /> Download backup
+            </Button>
+            <Button ref={importButton} type="button" variant="outline" disabled={reading} onClick={() => input.current?.click()}>
+              <Upload aria-hidden="true" /> Import character
+            </Button>
+            <input ref={input} type="file" accept=".json,application/json" hidden onChange={readCharacter} />
+          </div>
+        </section>
       </div>
       {pending ? (
         <div className="mt-3 space-y-3 rounded-lg border border-border bg-background p-4">

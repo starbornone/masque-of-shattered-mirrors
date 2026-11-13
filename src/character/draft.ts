@@ -15,6 +15,14 @@ import type { EquipmentPlan } from '../equipment/plan.ts'
 
 export const characterStorageKey = 'masque-character'
 
+export function characterFilename(draftName: string): string {
+  // Windows filenames also exclude ASCII control characters.
+  // oxlint-disable-next-line eslint/no-control-regex
+  const stem = draftName.replace(/[<>:"/\\|?*\u0000-\u001f]/g, '-').trim().replace(/[. ]+$/, '')
+  const reserved = /^(?:con|prn|aux|nul|com[1-9¹²³]|lpt[1-9¹²³])(?:\.|$)/i
+  return `${reserved.test(stem) ? `_${stem}` : stem || 'masque-character'}.json`
+}
+
 export type CharacterDraft = {
   sessionZero: SessionZeroDraft
   buildDraft: BuildDraft

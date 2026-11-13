@@ -190,7 +190,7 @@ export function Workspace() {
           message: gmPackage ? 'GM package restored.' : 'Character loaded. Tailoring brief generated.',
         })
       }
-      else setError('Choose a valid JSON file from Export character or Export GM package. The current character and notes have been kept.')
+      else setError('Choose a character JSON file from Download for GM or Download backup, or open an exported GM package. The current character and notes have been kept.')
     } catch {
       setError('This file couldn’t be read.')
     } finally {

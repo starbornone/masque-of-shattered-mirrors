@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { normalizeBuild } from '../src/attributes/build.ts'
 import { buildDraftStorageKey, serializeBuildDraft } from '../src/attributes/draft.ts'
-import { characterStorageKey, loadCharacterDraft, parseCharacter, serializeCharacter } from '../src/character/draft.ts'
+import { characterFilename, characterStorageKey, loadCharacterDraft, parseCharacter, serializeCharacter } from '../src/character/draft.ts'
 import type { CharacterDraft } from '../src/character/draft.ts'
 import { serializeSessionZero, sessionZeroStorageKey } from '../src/session-zero/draft.ts'
 import { emptySessionZero } from '../src/session-zero/types.ts'
@@ -30,6 +30,13 @@ const character: CharacterDraft = {
     },
   },
 }
+
+test('character downloads use a portable filename based on the draft name', () => {
+  assert.equal(characterFilename('Élodie / The Witness'), 'Élodie - The Witness.json')
+  assert.equal(characterFilename('CON.notes'), '_CON.notes.json')
+  assert.equal(characterFilename('Mask... '), 'Mask.json')
+  assert.equal(characterFilename('...'), 'masque-character.json')
+})
 
 test('character export restores skipped answers, unfinished attributes, planned skills, and guide progress', () => {
   assert.equal(canAssignSkills(character.buildDraft.build), false)

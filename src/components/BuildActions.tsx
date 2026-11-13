@@ -32,17 +32,17 @@ export function BuildActions({ build }: { build: Build }) {
             setMessage('')
           }}
         >
-          Share build
+          Share attributes
         </Button>
         <Button type="button" variant="outline" className="min-h-11" onClick={() => window.print()}>
           Print attribute ledger
         </Button>
       </div>
       <div id={linkId} hidden={!showLink} className="space-y-2">
-        <p className="text-muted-foreground">The link contains your build choices. Your concept answers stay on this device.</p>
+        <p className="text-muted-foreground">Anyone with the link can see your level, ancestry, background, class, and attribute choices. For session-zero answers, skill plans, feats, spells, and gear, use the character file.</p>
         <div className="flex flex-wrap items-end gap-2">
           <label className="min-w-0 flex-1 basis-48 space-y-1">
-            <span className="block font-medium">Build link</span>
+            <span className="block font-medium">Attribute link</span>
             <input
               readOnly
               value={link}
