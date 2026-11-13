@@ -1,44 +1,52 @@
 import { useRef, useState } from 'react'
-import type { CharacterDraft } from '@/character/draft'
+import type { RefObject } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { downloadFile } from '@/lib/download'
-import { tailoringBrief } from './brief.ts'
-import { serializeGmPackage } from './package.ts'
 
-export function TailoringBrief({ draft, initialNotes }: { draft: CharacterDraft; initialNotes: string }) {
-  const [notes, setNotes] = useState(initialNotes)
-  const [message, setMessage] = useState('')
+type TailoringBriefProps = {
+  notes: string
+  dirty: boolean
+  message: string
+  regenerateButton: RefObject<HTMLButtonElement | null>
+  reading: boolean
+  onNotesChange: (notes: string) => void
+  onExport: () => void
+  onRegenerate: () => void
+}
+
+export function TailoringBrief({
+  notes, dirty, message, regenerateButton, reading, onNotesChange, onExport, onRegenerate,
+}: TailoringBriefProps) {
   const editor = useRef<HTMLTextAreaElement>(null)
+  const [copyMessage, setCopyMessage] = useState('')
 
   async function copyNotes() {
     try {
       await navigator.clipboard.writeText(notes)
-      setMessage('Session notes copied.')
+      setCopyMessage('Session notes copied.')
     } catch {
       editor.current?.focus()
       editor.current?.select()
-      setMessage('Clipboard unavailable. Copy the selected notes manually.')
-    }
-  }
-
-  function exportPackage() {
-    try {
-      downloadFile('masque-gm-package.json', serializeGmPackage({ character: draft, sessionNotes: notes }), 'application/json')
-      setMessage('GM package download started.')
-    } catch {
-      setMessage('The package couldn’t be downloaded. Copy your notes and try again.')
+      setCopyMessage('Clipboard unavailable. Copy the selected notes manually.')
     }
   }
 
   return (
     <Card>
       <CardHeader className="gap-2">
-        <h2 className="text-2xl">GM tailoring brief</h2>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h2 className="text-2xl">GM tailoring brief</h2>
+          <Button type="button" variant="outline" className="min-h-11" onClick={() => {
+            setCopyMessage('')
+            onExport()
+          }}>Export GM package</Button>
+        </div>
         <p id="brief-guidance" className="text-muted-foreground">
-          Edit these preparation suggestions, then copy them or export a GM package to save the character and notes together.
-          Open the package above to resume. GM packages contain campaign spoilers.
+          Export a GM package to keep the character and notes together. Open it here to resume.
+          GM packages contain campaign spoilers.
         </p>
+        <p role="status" className="font-medium text-primary">{dirty ? 'Unsaved edits' : ''}</p>
+        <p role="status" className="text-sm text-muted-foreground">{copyMessage || message}</p>
       </CardHeader>
       <CardContent className="space-y-4">
         <label className="block space-y-2">
@@ -50,22 +58,20 @@ export function TailoringBrief({ draft, initialNotes }: { draft: CharacterDraft;
             aria-describedby="brief-guidance"
             value={notes}
             onChange={(event) => {
-              setNotes(event.currentTarget.value)
-              setMessage('')
+              setCopyMessage('')
+              onNotesChange(event.currentTarget.value)
             }}
           />
         </label>
         <div className="flex flex-wrap gap-2">
           <Button type="button" className="min-h-11" onClick={copyNotes}>Copy session notes</Button>
-          <Button type="button" variant="outline" className="min-h-11" onClick={exportPackage}>Export GM package</Button>
-          <Button type="button" variant="outline" className="min-h-11" onClick={() => {
-            setNotes(tailoringBrief(draft))
-            setMessage('')
+          <Button ref={regenerateButton} type="button" variant="outline" className="min-h-11" disabled={reading} onClick={() => {
+            setCopyMessage('')
+            onRegenerate()
           }}>
             Regenerate from character
           </Button>
         </div>
-        {message ? <p role="status" className="text-sm text-muted-foreground">{message}</p> : null}
       </CardContent>
     </Card>
   )

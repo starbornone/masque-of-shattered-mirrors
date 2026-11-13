@@ -81,7 +81,7 @@ Open [http://localhost:5173/gm/](http://localhost:5173/gm/), using the port Vite
 
 This command builds the private workspace before starting Vite. After editing GM components, run `npm run build:gm` and reload the page. Both `npm run dev` and `npm run preview` also handle `/gm/` once that build exists. A missing password or private build returns 503. The local server uses the same password check as Vercel and blocks direct requests for GM source and build files. [Vite server middleware](https://vite.dev/guide/api-plugin.html#configureserver), [Vite environment loading](https://vite.dev/config/#using-environment-variables-in-config)
 
-In the workspace, open the player’s character JSON to generate a brief. Edit **Session notes (GM only)** and choose **Export GM package** to download `masque-gm-package.json`. Opening that package restores the character and your exact notes, including an empty editor. The workspace keeps edits in tab memory, so export before refreshing or opening another file. GM packages contain campaign spoilers and are rejected by the public character importer.
+In the workspace, open the player’s character JSON to generate a brief. Edit **Session notes (GM only)** and choose **Export GM package** to download `masque-gm-package.json`. Opening that package restores the character and your exact notes, including an empty editor. If edits are unsaved, replacing the character or regenerating the brief asks you to export, discard, or cancel. Edits stay in tab memory, and browsers that support leave warnings can prompt on refresh or exit. GM packages contain campaign spoilers and are rejected by the public character importer.
 
 ## Deployment and campaign settings
 
