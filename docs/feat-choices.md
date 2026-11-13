@@ -1,6 +1,6 @@
 # Class, general, and skill feat choices
 
-The **Choose class, general, and skill feats** step follows attribute boosts. It explains feat types and prerequisites, offers searchable rules, and allows every choice to remain undecided. Use **Edit feats** from build review to return after skill planning.
+The **Choose class, general, and skill feats** step follows attribute boosts. It explains feat types and prerequisites, offers searchable rules, and allows every choice to remain undecided. With all boosts assigned, use **Plan skills** from a skill feat slot or a selected feat with a proficiency prerequisite. The return button restores the same slot, search, and expanded group. Named skills in supported prerequisite text show their recorded ranks at the slot’s level. Check the full prerequisite and apply any training granted by your character options.
 
 ## Slots and grants
 

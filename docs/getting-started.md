@@ -48,7 +48,7 @@ The development server defaults to `http://localhost:5173`. Run `npm run build` 
 8. Use **Share build** in the review to copy a mechanical link. Opening it shows a preview. Choose **Use shared build** to replace the attribute build and skill plan in the named active draft.
 9. Use **Print attribute ledger** in the review or preview to print or save a PDF from your browser.
 10. Check **Campaign fit** beneath the ledger. If you change a boost, the corresponding modifier changes in the checklist.
-11. Once all boosts are assigned, select **Plan skill proficiencies**. Enter level-1 training and assign later increases. Return to the review to see those ranks and base modifiers under **Campaign fit**.
+11. Once all boosts are assigned, **Plan skills (optional)** appears on the boosts step. Enter level-1 training and any later increases, then choose **Back to attribute boosts** or continue the guide without opening the planner. Relevant feat slots also offer **Plan skills**, with a return button for that slot. You can still open **Plan skill proficiencies** from build review, where **Campaign fit** shows recorded ranks and base modifiers.
 12. Open **Starting languages (optional)** in the build review to check the rules and jot down the languages you plan to take. The browser saves the notes as you type.
 13. Use **Export character** below the guide to save the active draft as JSON at any stage. Choose **Import character** to open a backup as a new draft or replace the active draft.
 

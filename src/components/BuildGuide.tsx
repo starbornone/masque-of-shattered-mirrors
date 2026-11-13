@@ -53,6 +53,7 @@ type BuildGuideProps = {
   onProgress: (step: BuildGuideStep) => void
   onBackToConcept: () => void
   skillsAvailable: boolean
+  onPlanSkills: (returnLabel: string, trigger: HTMLButtonElement) => void
   onEditFromReview: (step: BuildStep, trigger: HTMLButtonElement) => void
   onReturnToReview?: () => void
   startingLanguageNotes: string
@@ -66,7 +67,7 @@ type BuildGuideProps = {
 
 export function BuildGuide({
   character, build, currentStep, onChange, onProgress, onBackToConcept,
-  skillsAvailable, onEditFromReview, onReturnToReview,
+  skillsAvailable, onPlanSkills, onEditFromReview, onReturnToReview,
   startingLanguageNotes, onStartingLanguageNotesChange,
   ancestryChoices, onAncestryChoicesChange, onFeatChoicesChange, onSpellChoicesChange, onEquipmentPlanChange,
 }: BuildGuideProps) {
@@ -185,12 +186,17 @@ export function BuildGuide({
               <>
                 <BuildBoosts build={build} onChange={updateBuild} />
                 <AttributeLedger build={build} />
+                {skillsAvailable ? (
+                  <Button type="button" variant="outline" onClick={(event) => onPlanSkills('attribute boosts', event.currentTarget)}>
+                    Plan skills (optional)
+                  </Button>
+                ) : null}
               </>
             ) : null}
 
             {currentStep === 'feats' ? (
               <Suspense fallback={<p role="status">Loading feat choices…</p>}>
-                <FeatGuide character={character} onChange={onFeatChoicesChange} />
+                <FeatGuide character={character} onChange={onFeatChoicesChange} onPlanSkills={skillsAvailable ? onPlanSkills : undefined} />
               </Suspense>
             ) : null}
 

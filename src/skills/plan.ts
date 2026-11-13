@@ -123,3 +123,14 @@ export function evaluateSkillPlan(build: Build, plan: SkillPlan) {
   })
   return { rows, slots }
 }
+
+export function recordedPrerequisiteRanks(prerequisites: string, build: Build, plan: SkillPlan, level: number) {
+  const clauses = prerequisites.split(';').map((clause) => clause.split(/\b(?:trained|expert|master|legendary) in\s+/i)[1] ?? '')
+  if (clauses.every((clause) => !clause)) return []
+  const { rows } = evaluateSkillPlan({ ...build, level }, plan)
+  return rows.filter(({ name }) => {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const mentioned = new RegExp(`(?:^|[,\\s])${escaped}(?=,|$|\\s+(?:and|or)\\b)`, 'i')
+    return clauses.some((clause) => mentioned.test(clause.trim()))
+  })
+}

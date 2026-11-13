@@ -27,6 +27,8 @@ const storageMessages = {
   unreadable: 'This browser’s draft library couldn’t be read. The older draft is open when available. Use Export character to keep a copy.',
 }
 
+type SkillReturn = { label: string; trigger: HTMLButtonElement; top: number }
+
 function App() {
   const [stored, setStored] = useState(() => loadDraftLibrary(startLevel))
   const [shared, setShared] = useState(() => {
@@ -35,6 +37,8 @@ function App() {
   })
   const [restoreCount, setRestoreCount] = useState(0)
   const [editingFromReview, setEditingFromReview] = useState(false)
+  const [skillReturn, setSkillReturn] = useState<SkillReturn | null>(null)
+  const skillReturnPosition = useRef<SkillReturn | null>(null)
   const concept = useRef<HTMLDivElement>(null)
   const reviewPosition = useRef<{ triggerId: string; top: number; languagesOpen: boolean } | null>(null)
   const { library, problem } = stored
@@ -43,7 +47,7 @@ function App() {
   const editorKey = `${active.id}:${restoreCount}`
   const { sessionZero: draft, buildDraft } = character
   const { build, step: savedStep, skills } = buildDraft
-  const skillsAvailable = (savedStep === 'review' || savedStep === 'skills') && canAssignSkills(build)
+  const skillsAvailable = canAssignSkills(build)
   const step = savedStep === 'skills' && !skillsAvailable ? 'review' : savedStep
   const sharedBuild = shared?.build
   const reviewBuild = sharedBuild ?? (step === 'review' ? build : null)
@@ -61,9 +65,19 @@ function App() {
     if (anchor) window.scrollBy({ top: anchor.getBoundingClientRect().top - position.top, behavior: 'instant' })
   }, [sharedBuild, step])
 
-  function resetReviewEdit() {
+  useLayoutEffect(() => {
+    const position = skillReturnPosition.current
+    if (skillReturn || !position) return
+    skillReturnPosition.current = null
+    position.trigger.focus({ preventScroll: true })
+    window.scrollBy({ top: position.trigger.getBoundingClientRect().top - position.top, behavior: 'instant' })
+  }, [skillReturn])
+
+  function resetEditorNavigation() {
     reviewPosition.current = null
     setEditingFromReview(false)
+    skillReturnPosition.current = null
+    setSkillReturn(null)
   }
 
   function saveLibrary(next: DraftLibrary, keepInMemory = false) {
@@ -72,7 +86,7 @@ function App() {
       setStored({ ...stored, library: keepInMemory ? next : library, problem: result.problem })
       return false
     }
-    if (next.activeId !== library.activeId) resetReviewEdit()
+    if (next.activeId !== library.activeId) resetEditorNavigation()
     setStored({ library: next, saved: result.saved, problem: null })
     return true
   }
@@ -125,9 +139,18 @@ function App() {
     saveBuild({ ...buildDraft, step: 'review' })
   }
 
+  function openSkillPlanner(label: string, trigger: HTMLButtonElement) {
+    setSkillReturn({ label, trigger, top: trigger.getBoundingClientRect().top })
+  }
+
+  function closeSkillPlanner() {
+    skillReturnPosition.current = skillReturn
+    setSkillReturn(null)
+  }
+
   function restoreCharacter(next: CharacterDraft) {
     if (!saveLibrary(updateActive({ character: next }))) return false
-    resetReviewEdit()
+    resetEditorNavigation()
     setRestoreCount((count) => count + 1)
     if (shared) closeSharedBuild()
     return true
@@ -212,7 +235,7 @@ function App() {
           />
         </div>
         {!sharedBuild && step && step !== 'skills' ? (
-          <div className="mx-auto w-full max-w-2xl">
+          <div hidden={Boolean(skillReturn)} className="mx-auto w-full max-w-2xl">
             <BuildGuide
               key={editorKey}
               character={character}
@@ -222,6 +245,7 @@ function App() {
               onProgress={(next) => saveBuild({ ...buildDraft, step: next })}
               onBackToConcept={returnToConcept}
               skillsAvailable={skillsAvailable}
+              onPlanSkills={openSkillPlanner}
               onEditFromReview={editFromReview}
               onReturnToReview={editingFromReview && step !== 'review' ? returnToReview : undefined}
               startingLanguageNotes={character.startingLanguageNotes ?? ''}
@@ -235,13 +259,14 @@ function App() {
           </div>
         ) : null}
 
-        {!sharedBuild && step === 'skills' ? (
+        {!sharedBuild && (step === 'skills' || skillReturn) ? (
           <SkillPlanner
             key={editorKey}
             build={build}
             plan={skills ?? emptySkillPlan}
             onChange={(next) => saveBuild({ ...buildDraft, skills: parseSkillPlan(next) })}
-            onBack={returnToReview}
+            returnLabel={skillReturn ? `Back to ${skillReturn.label}` : undefined}
+            onBack={skillReturn ? closeSkillPlanner : returnToReview}
           />
         ) : null}
 

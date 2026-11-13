@@ -11,7 +11,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 - [x] Protect unsaved GM notes when replacing a character, regenerating the brief, or leaving the page.
 - [x] Put actionable next steps at the top of build review and return there after edits.
 - [x] Enlarge touch targets and check contrast in phone and portrait tablet layouts.
-- [ ] Offer optional skill planning immediately after boosts, with a return path to relevant feat choices.
+- [x] Offer optional skill planning immediately after boosts, with a return path to relevant feat choices.
 - [ ] Clarify GM handoff, draft backups, and attribute sharing. Preview the effects of applying a shared build.
 - [ ] Profile draft saves on a phone and improve save status and recovery.
 

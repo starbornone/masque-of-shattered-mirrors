@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react'
+import type { ReactNode } from 'react'
 import type { CharacterDraft } from '@/character/draft'
 import { availableFeats, featOption, featWarnings } from '@/feats/options'
 import type { FeatOption } from '@/feats/options'
 import { effectiveFeat, emptyFeatChoices, featKinds, featName, featSlots } from '@/feats/choices'
 import type { FeatChoices, FeatChoice, FeatSlot } from '@/feats/choices'
 import { Button } from '@/components/ui/button'
+import { emptySkillPlan, recordedPrerequisiteRanks } from '@/skills/plan'
 
 const field = 'min-h-11 w-full rounded-md border border-input bg-background px-3 text-foreground focus-visible:outline-2 focus-visible:outline-ring'
 const kinds = { class: 'Class feat', general: 'General feat', skill: 'Skill feat', ancestry: 'Ancestry feat', dedication: 'Multiclass dedication' }
 const levels = Array.from({ length: 20 }, (_, index) => index + 1)
 const ruleLoaders = import.meta.glob<{ default: Record<string, string> }>('../content/feat-rules/*.json')
 
-function FeatRules({ option }: { option: FeatOption }) {
+function FeatRules({ option, rankGuidance }: { option: FeatOption; rankGuidance: ReactNode }) {
   const { id, rulesGroup } = option
   const [text, setText] = useState<string | null>(null)
   const [failed, setFailed] = useState(false)
@@ -34,6 +36,7 @@ function FeatRules({ option }: { option: FeatOption }) {
     <div className="space-y-2">
       <p className="text-sm font-medium text-primary">{option.source} · level {option.level} · {option.rarity}{option.action !== 'passive' ? ` · ${option.action}` : ''}</p>
       {option.prerequisites ? <p className="text-sm"><strong>Prerequisites</strong> — {option.prerequisites}</p> : null}
+      {rankGuidance}
       {text ? <>
         <p className="text-muted-foreground">{paragraphs[overview]}</p>
         {paragraphs.length > 1 ? <details>
@@ -46,16 +49,21 @@ function FeatRules({ option }: { option: FeatOption }) {
   )
 }
 
-function FeatPicker({ slot, character, archetypes, onChange }: {
+function FeatPicker({ slot, character, archetypes, onChange, onPlanSkills }: {
   slot: FeatSlot
   character: CharacterDraft
   archetypes: boolean
   onChange: (choice: FeatChoice | null) => void
+  onPlanSkills?: (returnLabel: string, trigger: HTMLButtonElement) => void
 }) {
   const [query, setQuery] = useState('')
   const plan = character.featChoices ?? emptyFeatChoices
   const choice = effectiveFeat(slot, plan)
   const selected = choice ? featOption(choice.id) : undefined
+  const { build, skills } = character.buildDraft
+  const ranks = onPlanSkills && selected
+    ? recordedPrerequisiteRanks(selected.prerequisites, build, skills ?? emptySkillPlan, slot.level)
+    : []
   const allowed = availableFeats(slot, character, archetypes)
   const matches = allowed.filter((row) => `${row.name} ${row.traits.join(' ')} ${row.prerequisites}`.toLowerCase().includes(query.trim().toLowerCase()))
   const visible = selected && !matches.some((row) => row.id === selected.id) ? [selected, ...matches] : matches
@@ -77,7 +85,17 @@ function FeatPicker({ slot, character, archetypes, onChange }: {
         </select>
       </label>
       {slot.fixed && choice?.id !== slot.fixed ? <Button type="button" variant="outline" onClick={() => onChange({ id: slot.fixed!, notes: choice?.notes ?? '' })}>Use granted {featName(slot.fixed)}</Button> : null}
-      {selected ? <FeatRules key={selected.id} option={selected} /> : null}
+      {selected ? <FeatRules key={selected.id} option={selected} rankGuidance={ranks.length ? (
+          <p className="text-sm text-muted-foreground">
+            <strong className="text-foreground">Recorded at level {slot.level}</strong>{' '}
+            {ranks.map(({ name, rank }) => `${name} (${rank})`).join(', ')}. Check the full prerequisite and any training granted by your character options.
+          </p>
+        ) : null} /> : null}
+      {onPlanSkills && (slot.kind === 'skill' || ranks.length > 0 || /\b(?:trained|expert|master|legendary) in\b/i.test(selected?.prerequisites ?? '')) ? (
+        <Button type="button" variant="outline" onClick={(event) => onPlanSkills(slot.label.toLowerCase(), event.currentTarget)}>
+          Plan skills
+        </Button>
+      ) : null}
       {slot.fixedName ? <div className="space-y-1 text-sm text-muted-foreground">
         <p>This background references a feat outside the Core catalogs. Follow its rules and record any extra choices below.</p>
         <a className="inline-block font-medium text-primary underline underline-offset-2" href={`https://2e.aonprd.com/Search.aspx?q=${encodeURIComponent(slot.fixedName)}`} target="_blank" rel="noreferrer">Find {slot.fixedName} on Archives of Nethys</a>
@@ -91,7 +109,11 @@ function FeatPicker({ slot, character, archetypes, onChange }: {
   )
 }
 
-export default function FeatGuide({ character, onChange }: { character: CharacterDraft; onChange: (plan: FeatChoices) => void }) {
+export default function FeatGuide({ character, onChange, onPlanSkills }: {
+  character: CharacterDraft
+  onChange: (plan: FeatChoices) => void
+  onPlanSkills?: (returnLabel: string, trigger: HTMLButtonElement) => void
+}) {
   const [archetypes, setArchetypes] = useState(false)
   const plan = character.featChoices ?? emptyFeatChoices
   const slots = featSlots(character, plan)
@@ -121,7 +143,7 @@ export default function FeatGuide({ character, onChange }: { character: Characte
         return <details key={group.kind} open={group.kind === 'class'} className="rounded-lg border border-border p-3">
           <summary className="font-medium">{group.title} · {filled} of {rows.length} recorded</summary>
           <div className="mt-3 space-y-4"><p className="text-sm text-muted-foreground">{group.description}</p>
-            {rows.length ? rows.map((slot) => <FeatPicker key={slot.id} slot={slot} character={character} archetypes={archetypes} onChange={(choice) => setChoice(slot.id, choice)} />) : <p className="text-sm text-muted-foreground">No slots at this level. Select a class for its progression, or add a choice granted by another rule below.</p>}
+            {rows.length ? rows.map((slot) => <FeatPicker key={slot.id} slot={slot} character={character} archetypes={archetypes} onChange={(choice) => setChoice(slot.id, choice)} onPlanSkills={onPlanSkills} />) : <p className="text-sm text-muted-foreground">No slots at this level. Select a class for its progression, or add a choice granted by another rule below.</p>}
           </div>
         </details>
       })}

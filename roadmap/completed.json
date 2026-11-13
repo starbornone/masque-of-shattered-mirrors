@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-14T10:42:40+11:00",
+  "updatedAt": "2026-11-14T10:49:35+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -349,6 +349,13 @@
       "group": "Phase 1: MVP/Now",
       "notes": "Use 44 CSS-pixel minimums for shared buttons and full-width disclosure rows. Improve text, field outlines, and keyboard focus in the dark theme. Verified button and quantity sizes, disclosure taps, focus, and wrapping in Chromium at 360 x 800 and 768 x 1024. Checked sampled normal text against a 4.5:1 minimum and inspected simulated dim layouts.",
       "completedAt": "2026-11-14T10:42:40+11:00"
+    },
+    {
+      "id": "skill-planning-after-boosts",
+      "title": "Offer optional skill planning as soon as boosts are complete",
+      "group": "Phase 1: MVP/Now",
+      "notes": "Open the skill planner from completed boosts or a relevant feat slot. Return to the originating control with its position, focus, and editor choices preserved. Display recorded skill ranks at the feat slot's level as advisory guidance. Verified the round trip, saved choices, and draft isolation in Chromium.",
+      "completedAt": "2026-11-14T10:49:35+11:00"
     }
   ]
 }

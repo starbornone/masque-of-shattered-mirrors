@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { normalizeBuild } from '../src/attributes/build.ts'
 import { parseBuildDraft, serializeBuildDraft } from '../src/attributes/draft.ts'
-import { canAssignSkills, emptySkillPlan, evaluateSkillPlan } from '../src/skills/plan.ts'
+import { canAssignSkills, emptySkillPlan, evaluateSkillPlan, recordedPrerequisiteRanks } from '../src/skills/plan.ts'
 import type { SkillPlan } from '../src/skills/plan.ts'
 
 const boosts = ['int', 'dex', 'wis', 'cha']
@@ -62,4 +62,21 @@ test('named Lore and skill choices survive a draft round trip', () => {
   saved.skills.lore = []
   const restored = parseBuildDraft(JSON.stringify(saved))
   assert.deepEqual(restored?.skills, emptySkillPlan)
+})
+
+test('feat guidance shows recorded ranks at the slot level without deciding eligibility', () => {
+  const plan: SkillPlan = {
+    lore: ['Warfare'],
+    trained: ['society', 'lore:warfare'],
+    choices: { 'increase:2': 'society', 'increase:7': 'society' },
+  }
+  const hints = (text: string, level: number) => recordedPrerequisiteRanks(text, investigator, plan, level)
+    .map(({ name, rank }) => [name, rank])
+  assert.deepEqual(hints('master in Society or Warfare Lore; Dedication', 2), [
+    ['Society', 'Expert'], ['Warfare Lore', 'Trained'],
+  ])
+  assert.deepEqual(hints('trained in Society, and Thievery', 1), [
+    ['Society', 'Trained'], ['Thievery', 'Untrained'],
+  ])
+  assert.deepEqual(hints('expert in unarmed attacks; Arcana feat', 7), [])
 })

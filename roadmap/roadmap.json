@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-14T10:42:40+11:00",
+  "updatedAt": "2026-11-14T10:49:35+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -9,12 +9,6 @@
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
   "items": [
-    {
-      "id": "skill-planning-after-boosts",
-      "title": "Offer optional skill planning as soon as boosts are complete",
-      "group": "Phase 1: MVP/Now",
-      "notes": "Impact High, effort Med. Offer Plan skills after boosts and from relevant feat decisions. Return to the originating feat slot and show recorded ranks beside relevant prerequisites as advisory guidance. Preserve choices when the build changes."
-    },
     {
       "id": "clarify-character-transfers",
       "title": "Clarify handoff, backup, and attribute sharing",

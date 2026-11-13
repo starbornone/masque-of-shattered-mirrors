@@ -12,12 +12,13 @@ type SkillPlannerProps = {
   build: Build
   plan: SkillPlan
   onChange: (plan: SkillPlan) => void
+  returnLabel?: string
   onBack: () => void
 }
 
 const fieldClass = 'min-h-11 w-full rounded-md border border-input bg-background px-3 text-foreground focus-visible:outline-2 focus-visible:outline-ring'
 
-export function SkillPlanner({ build, plan, onChange, onBack }: SkillPlannerProps) {
+export function SkillPlanner({ build, plan, onChange, returnLabel, onBack }: SkillPlannerProps) {
   const [loreInput, setLoreInput] = useState('')
   const heading = useRef<HTMLHeadingElement>(null)
   const { rows, slots } = evaluateSkillPlan(build, plan)
@@ -44,6 +45,8 @@ export function SkillPlanner({ build, plan, onChange, onBack }: SkillPlannerProp
         title="Skill proficiency planner"
         description="Mark your level-1 training, then assign any later increases. The base modifier adds the linked attribute and proficiency."
       />
+
+      {returnLabel ? <Button type="button" variant="outline" onClick={onBack}>{returnLabel}</Button> : null}
 
       <Card>
         <CardHeader>
@@ -152,7 +155,7 @@ export function SkillPlanner({ build, plan, onChange, onBack }: SkillPlannerProp
         </CardContent>
       </Card>
 
-      <Button type="button" variant="outline" className="min-h-11" onClick={onBack}>Back to build review</Button>
+      <Button type="button" variant="outline" className="min-h-11" onClick={onBack}>{returnLabel ?? 'Back to build review'}</Button>
     </section>
   )
 }
