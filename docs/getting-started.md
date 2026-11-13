@@ -45,18 +45,18 @@ The development server defaults to `http://localhost:5173`. Run `npm run build` 
 6. Reload to restore the build and its current step.
    The **Choose heritage and ancestry feats** step follows ancestry. Search by name or ability, choose one heritage, and record ancestry feats at levels 1, 5, 9, 13, and 17 up to your character’s level. Each selected option shows rules, rarity, prerequisites where applicable, and space for extra choices. **Decide later** leaves the step open. If you change ancestry or heritage, prior choices stay saved with review guidance. Choices above a reduced level are retained for later. The build review and GM character review include the selections.
 7. In build review, **What’s left** shows up to three next steps, with unfinished mechanics first, followed by advisory checks and optional choices. Select an action to open its editor, then use **Back to build review** to return to the same spot. When an action is resolved, focus moves to the next available action or the review heading. You can still export a partial draft.
-8. Use **Share build** in the review to copy a mechanical link. Opening it shows a preview. Choose **Use shared build** to replace the attribute build and skill plan in the named active draft.
+8. Use **Share attributes** in the review to copy a mechanical link. Opening it shows a preview. The preview names the active draft, lists what will change, and offers **Download backup**. Choose **Apply shared attributes** to replace the attribute build and clear the skill plan.
 9. Use **Print attribute ledger** in the review or preview to print or save a PDF from your browser.
 10. Check **Campaign fit** beneath the ledger. If you change a boost, the corresponding modifier changes in the checklist.
 11. Once all boosts are assigned, **Plan skills (optional)** appears on the boosts step. Enter level-1 training and any later increases, then choose **Back to attribute boosts** or continue the guide without opening the planner. Relevant feat slots also offer **Plan skills**, with a return button for that slot. You can still open **Plan skill proficiencies** from build review, where **Campaign fit** shows recorded ranks and base modifiers.
 12. Open **Starting languages (optional)** in the build review to check the rules and jot down the languages you plan to take. The browser saves the notes as you type.
-13. Use **Export character** below the guide to save the active draft as JSON at any stage. Choose **Import character** to open a backup as a new draft or replace the active draft.
+13. Under **Character file**, use **Download for GM** to privately hand off a full draft, including session-zero answers. Use **Download backup** to keep your own copy of the same JSON file at any stage. Choose **Import character** to open a backup as a new draft or replace the active draft.
 
 ### Named character drafts
 
 Use **New draft** above the guide to name and start a character. Choose a name in **Active character draft** to resume that draft’s answers and guide step. **Rename** updates the name. To remove a draft, select it, choose **Delete**, and confirm the deletion.
 
-Existing saves open as **Character 1**. Drafts are stored in the current browser. Use **Export character** to keep a portable backup of the active draft. To restore a file, select **Import as new draft** and give it a name, or choose **Replace active draft** to overwrite the draft named in the preview.
+Existing saves open as **Character 1**. Drafts are stored in the current browser. Use **Download backup** to keep a portable backup of the active draft. To restore a file, select **Import as new draft** and give it a name, or choose **Replace active draft** to overwrite the draft named in the preview.
 
 The optional faith step describes each deity before you choose. The background and class steps offer expandable **Campaign-fit suggestions** with boost and proficiency notes. [Paizo’s Divine Mysteries deity tables](https://downloads.paizo.com/PZO13003_SupplementalGodTable.pdf)
 
@@ -70,7 +70,7 @@ For an untracked subclass or conditional grant, expand **Additional choices from
 
 After feats, **Choose spells and cantrips** shows your class’s cantrips and ranked preparations or repertoire. Choose the tradition for a Witch or Sorcerer, the school preparation type for a Wizard, or the deity-allowed font for a Cleric. Expand a group and spell row, search, choose, and read the rules. Repertoire counts are spells known; daily slot counts appear separately in each rank heading.
 
-Wizards and Witches can record learned spells separately from daily preparations. **Additional spells and granted access** records innate, focus, feat, archetype, and other grants with their source, rank, level, and frequency. All selections remain optional, survive refreshes, and travel with **Export character**. Earlier selections remain saved after class or level changes. [Spell planning details](spell-choices.md)
+Wizards and Witches can record learned spells separately from daily preparations. **Additional spells and granted access** records innate, focus, feat, archetype, and other grants with their source, rank, level, and frequency. All selections remain optional, survive refreshes, and travel with **Download backup**. Earlier selections remain saved after class or level changes. [Spell planning details](spell-choices.md)
 
 ### Starting equipment
 
@@ -78,7 +78,7 @@ Continue from spells to **Plan starting equipment**. Enter the character’s sta
 
 ### Foundry VTT
 
-Open **Export to Foundry VTT** in the player’s Character file panel. Download the actor and use **Import Data** on a new blank Character in a PF2e world. Check **Biography → Campaign Notes** for the choices to finish in Foundry. Use **Export character** to keep an editable Masque backup. [Foundry import instructions](foundry-export.md)
+Open **Export to Foundry VTT** in the player’s Character file panel. Download the actor and use **Import Data** on a new blank Character in a PF2e world. Check **Biography → Campaign Notes** for the choices to finish in Foundry. Use **Download backup** to keep an editable Masque backup. [Foundry import instructions](foundry-export.md)
 
 ### First useful action
 

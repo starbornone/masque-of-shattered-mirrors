@@ -12,7 +12,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 - [x] Put actionable next steps at the top of build review and return there after edits.
 - [x] Enlarge touch targets and check contrast in phone and portrait tablet layouts.
 - [x] Offer optional skill planning immediately after boosts, with a return path to relevant feat choices.
-- [ ] Clarify GM handoff, draft backups, and attribute sharing. Preview the effects of applying a shared build.
+- [x] Clarify GM handoff, draft backups, and attribute sharing. Preview the effects of applying a shared build.
 - [ ] Profile draft saves on a phone and improve save status and recovery.
 
 ### Phase 2 — Next

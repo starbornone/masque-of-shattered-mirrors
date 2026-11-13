@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-14T10:49:35+11:00",
+  "updatedAt": "2026-11-14T10:57:56+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -9,12 +9,6 @@
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
   "items": [
-    {
-      "id": "clarify-character-transfers",
-      "title": "Clarify handoff, backup, and attribute sharing",
-      "group": "Phase 1: MVP/Now",
-      "notes": "Impact Med, effort Low. Label Send to GM, Back up or restore, and Share attributes by purpose and describe what each includes. Use the draft name in downloads. Before applying a shared build, name the destination and explain that its attributes will be replaced and its skill plan cleared."
-    },
     {
       "id": "profile-draft-saves-and-recovery",
       "title": "Profile draft saves and improve recovery",

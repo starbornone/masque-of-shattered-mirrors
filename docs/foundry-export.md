@@ -13,7 +13,7 @@ The actor export targets Foundry VTT 14 with Pathfinder Second Edition system 8.
 - **Wealth.** If the plan has a positive remaining balance, the actor receives that amount as gold, silver, and copper. Unset and overspent budgets add no coins.
 - **Build choices.** The checklist carries the selected foundations, feats, spells, and language notes. Supported names link to their compendium entry. Add them through Foundry to resolve grants and spellcasting entries.
 
-The export contains player mechanics only. It omits session-zero answers, GM notes, and GM packages. **Export character** creates the editable backup for reopening the draft in Masque.
+The export contains player mechanics only. It omits session-zero answers, GM notes, and GM packages. **Download backup** creates the editable backup for reopening the draft in Masque.
 
 ## Reference and verification
 

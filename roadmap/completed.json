@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-14T10:49:35+11:00",
+  "updatedAt": "2026-11-14T10:57:56+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -356,6 +356,13 @@
       "group": "Phase 1: MVP/Now",
       "notes": "Open the skill planner from completed boosts or a relevant feat slot. Return to the originating control with its position, focus, and editor choices preserved. Display recorded skill ranks at the feat slot's level as advisory guidance. Verified the round trip, saved choices, and draft isolation in Chromium.",
       "completedAt": "2026-11-14T10:49:35+11:00"
+    },
+    {
+      "id": "clarify-character-transfers",
+      "title": "Clarify handoff, backup, and attribute sharing",
+      "group": "Phase 1: MVP/Now",
+      "notes": "Label GM handoff, backup and restore, and attribute sharing by purpose. Name character JSON downloads after the draft. The shared-build preview names the destination; offers a backup; and explains replacement of attributes, clearing the skill plan, and retention of the other draft sections. Verified handoff, preview, cancellation, apply, and restore in Chromium.",
+      "completedAt": "2026-11-14T10:57:56+11:00"
     }
   ]
 }
