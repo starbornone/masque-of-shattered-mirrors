@@ -55,6 +55,8 @@ The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror 
 
 ## Data and control flow
 
+Table View uses the `#table` URL and reads the active draft from the same browser storage as the editor. Offline preparation installs a service worker from the public build. The build lists its public assets in a versioned cache, and the worker serves a cached player shell after a network failure. Only the player entry page and listed public assets are eligible for offline responses. The GM build and authenticated routes use the network.
+
 1. Player answers or skips the session-zero questions. The review offers JSON and Markdown downloads of the answers.
 2. Player selects ancestry, background, class, level, and boosts. The ported engine normalizes and calculates the current `Build`. The review shows unchosen options and unassigned boosts in an incomplete draft.
    A separate heritage and ancestry feat step follows ancestry. The optional `CharacterDraft.ancestryChoices` field stores one heritage, feat choices by standard slot level, and notes for each choice. The attribute `Build` and its share/print formats stay unchanged. Character saves, player JSON, and nested characters in GM packages include these selections. Older files without the field remain valid. See [ancestry option design and sources](ancestry-options.md).

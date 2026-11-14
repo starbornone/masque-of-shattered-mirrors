@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-14T11:21:04+11:00",
+  "updatedAt": "2026-11-14T11:37:51+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -9,12 +9,6 @@
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
   "items": [
-    {
-      "id": "offline-player-table-view",
-      "title": "Make Table View reopen offline",
-      "group": "Phase 2: Next",
-      "notes": "Impact High, effort Med. Add Prepare for offline play and report readiness after caching the public shell and Table View assets. Exclude /gm/ and its assets from the versioned cache. In airplane mode, refresh and verify that the active character and key checks are still accessible."
-    },
     {
       "id": "verify-live-foundry-import",
       "title": "Verify the Foundry export in a live import",

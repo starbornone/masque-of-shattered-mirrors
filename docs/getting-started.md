@@ -74,6 +74,8 @@ Choose **At the table** next to the active draft. The view puts Diplomacy, Decep
 
 The lists show up to five carried items and five planned spells. Review the gear and spell plans for the full lists. **Back to draft** returns to the same editor and scroll position.
 
+While connected, choose **Prepare for offline play** in Table View and wait for the ready message. Once ready, refreshing the Table View URL opens the active draft saved in this browser, even in airplane mode. Prepare again if browser storage was cleared. Offline preparation is available on the production site and on the local production preview.
+
 Choose **Print table card** to preview the one-page version. Personal hooks start off. Select any mask text, art, invitation reason, or personal stake you want on the card. The preview shows exactly which hooks are included and uses excerpts for long entries. Choose **Print / Save as PDF**, select A4 or Letter in portrait orientation, and turn off browser headers and footers.
 
 ### Spell choices

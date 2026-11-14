@@ -41,7 +41,9 @@ function App() {
     return requested === null ? null : { build: parseBuild(requested) }
   })
   const [restoreCount, setRestoreCount] = useState(0)
-  const [atTable, setAtTable] = useState(false)
+  const [atTable, setAtTable] = useState(() =>
+    window.location.hash === '#table' && !new URLSearchParams(window.location.search).has('build'),
+  )
   const tableReturn = useRef<{ trigger: HTMLButtonElement; scroll: number } | null>(null)
   const [sharedTransferMessage, setSharedTransferMessage] = useState('')
   const [editingFromReview, setEditingFromReview] = useState(false)
@@ -249,7 +251,12 @@ function App() {
             This build link couldn’t be opened.
           </p>
         ) : null}
-        {atTable ? <TableView draft={active} onBack={() => setAtTable(false)} /> : null}
+        {atTable ? <TableView draft={active} onBack={() => {
+          const url = new URL(window.location.href)
+          url.hash = ''
+          window.history.replaceState(window.history.state, '', url)
+          setAtTable(false)
+        }} /> : null}
         <div hidden={atTable} className={atTable ? undefined : 'contents'}>
           {!sharedBuild ? (
             <DraftPicker
@@ -261,6 +268,7 @@ function App() {
               onDelete={deleteDraft}
               onOpenTable={(trigger) => {
                 tableReturn.current = { trigger, scroll: window.scrollY }
+                window.history.replaceState(window.history.state, '', '#table')
                 setAtTable(true)
               }}
             />

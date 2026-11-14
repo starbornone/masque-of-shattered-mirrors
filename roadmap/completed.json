@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-14T11:21:04+11:00",
+  "updatedAt": "2026-11-14T11:37:51+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -391,6 +391,13 @@
       "group": "Phase 2: Next",
       "notes": "Preview concept, build, and training changes from revised player JSON. Apply the character while retaining exact notes and copy refreshed prep suggestions individually. Verified cancel, invalid input, apply, copy, export, and package reopen in Chromium.",
       "completedAt": "2026-11-14T11:21:04+11:00"
+    },
+    {
+      "id": "offline-player-table-view",
+      "title": "Make Table View reopen offline",
+      "group": "Phase 2: Next",
+      "notes": "Prepare Table View using a versioned public asset cache and reopen it at #table. Verified preparation and retry, offline refresh to the saved draft and its key checks, and print preview with Chromium airplane-mode emulation and HTTP caching disabled. Verified protected GM HTML and assets were excluded from the cache.",
+      "completedAt": "2026-11-14T11:37:51+11:00"
     }
   ]
 }

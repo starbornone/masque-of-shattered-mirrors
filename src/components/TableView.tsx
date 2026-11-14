@@ -1,9 +1,10 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { NamedDraft } from '@/character/library'
 import { tableReference } from '@/character/table-reference'
 import { TableCard } from '@/components/TableCard'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { offlinePlayReady, prepareOfflinePlay, supportsOfflinePlay } from '@/lib/player-offline'
 
 function signed(value: number) {
   return value >= 0 ? `+${value}` : String(value)
@@ -13,12 +14,32 @@ export function TableView({ draft, onBack }: { draft: NamedDraft; onBack: () => 
   const heading = useRef<HTMLHeadingElement>(null)
   const printButton = useRef<HTMLButtonElement>(null)
   const [preview, setPreview] = useState(false)
+  const [offline, setOffline] = useState<'idle' | 'preparing' | 'ready' | 'failed'>('idle')
+  const offlineSupported = supportsOfflinePlay()
   const reference = tableReference(draft.character)
   const { level, boostsRemaining, hasSkillPlan, wisdom, checks, gear, spells, moreGear, moreSpells } = reference
 
   useLayoutEffect(() => {
     heading.current?.focus()
   }, [])
+
+  useEffect(() => {
+    if (!offlineSupported) return
+    let active = true
+    void offlinePlayReady().then((ready) => {
+      if (active && ready) setOffline((status) => status === 'idle' ? 'ready' : status)
+    }).catch(() => {})
+    return () => { active = false }
+  }, [offlineSupported])
+
+  async function prepare() {
+    setOffline('preparing')
+    try {
+      setOffline(await prepareOfflinePlay() ? 'ready' : 'failed')
+    } catch {
+      setOffline('failed')
+    }
+  }
 
   return (
     <section data-table-view aria-labelledby={preview ? 'table-card-preview-heading' : 'table-view-heading'} className="mx-auto w-full max-w-2xl space-y-4">
@@ -37,6 +58,21 @@ export function TableView({ draft, onBack }: { draft: NamedDraft; onBack: () => 
             <Button type="button" variant="outline" onClick={onBack}>Back to draft</Button>
           </div>
         </div>
+
+        {offlineSupported ? (
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            {offline !== 'ready' ? (
+              <Button type="button" variant="outline" disabled={offline === 'preparing'} onClick={() => void prepare()}>
+                Prepare for offline play
+              </Button>
+            ) : null}
+            <p role="status" className="text-sm text-muted-foreground">
+              {offline === 'preparing' ? 'Preparing Table View for offline play…' : null}
+              {offline === 'ready' ? 'Table View is ready offline on this device.' : null}
+              {offline === 'failed' ? 'Couldn’t prepare offline play. Check your connection and try again.' : null}
+            </p>
+          </div>
+        ) : null}
 
         <Card>
           <CardHeader>

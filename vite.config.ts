@@ -3,6 +3,7 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { localGm } from './server/gm-local.ts'
+import { playerOffline } from './build/offline.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -11,7 +12,7 @@ export default defineConfig({
       output: { codeSplitting: { groups: [{ name: 'rules-index', test: /[\\/]content[\\/](?:spell-labels|feat-labels|feat-progression|ancestry-options)\.json$/ }] } },
     },
   },
-  plugins: [localGm(), react(), tailwindcss()],
+  plugins: [localGm(), react(), tailwindcss(), playerOffline()],
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),

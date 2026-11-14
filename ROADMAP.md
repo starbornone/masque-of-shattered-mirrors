@@ -20,7 +20,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 - [x] Add a read-only Table View for quick access to checks, training, and relevant gear or spells.
 - [x] Generate a one-page print or PDF table card from Table View.
 - [x] Let the GM review revised character files and keep their edited notes.
-- [ ] Make Table View reopen after a refresh in airplane mode.
+- [x] Make Table View reopen after a refresh in airplane mode.
 - [ ] Verify a live Foundry actor import and surface the remaining setup before download.
 
 ### Phase 3 — Later
