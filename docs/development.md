@@ -41,6 +41,8 @@ npm run dev
 
 Path alias: `@/*` → `./src/*` (TypeScript + Vite).
 
+The draft save profile used production preview in Chromium at 360 × 800 with 4× CPU throttling. Each run sampled 30 session-zero text edits per fixture and 20 switches between saved drafts in the larger fixture. The fixtures held one typical draft (965 bytes) or eight developed drafts (about 67 KiB). The p95 time to the next animation frame was 18.5 ms for one draft, 17.2 ms for eight drafts, and 32.6 ms for switching before batching. After batching it was 18.4 ms, 17.6 ms, and 33.5 ms respectively, against a 100 ms target. Synchronous storage calls were under 2 ms at p95 in both runs. With eight drafts, typing went from 30 writes during the edit burst to one after it. These are desktop emulation measurements.
+
 The player and GM builds share the dark theme and focus styles in [src/index.css](../src/index.css). Shared buttons and disclosure rows use a 44 CSS-pixel minimum touch target. Check action wrapping, disclosure taps, quantity fields, and keyboard focus at 360 × 800 and 768 × 1024 in portrait. Check normal text against its rendered surface at 4.5:1 or higher, including helper text, errors, and hover states.
 
 ## Safe navigation for agents

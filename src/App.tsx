@@ -4,8 +4,9 @@ import { parseBuild } from '@/attributes/build'
 import type { BuildDraft, BuildStep } from '@/attributes/draft'
 import { characterFilename, serializeCharacter } from '@/character/draft'
 import type { CharacterDraft } from '@/character/draft'
-import { draftNameError, loadDraftLibrary, newCharacterDraft, storeDraftLibrary } from '@/character/library'
+import { draftNameError, newCharacterDraft } from '@/character/library'
 import type { DraftLibrary } from '@/character/library'
+import { useDraftLibrary } from '@/character/useDraftLibrary'
 import { BuildActions } from '@/components/BuildActions'
 import { BuildGuide } from '@/components/BuildGuide'
 import { BuildSummary } from '@/components/BuildSummary'
@@ -24,15 +25,16 @@ import { canAssignSkills, emptySkillPlan, parseSkillPlan } from '@/skills/plan'
 
 const startLevel = Number(import.meta.env.VITE_CAMPAIGN_START_LEVEL)
 const storageMessages = {
-  unavailable: 'This browser couldn’t save your drafts. Use Download backup to keep a copy of your work.',
-  changed: 'Saved drafts changed in another tab. Export any unsaved work, then reload this page.',
-  unreadable: 'This browser’s draft library couldn’t be read. The older draft is open when available. Use Download backup to keep a copy.',
+  unavailable: 'This browser couldn’t save your drafts.',
+  changed: 'Saved drafts changed in another tab. Export your work, then reload to open the latest saved drafts.',
+  unreadable: 'This browser’s draft library couldn’t be read. The older draft is open when available.',
 }
 
 type SkillReturn = { label: string; trigger: HTMLButtonElement; top: number }
 
 function App() {
-  const [stored, setStored] = useState(() => loadDraftLibrary(startLevel))
+  const { library, problem, saved, dirty, saving, queue, commit, flush } = useDraftLibrary(startLevel)
+  const [recoveryMessage, setRecoveryMessage] = useState('')
   const [shared, setShared] = useState(() => {
     const requested = new URLSearchParams(window.location.search).get('build')
     return requested === null ? null : { build: parseBuild(requested) }
@@ -44,7 +46,6 @@ function App() {
   const skillReturnPosition = useRef<SkillReturn | null>(null)
   const concept = useRef<HTMLDivElement>(null)
   const reviewPosition = useRef<{ triggerId: string; top: number; languagesOpen: boolean } | null>(null)
-  const { library, problem } = stored
   const active = library.drafts.find(({ id }) => id === library.activeId)!
   const character = active.character
   const editorKey = `${active.id}:${restoreCount}`
@@ -83,29 +84,27 @@ function App() {
     setSkillReturn(null)
   }
 
-  function saveLibrary(next: DraftLibrary, keepInMemory = false) {
-    const result = problem === 'unreadable' ? { problem } : storeDraftLibrary(next, stored.saved)
-    if (result.problem) {
-      setStored({ ...stored, library: keepInMemory ? next : library, problem: result.problem })
-      return false
-    }
-    if (next.activeId !== library.activeId) resetEditorNavigation()
-    setStored({ library: next, saved: result.saved, problem: null })
+  function saveLibrary(change: (current: DraftLibrary) => DraftLibrary, destinationId = active.id) {
+    if (!commit(change)) return false
+    if (destinationId !== active.id) resetEditorNavigation()
     return true
   }
 
   function updateActive(changes: Partial<Pick<typeof active, 'name' | 'character'>>) {
-    return { ...library, drafts: library.drafts.map((entry) => entry.id === active.id ? { ...entry, ...changes } : entry) }
+    return (current: DraftLibrary) => ({
+      ...current, drafts: current.drafts.map((entry) => entry.id === active.id ? { ...entry, ...changes } : entry),
+    })
   }
 
   function saveCharacter(next: CharacterDraft) {
-    saveLibrary(updateActive({ character: next }), true)
+    setRecoveryMessage('')
+    queue(updateActive({ character: next }))
   }
 
   function createDraft(name: string, next: CharacterDraft = newCharacterDraft(startLevel)) {
     if (draftNameError(library, name)) return false
     const entry = { id: crypto.randomUUID(), name: name.trim(), character: next }
-    return saveLibrary({ activeId: entry.id, drafts: [...library.drafts, entry] })
+    return saveLibrary((current) => ({ activeId: entry.id, drafts: [...current.drafts, entry] }), entry.id)
   }
 
   function renameDraft(name: string) {
@@ -115,8 +114,10 @@ function App() {
 
   function deleteDraft() {
     if (library.drafts.length < 2) return false
-    const drafts = library.drafts.filter(({ id }) => id !== active.id)
-    return saveLibrary({ activeId: drafts[0].id, drafts })
+    const destination = library.drafts.find(({ id }) => id !== active.id)!
+    return saveLibrary((current) => ({
+      activeId: destination.id, drafts: current.drafts.filter(({ id }) => id !== active.id),
+    }), destination.id)
   }
 
   function saveDraft(next: SessionZeroDraft) {
@@ -166,12 +167,12 @@ function App() {
     setShared(null)
   }
 
-  function downloadBeforeApplying() {
+  function downloadDraft(report: (message: string) => void) {
     try {
       downloadFile(characterFilename(active.name), serializeCharacter(character), 'application/json')
-      setSharedTransferMessage('Backup download started.')
+      report('Backup download started.')
     } catch {
-      setSharedTransferMessage('The backup couldn’t be downloaded. Try again.')
+      report('The backup couldn’t be downloaded. Try again.')
     }
   }
 
@@ -182,7 +183,7 @@ function App() {
 
   return (
     <div
-      className="relative flex min-h-svh flex-col overflow-hidden text-foreground"
+      className="relative flex min-h-svh flex-col overflow-x-clip text-foreground"
       data-print-ledger={reviewBuild ? '' : undefined}
     >
       <img
@@ -216,11 +217,23 @@ function App() {
       </header>
 
       <main className="relative z-10 mx-auto flex w-full max-w-[45rem] flex-1 flex-col gap-7 px-4 py-7 sm:px-6 sm:py-10">
-        {problem ? (
-          <p role="alert" className="mx-auto w-full max-w-2xl text-destructive">
-            {storageMessages[problem]}
+        <div className="sticky top-0 z-20 mx-auto w-full max-w-2xl space-y-2 rounded-md border border-border bg-card px-3 py-2 text-sm print:hidden">
+          <p role="status" className="text-muted-foreground">
+            {saving ? 'Saving…' : problem ? (dirty ? 'Changes are only in this tab.' : '') : saved ? 'Saved on this device' : 'Changes save on this device.'}
           </p>
-        ) : null}
+          {problem ? (
+            <>
+              <p role="alert" className="text-destructive">{storageMessages[problem]}</p>
+              <div className="flex flex-wrap gap-2">
+                <Button type="button" variant="outline" onClick={() => downloadDraft(setRecoveryMessage)}>Export to recover</Button>
+                {problem === 'unavailable' && dirty ? (
+                  <Button type="button" variant="outline" onClick={() => { setRecoveryMessage(''); flush() }}>Retry save</Button>
+                ) : null}
+              </div>
+              <p role="status" className="text-muted-foreground empty:hidden">{recoveryMessage}</p>
+            </>
+          ) : null}
+        </div>
         {shared && !sharedBuild ? (
           <p role="alert" className="mx-auto w-full max-w-2xl text-destructive">
             This build link couldn’t be opened.
@@ -230,7 +243,7 @@ function App() {
           <DraftPicker
             library={library}
             active={active}
-            onSwitch={(id) => saveLibrary({ ...library, activeId: id })}
+            onSwitch={(id) => saveLibrary((current) => ({ ...current, activeId: id }), id)}
             onCreate={createDraft}
             onRename={renameDraft}
             onDelete={deleteDraft}
@@ -313,7 +326,7 @@ function App() {
                     >
                       Apply shared attributes
                     </Button>
-                    <Button type="button" variant="outline" onClick={downloadBeforeApplying}>Download backup</Button>
+                    <Button type="button" variant="outline" onClick={() => downloadDraft(setSharedTransferMessage)}>Download backup</Button>
                     <Button type="button" variant="outline" onClick={closeSharedBuild}>Back to my draft</Button>
                   </div>
                   <p role="status" className="text-sm text-muted-foreground empty:hidden">{sharedTransferMessage}</p>

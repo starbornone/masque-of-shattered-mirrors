@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-14T10:57:56+11:00",
+  "updatedAt": "2026-11-14T11:04:24+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -9,12 +9,6 @@
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
   "items": [
-    {
-      "id": "profile-draft-saves-and-recovery",
-      "title": "Profile draft saves and improve recovery",
-      "group": "Phase 1: MVP/Now",
-      "notes": "Impact Med, effort Med. Measure typing and draft switching with one typical draft and several developed drafts on a mid-range phone. Target visible feedback within 100 ms for common edits. Show saving, saved on this device, and recovery states. Persist drafts individually if whole-library writes are the bottleneck. Retain stale-write detection and compatibility with existing imports."
-    },
     {
       "id": "player-table-view",
       "title": "Add a read-only Table View for the active draft",

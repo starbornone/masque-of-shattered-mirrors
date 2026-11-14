@@ -58,6 +58,8 @@ Use **New draft** above the guide to name and start a character. Choose a name i
 
 Existing saves open as **Character 1**. Drafts are stored in the current browser. Use **Download backup** to keep a portable backup of the active draft. To restore a file, select **Import as new draft** and give it a name, or choose **Replace active draft** to overwrite the draft named in the preview.
 
+The save banner shows **Saving…** while changes are queued and **Saved on this device** once they reach browser storage. If storage fails, **Retry save** attempts to write the open edits again. Use **Export to recover** to download the latest copy from the open tab. If another tab saved first, export your copy, reload, then use **Import as new draft** to compare it with the saved version. A browser that supports leave warnings can prompt if an exit-time save fails.
+
 The optional faith step describes each deity before you choose. The background and class steps offer expandable **Campaign-fit suggestions** with boost and proficiency notes. [Paizo’s Divine Mysteries deity tables](https://downloads.paizo.com/PZO13003_SupplementalGodTable.pdf)
 
 Heritage and ancestry feat choices are recorded with the character. Add any training they grant when planning skills, and check other benefits against the option’s rules. The app does not apply those effects automatically. Attribute share links and the printable attribute ledger retain their existing scope. [Ancestry option details](ancestry-options.md)

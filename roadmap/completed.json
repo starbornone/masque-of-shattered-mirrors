@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-14T10:57:56+11:00",
+  "updatedAt": "2026-11-14T11:04:24+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -363,6 +363,13 @@
       "group": "Phase 1: MVP/Now",
       "notes": "Label GM handoff, backup and restore, and attribute sharing by purpose. Name character JSON downloads after the draft. The shared-build preview names the destination; offers a backup; and explains replacement of attributes, clearing the skill plan, and retention of the other draft sections. Verified handoff, preview, cancellation, apply, and restore in Chromium.",
       "completedAt": "2026-11-14T10:57:56+11:00"
+    },
+    {
+      "id": "profile-draft-saves-and-recovery",
+      "title": "Profile draft saves and improve recovery",
+      "group": "Phase 1: MVP/Now",
+      "notes": "Profiled one typical draft and eight developed drafts at 360 x 800 with 4x CPU throttling in Chromium. The final p95 next-frame samples were 18.4 ms for typing and 33.5 ms for switching. Batched writes while typing, kept the existing storage format and stale-write check, and added status, retry, recovery export, and an exit warning when saving fails.",
+      "completedAt": "2026-11-14T11:04:24+11:00"
     }
   ]
 }
