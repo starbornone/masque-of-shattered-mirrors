@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-14T11:48:34+11:00",
+  "updatedAt": "2026-11-14T11:52:54+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -9,6 +9,12 @@
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
   "items": [
+    {
+      "id": "rehearse-player-gm-session",
+      "title": "Run a rehearsal with one player and one GM",
+      "group": "Next",
+      "notes": "Confirm the campaign starting level. Have the player export their draft and the GM edit the brief, apply a revised player file, and reopen the exported GM package. Verify that it contains the revised character and the edited notes. Prepare Table View on the player's phone, turn on airplane mode, and refresh. During a short scene, time the Diplomacy modifier and Thievery training lookups, aiming for five seconds each. Have the player approve a question for The mask slips before the scene. Keep the printed card within reach and record whether the player opens or uses the prompt without a reminder. Record the biggest interruption and use it to choose the next improvement."
+    },
     {
       "id": "pathbuilder-character-export",
       "title": "Export player characters for Pathbuilder",
