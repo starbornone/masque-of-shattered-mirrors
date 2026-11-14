@@ -25,10 +25,10 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 ### Phase 3 — Later
 
 - [x] Prototype a player-approved prompt card based on the mask's lie.
-- [ ] Revisit Pathbuilder export when it supports importing third-party character builds. [Transfer findings](docs/pathbuilder-transfer.md)
 
 ### Deferred
 
+- [ ] Revisit Pathbuilder export when it supports importing third-party character builds. [Transfer findings](docs/pathbuilder-transfer.md)
 - [ ] Verify a live Foundry actor import and surface the remaining setup before download.
 
 ## Original delivery phases

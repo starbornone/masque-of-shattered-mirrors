@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-14T11:43:28+11:00",
+  "updatedAt": "2026-11-14T11:48:34+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -12,8 +12,8 @@
     {
       "id": "pathbuilder-character-export",
       "title": "Export player characters for Pathbuilder",
-      "group": "Phase 3: Later",
-      "notes": "Impact Med, effort Med. Deferred pending a supported third-party character import format. Checked Pathbuilder Web 112.0 and developer documentation on 2026-11-11. Backup/Restore transfers native saves, Custom Pack imports rules content, and Export JSON sends character data out. Revisit when Pathbuilder documents a way to import external player builds."
+      "group": "Deferred",
+      "notes": "Deferred at the maintainer’s request. Impact Med, effort Med. Revisit when Pathbuilder documents a supported format for importing external player builds. The 2026-11-11 review of Pathbuilder Web 112.0 and developer documentation found that Backup/Restore transfers native saves, Custom Pack imports rules content, and Export JSON sends character data out."
     },
     {
       "id": "verify-live-foundry-import",
