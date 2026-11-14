@@ -8,7 +8,7 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 
 ### Next — Table rehearsal
 
-- [ ] Run a rehearsal with one player and one GM.
+- [ ] Run a rehearsal with one player and one GM. [Rehearsal checklist](docs/rehearsal-checklist.md)
   - Confirm the campaign starting level. Have the player export their draft and the GM edit the brief, apply a revised player file, and reopen the exported GM package. Verify that it contains the revised character and the edited notes.
   - Prepare Table View on the player's phone, turn on airplane mode, and refresh. During a short scene, time how long it takes the player to find their Diplomacy modifier and Thievery training. Aim for five seconds each.
   - Have the player approve a question for **The mask slips** before the scene. Keep the printed card within reach and record whether the player opens or uses the prompt without a reminder.
