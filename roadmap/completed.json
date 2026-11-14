@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-14T11:04:24+11:00",
+  "updatedAt": "2026-11-14T11:11:24+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -370,6 +370,13 @@
       "group": "Phase 1: MVP/Now",
       "notes": "Profiled one typical draft and eight developed drafts at 360 x 800 with 4x CPU throttling in Chromium. The final p95 next-frame samples were 18.4 ms for typing and 33.5 ms for switching. Batched writes while typing, kept the existing storage format and stale-write check, and added status, retry, recovery export, and an exit warning when saving fails.",
       "completedAt": "2026-11-14T11:04:24+11:00"
+    },
+    {
+      "id": "player-table-view",
+      "title": "Add a read-only Table View for the active draft",
+      "group": "Phase 2: Next",
+      "notes": "At the table shows common actions, recorded ranks and base skill modifiers, Wisdom contributions to Will and Perception, carried gear, and planned spells. It labels unfinished values and returns to the same draft position. In Chromium phone emulation with simulated dimming and 4x CPU throttling, Diplomacy and trained Thievery were visible after one tap in 134 ms.",
+      "completedAt": "2026-11-14T11:11:24+11:00"
     }
   ]
 }

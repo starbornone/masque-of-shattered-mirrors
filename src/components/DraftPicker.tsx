@@ -5,13 +5,14 @@ import { Button } from '@/components/ui/button'
 
 const field = 'min-h-11 w-full rounded-md border border-input bg-background px-3 text-foreground focus-visible:outline-2 focus-visible:outline-ring'
 
-export function DraftPicker({ library, active, onSwitch, onCreate, onRename, onDelete }: {
+export function DraftPicker({ library, active, onSwitch, onCreate, onRename, onDelete, onOpenTable }: {
   library: DraftLibrary
   active: NamedDraft
   onSwitch: (id: string) => boolean
   onCreate: (name: string) => boolean
   onRename: (name: string) => boolean
   onDelete: () => boolean
+  onOpenTable: (trigger: HTMLButtonElement) => void
 }) {
   const [action, setAction] = useState<'create' | 'rename' | 'delete' | null>(null)
   const [name, setName] = useState('')
@@ -31,6 +32,7 @@ export function DraftPicker({ library, active, onSwitch, onCreate, onRename, onD
             {library.drafts.map((entry) => <option key={entry.id} value={entry.id}>{entry.name}</option>)}
           </select>
         </label>
+        <Button type="button" onClick={(event) => onOpenTable(event.currentTarget)}>At the table</Button>
         <Button type="button" variant="outline" className="min-h-11" onClick={() => begin('create')}>New draft</Button>
         <Button type="button" variant="ghost" className="min-h-11" onClick={() => begin('rename')}>Rename</Button>
         {library.drafts.length > 1 ? (

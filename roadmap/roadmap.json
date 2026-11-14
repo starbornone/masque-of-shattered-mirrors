@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-14T11:04:24+11:00",
+  "updatedAt": "2026-11-14T11:11:24+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -9,12 +9,6 @@
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
   "items": [
-    {
-      "id": "player-table-view",
-      "title": "Add a read-only Table View for the active draft",
-      "group": "Phase 2: Next",
-      "notes": "Impact High, effort Med. Add At the table near the active draft. Show player-safe social and investigation actions, planned base skill modifiers and training, plus a short gear or spell list. Label incomplete values and show only the Wisdom contribution for Will and Perception until full modifiers are available. Find a social modifier and confirm Thievery training within two taps and five seconds from the active draft on a dimmed phone."
-    },
     {
       "id": "printable-table-card",
       "title": "Print a one-page player table card",

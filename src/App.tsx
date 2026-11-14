@@ -17,6 +17,7 @@ import { Navbar } from '@/components/Navbar'
 import { PrintableAttributeLedger } from '@/components/PrintableAttributeLedger'
 import { SessionZeroGuide } from '@/components/SessionZeroGuide'
 import { SkillPlanner } from '@/components/SkillPlanner'
+import { TableView } from '@/components/TableView'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { downloadFile } from '@/lib/download'
@@ -40,6 +41,8 @@ function App() {
     return requested === null ? null : { build: parseBuild(requested) }
   })
   const [restoreCount, setRestoreCount] = useState(0)
+  const [atTable, setAtTable] = useState(false)
+  const tableReturn = useRef<{ trigger: HTMLButtonElement; scroll: number } | null>(null)
   const [sharedTransferMessage, setSharedTransferMessage] = useState('')
   const [editingFromReview, setEditingFromReview] = useState(false)
   const [skillReturn, setSkillReturn] = useState<SkillReturn | null>(null)
@@ -55,6 +58,13 @@ function App() {
   const step = savedStep === 'skills' && !skillsAvailable ? 'review' : savedStep
   const sharedBuild = shared?.build
   const reviewBuild = sharedBuild ?? (step === 'review' ? build : null)
+  useLayoutEffect(() => {
+    if (atTable || !tableReturn.current) return
+    const { trigger, scroll } = tableReturn.current
+    tableReturn.current = null
+    trigger.focus({ preventScroll: true })
+    window.scrollTo({ top: scroll, behavior: 'instant' })
+  }, [atTable])
   useLayoutEffect(() => {
     const position = reviewPosition.current
     if (!position || step !== 'review' || sharedBuild) return
@@ -184,7 +194,7 @@ function App() {
   return (
     <div
       className="relative flex min-h-svh flex-col overflow-x-clip text-foreground"
-      data-print-ledger={reviewBuild ? '' : undefined}
+      data-print-ledger={reviewBuild && !atTable ? '' : undefined}
     >
       <img
         src={veratheMirror}
@@ -239,120 +249,127 @@ function App() {
             This build link couldn’t be opened.
           </p>
         ) : null}
-        {!sharedBuild ? (
-          <DraftPicker
-            library={library}
-            active={active}
-            onSwitch={(id) => saveLibrary((current) => ({ ...current, activeId: id }), id)}
-            onCreate={createDraft}
-            onRename={renameDraft}
-            onDelete={deleteDraft}
-          />
-        ) : null}
-        <div hidden={Boolean(sharedBuild) || step !== null} ref={concept} className="mx-auto w-full max-w-2xl">
-          <SessionZeroGuide
-            key={editorKey}
-            answers={draft.answers}
-            initialStep={draft.step}
-            onChange={(answers) => saveDraft({ ...draft, answers })}
-            onProgress={(step) => saveDraft({ ...draft, step })}
-            onStartBuild={() => saveBuild({ ...buildDraft, step: 'ancestry' })}
-          />
-        </div>
-        {!sharedBuild && step && step !== 'skills' ? (
-          <div hidden={Boolean(skillReturn)} className="mx-auto w-full max-w-2xl">
-            <BuildGuide
+        {atTable ? <TableView draft={active} onBack={() => setAtTable(false)} /> : null}
+        <div hidden={atTable} className={atTable ? undefined : 'contents'}>
+          {!sharedBuild ? (
+            <DraftPicker
+              library={library}
+              active={active}
+              onSwitch={(id) => saveLibrary((current) => ({ ...current, activeId: id }), id)}
+              onCreate={createDraft}
+              onRename={renameDraft}
+              onDelete={deleteDraft}
+              onOpenTable={(trigger) => {
+                tableReturn.current = { trigger, scroll: window.scrollY }
+                setAtTable(true)
+              }}
+            />
+          ) : null}
+          <div hidden={Boolean(sharedBuild) || step !== null} ref={concept} className="mx-auto w-full max-w-2xl">
+            <SessionZeroGuide
               key={editorKey}
-              character={character}
-              build={build}
-              currentStep={step}
-              onChange={(next) => saveBuild({ ...buildDraft, build: next, step })}
-              onProgress={(next) => saveBuild({ ...buildDraft, step: next })}
-              onBackToConcept={returnToConcept}
-              skillsAvailable={skillsAvailable}
-              onPlanSkills={openSkillPlanner}
-              onEditFromReview={editFromReview}
-              onReturnToReview={editingFromReview && step !== 'review' ? returnToReview : undefined}
-              startingLanguageNotes={character.startingLanguageNotes ?? ''}
-              onStartingLanguageNotesChange={(startingLanguageNotes) => saveCharacter({ ...character, startingLanguageNotes })}
-              ancestryChoices={character.ancestryChoices}
-              onAncestryChoicesChange={(ancestryChoices) => saveCharacter({ ...character, ancestryChoices })}
-              onFeatChoicesChange={(featChoices) => saveCharacter({ ...character, featChoices })}
-              onSpellChoicesChange={(spellChoices) => saveCharacter({ ...character, spellChoices })}
-              onEquipmentPlanChange={(equipmentPlan) => saveCharacter({ ...character, equipmentPlan })}
+              answers={draft.answers}
+              initialStep={draft.step}
+              onChange={(answers) => saveDraft({ ...draft, answers })}
+              onProgress={(step) => saveDraft({ ...draft, step })}
+              onStartBuild={() => saveBuild({ ...buildDraft, step: 'ancestry' })}
             />
           </div>
-        ) : null}
+          {!sharedBuild && step && step !== 'skills' ? (
+            <div hidden={Boolean(skillReturn)} className="mx-auto w-full max-w-2xl">
+              <BuildGuide
+                key={editorKey}
+                character={character}
+                build={build}
+                currentStep={step}
+                onChange={(next) => saveBuild({ ...buildDraft, build: next, step })}
+                onProgress={(next) => saveBuild({ ...buildDraft, step: next })}
+                onBackToConcept={returnToConcept}
+                skillsAvailable={skillsAvailable}
+                onPlanSkills={openSkillPlanner}
+                onEditFromReview={editFromReview}
+                onReturnToReview={editingFromReview && step !== 'review' ? returnToReview : undefined}
+                startingLanguageNotes={character.startingLanguageNotes ?? ''}
+                onStartingLanguageNotesChange={(startingLanguageNotes) => saveCharacter({ ...character, startingLanguageNotes })}
+                ancestryChoices={character.ancestryChoices}
+                onAncestryChoicesChange={(ancestryChoices) => saveCharacter({ ...character, ancestryChoices })}
+                onFeatChoicesChange={(featChoices) => saveCharacter({ ...character, featChoices })}
+                onSpellChoicesChange={(spellChoices) => saveCharacter({ ...character, spellChoices })}
+                onEquipmentPlanChange={(equipmentPlan) => saveCharacter({ ...character, equipmentPlan })}
+              />
+            </div>
+          ) : null}
 
-        {!sharedBuild && (step === 'skills' || skillReturn) ? (
-          <SkillPlanner
-            key={editorKey}
-            build={build}
-            plan={skills ?? emptySkillPlan}
-            onChange={(next) => saveBuild({ ...buildDraft, skills: parseSkillPlan(next) })}
-            returnLabel={skillReturn ? `Back to ${skillReturn.label}` : undefined}
-            onBack={skillReturn ? closeSkillPlanner : returnToReview}
-          />
-        ) : null}
+          {!sharedBuild && (step === 'skills' || skillReturn) ? (
+            <SkillPlanner
+              key={editorKey}
+              build={build}
+              plan={skills ?? emptySkillPlan}
+              onChange={(next) => saveBuild({ ...buildDraft, skills: parseSkillPlan(next) })}
+              returnLabel={skillReturn ? `Back to ${skillReturn.label}` : undefined}
+              onBack={skillReturn ? closeSkillPlanner : returnToReview}
+            />
+          ) : null}
 
-        {sharedBuild ? (
-          <section aria-labelledby="shared-build-heading" className="mx-auto w-full max-w-2xl">
-            <Card>
-              <CardHeader>
-                <h2 id="shared-build-heading" className="text-3xl">Shared attribute build</h2>
-                <p className="text-muted-foreground">
-                  Preview, print, or share these attributes before deciding whether to apply them.
-                </p>
-              </CardHeader>
-              <CardContent className="space-y-5">
-                <BuildSummary build={sharedBuild} />
-                <BuildActions build={sharedBuild} />
-                <section aria-labelledby="shared-build-impact" className="space-y-3 rounded-lg border border-border bg-background p-4">
-                  <h3 id="shared-build-impact" className="text-xl wrap-anywhere">Apply to “{active.name}”?</h3>
-                  <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-                    <li><strong className="text-foreground">Replaces</strong> level, ancestry, background, class, and attribute choices with the build above.</li>
-                    <li><strong className="text-foreground">Clears</strong> the skill plan, including training, Lore, and planned increases.</li>
-                    <li><strong className="text-foreground">Keeps</strong> session-zero answers, heritage, feats, spells, gear, and language notes. Review those choices for compatibility with the incoming build.</li>
-                  </ul>
-                  <div className="flex flex-wrap gap-2">
-                    <Button
-                      type="button"
-                      aria-describedby="shared-build-impact"
-                      onClick={() => {
-                        if (!restoreCharacter({ ...character, buildDraft: { build: sharedBuild, step: 'review' } })) {
-                          setSharedTransferMessage('The shared build couldn’t be saved. Your current draft is intact.')
-                        }
-                      }}
-                    >
-                      Apply shared attributes
-                    </Button>
-                    <Button type="button" variant="outline" onClick={() => downloadDraft(setSharedTransferMessage)}>Download backup</Button>
-                    <Button type="button" variant="outline" onClick={closeSharedBuild}>Back to my draft</Button>
-                  </div>
-                  <p role="status" className="text-sm text-muted-foreground empty:hidden">{sharedTransferMessage}</p>
-                </section>
-              </CardContent>
-            </Card>
-          </section>
-        ) : null}
+          {sharedBuild ? (
+            <section aria-labelledby="shared-build-heading" className="mx-auto w-full max-w-2xl">
+              <Card>
+                <CardHeader>
+                  <h2 id="shared-build-heading" className="text-3xl">Shared attribute build</h2>
+                  <p className="text-muted-foreground">
+                    Preview, print, or share these attributes before deciding whether to apply them.
+                  </p>
+                </CardHeader>
+                <CardContent className="space-y-5">
+                  <BuildSummary build={sharedBuild} />
+                  <BuildActions build={sharedBuild} />
+                  <section aria-labelledby="shared-build-impact" className="space-y-3 rounded-lg border border-border bg-background p-4">
+                    <h3 id="shared-build-impact" className="text-xl wrap-anywhere">Apply to “{active.name}”?</h3>
+                    <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+                      <li><strong className="text-foreground">Replaces</strong> level, ancestry, background, class, and attribute choices with the build above.</li>
+                      <li><strong className="text-foreground">Clears</strong> the skill plan, including training, Lore, and planned increases.</li>
+                      <li><strong className="text-foreground">Keeps</strong> session-zero answers, heritage, feats, spells, gear, and language notes. Review those choices for compatibility with the incoming build.</li>
+                    </ul>
+                    <div className="flex flex-wrap gap-2">
+                      <Button
+                        type="button"
+                        aria-describedby="shared-build-impact"
+                        onClick={() => {
+                          if (!restoreCharacter({ ...character, buildDraft: { build: sharedBuild, step: 'review' } })) {
+                            setSharedTransferMessage('The shared build couldn’t be saved. Your current draft is intact.')
+                          }
+                        }}
+                      >
+                        Apply shared attributes
+                      </Button>
+                      <Button type="button" variant="outline" onClick={() => downloadDraft(setSharedTransferMessage)}>Download backup</Button>
+                      <Button type="button" variant="outline" onClick={closeSharedBuild}>Back to my draft</Button>
+                    </div>
+                    <p role="status" className="text-sm text-muted-foreground empty:hidden">{sharedTransferMessage}</p>
+                  </section>
+                </CardContent>
+              </Card>
+            </section>
+          ) : null}
 
-        {reviewBuild ? <CampaignFit build={reviewBuild} skillPlan={!sharedBuild && skillsAvailable ? skills : undefined} /> : null}
-        {!sharedBuild ? (
-          <CharacterFileActions
-            key={active.id}
-            draft={character}
-            draftName={active.name}
-            validateName={(name) => draftNameError(library, name)}
-            onImportNew={createDraft}
-            onRestore={restoreCharacter}
-          />
-        ) : null}
+          {reviewBuild ? <CampaignFit build={reviewBuild} skillPlan={!sharedBuild && skillsAvailable ? skills : undefined} /> : null}
+          {!sharedBuild ? (
+            <CharacterFileActions
+              key={active.id}
+              draft={character}
+              draftName={active.name}
+              validateName={(name) => draftNameError(library, name)}
+              onImportNew={createDraft}
+              onRestore={restoreCharacter}
+            />
+          ) : null}
+        </div>
       </main>
 
       <div className="relative z-10">
         <Navbar />
       </div>
-      {reviewBuild ? <PrintableAttributeLedger build={reviewBuild} /> : null}
+      {reviewBuild && !atTable ? <PrintableAttributeLedger build={reviewBuild} /> : null}
     </div>
   )
 }

@@ -19,6 +19,7 @@ The guide starts with the invitation and character concept, then walks through a
 - **Character file** — Export or restore session-zero answers, the attribute build, planned skills, and optional starting language notes in one JSON file. This works at any stage of the guide.
 - **Named character drafts** — Create and switch between drafts in this browser. Each keeps its own answers, build, and progress. Your existing save opens as **Character 1**. [Draft and import controls](docs/getting-started.md#named-character-drafts)
 - **Campaign fit** — The guide suggests backgrounds and classes with relevant boosts or training. The build review shows the modifiers that support Will, Perception, social skills, and investigation. An advisory appears when a finished build is heavily weighted toward physical attributes.
+- **At the table** — Open a read-only reference for the active draft with common checks, recorded training, and a short list of carried gear and planned spells. [Table View](docs/getting-started.md#table-view)
 - **GM workspace** — Open a player character file at the password-protected `/gm/` route. Edit and copy the tailoring brief, or export a GM package that saves the character and edited notes together. Open that package to resume.
 
 ## What it does not do (yet)

@@ -68,6 +68,12 @@ After attribute boosts, **Choose class, general, and skill feats** shows the slo
 
 For an untracked subclass or conditional grant, expand **Additional choices from other rules**, add a slot, and record its source, level gained, and maximum feat level. Return after skill planning if you need to check training. All choices can remain undecided. Build changes retain previous selections for review, including a **Saved choices outside the current plan** section. Player exports and GM packages include the feat plan. [Feat guide details](feat-choices.md)
 
+### Table View
+
+Choose **At the table** next to the active draft. The view puts Diplomacy, Deception, Intimidation, Society, and Thievery near the top and pairs each skill with a common action. **Base** includes the attribute and recorded proficiency. Incomplete drafts label missing training or unfinished boosts. Will and Perception show the Wisdom contribution.
+
+The lists show up to five carried items and five planned spells. Review the gear and spell plans for the full lists. **Back to draft** returns to the same editor and scroll position.
+
 ### Spell choices
 
 After feats, **Choose spells and cantrips** shows your class’s cantrips and ranked preparations or repertoire. Choose the tradition for a Witch or Sorcerer, the school preparation type for a Wizard, or the deity-allowed font for a Cleric. Expand a group and spell row, search, choose, and read the rules. Repertoire counts are spells known; daily slot counts appear separately in each rank heading.
