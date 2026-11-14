@@ -58,6 +58,7 @@ export function previewCharacterUpdate(current: CharacterDraft, revised: Charact
     ['Spells and cantrips', current.spellChoices, revised.spellChoices],
     ['Equipment', current.equipmentPlan, revised.equipmentPlan],
     ['Languages', current.startingLanguageNotes, revised.startingLanguageNotes],
+    ['Mask prompt approval', current.maskPrompt, revised.maskPrompt],
     ['Guide progress', [current.sessionZero.step, current.buildDraft.step], [revised.sessionZero.step, revised.buildDraft.step]],
   ].filter(([, previous, next]) => orderedJson(previous) !== orderedJson(next)).map(([label]) => String(label))
   if (!concept.length && orderedJson(current.sessionZero.answers) !== orderedJson(revised.sessionZero.answers)) other.push('Concept details')

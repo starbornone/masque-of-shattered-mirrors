@@ -1,6 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { NamedDraft } from '@/character/library'
 import { tableReference } from '@/character/table-reference'
+import type { MaskPromptId } from '@/character/mask-prompt'
+import { MaskPrompt } from '@/components/MaskPrompt'
 import { TableCard } from '@/components/TableCard'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
@@ -10,10 +12,18 @@ function signed(value: number) {
   return value >= 0 ? `+${value}` : String(value)
 }
 
-export function TableView({ draft, onBack }: { draft: NamedDraft; onBack: () => void }) {
+export function TableView({ draft, onApproveMask, onBack }: {
+  draft: NamedDraft
+  onApproveMask: (prompt?: MaskPromptId) => void
+  onBack: () => void
+}) {
   const heading = useRef<HTMLHeadingElement>(null)
   const printButton = useRef<HTMLButtonElement>(null)
+  const promptButton = useRef<HTMLButtonElement>(null)
   const [preview, setPreview] = useState(false)
+  const [promptOpen, setPromptOpen] = useState(false)
+  const { maskPrompt } = draft.character
+  const mask = draft.character.sessionZero.answers.mask.trim()
   const [offline, setOffline] = useState<'idle' | 'preparing' | 'ready' | 'failed'>('idle')
   const offlineSupported = supportsOfflinePlay()
   const reference = tableReference(draft.character)
@@ -43,6 +53,12 @@ export function TableView({ draft, onBack }: { draft: NamedDraft; onBack: () => 
 
   return (
     <section data-table-view aria-labelledby={preview ? 'table-card-preview-heading' : 'table-view-heading'} className="mx-auto w-full max-w-2xl space-y-4">
+      {promptOpen ? (
+        <MaskPrompt mask={mask} approved={maskPrompt} onApprove={onApproveMask} onClose={() => {
+          setPromptOpen(false)
+          requestAnimationFrame(() => promptButton.current?.focus())
+        }} />
+      ) : null}
       {preview ? <TableCard draft={draft} reference={reference} onBack={() => {
         setPreview(false)
         requestAnimationFrame(() => printButton.current?.focus())
@@ -54,6 +70,11 @@ export function TableView({ draft, onBack }: { draft: NamedDraft; onBack: () => 
             <p className="wrap-anywhere text-muted-foreground">{draft.name} · Level {level}</p>
           </div>
           <div className="flex flex-wrap gap-2">
+            {mask ? (
+              <Button ref={promptButton} type="button" variant="outline" onClick={() => setPromptOpen(true)}>
+                {maskPrompt ? 'The mask slips' : 'Choose a mask prompt'}
+              </Button>
+            ) : null}
             <Button ref={printButton} type="button" variant="outline" onClick={() => setPreview(true)}>Print table card</Button>
             <Button type="button" variant="outline" onClick={onBack}>Back to draft</Button>
           </div>

@@ -12,6 +12,8 @@ import { parseSpellChoices } from '../spells/choices.ts'
 import type { SpellChoices } from '../spells/choices.ts'
 import { parseEquipmentPlan } from '../equipment/plan.ts'
 import type { EquipmentPlan } from '../equipment/plan.ts'
+import { isMaskPromptId } from './mask-prompt.ts'
+import type { MaskPromptId } from './mask-prompt.ts'
 
 export const characterStorageKey = 'masque-character'
 
@@ -31,9 +33,10 @@ export type CharacterDraft = {
   featChoices?: FeatChoices
   spellChoices?: SpellChoices
   equipmentPlan?: EquipmentPlan
+  maskPrompt?: MaskPromptId
 }
 
-export function serializeCharacter({ sessionZero, buildDraft, startingLanguageNotes, ancestryChoices, featChoices, spellChoices, equipmentPlan }: CharacterDraft): string {
+export function serializeCharacter({ sessionZero, buildDraft, startingLanguageNotes, ancestryChoices, featChoices, spellChoices, equipmentPlan, maskPrompt }: CharacterDraft): string {
   return JSON.stringify({
     format: characterStorageKey,
     version: 1,
@@ -46,6 +49,7 @@ export function serializeCharacter({ sessionZero, buildDraft, startingLanguageNo
     featChoices,
     spellChoices,
     equipmentPlan,
+    maskPrompt,
   }, null, 2) + '\n'
 }
 
@@ -85,6 +89,10 @@ export function parseCharacter(serialized: string): CharacterDraft | null {
       const plan = parseEquipmentPlan(data.equipmentPlan)
       if (!plan) return null
       draft.equipmentPlan = plan
+    }
+    if (Object.hasOwn(data, 'maskPrompt')) {
+      if (!isMaskPromptId(data.maskPrompt) || !sessionZero.answers.mask.trim()) return null
+      draft.maskPrompt = data.maskPrompt
     }
 
     // Reject files that would silently lose or change values during normalization.

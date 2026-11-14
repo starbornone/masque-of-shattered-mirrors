@@ -133,7 +133,8 @@ function App() {
   }
 
   function saveDraft(next: SessionZeroDraft) {
-    saveCharacter({ ...character, sessionZero: next })
+    const maskPrompt = next.answers.mask === draft.answers.mask ? character.maskPrompt : undefined
+    saveCharacter({ ...character, sessionZero: next, maskPrompt })
   }
 
   function saveBuild(next: BuildDraft) {
@@ -251,7 +252,7 @@ function App() {
             This build link couldn’t be opened.
           </p>
         ) : null}
-        {atTable ? <TableView draft={active} onBack={() => {
+        {atTable ? <TableView draft={active} onApproveMask={(maskPrompt) => saveCharacter({ ...character, maskPrompt })} onBack={() => {
           const url = new URL(window.location.href)
           url.hash = ''
           window.history.replaceState(window.history.state, '', url)

@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import type { NamedDraft } from '@/character/library'
 import type { tableReference } from '@/character/table-reference'
+import { maskPromptQuestions } from '@/character/mask-prompt'
 import { Button } from '@/components/ui/button'
 
 type Reference = ReturnType<typeof tableReference>
@@ -17,8 +18,11 @@ export function TableCard({ draft, reference, onBack }: {
   onBack: () => void
 }) {
   const [included, setIncluded] = useState<Partial<Record<Hook, boolean>>>({})
+  const [printPrompt, setPrintPrompt] = useState(false)
   const heading = useRef<HTMLHeadingElement>(null)
   const { mask, art, invitationReason, stake } = draft.character.sessionZero.answers
+  const approved = draft.character.maskPrompt
+  const question = approved && mask.trim() ? maskPromptQuestions[approved] : undefined
   const hooks: { id: Hook; label: string; value: string }[] = [
     { id: 'mask', label: 'Mask’s lie', value: mask },
     { id: 'art', label: 'Art or craft', value: art },
@@ -52,6 +56,15 @@ export function TableCard({ draft, reference, onBack }: {
               ))}
             </div>
           </fieldset>
+        ) : null}
+        {question ? (
+          <div>
+            <label className="flex min-h-11 items-center gap-2 font-medium">
+              <input type="checkbox" checked={printPrompt} onChange={(event) => setPrintPrompt(event.currentTarget.checked)} />
+              Print “The mask slips” on the back
+            </label>
+            {printPrompt ? <p className="text-sm text-muted-foreground">Use two-sided printing and flip on the long edge. In the PDF, the prompt is page 2.</p> : null}
+          </div>
         ) : null}
         <div className="flex flex-wrap gap-2">
           <Button type="button" onClick={() => window.print()}>Print / Save as PDF</Button>
@@ -111,6 +124,17 @@ export function TableCard({ draft, reference, onBack }: {
           </section>
         ) : null}
       </article>
+      {printPrompt && question ? (
+        <article className="table-card mask-prompt-back" aria-label="Mask prompt reverse">
+          <header className="table-card-header">
+            <p>The Masque of Shattered Mirrors</p>
+            <h1>The mask slips</h1>
+            <p>{draft.name}</p>
+          </header>
+          <blockquote>{excerpt(mask, 900)}</blockquote>
+          <p className="mask-prompt-question">{question}</p>
+        </article>
+      ) : null}
     </section>
   )
 }

@@ -464,6 +464,18 @@
   color: #444;
 }
 
+.mask-prompt-back blockquote {
+  margin-block: 1.25rem;
+  border-inline-start: 2px solid #777;
+  padding-inline-start: 0.85rem;
+  font: 16pt/1.25 var(--font-heading);
+}
+
+.mask-prompt-question {
+  font-size: 14pt;
+  font-weight: 650;
+}
+
 @media print {
   @page table-card {
     margin: 12mm;
@@ -496,6 +508,10 @@
   .table-card {
     border: 0;
     padding: 0;
+  }
+
+  .mask-prompt-back {
+    break-before: page;
   }
 
   .table-card-columns {

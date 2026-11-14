@@ -38,6 +38,18 @@ test('character downloads use a portable filename based on the draft name', () =
   assert.equal(characterFilename('...'), 'masque-character.json')
 })
 
+test('character files preserve approved mask prompts and reject invalid approvals', () => {
+  const approved: CharacterDraft = {
+    ...character,
+    sessionZero: { ...character.sessionZero, answers: { ...character.sessionZero.answers, mask: 'I fear nothing.' } },
+    maskPrompt: 'see-through',
+  }
+  const file = serializeCharacter(approved)
+  assert.deepEqual(parseCharacter(file), approved)
+  assert.equal(parseCharacter(file.replace('see-through', 'unknown')), null)
+  assert.equal(parseCharacter(file.replace('I fear nothing.', ' ')), null)
+})
+
 test('character export restores skipped answers, unfinished attributes, planned skills, and guide progress', () => {
   assert.equal(canAssignSkills(character.buildDraft.build), false)
   const file = JSON.parse(serializeCharacter(character))
