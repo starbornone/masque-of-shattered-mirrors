@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-14T11:16:24+11:00",
+  "updatedAt": "2026-11-14T11:21:04+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -9,12 +9,6 @@
     "summary": "PF2e Remaster session-zero and character creator for The Masque of Shattered Mirrors—one player, one GM, spoiler-safe handoff."
   },
   "items": [
-    {
-      "id": "update-gm-character-without-losing-notes",
-      "title": "Update the player character while preserving GM notes",
-      "group": "Phase 2: Next",
-      "notes": "Impact High, effort Med. Import a revised player JSON into the open GM package. Preview concept, build, and training changes, retain the exact edited notes, and let the GM copy individual refreshed suggestions into prep."
-    },
     {
       "id": "offline-player-table-view",
       "title": "Make Table View reopen offline",

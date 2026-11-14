@@ -52,7 +52,7 @@ function quoteAnswer(answer: string) {
     .join('\n')
 }
 
-export function tailoringBrief(draft: CharacterDraft): string {
+export function tailoringSections(draft: CharacterDraft) {
   const { answers } = draft.sessionZero
   const { build, skills } = draft.buildDraft
   const stake = answers.stake
@@ -68,7 +68,7 @@ export function tailoringBrief(draft: CharacterDraft): string {
       ))
     : ['Keep visible clues and NPC testimony available. Add skill-specific opportunities once the player’s attributes and planned training are ready.']
 
-  const sections = [
+  return [
     {
       title: 'Build snapshot',
       notes: [
@@ -148,13 +148,16 @@ export function tailoringBrief(draft: CharacterDraft): string {
     },
   ]
 
+}
+
+export function tailoringBrief(draft: CharacterDraft): string {
   return [
     '# GM tailoring brief',
     '',
     'The Masque of Shattered Mirrors',
     '',
     'GM-only preparation suggestions based on the imported character. Resolve open choices before play.',
-    ...sections.flatMap(({ title, answer, notes }) => [
+    ...tailoringSections(draft).flatMap(({ title, answer, notes }) => [
       '',
       `## ${title}`,
       '',

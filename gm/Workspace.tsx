@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import type { ChangeEvent } from 'react'
 import { parseCharacter } from '@/character/draft'
 import type { CharacterDraft } from '@/character/draft'
@@ -9,6 +9,8 @@ import { Card, CardContent } from '@/components/ui/card'
 import { downloadFile } from '@/lib/download'
 import { canAssignSkills, evaluateSkillPlan } from '@/skills/plan'
 import { TailoringBrief } from './TailoringBrief'
+import { CharacterUpdate, UpdatedSuggestions } from './CharacterUpdate'
+import { previewCharacterUpdate } from './character-update.ts'
 import { AncestryChoicesSummary } from '@/components/AncestryChoicesSummary'
 import { FeatChoicesSummary } from '@/components/FeatChoicesSummary'
 import { SpellChoicesSummary } from '@/components/SpellChoicesSummary'
@@ -24,6 +26,8 @@ type BriefChange =
 type Session = {
   workspace: GmPackage
   cleanNotes: string
+  characterUpdated?: boolean
+  suggestions?: ReturnType<typeof previewCharacterUpdate>['suggestions']
   importCount: number
   pending: BriefChange | null
   message: string
@@ -97,10 +101,13 @@ function CharacterSummary({ draft }: { draft: CharacterDraft }) {
 
 export function Workspace() {
   const [session, setSession] = useState<Session | null>(null)
+  const [update, setUpdate] = useState<{ filename: string; character: CharacterDraft } | null>(null)
   const [reading, setReading] = useState(false)
   const [error, setError] = useState('')
   const [exportError, setExportError] = useState('')
   const fileSummary = useRef<HTMLElement>(null)
+  const updateButton = useRef<HTMLButtonElement>(null)
+  const updateFile = useRef<HTMLInputElement>(null)
   const regenerateButton = useRef<HTMLButtonElement>(null)
   const confirmation = useRef<HTMLDialogElement>(null)
   const cancelButton = useRef<HTMLButtonElement>(null)
@@ -108,6 +115,12 @@ export function Workspace() {
   const pending = session?.pending
   const confirming = Boolean(pending)
   const dirty = Boolean(session && session.workspace.sessionNotes !== session.cleanNotes)
+  const packageDirty = dirty || Boolean(session?.characterUpdated)
+  const currentCharacter = session?.workspace.character
+  const updatePreview = useMemo(
+    () => currentCharacter && update ? previewCharacterUpdate(currentCharacter, update.character) : null,
+    [currentCharacter, update],
+  )
 
   useLayoutEffect(() => {
     const dialog = confirmation.current
@@ -123,20 +136,20 @@ export function Workspace() {
   }, [confirming])
 
   useEffect(() => {
-    if (!dirty) return
+    if (!packageDirty) return
     function warnBeforeLeaving(event: BeforeUnloadEvent) {
       event.preventDefault()
       event.returnValue = true
     }
     window.addEventListener('beforeunload', warnBeforeLeaving)
     return () => window.removeEventListener('beforeunload', warnBeforeLeaving)
-  }, [dirty])
+  }, [packageDirty])
 
   function requestChange(change: BriefChange) {
     setExportError('')
     dialogReturn.current = change.kind
     setSession((current) => {
-      if (current && current.workspace.sessionNotes !== current.cleanNotes) {
+      if (current && (current.workspace.sessionNotes !== current.cleanNotes || (change.kind === 'replace' && current.characterUpdated))) {
         return { ...current, pending: change }
       }
       return applyChange(current, change)
@@ -163,7 +176,7 @@ export function Workspace() {
       return
     }
 
-    const exported = { ...session, cleanNotes: session.workspace.sessionNotes }
+    const exported = { ...session, cleanNotes: session.workspace.sessionNotes, characterUpdated: false }
     const next = change ? applyChange(exported, change) : exported
     if (next) setSession({
       ...next,
@@ -171,7 +184,24 @@ export function Workspace() {
     })
   }
 
-  async function openCharacter(event: ChangeEvent<HTMLInputElement>) {
+  function closeUpdate() {
+    setUpdate(null)
+    updateButton.current?.focus()
+  }
+
+  function applyUpdate() {
+    if (!update || !updatePreview) return
+    setSession((current) => current && {
+      ...current,
+      workspace: { ...current.workspace, character: update.character },
+      characterUpdated: true,
+      suggestions: updatePreview.suggestions,
+      message: 'Character updated. Export the GM package to save this revision.',
+    })
+    closeUpdate()
+  }
+
+  async function openCharacter(event: ChangeEvent<HTMLInputElement>, updating = false) {
     const file = event.currentTarget.files?.[0]
     event.currentTarget.value = ''
     if (!file) return
@@ -180,6 +210,12 @@ export function Workspace() {
     setError('')
     try {
       const text = await file.text()
+      if (updating) {
+        const character = parseCharacter(text)
+        if (character) setUpdate({ filename: file.name, character })
+        else setError('Choose a revised player character JSON from Download for GM or Download backup.')
+        return
+      }
       const gmPackage = parseGmPackage(text)
       const character = gmPackage ? null : parseCharacter(text)
       const nextWorkspace = gmPackage ?? (character ? { character, sessionNotes: tailoringBrief(character) } : null)
@@ -211,6 +247,13 @@ export function Workspace() {
       <main className="relative z-10 mx-auto flex w-full max-w-[45rem] flex-1 flex-col gap-7 px-4 py-7 sm:px-6 sm:py-10">
         <Card>
           <CardContent className="space-y-3">
+            {session ? (
+              <div className="space-y-2">
+                <Button ref={updateButton} type="button" disabled={reading} onClick={() => updateFile.current?.click()}>Update player character</Button>
+                <input ref={updateFile} type="file" accept=".json,application/json" hidden onChange={(event) => void openCharacter(event, true)} />
+                <p className="text-sm text-muted-foreground">Preview a revised player file and keep the current session notes.</p>
+              </div>
+            ) : null}
             <details key={session?.importCount ?? 0} open={!session} className="space-y-3">
               <summary ref={fileSummary} className="font-medium">
                 {session ? 'Replace character or GM package' : 'Open a character or GM package'}
@@ -224,33 +267,38 @@ export function Workspace() {
                   <input
                     type="file"
                     accept=".json,application/json"
-                    disabled={reading}
+                    disabled={reading || Boolean(update)}
                     className="block min-h-11 w-full cursor-pointer rounded-md border border-input bg-background px-2 file:mr-3 file:min-h-11 file:cursor-pointer file:border-0 file:bg-transparent file:font-medium file:text-primary"
                     onChange={openCharacter}
                   />
                 </label>
-                {error ? <p role="alert" className="text-sm text-destructive">{error}</p> : null}
               </div>
             </details>
+            {error ? <p role="alert" className="text-sm text-destructive">{error}</p> : null}
           </CardContent>
         </Card>
+        {update && updatePreview ? (
+          <CharacterUpdate filename={update.filename} preview={updatePreview} onApply={applyUpdate} onCancel={closeUpdate} />
+        ) : null}
         {session ? (
           <>
             <TailoringBrief
               key={session.importCount}
               notes={session.workspace.sessionNotes}
               dirty={dirty}
+              characterUpdated={Boolean(session.characterUpdated)}
               message={session.message}
               regenerateButton={regenerateButton}
-              reading={reading}
-              onNotesChange={(sessionNotes) => setSession({
-                ...session,
-                workspace: { ...session.workspace, sessionNotes },
+              reading={reading || Boolean(update)}
+              onNotesChange={(sessionNotes) => setSession((current) => current && ({
+                ...current,
+                workspace: { ...current.workspace, sessionNotes },
                 message: '',
-              })}
+              }))}
               onExport={() => exportPackage()}
               onRegenerate={() => requestChange({ kind: 'regenerate' })}
             />
+            {session.suggestions ? <UpdatedSuggestions key={session.importCount + ':' + JSON.stringify(session.suggestions)} suggestions={session.suggestions} /> : null}
             <CharacterSummary draft={session.workspace.character} />
           </>
         ) : null}
@@ -266,9 +314,9 @@ export function Workspace() {
           cancelChange()
         }}
       >
-        <h2 id="unsaved-notes-title" className="text-2xl">Unsaved GM notes</h2>
+        <h2 id="unsaved-notes-title" className="text-2xl">{pending?.kind === 'replace' && session?.characterUpdated ? 'Unsaved GM package' : 'Unsaved GM notes'}</h2>
         <p id="unsaved-notes-description" className="text-sm text-muted-foreground">
-          {pending?.kind === 'replace' ? 'Opening this file will replace your notes.' : 'Regenerating the brief will replace your notes.'}
+          {pending?.kind === 'replace' ? 'Opening this file will replace the current character and notes.' : 'Regenerating the brief will replace your notes.'}
           {' Export a GM package to keep a copy before continuing.'}
         </p>
         {exportError ? <p role="alert" className="text-sm text-destructive">{exportError}</p> : null}

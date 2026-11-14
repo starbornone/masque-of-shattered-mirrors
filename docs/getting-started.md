@@ -106,6 +106,8 @@ To save and resume GM preparation:
 2. Edit **Session notes (GM only)** and choose **Export GM package**. The downloaded `masque-gm-package.json` contains the character and those notes.
 3. Open that GM package in the same file input to restore both. The notes are restored exactly, without regenerating the brief.
 
+Once a character or package is open, choose **Update player character** and select a revised player JSON. Compare the current and revised concept, build, and training, then apply or cancel. Applying keeps your session notes exactly as written. You can copy individual **Updated prep suggestions** into your notes as needed. Export the GM package to save the revision together with your notes.
+
 When **Unsaved edits** is visible, opening a valid replacement file or choosing **Regenerate from character** asks what to do with your current notes. **Export package** starts a download of the current character and notes, then continues. **Discard edits** continues without exporting. **Cancel** keeps the current character and notes. Invalid imports keep your work in place.
 
 Edits stay in tab memory. The browser can warn on refresh, navigation, or tab close while edits are unsaved. Some browsers and mobile exit flows skip this warning, so export the package before leaving. GM packages contain spoilers and cannot be imported by the public player guide.

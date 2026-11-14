@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 type TailoringBriefProps = {
   notes: string
   dirty: boolean
+  characterUpdated: boolean
   message: string
   regenerateButton: RefObject<HTMLButtonElement | null>
   reading: boolean
@@ -15,7 +16,7 @@ type TailoringBriefProps = {
 }
 
 export function TailoringBrief({
-  notes, dirty, message, regenerateButton, reading, onNotesChange, onExport, onRegenerate,
+  notes, dirty, characterUpdated, message, regenerateButton, reading, onNotesChange, onExport, onRegenerate,
 }: TailoringBriefProps) {
   const editor = useRef<HTMLTextAreaElement>(null)
   const [copyMessage, setCopyMessage] = useState('')
@@ -46,6 +47,7 @@ export function TailoringBrief({
           GM packages contain campaign spoilers.
         </p>
         <p role="status" className="font-medium text-primary">{dirty ? 'Unsaved edits' : ''}</p>
+        {characterUpdated ? <p className="font-medium text-primary">Unsaved character update</p> : null}
         <p role="status" className="text-sm text-muted-foreground">{copyMessage || message}</p>
       </CardHeader>
       <CardContent className="space-y-4">

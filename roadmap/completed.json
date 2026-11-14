@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-14T11:16:24+11:00",
+  "updatedAt": "2026-11-14T11:21:04+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -384,6 +384,13 @@
       "group": "Phase 2: Next",
       "notes": "Preview the Table View checks, training, gear, and spells in an ink-friendly card. The mask, art, invitation reason, and personal stake are individually optional and omitted by default. Verified one-page A4 and Letter browser PDFs with long hooks selected, the default card with hooks off, and the separate attribute ledger.",
       "completedAt": "2026-11-14T11:16:24+11:00"
+    },
+    {
+      "id": "update-gm-character-without-losing-notes",
+      "title": "Update the player character while preserving GM notes",
+      "group": "Phase 2: Next",
+      "notes": "Preview concept, build, and training changes from revised player JSON. Apply the character while retaining exact notes and copy refreshed prep suggestions individually. Verified cancel, invalid input, apply, copy, export, and package reopen in Chromium.",
+      "completedAt": "2026-11-14T11:21:04+11:00"
     }
   ]
 }
