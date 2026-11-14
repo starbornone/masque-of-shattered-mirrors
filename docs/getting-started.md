@@ -78,6 +78,8 @@ While connected, choose **Prepare for offline play** in Table View and wait for 
 
 Choose **Print table card** to preview the one-page version. Personal hooks start off. Select any mask text, art, invitation reason, or personal stake you want on the card. The preview shows exactly which hooks are included and uses excerpts for long entries. Choose **Print / Save as PDF**, select A4 or Letter in portrait orientation, and turn off browser headers and footers.
 
+If your draft has a mask lie, choose **Choose a mask prompt** in Table View and approve one of the questions. After approval, **The mask slips** opens the lie and question in one tap during play. You can change or remove approval from the card. Editing the mask lie clears approval. In the print preview, select **Print “The mask slips” on the back** to include your approved question and mask text on page 2. For a physical card, print two-sided and flip on the long edge.
+
 ### Spell choices
 
 After feats, **Choose spells and cantrips** shows your class’s cantrips and ranked preparations or repertoire. Choose the tradition for a Witch or Sorcerer, the school preparation type for a Wizard, or the deity-allowed font for a Cleric. Expand a group and spell row, search, choose, and read the rules. Repertoire counts are spells known; daily slot counts appear separately in each rank heading.

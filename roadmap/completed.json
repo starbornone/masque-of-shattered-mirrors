@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-14T11:37:51+11:00",
+  "updatedAt": "2026-11-14T11:43:28+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -398,6 +398,13 @@
       "group": "Phase 2: Next",
       "notes": "Prepare Table View using a versioned public asset cache and reopen it at #table. Verified preparation and retry, offline refresh to the saved draft and its key checks, and print preview with Chromium airplane-mode emulation and HTTP caching disabled. Verified protected GM HTML and assets were excluded from the cache.",
       "completedAt": "2026-11-14T11:37:51+11:00"
+    },
+    {
+      "id": "mask-slips-prompt-card",
+      "title": "Prototype The mask slips prompt card",
+      "group": "Phase 3: Later",
+      "notes": "Save the player's approved question with the draft, reopen the mask lie and question in one tap, and optionally print them on the reverse of the table card. Verified approval, refresh, and reapproval after mask edits in Chromium. Inspected A4 and Letter reverse pages. In-session playtesting is pending.",
+      "completedAt": "2026-11-14T11:43:28+11:00"
     }
   ]
 }

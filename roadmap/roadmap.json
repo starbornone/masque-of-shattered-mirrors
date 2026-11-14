@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "roadmap",
-  "updatedAt": "2026-11-14T11:37:51+11:00",
+  "updatedAt": "2026-11-14T11:43:28+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -10,22 +10,16 @@
   },
   "items": [
     {
-      "id": "verify-live-foundry-import",
-      "title": "Verify the Foundry export in a live import",
-      "group": "Phase 2: Next",
-      "notes": "Impact Med, effort Low. Import into a blank actor on the documented Foundry and PF2e target. Check level, attributes, skills, Lore, gear quantities, and carried status. Show the remaining foundation, feat, and spell setup before download."
-    },
-    {
-      "id": "mask-slips-prompt-card",
-      "title": "Prototype The mask slips prompt card",
-      "group": "Phase 3: Later",
-      "notes": "Impact Med, effort Med. Try a paper card pairing the player's mask lie with a short player-safe question and observe whether they reach for it during a scene. Let the player approve a prompt once and open it in one tap or print it on the back of the table card, with no entry during play."
-    },
-    {
       "id": "pathbuilder-character-export",
       "title": "Export player characters for Pathbuilder",
       "group": "Phase 3: Later",
       "notes": "Impact Med, effort Med. Deferred pending a supported third-party character import format. Checked Pathbuilder Web 112.0 and developer documentation on 2026-11-11. Backup/Restore transfers native saves, Custom Pack imports rules content, and Export JSON sends character data out. Revisit when Pathbuilder documents a way to import external player builds."
+    },
+    {
+      "id": "verify-live-foundry-import",
+      "title": "Verify the Foundry export in a live import",
+      "group": "Deferred",
+      "notes": "Deferred at the maintainer’s request. Impact Med, effort Low. Import into a blank actor on the documented Foundry and PF2e target. Check level, attributes, skills, Lore, gear quantities, and carried status. Show the remaining foundation, feat, and spell setup before download."
     }
   ]
 }

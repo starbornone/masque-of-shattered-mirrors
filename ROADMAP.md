@@ -21,12 +21,15 @@ Machine-readable status for agents: [`roadmap/roadmap.json`](roadmap/roadmap.jso
 - [x] Generate a one-page print or PDF table card from Table View.
 - [x] Let the GM review revised character files and keep their edited notes.
 - [x] Make Table View reopen after a refresh in airplane mode.
-- [ ] Verify a live Foundry actor import and surface the remaining setup before download.
 
 ### Phase 3 — Later
 
-- [ ] Prototype a player-approved prompt card based on the mask's lie.
+- [x] Prototype a player-approved prompt card based on the mask's lie.
 - [ ] Revisit Pathbuilder export when it supports importing third-party character builds. [Transfer findings](docs/pathbuilder-transfer.md)
+
+### Deferred
+
+- [ ] Verify a live Foundry actor import and surface the remaining setup before download.
 
 ## Original delivery phases
 
