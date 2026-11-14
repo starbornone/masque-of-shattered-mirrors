@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-14T11:11:24+11:00",
+  "updatedAt": "2026-11-14T11:16:24+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -377,6 +377,13 @@
       "group": "Phase 2: Next",
       "notes": "At the table shows common actions, recorded ranks and base skill modifiers, Wisdom contributions to Will and Perception, carried gear, and planned spells. It labels unfinished values and returns to the same draft position. In Chromium phone emulation with simulated dimming and 4x CPU throttling, Diplomacy and trained Thievery were visible after one tap in 134 ms.",
       "completedAt": "2026-11-14T11:11:24+11:00"
+    },
+    {
+      "id": "printable-table-card",
+      "title": "Print a one-page player table card",
+      "group": "Phase 2: Next",
+      "notes": "Preview the Table View checks, training, gear, and spells in an ink-friendly card. The mask, art, invitation reason, and personal stake are individually optional and omitted by default. Verified one-page A4 and Letter browser PDFs with long hooks selected, the default card with hooks off, and the separate attribute ledger.",
+      "completedAt": "2026-11-14T11:16:24+11:00"
     }
   ]
 }

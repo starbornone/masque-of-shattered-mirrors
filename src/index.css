@@ -395,7 +395,113 @@
   }
 }
 
+.table-card {
+  color-scheme: light;
+  color: #181818;
+  background: white;
+  border: 1px solid #aaa;
+  padding: clamp(0.625rem, 3vw, 1.5rem);
+  font: 10pt/1.25 var(--font-sans);
+  overflow-wrap: anywhere;
+}
+
+.table-card-header {
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #333;
+}
+
+.table-card h1 {
+  font-size: 22pt;
+  line-height: 1.05;
+  margin-block: 0.2rem;
+}
+
+.table-card h2 {
+  font-size: 14pt;
+  margin-block: 0.65rem 0.2rem;
+}
+
+.table-card table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table-card th,
+.table-card td {
+  border-bottom: 1px solid #bbb;
+  padding: 0.2rem 0.3rem;
+  vertical-align: top;
+}
+
+.table-card th:last-child,
+.table-card td:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.table-card-columns {
+  display: grid;
+  gap: 0.4rem 1rem;
+}
+
+@media (width >= 40rem) {
+  .table-card-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.table-card li + li {
+  margin-top: 0.15rem;
+}
+
+.table-card dt {
+  font-weight: 650;
+}
+
+.table-card-note {
+  margin-top: 0.3rem;
+  color: #444;
+}
+
 @media print {
+  @page table-card {
+    margin: 12mm;
+  }
+
+  body:has(.table-card) {
+    background: white;
+    page: table-card;
+  }
+
+  #root:has(.table-card) > div,
+  body:has(.table-card) main {
+    display: block;
+    min-height: 0;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  body:has(.table-card) #root > div > :not(main),
+  body:has(.table-card) main > :not([data-table-view]) {
+    display: none;
+  }
+
+  body:has(.table-card) [data-table-view] {
+    max-width: none;
+  }
+
+  .table-card {
+    border: 0;
+    padding: 0;
+  }
+
+  .table-card-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   body:has(.print-attribute-ledger) {
     background: white;
   }

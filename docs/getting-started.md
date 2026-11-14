@@ -74,6 +74,8 @@ Choose **At the table** next to the active draft. The view puts Diplomacy, Decep
 
 The lists show up to five carried items and five planned spells. Review the gear and spell plans for the full lists. **Back to draft** returns to the same editor and scroll position.
 
+Choose **Print table card** to preview the one-page version. Personal hooks start off. Select any mask text, art, invitation reason, or personal stake you want on the card. The preview shows exactly which hooks are included and uses excerpts for long entries. Choose **Print / Save as PDF**, select A4 or Letter in portrait orientation, and turn off browser headers and footers.
+
 ### Spell choices
 
 After feats, **Choose spells and cantrips** shows your class’s cantrips and ranked preparations or repertoire. Choose the tradition for a Witch or Sorcerer, the school preparation type for a Wizard, or the deity-allowed font for a Cleric. Expand a group and spell row, search, choose, and read the rules. Repertoire counts are spells known; daily slot counts appear separately in each rank heading.
