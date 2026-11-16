@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-16T23:19:43+11:00",
+  "updatedAt": "2026-11-16T23:25:58+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -433,6 +433,13 @@
       "group": "Branding",
       "notes": "Keep the mask and fractured mirror visible in a crop that fades toward the title. Inspected phone screenshots and measured title and campaign name contrast at 320, 360, and 390 px in Chromium. Confirmed that the built offline worker includes the cover asset.",
       "completedAt": "2026-11-16T23:19:43+11:00"
+    },
+    {
+      "id": "refine-player-header-and-remove-mirror-backdrop",
+      "title": "Refine the player header and remove the SVG backdrop",
+      "group": "Branding",
+      "notes": "Run the cover crop to the right edge of the header, deepen its fade near the campaign name, and remove the old large SVG behind the player content. Verified phone contrast at 320, 360, and 390 px and the right edge at 1440 and 1920 px in Chromium.",
+      "completedAt": "2026-11-16T23:25:58+11:00"
     }
   ]
 }

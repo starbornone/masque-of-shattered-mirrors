@@ -218,24 +218,6 @@
   }
 }
 
-.verathe-backdrop {
-  inset-block-start: 3rem;
-  inset-inline-end: clamp(-12rem, 20vw - 20rem, -1rem);
-  width: clamp(29rem, 52vw, 48rem);
-  max-width: none;
-  height: auto;
-  opacity: 0.88;
-}
-
-@media (width < 48rem) {
-  .verathe-backdrop {
-    inset-block-start: 5rem;
-    inset-inline-end: -12rem;
-    width: clamp(22rem, 78vw, 29rem);
-    opacity: 0.38;
-  }
-}
-
 .veil-in {
   animation: veil-in 0.7s ease-out both;
 }
@@ -263,7 +245,7 @@
 .masque-masthead-art {
   width: clamp(9rem, 45vw, 26rem);
   object-position: 48% 47%;
-  mask-image: linear-gradient(to right, transparent, rgb(0 0 0 / 0.15) 30%, black 85%);
+  mask-image: linear-gradient(to right, transparent, rgb(0 0 0 / 0.1) 32%, rgb(0 0 0 / 0.38) 60%, black 90%);
 }
 
 .masque-masthead-kicker {

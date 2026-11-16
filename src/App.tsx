@@ -1,6 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import masqueCover from '@/assets/masque-cover.webp'
-import veratheMirror from '@/assets/verathe-mirror.svg'
 import { parseBuild } from '@/attributes/build'
 import type { BuildDraft, BuildStep } from '@/attributes/draft'
 import { characterFilename, serializeCharacter } from '@/character/draft'
@@ -200,24 +199,14 @@ function App() {
       className="relative flex min-h-svh flex-col overflow-x-clip text-foreground"
       data-print-ledger={reviewBuild && !atTable ? '' : undefined}
     >
-      <img
-        src={veratheMirror}
-        alt=""
-        width={600}
-        height={620}
-        className="verathe-backdrop pointer-events-none absolute print:hidden"
-      />
-
       <header className="masque-masthead relative z-10">
-        <div className="pointer-events-none absolute inset-0 mx-auto max-w-5xl">
-          <img
-            src={masqueCover}
-            alt=""
-            width={1200}
-            height={800}
-            className="masque-masthead-art absolute inset-y-0 right-0 h-full object-cover"
-          />
-        </div>
+        <img
+          src={masqueCover}
+          alt=""
+          width={1200}
+          height={800}
+          className="masque-masthead-art pointer-events-none absolute inset-y-0 right-0 h-full object-cover"
+        />
         <div className="mx-auto max-w-[45rem] px-4 py-6 sm:px-6 sm:py-7">
           <div className="veil-in flex items-center gap-3.5 sm:gap-4">
             <img
