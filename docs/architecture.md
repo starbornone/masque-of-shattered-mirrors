@@ -53,6 +53,8 @@ The header and browser tab share the same [SVG emblem](../public/favicon.svg). A
 
 The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror with a spiral of silver sparkles. The artwork sits beside the guide on wide screens and fades into the right margin on narrow screens. The concept, build, and skill screens share a heading style and dark panels. Session Zero opens with a shallow crop of the [sealed invitation art](../public/art/masque-invitation.webp) above the paper letter, with the wax seal in view on phones. The letter uses a paper surface with a silver ribbon and a mirror stamped into the wax seal.
 
+The Campaign Fit checklist opens with a shallow [ballroom banner](../public/art/masque-ballroom.webp) in both build review and the shared attribute preview. The crop keeps the masked guest and candlelit hall visible on phones.
+
 ## Data and control flow
 
 Table View uses the `#table` URL and reads the active draft from the same browser storage as the editor. Offline preparation installs a service worker from the public build. The build lists its public assets in a versioned cache, and the worker serves a cached player shell after a network failure. Only the player entry page and listed public assets are eligible for offline responses. The GM build and authenticated routes use the network.

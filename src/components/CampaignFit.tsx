@@ -29,6 +29,14 @@ export function CampaignFit({ build, skillPlan }: { build: Build; skillPlan?: Sk
   return (
     <section aria-labelledby="campaign-fit-heading" className="mx-auto w-full max-w-2xl">
       <Card>
+        <img
+          src={`${import.meta.env.BASE_URL}art/masque-ballroom.webp`}
+          alt=""
+          width={1700}
+          height={850}
+          loading="lazy"
+          className="h-28 w-full object-cover object-[center_22%] sm:h-36"
+        />
         <CardHeader>
           <h2 id="campaign-fit-heading" className="text-2xl">Campaign fit checklist</h2>
           <p className="text-muted-foreground">

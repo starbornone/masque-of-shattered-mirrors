@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-16T23:10:06+11:00",
+  "updatedAt": "2026-11-16T23:13:48+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -419,6 +419,13 @@
       "group": "Session Zero",
       "notes": "Use a shallow crop centered on the wax seal. Verified image placement, seal visibility, and invitation acceptance at 360 and 390 px phone widths in Chromium.",
       "completedAt": "2026-11-16T23:10:06+11:00"
+    },
+    {
+      "id": "illustrate-campaign-fit-with-ballroom-banner",
+      "title": "Show the ballroom banner on Campaign Fit",
+      "group": "Campaign Fit",
+      "notes": "Use a shallow crop above the checklist in build review and shared attribute preview. Verified the banner and all eight checks at 360 and 390 px phone widths in Chromium.",
+      "completedAt": "2026-11-16T23:13:48+11:00"
     }
   ]
 }
