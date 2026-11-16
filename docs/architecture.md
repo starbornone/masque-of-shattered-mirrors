@@ -51,7 +51,7 @@ The public app opens the player’s character guide, saved build step, or a shar
 
 The header and browser tab share the same [SVG emblem](../public/favicon.svg). A fractured oval mirror frames the silver masquerade mask.
 
-The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror with a spiral of silver sparkles. The artwork sits beside the guide on wide screens and fades into the right margin on narrow screens. The concept, build, and skill screens share a heading style and dark panels. The invitation uses a paper surface with a silver ribbon and a mirror stamped into the wax seal.
+The [shell backdrop](../src/assets/verathe-mirror.svg) shows a fractured mirror with a spiral of silver sparkles. The artwork sits beside the guide on wide screens and fades into the right margin on narrow screens. The concept, build, and skill screens share a heading style and dark panels. Session Zero opens with a shallow crop of the [sealed invitation art](../public/art/masque-invitation.webp) above the paper letter, with the wax seal in view on phones. The letter uses a paper surface with a silver ribbon and a mirror stamped into the wax seal.
 
 ## Data and control flow
 

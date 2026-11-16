@@ -121,7 +121,18 @@ export function SessionZeroGuide({ answers, initialStep, onChange, onProgress, o
         progress={{ label: 'Character concept progress', step: stepIndex + 1, total: steps.length }}
       />
 
-      {step.id === 'invitation' ? <InvitationLetter /> : null}
+      {step.id === 'invitation' ? (
+        <>
+          <img
+            src={`${import.meta.env.BASE_URL}art/masque-invitation.webp`}
+            alt=""
+            width={1200}
+            height={800}
+            className="veil-in-delay mx-auto h-28 w-full max-w-2xl rounded-sm object-cover object-[50%_47%] sm:h-36"
+          />
+          <InvitationLetter />
+        </>
+      ) : null}
 
       <form onSubmit={advance} className="space-y-4">
         {'example' in step ? (

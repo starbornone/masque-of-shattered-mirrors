@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-16T14:04:44+11:00",
+  "updatedAt": "2026-11-16T23:10:06+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -412,6 +412,13 @@
       "group": "Branding",
       "notes": "Link the player footer to astralarchives.games and document the verified Vercel host masque.astralarchives.games.",
       "completedAt": "2026-11-16T14:04:44+11:00"
+    },
+    {
+      "id": "illustrate-session-zero-invitation",
+      "title": "Show the sealed invitation above the Session Zero letter",
+      "group": "Session Zero",
+      "notes": "Use a shallow crop centered on the wax seal. Verified image placement, seal visibility, and invitation acceptance at 360 and 390 px phone widths in Chromium.",
+      "completedAt": "2026-11-16T23:10:06+11:00"
     }
   ]
 }
