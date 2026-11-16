@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react'
+import masqueCover from '@/assets/masque-cover.webp'
 import veratheMirror from '@/assets/verathe-mirror.svg'
 import { parseBuild } from '@/attributes/build'
 import type { BuildDraft, BuildStep } from '@/attributes/draft'
@@ -208,6 +209,15 @@ function App() {
       />
 
       <header className="masque-masthead relative z-10">
+        <div className="pointer-events-none absolute inset-0 mx-auto max-w-5xl">
+          <img
+            src={masqueCover}
+            alt=""
+            width={1200}
+            height={800}
+            className="masque-masthead-art absolute inset-y-0 right-0 h-full object-cover"
+          />
+        </div>
         <div className="mx-auto max-w-[45rem] px-4 py-6 sm:px-6 sm:py-7">
           <div className="veil-in flex items-center gap-3.5 sm:gap-4">
             <img
@@ -215,13 +225,13 @@ function App() {
               alt=""
               width={56}
               height={56}
-              className="size-11 shrink-0 sm:size-14"
+              className="hidden size-11 shrink-0 min-[30rem]:block sm:size-14"
             />
             <div>
               <p className="masque-masthead-kicker mb-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] sm:text-xs">
                 The Masque of Shattered Mirrors
               </p>
-              <h1 className="masque-title">
+              <h1 className="masque-title max-w-52 sm:max-w-none">
                 Masque Character Creator
               </h1>
             </div>

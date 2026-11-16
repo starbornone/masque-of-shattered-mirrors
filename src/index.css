@@ -253,10 +253,17 @@
 }
 
 .masque-masthead::after {
+  position: relative;
   display: block;
   height: 2px;
   background: linear-gradient(90deg, transparent, oklch(0.77 0.055 250 / 0.62) 48%, transparent);
   content: "";
+}
+
+.masque-masthead-art {
+  width: clamp(9rem, 45vw, 26rem);
+  object-position: 48% 47%;
+  mask-image: linear-gradient(to right, transparent, rgb(0 0 0 / 0.15) 30%, black 85%);
 }
 
 .masque-masthead-kicker {

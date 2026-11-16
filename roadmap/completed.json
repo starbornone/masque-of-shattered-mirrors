@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-16T23:13:48+11:00",
+  "updatedAt": "2026-11-16T23:19:43+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -426,6 +426,13 @@
       "group": "Campaign Fit",
       "notes": "Use a shallow crop above the checklist in build review and shared attribute preview. Verified the banner and all eight checks at 360 and 390 px phone widths in Chromium.",
       "completedAt": "2026-11-16T23:13:48+11:00"
+    },
+    {
+      "id": "illustrate-player-header-with-cover-art",
+      "title": "Use the cover art in the player header",
+      "group": "Branding",
+      "notes": "Keep the mask and fractured mirror visible in a crop that fades toward the title. Inspected phone screenshots and measured title and campaign name contrast at 320, 360, and 390 px in Chromium. Confirmed that the built offline worker includes the cover asset.",
+      "completedAt": "2026-11-16T23:19:43+11:00"
     }
   ]
 }
