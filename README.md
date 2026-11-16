@@ -86,7 +86,7 @@ In the workspace, open the character JSON from the player’s **Download for GM*
 
 ## Deployment and campaign settings
 
-Vercel builds the site when changes are pushed to `main`.
+Vercel builds the site when changes are pushed to `main`. The production site is [Masque Character Creator](https://masque.astralarchives.games/).
 
 To enable `/gm/`, set a long, unique `MASQUE_GM_PASSWORD` as a sensitive Production environment variable in Vercel and deploy. Open `/gm/` over HTTPS and enter `gm` as the username. The Function serves the workspace only after checking the password. [Vercel environment variables](https://vercel.com/docs/environment-variables)
 

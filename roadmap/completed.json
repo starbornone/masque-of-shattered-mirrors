@@ -1,7 +1,7 @@
 {
   "schema": "name-roadmap/v1",
   "file": "completed",
-  "updatedAt": "2026-11-14T11:43:28+11:00",
+  "updatedAt": "2026-11-16T14:04:44+11:00",
   "project": {
     "key": "masque-of-shattered-mirrors",
     "title": "Masque Character Creator",
@@ -405,6 +405,13 @@
       "group": "Phase 3: Later",
       "notes": "Save the player's approved question with the draft, reopen the mask lie and question in one tap, and optionally print them on the reverse of the table card. Verified approval, refresh, and reapproval after mask edits in Chromium. Inspected A4 and Letter reverse pages. In-session playtesting is pending.",
       "completedAt": "2026-11-14T11:43:28+11:00"
+    },
+    {
+      "id": "update-astral-archives-branding",
+      "title": "Update the return link to Astral Archives",
+      "group": "Branding",
+      "notes": "Link the player footer to astralarchives.games and document the verified Vercel host masque.astralarchives.games.",
+      "completedAt": "2026-11-16T14:04:44+11:00"
     }
   ]
 }
